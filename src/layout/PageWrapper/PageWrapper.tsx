@@ -1,11 +1,11 @@
-import React, { useLayoutEffect, forwardRef, ReactElement, useContext, useEffect } from 'react';
+import React, { useLayoutEffect, forwardRef, ReactElement, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { ISubHeaderProps } from '../SubHeader/SubHeader';
 import { IPageProps } from '../Page/Page';
 import { useNavigate } from 'react-router-dom';
-import AuthContext from '../../contexts/authContext';
 import { demoPagesMenu } from '../../menu';
+import {useSelector} from "react-redux";
 
 interface IPageWrapperProps {
 	isProtected?: boolean;
@@ -30,11 +30,14 @@ const PageWrapper = forwardRef<HTMLDivElement, IPageWrapperProps>(
 				.setAttribute('content', description || process.env.REACT_APP_META_DESC || '');
 		});
 
-		const { user } = useContext(AuthContext);
+		const isLoggedIn = useSelector((state:any) => state.user.isLoggedIn);
+
 
 		const navigate = useNavigate();
+
+		/// ЛОГИКА ПРОВЕРКИ ЗАЛОГИНЕННОСТИ БУДЕТ ТУТ
 		useEffect(() => {
-			if (isProtected && user === '') {
+			if (isProtected && !isLoggedIn) {
 				navigate(`../${demoPagesMenu.login.path}`);
 			}
 			return () => {};

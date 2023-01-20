@@ -6,7 +6,6 @@ import './styles/styles.scss';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeContextProvider} from './contexts/themeContext';
-import {AuthContextProvider} from './contexts/authContext';
 import {GoogleOAuthProvider} from '@react-oauth/google';
 import {Provider as StoreProvider} from 'react-redux'
 import store from './store'
@@ -15,13 +14,12 @@ import './i18n';
 const children = (
 	<StoreProvider store={store}>
 		<GoogleOAuthProvider clientId="<C01koz8bu>">
-			<AuthContextProvider>
-				<ThemeContextProvider>
+
+			<ThemeContextProvider>
 					<Router>
 						<App/>
 					</Router>
 				</ThemeContextProvider>
-			</AuthContextProvider>
 		</GoogleOAuthProvider>
 	</StoreProvider>
 );

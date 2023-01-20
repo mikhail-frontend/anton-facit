@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext, useState } from 'react';
+import React, { FC, useCallback, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -11,16 +11,17 @@ import Button from '../../../components/bootstrap/Button';
 import Logo from '../../../components/Logo';
 import useDarkMode from '../../../hooks/useDarkMode';
 import { useFormik } from 'formik';
-import AuthContext from '../../../contexts/authContext';
 import USERS, { getUserDataWithUsername } from '../../../common/data/userDummyData';
 import Spinner from '../../../components/bootstrap/Spinner';
 import Alert from '../../../components/bootstrap/Alert';
 import { GoogleLogin } from '@react-oauth/google';
 import AppleLogin from 'react-apple-login'
-
+import {useDispatch, useSelector} from "react-redux";
+import {logInUser} from "../../../store/modules/user/asyncActions";
 interface ILoginHeaderProps {
 	isNewUser?: boolean;
 }
+
 const LoginHeader: FC<ILoginHeaderProps> = ({ isNewUser }) => {
 	if (isNewUser) {
 		return (
@@ -42,7 +43,25 @@ interface ILoginProps {
 	isSignUp?: boolean;
 }
 const Login: FC<ILoginProps> = ({ isSignUp }) => {
-	const { setUser } = useContext(AuthContext);
+
+	const dispatch:any = useDispatch();
+	const userData = useSelector((state:any) => state.user.userData);
+
+	const loginAndRedirect = async (values) => {
+		if (usernameCheck(values.loginUsername)) {
+			if (passwordCheck(values.loginUsername, values.loginPassword)) {
+
+				await dispatch(logInUser({
+					email: values.loginUsername,
+					password: values.loginPassword
+				}));
+				handleOnClick();
+			} else {
+				formik.setFieldError('loginPassword', 'Username and password do not match.');
+			}
+		}
+	}
+
 
 	const { darkModeStatus } = useDarkMode();
 
@@ -80,18 +99,8 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 			return errors;
 		},
 		validateOnChange: false,
-		onSubmit: (values) => {
-			if (usernameCheck(values.loginUsername)) {
-				if (passwordCheck(values.loginUsername, values.loginPassword)) {
-					if (setUser) {
-						setUser(values.loginUsername);
-					}
-
-					handleOnClick();
-				} else {
-					formik.setFieldError('loginPassword', 'Username and password do not match.');
-				}
-			}
+		onSubmit: async (values) => {
+			await loginAndRedirect(values)
 		},
 	});
 
