@@ -1,28 +1,78 @@
-import React, { FC, useCallback, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, {FC, useCallback, useState} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
-import Card, { CardBody } from '../../../components/bootstrap/Card';
+import Card, {CardBody} from '../../../components/bootstrap/Card';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Input from '../../../components/bootstrap/forms/Input';
 import Button from '../../../components/bootstrap/Button';
 import Logo from '../../../components/Logo';
 import useDarkMode from '../../../hooks/useDarkMode';
-import { useFormik } from 'formik';
-import USERS, { getUserDataWithUsername } from '../../../common/data/userDummyData';
+import {useFormik} from 'formik';
 import Spinner from '../../../components/bootstrap/Spinner';
-import Alert from '../../../components/bootstrap/Alert';
-import { GoogleLogin } from '@react-oauth/google';
+import {GoogleLogin} from '@react-oauth/google';
 import AppleLogin from 'react-apple-login'
 import {useDispatch, useSelector} from "react-redux";
 import {logInUser} from "../../../store/modules/user/asyncActions";
+
 interface ILoginHeaderProps {
 	isNewUser?: boolean;
 }
 
-const LoginHeader: FC<ILoginHeaderProps> = ({ isNewUser }) => {
+const SignUpForm = ({handleOnClick}) => {
+	return <>
+
+		<>
+			<div className='col-12'>
+				<FormGroup
+					id='signup-email'
+					isFloating
+					label='Your email'>
+					<Input type='email' autoComplete='email'/>
+				</FormGroup>
+			</div>
+			<div className='col-12'>
+				<FormGroup
+					id='signup-name'
+					isFloating
+					label='Your name'>
+					<Input autoComplete='given-name'/>
+				</FormGroup>
+			</div>
+			<div className='col-12'>
+				<FormGroup
+					id='signup-surname'
+					isFloating
+					label='Your surname'>
+					<Input autoComplete='family-name'/>
+				</FormGroup>
+			</div>
+			<div className='col-12'>
+				<FormGroup
+					id='signup-password'
+					isFloating
+					label='Password'>
+					<Input
+						type='password'
+						autoComplete='password'
+					/>
+				</FormGroup>
+			</div>
+			<div className='col-12'>
+				<Button
+					color='info'
+					className='w-100 py-3'
+					onClick={handleOnClick}>
+					Sign Up
+				</Button>
+			</div>
+		</>
+	</>
+}
+
+const LoginHeader: FC<ILoginHeaderProps> = ({isNewUser}) => {
 	if (isNewUser) {
 		return (
 			<>
@@ -48,18 +98,13 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 	const userData = useSelector((state:any) => state.user.userData);
 
 	const loginAndRedirect = async (values) => {
-		if (usernameCheck(values.loginUsername)) {
-			if (passwordCheck(values.loginUsername, values.loginPassword)) {
-
-				await dispatch(logInUser({
+		await dispatch(logInUser({
 					email: values.loginUsername,
 					password: values.loginPassword
 				}));
-				handleOnClick();
-			} else {
-				formik.setFieldError('loginPassword', 'Username and password do not match.');
-			}
-		}
+
+		handleOnClick();
+
 	}
 
 
@@ -71,19 +116,13 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 	const navigate = useNavigate();
 	const handleOnClick = useCallback(() => navigate('/'), [navigate]);
 
-	const usernameCheck = (username: string) => {
-		return !!getUserDataWithUsername(username);
-	};
 
-	const passwordCheck = (username: string, password: string) => {
-		return getUserDataWithUsername(username).password === password;
-	};
 
 	const formik = useFormik({
 		enableReinitialize: true,
 		initialValues: {
-			loginUsername: USERS.JOHN.username,
-			loginPassword: USERS.JOHN.password,
+			loginUsername: '',
+			loginPassword: '',
 		},
 		validate: (values) => {
 			const errors: { loginUsername?: string; loginPassword?: string } = {};
@@ -108,15 +147,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 	const handleContinue = () => {
 		setIsLoading(true);
 		setTimeout(() => {
-			if (
-				!Object.keys(USERS).find(
-					(f) => USERS[f].username.toString() === formik.values.loginUsername,
-				)
-			) {
-				formik.setFieldError('loginUsername', 'No such user found in the system.');
-			} else {
-				setSignInPassword(true);
-			}
+			setSignInPassword(true);
 			setIsLoading(false);
 		}, 1000);
 	};
@@ -181,63 +212,9 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 
 								<LoginHeader isNewUser={singUpStatus} />
 
-								<Alert isLight icon='Lock' isDismissible>
-									<div className='row'>
-										<div className='col-12'>
-											<strong>Username:</strong> {USERS.JOHN.username}
-										</div>
-										<div className='col-12'>
-											<strong>Password:</strong> {USERS.JOHN.password}
-										</div>
-									</div>
-								</Alert>
 								<form className='row g-4'>
 									{singUpStatus ? (
-										<>
-											<div className='col-12'>
-												<FormGroup
-													id='signup-email'
-													isFloating
-													label='Your email'>
-													<Input type='email' autoComplete='email' />
-												</FormGroup>
-											</div>
-											<div className='col-12'>
-												<FormGroup
-													id='signup-name'
-													isFloating
-													label='Your name'>
-													<Input autoComplete='given-name' />
-												</FormGroup>
-											</div>
-											<div className='col-12'>
-												<FormGroup
-													id='signup-surname'
-													isFloating
-													label='Your surname'>
-													<Input autoComplete='family-name' />
-												</FormGroup>
-											</div>
-											<div className='col-12'>
-												<FormGroup
-													id='signup-password'
-													isFloating
-													label='Password'>
-													<Input
-														type='password'
-														autoComplete='password'
-													/>
-												</FormGroup>
-											</div>
-											<div className='col-12'>
-												<Button
-													color='info'
-													className='w-100 py-3'
-													onClick={handleOnClick}>
-													Sign Up
-												</Button>
-											</div>
-										</>
+										<SignUpForm handleOnClick={handleOnClick}/>
 									) : (
 										<>
 											<div className='col-12'>
