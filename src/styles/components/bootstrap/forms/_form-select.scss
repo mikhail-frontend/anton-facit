@@ -3,6 +3,7 @@
 //
 
 .form-select {
+	background-color: #f8f9fa;
 	@include dark-mode {
 		background-color: $dark-input-bg;
 		color: $dark-input-color;
@@ -31,4 +32,5 @@
 
 .form-select-lg {
 	@include border-radius($form-select-border-radius-lg);
+	height: 47.5px;
 }

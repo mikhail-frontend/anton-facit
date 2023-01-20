@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useMemo} from 'react';
 import {demoPagesMenu} from '../../../menu';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import SubHeader, {SubHeaderLeft} from '../../../layout/SubHeader/SubHeader';
@@ -12,18 +12,48 @@ import Button from "../../../components/bootstrap/Button";
 import FormGroup from "../../../components/bootstrap/forms/FormGroup";
 import {useFormik} from "formik";
 import validate from "../demo-pages/helper/editPagesValidate";
+import Select from "../../../components/bootstrap/forms/Select";
+import classNames from "classnames";
+import useDarkMode from "../../../hooks/useDarkMode";
+// @ts-ignore
+import countryList from 'react-select-country-list'
 
 const DashboardPage = () => {
-	const formik: any = useFormik({
+	const { darkModeStatus } = useDarkMode();
+	const countriesList = useMemo(() => countryList().getData().map((item:any) => ({text: item.label, value: item.value})), []);
+	const gendersList = useMemo(() => ([
+		{
+			text: 'Male',
+			value: 'male'
+		},
+		{
+			text: 'Female',
+			value: 'female'
+		},
+		{
+			text: 'Non binary',
+			value: 'non-binary'
+		},
+		{
+			text: `Don't want to talk`,
+			value: 'other'
+		},
+
+	]), [])
+	console.log({
+		countriesList
+	})
+	const formik = useFormik({
 		initialValues: {
 			name: '', // +
 			second_name: '', // +
 			email: '', // +
-			phone: '',
-			telegram: '',
-			country: '',
-			city: '',
-			gender: '',
+			phone: '', // +
+			telegram: '', //+
+			country: '', //+
+			city: '', //+,
+			gender: '', // +
+
 			language: '',
 			password: '',
 			password_confirmation: '',
@@ -144,6 +174,72 @@ const DashboardPage = () => {
 										mask='+1 (999) 999-9999'
 									/>
 								</FormGroup>
+							</div>
+							<div className='col-md-6'>
+								<FormGroup id='telegram' label='Telegram' isFloating>
+									<Input
+										placeholder='Telegram'
+										onChange={formik.handleChange}
+										onBlur={formik.handleBlur}
+										value={formik.values.telegram}
+										isValid={formik.isValid}
+										isTouched={formik.touched.telegram}
+										invalidFeedback={formik.errors.telegram}
+										validFeedback='Looks good!'
+									/>
+								</FormGroup>
+							</div>
+							<div className='col-md-6'>
+								<Select
+									id='country'
+									ariaLabel='country'
+									placeholder='Select your country'
+									size='lg'
+									list={countriesList}
+									className={classNames('rounded-1', {
+										'bg-white': !darkModeStatus,
+									})}
+									validFeedback='Looks good!'
+									onChange={(e: { target: { value: any } }) => {
+										formik.handleChange(e);
+										console.log(e.target.value)
+									}}
+									value={formik.values.country}
+								/>
+							</div>
+
+							<div className='col-md-6'>
+								<FormGroup id='city' label='City' isFloating>
+									<Input
+										placeholder='Your city'
+										onChange={formik.handleChange}
+										onBlur={formik.handleBlur}
+										value={formik.values.city}
+										isValid={formik.isValid}
+										isTouched={formik.touched.city}
+										invalidFeedback={formik.errors.city}
+										validFeedback='Looks good!'
+									/>
+								</FormGroup>
+							</div>
+
+							<div className='col-md-6'>
+								<Select
+									id='gender'
+									ariaLabel='gender'
+									placeholder='Select your gender'
+									size='lg'
+									list={gendersList}
+									className={classNames('rounded-1', {
+										'bg-white': !darkModeStatus,
+									})}
+									validFeedback='Looks good!'
+									onChange={(e: { target: { value: any } }) => {
+										formik.handleChange(e);
+										console.log(e.target.value)
+									}}
+									value={formik.values.gender}
+								/>
 							</div>
 						</div>
 					</CardBody>

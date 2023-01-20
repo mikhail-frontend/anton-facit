@@ -53,16 +53,18 @@ const emailValidation = (value:string, key:keyof IValues, errors:IValues) => {
 	}
 };
 
-const urlValidation =  (v:string, key:keyof IValues, errors:IValues) => {
+const telegramValidation =  (v:string, key:keyof IValues, errors:IValues) => {
 	const value = v || '';
 	if (!value) {
 		errors[key] = 'Required';
 	} else if(!value.match(/^https?:\/\/.*/gm)) {
 		errors[key] = 'Invalid URL';
+	} else if(!value.includes('https://t.me/')) {
+		errors[key] = 'Invalid Telegram';
 	}
 };
 const phoneValidation = (value:string, key:keyof IValues, errors:IValues) => {
-	if (!value) {
+	if (!value || (value.trim() === '+1 (___) ___-____')) {
 		errors[key] = 'Required';
 	} else if (value.length !== 17) {
 		errors[key] = 'Invalid phone length';
@@ -104,7 +106,7 @@ const validate = (values: IValues) => {
 	simpleStringValidation(values.lastName || '', 'lastName', errors);
 	emailValidation(values.emailAddress || '', 'emailAddress', errors);
 	emailValidation(values.email || '', 'email', errors);
-	urlValidation(values.telegram || '', 'telegram', errors);
+	telegramValidation(values.telegram || '', 'telegram', errors);
 	phoneValidation(values.phone || '', 'phone', errors)
 
 

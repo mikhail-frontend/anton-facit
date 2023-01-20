@@ -13,30 +13,30 @@ const CommonHeaderChat = () => {
 	const [state, setState] = useState<boolean>(false);
 	const [msgCount, setMsgCount] = useState<number>(0);
 
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setMsgCount(1);
-			showNotification(
-				<span className='d-flex align-items-center'>
-					<Avatar
-						srcSet={USERS.CHLOE.srcSet}
-						src={USERS.CHLOE.src}
-						size={36}
-						color={USERS.CHLOE.color}
-						className='me-3'
-					/>
-					<span>{USERS.CHLOE.name} sent a message.</span>
-				</span>,
-				<div onClick={() => setState(!state)} role='presentation'>
-					<p>I think it's really starting to shine.</p>
-				</div>,
-			);
-		}, 30000);
-		return () => {
-			clearTimeout(timeout);
-		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	// useEffect(() => {
+	// 	const timeout = setTimeout(() => {
+	// 		setMsgCount(1);
+	// 		showNotification(
+	// 			<span className='d-flex align-items-center'>
+	// 				<Avatar
+	// 					srcSet={USERS.CHLOE.srcSet}
+	// 					src={USERS.CHLOE.src}
+	// 					size={36}
+	// 					color={USERS.CHLOE.color}
+	// 					className='me-3'
+	// 				/>
+	// 				<span>{USERS.CHLOE.name} sent a message.</span>
+	// 			</span>,
+	// 			<div onClick={() => setState(!state)} role='presentation'>
+	// 				<p>I think it's really starting to shine.</p>
+	// 			</div>,
+	// 		);
+	// 	}, 30000);
+	// 	return () => {
+	// 		clearTimeout(timeout);
+	// 	};
+	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, []);
 
 	useEffect(() => {
 		setMsgCount(0);
