@@ -350,6 +350,7 @@ const ColumnDynamicData = () => {
 				// @ts-ignore
 				y: {
 					title: {
+						// @ts-ignore
 						formatter(
 							val: any,
 							opts: {

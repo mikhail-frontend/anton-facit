@@ -198,6 +198,7 @@ const OffCanvas: FC<IOffCanvasProps> = ({
 	// @ts-ignore
 	const MotionTagWrapper = motion[Tag];
 
+
 	return (
 		<Portal>
 			<AnimatePresence exitBeforeEnter>
@@ -222,11 +223,13 @@ const OffCanvas: FC<IOffCanvasProps> = ({
 										isRightPanel && deviceScreen?.width > 1200,
 								},
 							)}
-							tabIndex='-1'
+							tabIndex={-1}
 							aria-labelledby={titleId}
 							data-bs-scroll={initialProps.isBodyScroll}
 							data-bs-backdrop={initialProps.isBackdrop}
-							style={{ visibility: isOpen && 'visible' }}
+							// eslint-disable-next-line react/jsx-props-no-spreading
+							// @ts-ignore
+							style={{ 'visibility': isOpen ? 'visible' : 'auto' }}
 							// eslint-disable-next-line react/jsx-props-no-spreading
 							{...props}>
 							{children}

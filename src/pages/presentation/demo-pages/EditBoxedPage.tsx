@@ -118,6 +118,7 @@ const EditBoxedPage = () => {
 	const formikAddress = useFormik({
 		initialValues: {
 			addressLine: '259 Street',
+			// @ts-ignore
 			addressLine2: '',
 			city: 'New York',
 			state: 'usa',
@@ -261,6 +262,7 @@ const EditBoxedPage = () => {
 							});
 							formikAddress.setValues({
 								addressLine: '',
+								//@ts-ignore
 								addressLine2: '',
 								city: '',
 								state: '',
@@ -620,6 +622,7 @@ const EditBoxedPage = () => {
 												isFloating>
 												<Input
 													onChange={formikAddress.handleChange}
+													//@ts-ignore
 													value={formikAddress.values.addressLine2}
 												/>
 											</FormGroup>

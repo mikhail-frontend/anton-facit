@@ -1,17 +1,5 @@
-
-
-// 	country: '',
-// 	city: '',
-// 	gender: '',
-// 	language: '',
-// 	password: '',
-// 	password_confirmation: ''
-
-// 	phone: '',
-
-
-
-interface IValues {
+import {simpleStringValidation, emailValidation, telegramValidation, phoneValidation, passwordValidation} from './validationFuncs'
+export type IValues = {
 
 	image?: string;
 	name?: string;
@@ -35,41 +23,8 @@ interface IValues {
 	confirmPassword?: string;
 }
 
-const simpleStringValidation = (value:string, key:keyof IValues, errors:IValues) => {
-	if (!value) {
-		errors[key] = 'Required';
-	} else if (value.length < 3) {
-		errors[key] = 'Must be 3 characters or more';
-	} else if (value.length > 20) {
-		errors[key] = 'Must be 20 characters or less';
-	}
-};
 
-const emailValidation = (value:string, key:keyof IValues, errors:IValues) => {
-	if (!value) {
-		errors[key] = 'Required';
-	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-		errors[key] = 'Invalid email address';
-	}
-};
 
-const telegramValidation =  (v:string, key:keyof IValues, errors:IValues) => {
-	const value = v || '';
-	if (!value) {
-		errors[key] = 'Required';
-	} else if(!value.match(/^https?:\/\/.*/gm)) {
-		errors[key] = 'Invalid URL';
-	} else if(!value.includes('https://t.me/')) {
-		errors[key] = 'Invalid Telegram';
-	}
-};
-const phoneValidation = (value:string, key:keyof IValues, errors:IValues) => {
-	if (!value || (value.trim() === '+1 (___) ___-____')) {
-		errors[key] = 'Required';
-	} else if (value.length !== 17) {
-		errors[key] = 'Invalid phone length';
-	}
-}
 const validate = (values: IValues) => {
 
 
@@ -108,7 +63,7 @@ const validate = (values: IValues) => {
 	emailValidation(values.email || '', 'email', errors);
 	telegramValidation(values.telegram || '', 'telegram', errors);
 	phoneValidation(values.phone || '', 'phone', errors)
-
+	passwordValidation(values.password || '', values.password_confirmation || '', 'password', 'password_confirmation', errors)
 
 	if (values.currentPassword) {
 		if (!values.newPassword) {

@@ -73,6 +73,7 @@ const validate = (values: IValues) => {
 		newPassword: '',
 		confirmPassword: '',
 		addressLine: '',
+		//@ts-ignore
 		addressLine2: '',
 		phoneNumber: '',
 		city: '',
@@ -170,6 +171,7 @@ const EditWizardPage = () => {
 			emailAddress: 'johndoe@site.com',
 			phoneNumber: '',
 			addressLine: '',
+			//@ts-ignore
 			addressLine2: '',
 			city: '',
 			state: '',
@@ -235,6 +237,7 @@ const EditWizardPage = () => {
 								emailAddress: '',
 								phoneNumber: '',
 								addressLine: '',
+								//@ts-ignore
 								addressLine2: '',
 								city: '',
 								state: '',

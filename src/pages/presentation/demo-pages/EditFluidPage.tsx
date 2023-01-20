@@ -126,6 +126,7 @@ const EditFluidPage = () => {
 	const formikAddress = useFormik({
 		initialValues: {
 			addressLine: '259 Street',
+			// @ts-ignore
 			addressLine2: '',
 			city: 'New York',
 			state: 'usa',
@@ -269,6 +270,7 @@ const EditFluidPage = () => {
 							});
 							formikAddress.setValues({
 								addressLine: '',
+								//@ts-ignore
 								addressLine2: '',
 								city: '',
 								state: '',
@@ -689,6 +691,7 @@ const EditFluidPage = () => {
 												isFloating>
 												<Input
 													onChange={formikAddress.handleChange}
+													//@ts-ignore
 													value={formikAddress.values.addressLine2}
 												/>
 											</FormGroup>

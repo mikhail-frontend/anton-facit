@@ -55,6 +55,7 @@ const SingleBoxedPage = () => {
 			emailAddress: 'johndoe@site.com',
 			phoneNumber: '',
 			addressLine: '',
+			//@ts-ignore
 			addressLine2: '',
 			city: '',
 			state: '',
