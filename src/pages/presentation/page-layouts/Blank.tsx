@@ -3,11 +3,10 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import HumansWebp from '../../../assets/img/scene8.webp';
 import Humans from '../../../assets/img/scene8.png';
-import { pageLayoutTypesPagesMenu } from '../../../menu';
 
 const Blank = () => {
 	return (
-		<PageWrapper title={pageLayoutTypesPagesMenu.blank.text}>
+		<PageWrapper title={'No title'}>
 			<Page>
 				<div className='row d-flex align-items-center h-100'>
 					<div

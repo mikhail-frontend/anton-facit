@@ -3,11 +3,10 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import Humans from '../../../assets/img/scene2.png';
 import HumansWebp from '../../../assets/img/scene2.webp';
-import { pageLayoutTypesPagesMenu } from '../../../menu';
 
 const OnlyHeader = () => {
 	return (
-		<PageWrapper title={pageLayoutTypesPagesMenu.pageLayout.subMenu.onlyHeader.text}>
+		<PageWrapper title={'No title'}>
 			<Page>
 				<div className='row d-flex align-items-center h-100'>
 					<div

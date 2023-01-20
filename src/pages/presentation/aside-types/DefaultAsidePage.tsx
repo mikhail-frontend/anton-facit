@@ -6,11 +6,10 @@ import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Humans from '../../../assets/img/scene5.png';
 import HumansWebp from '../../../assets/img/scene5.webp';
 import CommonLayoutRightSubheader from '../../_layout/_subheaders/CommonLayoutRightSubheader';
-import { pageLayoutTypesPagesMenu } from '../../../menu';
 
 const DefaultAsidePage = () => {
 	return (
-		<PageWrapper title={pageLayoutTypesPagesMenu.asideTypes.subMenu.defaultAside.text}>
+		<PageWrapper title={'No title'}>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

@@ -4,8 +4,7 @@ import {
 	componentPagesMenu,
 	dashboardPagesMenu,
 	demoPagesMenu,
-	gettingStartedPagesMenu,
-	pageLayoutTypesPagesMenu,
+	gettingStartedPagesMenu
 } from '../menu';
 import Login from '../pages/presentation/auth/Login';
 
@@ -196,10 +195,6 @@ const presentation: RouteProps[] = [
 	{
 		path: dashboardPagesMenu.dashboard.path,
 		element: <LANDING.DASHBOARD />,
-	},
-	{
-		path: dashboardPagesMenu.dashboardBooking.path,
-		element: <LANDING.DASHBOARD_BOOKING />,
 	},
 	{
 		path: dashboardPagesMenu.summary.path,
@@ -403,37 +398,6 @@ const presentation: RouteProps[] = [
 
 	/** ************************************************** */
 
-	/**
-	 * Page Layout Types
-	 */
-	{
-		path: pageLayoutTypesPagesMenu.blank.path,
-		element: <PAGE_LAYOUTS.BLANK />,
-	},
-	{
-		path: pageLayoutTypesPagesMenu.pageLayout.subMenu.headerAndSubheader.path,
-		element: <PAGE_LAYOUTS.HEADER_SUBHEADER />,
-	},
-	{
-		path: pageLayoutTypesPagesMenu.pageLayout.subMenu.onlyHeader.path,
-		element: <PAGE_LAYOUTS.HEADER />,
-	},
-	{
-		path: pageLayoutTypesPagesMenu.pageLayout.subMenu.onlySubheader.path,
-		element: <PAGE_LAYOUTS.SUBHEADER />,
-	},
-	{
-		path: pageLayoutTypesPagesMenu.pageLayout.subMenu.onlyContent.path,
-		element: <PAGE_LAYOUTS.CONTENT />,
-	},
-	{
-		path: pageLayoutTypesPagesMenu.asideTypes.subMenu.defaultAside.path,
-		element: <PAGE_LAYOUTS.ASIDE />,
-	},
-	{
-		path: pageLayoutTypesPagesMenu.asideTypes.subMenu.minimizeAside.path,
-		element: <PAGE_LAYOUTS.MINIMIZE_ASIDE />,
-	},
 ];
 const documentation: RouteProps[] = [
 	/**

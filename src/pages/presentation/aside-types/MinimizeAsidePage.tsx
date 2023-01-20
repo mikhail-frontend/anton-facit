@@ -7,12 +7,11 @@ import Humans from '../../../assets/img/scene6.png';
 import HumansWebp from '../../../assets/img/scene6.webp';
 import CommonLayoutRightSubheader from '../../_layout/_subheaders/CommonLayoutRightSubheader';
 import useMinimizeAside from '../../../hooks/useMinimizeAside';
-import { pageLayoutTypesPagesMenu } from '../../../menu';
 
 const MinimizeAsidePage = () => {
 	useMinimizeAside();
 	return (
-		<PageWrapper title={pageLayoutTypesPagesMenu.asideTypes.subMenu.minimizeAside.text}>
+		<PageWrapper title={'No title'}>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

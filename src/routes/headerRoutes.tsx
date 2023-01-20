@@ -5,7 +5,6 @@ import {
 	dashboardPagesMenu,
 	demoPagesMenu,
 	gettingStartedPagesMenu,
-	pageLayoutTypesPagesMenu,
 } from '../menu';
 import DashboardHeader from '../pages/_layout/_headers/DashboardHeader';
 import DashboardBookingHeader from '../pages/_layout/_headers/DashboardBookingHeader';
@@ -24,9 +23,6 @@ import DefaultHeader from '../pages/_layout/_headers/DefaultHeader';
 import DocumentationHeader from '../pages/_layout/_headers/DocumentationHeader';
 
 const headers: RouteProps[] = [
-	{ path: pageLayoutTypesPagesMenu.pageLayout.subMenu.onlySubheader.path, element: null },
-	{ path: pageLayoutTypesPagesMenu.pageLayout.subMenu.onlyContent.path, element: null },
-	{ path: pageLayoutTypesPagesMenu.blank.path, element: null },
 	{ path: demoPagesMenu.login.path, element: null },
 	{ path: demoPagesMenu.signUp.path, element: null },
 	{ path: demoPagesMenu.page404.path, element: null },
@@ -37,10 +33,7 @@ const headers: RouteProps[] = [
 		element: <DashboardHeader />,
 	},
 	{ path: demoPagesMenu.pricingTable.path, element: <DashboardHeader /> },
-	{
-		path: dashboardPagesMenu.dashboardBooking.path,
-		element: <DashboardBookingHeader />,
-	},
+
 	{
 		path: demoPagesMenu.appointment.subMenu.calendar.path,
 		element: <DashboardBookingHeader />,
@@ -128,18 +121,6 @@ const headers: RouteProps[] = [
 	{
 		path: `${demoPagesMenu.sales.subMenu.productID.path}/:id`,
 		element: <ProductListHeader />,
-	},
-	{
-		path: `${pageLayoutTypesPagesMenu.asideTypes.path}/*`,
-		element: <PageLayoutHeader />,
-	},
-	{
-		path: pageLayoutTypesPagesMenu.pageLayout.subMenu.headerAndSubheader.path,
-		element: <PageLayoutHeader />,
-	},
-	{
-		path: pageLayoutTypesPagesMenu.pageLayout.subMenu.onlyHeader.path,
-		element: <PageLayoutHeader />,
 	},
 	{
 		path: `${componentPagesMenu.components.path}/*`,

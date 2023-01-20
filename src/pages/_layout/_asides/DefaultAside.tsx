@@ -9,7 +9,6 @@ import {
 	dashboardPagesMenu,
 	demoPagesMenu,
 	gettingStartedPagesMenu,
-	pageLayoutTypesPagesMenu,
 } from '../../../menu';
 import ThemeContext from '../../../contexts/themeContext';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
@@ -43,7 +42,6 @@ const DefaultAside = () => {
 						<NavigationLine />
 						<Navigation menu={demoPagesMenu} id='aside-demo-pages' />
 						<NavigationLine />
-						<Navigation menu={pageLayoutTypesPagesMenu} id='aside-menu' />
 					</>
 				)}
 

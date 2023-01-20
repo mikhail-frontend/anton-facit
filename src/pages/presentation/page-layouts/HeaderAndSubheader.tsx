@@ -6,11 +6,10 @@ import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Humans from '../../../assets/img/scene1.png';
 import HumansWebp from '../../../assets/img/scene1.webp';
 import CommonLayoutRightSubheader from '../../_layout/_subheaders/CommonLayoutRightSubheader';
-import { pageLayoutTypesPagesMenu } from '../../../menu';
 
 const HeaderAndSubheader = () => {
 	return (
-		<PageWrapper title={pageLayoutTypesPagesMenu.pageLayout.subMenu.headerAndSubheader.text}>
+		<PageWrapper title={'No title'}>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb
