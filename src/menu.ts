@@ -31,24 +31,16 @@ export const summaryPageTopMenu = {
 };
 
 export const dashboardPagesMenu = {
+	pages: {
+		id: 'pages',
+		text: 'Ready pages',
+		icon: 'Extension',
+	},
 	dashboard: {
 		id: 'dashboard',
 		text: 'Dashboard',
 		path: '/',
-		icon: 'Profile',
-		subMenu: null,
-	},
-	crmDashboard: {
-		id: 'crmDashboard',
-		text: 'CRM Dashboard',
-		path: 'crm/dashboard',
-		icon: 'RecentActors',
-	},
-	summary: {
-		id: 'summary',
-		text: 'Summary',
-		path: 'summary',
-		icon: 'sticky_note_2',
+		icon: 'Badge',
 		subMenu: null,
 	},
 };

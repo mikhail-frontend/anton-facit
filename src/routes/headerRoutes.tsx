@@ -94,10 +94,7 @@ const headers: RouteProps[] = [
 		path: `${demoPagesMenu.crm.subMenu.customerID.path}/:id`,
 		element: <ProfilePageHeader />,
 	},
-	{
-		path: dashboardPagesMenu.summary.path,
-		element: <SummaryHeader />,
-	},
+
 	{
 		path: demoPagesMenu.gridPages.subMenu.gridBoxed.path,
 		element: <ProductsHeader />,

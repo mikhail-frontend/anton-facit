@@ -196,10 +196,7 @@ const presentation: RouteProps[] = [
 		path: dashboardPagesMenu.dashboard.path,
 		element: <LANDING.DASHBOARD />,
 	},
-	{
-		path: dashboardPagesMenu.summary.path,
-		element: <LANDING.SUMMARY />,
-	},
+
 
 	/** ************************************************** */
 
