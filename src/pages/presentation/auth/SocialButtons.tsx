@@ -2,9 +2,15 @@ import Button from '../../../components/bootstrap/Button';
 import classNames from 'classnames';
 import AppleLogin from 'react-apple-login';
 import { GoogleLogin } from '@react-oauth/google';
+import useDarkMode from "../../../hooks/useDarkMode";
+
+
 import React from 'react';
 
-const SocialButtons = ({ darkModeStatus }) => {
+const SocialButtons = () => {
+
+	const { darkModeStatus } = useDarkMode();
+
 	return (
 		<>
 			<div className='col-12 mb-3 text-center text-muted'>OR</div>

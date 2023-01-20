@@ -94,8 +94,8 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 								</div>
 
 								<LoginHeader isNewUser={singUpStatus} />
-								{singUpStatus && <SignUp darkModeStatus={darkModeStatus} />}
-								{!singUpStatus && <LoginForm darkModeStatus={darkModeStatus} />}
+								{singUpStatus && <SignUp  />}
+								{!singUpStatus && <LoginForm  />}
 							</CardBody>
 						</Card>
 

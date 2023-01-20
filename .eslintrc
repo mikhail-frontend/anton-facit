@@ -6,7 +6,6 @@
 	"extends": [
 		"plugin:react/recommended",
 		"airbnb-typescript",
-		"plugin:eslint-comments/recommended",
 		"plugin:import/errors",
 		"plugin:import/warnings",
 		"plugin:prettier/recommended",
@@ -16,7 +15,7 @@
 	"parserOptions": {
 		"project": "./tsconfig.json"
 	},
-	"plugins": ["import", "prettier", "eslint-comments", "react", "jsx-a11y", "react-hooks"],
+	"plugins": ["import", "prettier",  "react", "jsx-a11y", "react-hooks"],
 	"rules": {
 		"prettier/prettier": ["warn"],
 		"no-use-before-define": "off",

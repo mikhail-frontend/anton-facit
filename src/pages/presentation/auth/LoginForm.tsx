@@ -1,7 +1,7 @@
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Input from '../../../components/bootstrap/forms/Input';
 import Button from '../../../components/bootstrap/Button';
-import React, { useRef, useState } from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import { useFormik } from 'formik';
 import { emailValidation, passwordValidation } from '../demo-pages/helper/validationFuncs';
 import { IValues } from '../demo-pages/helper/editPagesValidate';
@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import Spinner from '../../../components/bootstrap/Spinner';
 import Toasts from '../../../components/bootstrap/Toasts';
 import { useToasts } from 'react-toast-notifications';
+import ThemeContext from "../../../contexts/themeContext";
 
 const validate = (values: Partial<IValues>) => {
 	const errors: IValues = {
@@ -29,7 +30,9 @@ const validate = (values: Partial<IValues>) => {
 	);
 	return errors;
 };
-const LoginForm = ({ darkModeStatus }) => {
+const LoginForm = () => {
+	const { darkModeStatus } = useContext(ThemeContext);
+
 	const dispatch: any = useDispatch();
 	const navigate = useNavigate();
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -120,7 +123,7 @@ const LoginForm = ({ darkModeStatus }) => {
 						Continue
 					</Button>
 				</div>
-				<SocialButtons darkModeStatus={darkModeStatus} />
+				<SocialButtons />
 			</form>
 		</div>
 	);

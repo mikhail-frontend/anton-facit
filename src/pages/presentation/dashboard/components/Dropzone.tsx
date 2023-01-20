@@ -5,15 +5,21 @@ import axios from 'axios';
 import SvgClearAll from '../../../../components/icon/material-icons/Close';
 import Spinner from '../../../../components/bootstrap/Spinner';
 
-export default function Dropzone({ photo, savePhoto, deletePhoto }) {
+const Dropzone:React.FC<{
+	photo: string,
+	savePhoto: (photo:string) => void,
+	deletePhoto: () => void
+}> = ({ photo, savePhoto, deletePhoto }) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [files, setFiles] = useState<any>(photo ? [photo] : []);
 	const [isActive, setIsActive] = useState(false);
 	const [loading, setLoading] = useState(false);
+	//eslint-disable-next-line
 	const { getRootProps, getInputProps, acceptedFiles, open } = useDropzone({
 		accept: {
 			'image/*': [],
 		},
+		//eslint-disable-next-line
 		onDrop: async (acceptedFiles: any[]) => {
 			setLoading(true);
 			const [image] = acceptedFiles;
@@ -88,3 +94,5 @@ export default function Dropzone({ photo, savePhoto, deletePhoto }) {
 		</div>
 	);
 }
+
+export default Dropzone

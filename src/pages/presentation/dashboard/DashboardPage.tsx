@@ -51,11 +51,15 @@ const DashboardPage = () => {
 
 	const formRef = useRef<HTMLFormElement>(null);
 
+	//eslint-disable-next-line
 	useEffect(() => {
-		formik.setValues({
-			...userData,
-			language,
-		});
+		(() => {
+			formik.setValues({
+				...userData,
+				language,
+			});
+		})()
+	//eslint-disable-next-line
 	}, [userData]);
 
 	const formik = useFormik({
