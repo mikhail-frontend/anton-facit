@@ -3,8 +3,6 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
 import Page from '../../../layout/Page/Page';
 import Card, {CardBody, CardHeader, CardLabel, CardSubTitle, CardTitle} from "../../../components/bootstrap/Card";
-import Avatar from "../../../components/Avatar";
-import USERS from "../../../common/data/userDummyData";
 import Input from "../../../components/bootstrap/forms/Input";
 import Button from "../../../components/bootstrap/Button";
 import FormGroup from "../../../components/bootstrap/forms/FormGroup";
@@ -18,6 +16,7 @@ import countryList from 'react-select-country-list';
 import {fullData, emptyData} from "./helpers/formData";
 import Toasts from "../../../components/bootstrap/Toasts";
 import Dropzone from './components/Dropzone'
+import LANG, { getLangWithKey, ILang } from '../../../lang';
 
 
 const DashboardPage = () => {
@@ -49,12 +48,20 @@ const DashboardPage = () => {
 	const formRef = useRef<HTMLFormElement>(null);
 
 	const formik = useFormik({
-		initialValues: emptyData,
+		initialValues: fullData,
 		validate,
 		onSubmit: (event) => {
 			console.log(event)
 		},
 	});
+
+	const savePhoto = (photo:string) => {
+		formik.values.image = photo
+	}
+
+	const deletePhoto = () => {
+		formik.values.image = '';
+	}
 
 	const { addToast } = useToasts();
 
@@ -139,7 +146,7 @@ const DashboardPage = () => {
 						</CardHeader>
 						<CardBody>
 							<div className='col-12'>
-								<Dropzone/>
+								<Dropzone photo={formik.values.image} savePhoto={savePhoto} deletePhoto={deletePhoto}/>
 							</div>
 						</CardBody>
 					</Card>
