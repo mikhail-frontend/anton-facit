@@ -43,6 +43,18 @@ export const dashboardPagesMenu = {
 		icon: 'Badge',
 		subMenu: null,
 	},
+	login: {
+		id: 'login',
+		text: 'Login',
+		path: '/login',
+		icon: 'Login',
+	},
+	signUp: {
+		id: 'signUp',
+		text: 'Sign Up',
+		path: '/sign-up',
+		icon: 'PersonAdd',
+	},
 };
 
 export const demoPagesMenu = {

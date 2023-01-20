@@ -27,7 +27,7 @@ const DashboardPage = () => {
 
 	const {i18n: {language}} = useTranslation();
 	const {darkModeStatus} = useDarkMode();
-
+	const { addToast } = useToasts();
 
 	const countriesList = useMemo(() => countryList().getData().map((item: any) => ({
 		text: item.label,
@@ -39,7 +39,8 @@ const DashboardPage = () => {
 
 	useEffect(() => {
 		formik.setValues({
-			...userData
+			...userData,
+			language
 		})
 	}, [userData])
 
@@ -50,6 +51,12 @@ const DashboardPage = () => {
 		},
 	});
 
+	const percentFilling = useMemo(() => {
+		const filledValues = Object.values(formik.values).filter((val: string) => val && val.length);
+		const allValues = Object.values(formik.values);
+		return filledValues.length / allValues.length * 100;
+	}, [formik.values])
+
 	const savePhoto = (photo: string) => {
 		formik.values.image = photo
 	}
@@ -58,7 +65,7 @@ const DashboardPage = () => {
 		formik.values.image = '';
 	}
 
-	const { addToast } = useToasts();
+
 
 	const submitHandler = async (event:React.MouseEvent<HTMLElement>) => {
 		event.preventDefault();
@@ -110,11 +117,7 @@ const DashboardPage = () => {
 
 	}
 
-	const percentFilling = useMemo(() => {
-		const filledValues = Object.values(formik.values).filter((val: string) => val && val.length);
-		const allValues = Object.values(formik.values);
-		return filledValues.length / allValues.length * 100;
-	}, [formik.values])
+
 
 
 	return (
