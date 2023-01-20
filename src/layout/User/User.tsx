@@ -31,7 +31,6 @@ const User = () => {
 				onClick={() => setCollapseStatus(!collapseStatus)}>
 				<div className='user-avatar'>
 					<img
-						srcSet={userData?.srcSet}
 						src={userData?.src}
 						alt='Avatar'
 						width={128}

@@ -17,6 +17,8 @@ import {fullData} from "./helpers/formData";
 import Toasts from "../../../components/bootstrap/Toasts";
 import Dropzone from './components/Dropzone'
 import ChangeLang from "../../_layout/_headers/ChangeLang";
+import {genders} from "./entities";
+import Progress from '../../../components/bootstrap/Progress';
 
 const DashboardPage = () => {
 	const {darkModeStatus} = useDarkMode();
@@ -24,35 +26,19 @@ const DashboardPage = () => {
 		text: item.label,
 		value: item.value
 	})), []);
-	const gendersList = useMemo(() => ([
-		{
-			text: 'Male',
-			value: 'male'
-		},
-		{
-			text: 'Female',
-			value: 'female'
-		},
-		{
-			text: 'Non binary',
-			value: 'non-binary'
-		},
-		{
-			text: `Don't want to talk`,
-			value: 'other'
-		},
-
-	]), []);
+	const gendersList = useMemo(() => (genders), []);
 
 	const formRef = useRef<HTMLFormElement>(null);
+
 
 	const formik = useFormik({
 		initialValues: fullData,
 		validate,
-		onSubmit: (event) => {},
+		onSubmit: (event) => {
+		},
 	});
 
-	const savePhoto = (photo:string) => {
+	const savePhoto = (photo: string) => {
 		formik.values.image = photo
 	}
 
@@ -105,7 +91,7 @@ const DashboardPage = () => {
 			},
 		)
 
-		console.log({formik, values, errors: result, availableErrors, isValid });
+		console.log({formik, values, errors: result, availableErrors, isValid});
 		setTimeout(() => {
 			// @ts-ignore
 			formik.setTouched(false)
@@ -113,10 +99,22 @@ const DashboardPage = () => {
 
 	}
 
+	const percentFilling = useMemo(() => {
+		const filledValues = Object.values(formik.values).filter((val: string) => val && val.length);
+		const allValues = Object.values(formik.values);
+		return filledValues.length / allValues.length * 100;
+	}, [formik.values])
+
+
+	// useEffect(() => {
+
+	// }, [formik.values])
 
 	return (
 		<PageWrapper title={'Profile page'}>
+
 			<SubHeader>
+				<Progress value={percentFilling} isAutoColor height={10}/>
 				<SubHeaderLeft>
 					<span className='h4 mb-0 fw-bold'>Profile</span>
 				</SubHeaderLeft>
