@@ -7,21 +7,24 @@ import Input from "../../../components/bootstrap/forms/Input";
 import Button from "../../../components/bootstrap/Button";
 import FormGroup from "../../../components/bootstrap/forms/FormGroup";
 import {useFormik} from "formik";
-import validate from "../demo-pages/helper/editPagesValidate";
+import validate, {IValues} from "../demo-pages/helper/editPagesValidate";
 import Select from "../../../components/bootstrap/forms/Select";
 import classNames from "classnames";
 import useDarkMode from "../../../hooks/useDarkMode";
 import {useToasts} from 'react-toast-notifications';
 import countryList from 'react-select-country-list';
-import {fullData} from "./helpers/formData";
 import Toasts from "../../../components/bootstrap/Toasts";
 import Dropzone from './components/Dropzone'
 import ChangeLang from "../../_layout/_headers/ChangeLang";
 import {genders} from "./entities";
 import Progress from '../../../components/bootstrap/Progress';
 import {useTranslation} from "react-i18next";
+import {useSelector} from "react-redux";
 
 const DashboardPage = () => {
+	const user = useSelector((state:any) => state.user);
+	const userData:IValues = user.userData;
+
 	const {i18n: {language}} = useTranslation();
 	const {darkModeStatus} = useDarkMode();
 	const countriesList = useMemo(() => countryList().getData().map((item: any) => ({
@@ -34,7 +37,7 @@ const DashboardPage = () => {
 
 
 	const formik = useFormik({
-		initialValues: {...fullData, language},
+		initialValues: {...userData, language},
 		validate,
 		onSubmit: (event) => {
 		},
