@@ -44,11 +44,9 @@ import './styles/styles.scss';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeContextProvider } from './contexts/themeContext';
-import { AuthContextProvider } from './contexts/authContext';
 import './i18n';
 
 const children = (
-\t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
 \t\t\t\t
@@ -56,7 +54,6 @@ const children = (
 \t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
-\t</AuthContextProvider>
 );
 
 const container = document.getElementById('root');
@@ -78,11 +75,9 @@ import './styles/styles.scss';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeContextProvider } from './contexts/themeContext';
-import { AuthContextProvider } from './contexts/authContext';
 import './i18n';
 
 const children = (
-\t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
 \t\t\t\t
@@ -90,7 +85,6 @@ const children = (
 \t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
-\t</AuthContextProvider>
 );
 
 const container = document.getElementById('root');
@@ -112,11 +106,9 @@ import './styles/styles.scss';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeContextProvider } from './contexts/themeContext';
-import { AuthContextProvider } from './contexts/authContext';
 import './i18n';
 
 const children = (
-\t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
 \t\t\t\t
@@ -124,7 +116,6 @@ const children = (
 \t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
-\t</AuthContextProvider>
 );
 
 const container = document.getElementById('root');
@@ -205,11 +196,9 @@ import './styles/styles.scss';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeContextProvider } from './contexts/themeContext';
-import { AuthContextProvider } from './contexts/authContext';
 import './i18n';
 
 const children = (
-\t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
 \t\t\t\t
@@ -217,7 +206,6 @@ const children = (
 \t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
-\t</AuthContextProvider>
 );
 
 const container = document.getElementById('root');
@@ -282,11 +270,9 @@ import './styles/styles.scss';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeContextProvider } from './contexts/themeContext';
-import { AuthContextProvider } from './contexts/authContext';
 import './i18n';
 
 const children = (
-\t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
 \t\t\t\t
@@ -294,7 +280,6 @@ const children = (
 \t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
-\t</AuthContextProvider>
 );
 
 const container = document.getElementById('root');

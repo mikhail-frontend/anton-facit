@@ -10,10 +10,18 @@ import Collapse from '../../components/bootstrap/Collapse';
 import { NavigationLine } from '../Navigation/Navigation';
 import Icon from '../../components/icon/Icon';
 import useNavigationItemHandle from '../../hooks/useNavigationItemHandle';
-import AuthContext from '../../contexts/authContext';
+import {useDispatch, useSelector} from "react-redux";
+import {logOutUser} from "../../store/modules/user/asyncActions";
+
 
 const User = () => {
-	const { userData, setUser } = useContext(AuthContext);
+	const dispatch:any = useDispatch();
+
+	const userData = useSelector((state:any) => state.user.userData);
+	const logOutAndRedirect = async () => {
+		dispatch(logOutUser({user_id: 1}));
+		navigate(`../${demoPagesMenu.login.path}`);
+	}
 
 	const navigate = useNavigate();
 	const handleItem = useNavigationItemHandle();
@@ -31,7 +39,7 @@ const User = () => {
 				onClick={() => setCollapseStatus(!collapseStatus)}>
 				<div className='user-avatar'>
 					<img
-						src={userData?.src}
+						src={userData.image}
 						alt='Avatar'
 						width={128}
 						height={128}
@@ -39,10 +47,10 @@ const User = () => {
 				</div>
 				<div className='user-info'>
 					<div className='user-name d-flex align-items-center'>
-						{`${userData?.name} ${userData?.surname}`}
+						{`${userData?.name} ${userData?.second_name}`}
 						<Icon icon='Verified' className='ms-1' color='info' />
 					</div>
-					<div className='user-sub-title'>{userData?.position}</div>
+					{/*<div className='user-sub-title'>{userData?.position}</div>*/}
 				</div>
 			</div>
 			<DropdownMenu>
@@ -51,7 +59,7 @@ const User = () => {
 						icon='AccountBox'
 						onClick={() =>
 							navigate(
-								`../${demoPagesMenu.appointment.subMenu.employeeID.path}/${userData?.id}`,
+								`/`,
 							)
 						}>
 						Profile
@@ -70,25 +78,6 @@ const User = () => {
 			<Collapse isOpen={collapseStatus} className='user-menu'>
 				<nav aria-label='aside-bottom-user-menu'>
 					<div className='navigation'>
-						<div
-							role='presentation'
-							className='navigation-item cursor-pointer'
-							onClick={() =>
-								navigate(
-									`../${demoPagesMenu.appointment.subMenu.employeeID.path}/${userData?.id}`,
-									// @ts-ignore
-									handleItem(),
-								)
-							}>
-							<span className='navigation-link navigation-link-pill'>
-								<span className='navigation-link-info'>
-									<Icon icon='AccountBox' className='navigation-icon' />
-									<span className='navigation-text'>
-										{t('menu:Profile') as ReactNode}
-									</span>
-								</span>
-							</span>
-						</div>
 						<div
 							role='presentation'
 							className='navigation-item cursor-pointer'
@@ -119,12 +108,7 @@ const User = () => {
 						<div
 							role='presentation'
 							className='navigation-item cursor-pointer'
-							onClick={() => {
-								if (setUser) {
-									setUser('');
-								}
-								navigate(`../${demoPagesMenu.login.path}`);
-							}}>
+							onClick={() => logOutAndRedirect()}>
 							<span className='navigation-link navigation-link-pill'>
 								<span className='navigation-link-info'>
 									<Icon icon='Logout' className='navigation-icon' />

@@ -19,8 +19,10 @@ import Dropzone from './components/Dropzone'
 import ChangeLang from "../../_layout/_headers/ChangeLang";
 import {genders} from "./entities";
 import Progress from '../../../components/bootstrap/Progress';
+import {useTranslation} from "react-i18next";
 
 const DashboardPage = () => {
+	const {i18n: {language}} = useTranslation();
 	const {darkModeStatus} = useDarkMode();
 	const countriesList = useMemo(() => countryList().getData().map((item: any) => ({
 		text: item.label,
@@ -32,7 +34,7 @@ const DashboardPage = () => {
 
 
 	const formik = useFormik({
-		initialValues: fullData,
+		initialValues: {...fullData, language},
 		validate,
 		onSubmit: (event) => {
 		},
@@ -106,15 +108,10 @@ const DashboardPage = () => {
 	}, [formik.values])
 
 
-	// useEffect(() => {
-
-	// }, [formik.values])
-
 	return (
 		<PageWrapper title={'Profile page'}>
-
-			<SubHeader>
-				<Progress value={percentFilling} isAutoColor height={10}/>
+			<SubHeader >
+				<Progress value={percentFilling} isAutoColor height={10} style={{marginBottom: '20px', padding: 0}}/>
 				<SubHeaderLeft>
 					<span className='h4 mb-0 fw-bold'>Profile</span>
 				</SubHeaderLeft>
@@ -124,6 +121,7 @@ const DashboardPage = () => {
 						color='primary'
 						isLight
 						icon='Save'
+						style={{marginBottom: '20px'}}
 						onClick={(event) => submitClickHandler((event as any))}
 					>
 						Save changes

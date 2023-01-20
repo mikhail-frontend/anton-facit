@@ -401,13 +401,13 @@ export const demoPagesMenu = {
 	login: {
 		id: 'login',
 		text: 'Login',
-		path: 'auth-pages/login',
+		path: '/login',
 		icon: 'Login',
 	},
 	signUp: {
 		id: 'signUp',
 		text: 'Sign Up',
-		path: 'auth-pages/sign-up',
+		path: '/sign-up',
 		icon: 'PersonAdd',
 	},
 	page404: {
