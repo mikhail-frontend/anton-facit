@@ -1,22 +1,20 @@
-import React, {FC, useState} from 'react';
+import React, { FC, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
-import Card, {CardBody} from '../../../components/bootstrap/Card';
+import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Button from '../../../components/bootstrap/Button';
 import Logo from '../../../components/Logo';
 import useDarkMode from '../../../hooks/useDarkMode';
-import SignUp from "./SignUp";
-import LoginForm from "./LoginForm";
+import SignUp from './SignUp';
+import LoginForm from './LoginForm';
 
 interface ILoginHeaderProps {
 	isNewUser?: boolean;
 }
 
-
-
-const LoginHeader: FC<ILoginHeaderProps> = ({isNewUser}) => {
+const LoginHeader: FC<ILoginHeaderProps> = ({ isNewUser }) => {
 	if (isNewUser) {
 		return (
 			<>
@@ -95,9 +93,9 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 									</div>
 								</div>
 
-								<LoginHeader isNewUser={singUpStatus}/>
-								{singUpStatus && <SignUp darkModeStatus={darkModeStatus}/>}
-								{!singUpStatus && <LoginForm darkModeStatus={darkModeStatus}/>}
+								<LoginHeader isNewUser={singUpStatus} />
+								{singUpStatus && <SignUp darkModeStatus={darkModeStatus} />}
+								{!singUpStatus && <LoginForm darkModeStatus={darkModeStatus} />}
 							</CardBody>
 						</Card>
 

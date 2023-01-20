@@ -10,19 +10,19 @@ import Collapse from '../../components/bootstrap/Collapse';
 import { NavigationLine } from '../Navigation/Navigation';
 import Icon from '../../components/icon/Icon';
 import useNavigationItemHandle from '../../hooks/useNavigationItemHandle';
-import {useDispatch, useSelector} from "react-redux";
-import {logOutUser} from "../../store/modules/user/userActions";
+import { useDispatch, useSelector } from 'react-redux';
+import { logOutUser } from '../../store/modules/user/userActions';
 
 import UserImage4 from '../../assets/img/wanna/wanna4.png';
 
 const User = () => {
-	const dispatch:any = useDispatch();
+	const dispatch: any = useDispatch();
 
-	const userData = useSelector((state:any) => state.user.userData);
+	const userData = useSelector((state: any) => state.user.userData);
 	const logOutAndRedirect = async () => {
 		await dispatch(logOutUser());
 		navigate(`../${demoPagesMenu.login.path}`);
-	}
+	};
 
 	const navigate = useNavigate();
 	const handleItem = useNavigationItemHandle();
@@ -39,22 +39,12 @@ const User = () => {
 				role='presentation'
 				onClick={() => setCollapseStatus(!collapseStatus)}>
 				<div className='user-avatar'>
-					{
-						userData.image && <img
-							src={userData.image}
-							alt='Avatar'
-							width={128}
-							height={128}
-						/>
-					}
-					{
-						!userData.image && <img
-							src={UserImage4}
-							alt='Avatar'
-							width={128}
-							height={128}
-						/>
-					}
+					{userData.image && (
+						<img src={userData.image} alt='Avatar' width={128} height={128} />
+					)}
+					{!userData.image && (
+						<img src={UserImage4} alt='Avatar' width={128} height={128} />
+					)}
 				</div>
 				<div className='user-info'>
 					<div className='user-name d-flex align-items-center'>
@@ -66,13 +56,7 @@ const User = () => {
 			</div>
 			<DropdownMenu>
 				<DropdownItem>
-					<Button
-						icon='AccountBox'
-						onClick={() =>
-							navigate(
-								`/`,
-							)
-						}>
+					<Button icon='AccountBox' onClick={() => navigate(`/`)}>
 						Profile
 					</Button>
 				</DropdownItem>

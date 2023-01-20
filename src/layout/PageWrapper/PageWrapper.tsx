@@ -5,8 +5,8 @@ import { ISubHeaderProps } from '../SubHeader/SubHeader';
 import { IPageProps } from '../Page/Page';
 import { useNavigate } from 'react-router-dom';
 import { demoPagesMenu } from '../../menu';
-import {useSelector, useDispatch} from "react-redux";
-import {simpleLogin, setUserFromStorage} from "../../store/modules/user/userActions";
+import { useSelector, useDispatch } from 'react-redux';
+import { simpleLogin, setUserFromStorage } from '../../store/modules/user/userActions';
 
 interface IPageWrapperProps {
 	isProtected?: boolean;
@@ -31,17 +31,17 @@ const PageWrapper = forwardRef<HTMLDivElement, IPageWrapperProps>(
 				.setAttribute('content', description || process.env.REACT_APP_META_DESC || '');
 		});
 
-		const isLoggedIn = useSelector((state:any) => state.user.isLoggedIn);
-		const dispatch:any = useDispatch();
+		const isLoggedIn = useSelector((state: any) => state.user.isLoggedIn);
+		const dispatch: any = useDispatch();
 
 		const navigate = useNavigate();
 
 		/// ЛОГИКА ПРОВЕРКИ ЗАЛОГИНЕННОСТИ БУДЕТ ТУТ
 		useEffect(() => {
 			const user = localStorage.getItem('userU10');
-			if(user && JSON.parse(user) && JSON.parse(user).email) {
+			if (user && JSON.parse(user) && JSON.parse(user).email) {
 				dispatch(simpleLogin());
-				dispatch(setUserFromStorage(JSON.parse(user)))
+				dispatch(setUserFromStorage(JSON.parse(user)));
 				return () => {};
 			}
 

@@ -4,7 +4,7 @@ import {
 	componentPagesMenu,
 	dashboardPagesMenu,
 	demoPagesMenu,
-	gettingStartedPagesMenu
+	gettingStartedPagesMenu,
 } from '../menu';
 import Login from '../pages/presentation/auth/Login';
 
@@ -74,15 +74,6 @@ const APP = {
 		WITH_LIST: lazy(() => import('../pages/presentation/chat/WithListChatPage')),
 		ONLY_LIST: lazy(() => import('../pages/presentation/chat/OnlyListChatPage')),
 	},
-};
-const PAGE_LAYOUTS = {
-	HEADER_SUBHEADER: lazy(() => import('../pages/presentation/page-layouts/HeaderAndSubheader')),
-	HEADER: lazy(() => import('../pages/presentation/page-layouts/OnlyHeader')),
-	SUBHEADER: lazy(() => import('../pages/presentation/page-layouts/OnlySubheader')),
-	CONTENT: lazy(() => import('../pages/presentation/page-layouts/OnlyContent')),
-	BLANK: lazy(() => import('../pages/presentation/page-layouts/Blank')),
-	ASIDE: lazy(() => import('../pages/presentation/aside-types/DefaultAsidePage')),
-	MINIMIZE_ASIDE: lazy(() => import('../pages/presentation/aside-types/MinimizeAsidePage')),
 };
 
 const CONTENT = {
@@ -196,7 +187,6 @@ const presentation: RouteProps[] = [
 		path: dashboardPagesMenu.dashboard.path,
 		element: <LANDING.DASHBOARD />,
 	},
-
 
 	/** ************************************************** */
 
@@ -394,7 +384,6 @@ const presentation: RouteProps[] = [
 	 */
 
 	/** ************************************************** */
-
 ];
 const documentation: RouteProps[] = [
 	/**

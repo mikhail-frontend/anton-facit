@@ -1,129 +1,138 @@
-import React, {useMemo, useRef, useEffect} from 'react';
+import React, { useMemo, useRef, useEffect } from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Page from '../../../layout/Page/Page';
-import Card, {CardBody, CardHeader, CardLabel, CardSubTitle, CardTitle} from "../../../components/bootstrap/Card";
-import Input from "../../../components/bootstrap/forms/Input";
-import Button from "../../../components/bootstrap/Button";
-import FormGroup from "../../../components/bootstrap/forms/FormGroup";
-import {useFormik} from "formik";
-import validate, {IValues} from "../demo-pages/helper/editPagesValidate";
-import Select from "../../../components/bootstrap/forms/Select";
-import classNames from "classnames";
-import useDarkMode from "../../../hooks/useDarkMode";
-import {useToasts} from 'react-toast-notifications';
+import Card, {
+	CardBody,
+	CardHeader,
+	CardLabel,
+	CardSubTitle,
+	CardTitle,
+} from '../../../components/bootstrap/Card';
+import Input from '../../../components/bootstrap/forms/Input';
+import Button from '../../../components/bootstrap/Button';
+import FormGroup from '../../../components/bootstrap/forms/FormGroup';
+import { useFormik } from 'formik';
+import validate, { IValues } from '../demo-pages/helper/editPagesValidate';
+import Select from '../../../components/bootstrap/forms/Select';
+import classNames from 'classnames';
+import useDarkMode from '../../../hooks/useDarkMode';
+import { useToasts } from 'react-toast-notifications';
 import countryList from 'react-select-country-list';
-import Toasts from "../../../components/bootstrap/Toasts";
-import Dropzone from './components/Dropzone'
-import ChangeLang from "../../_layout/_headers/ChangeLang";
-import {genders} from "./entities";
+import Toasts from '../../../components/bootstrap/Toasts';
+import Dropzone from './components/Dropzone';
+import ChangeLang from '../../_layout/_headers/ChangeLang';
+import { genders } from './entities';
 import Progress from '../../../components/bootstrap/Progress';
-import {useTranslation} from "react-i18next";
-import {useSelector} from "react-redux";
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
 const DashboardPage = () => {
-	const user = useSelector((state:any) => state.user);
-	const userData:IValues = user.userData;
+	const user = useSelector((state: any) => state.user);
+	const userData: IValues = user.userData;
 
-	const {i18n: {language}} = useTranslation();
-	const {darkModeStatus} = useDarkMode();
+	const {
+		i18n: { language },
+	} = useTranslation();
+	const { darkModeStatus } = useDarkMode();
 	const { addToast } = useToasts();
 
-	const countriesList = useMemo(() => countryList().getData().map((item: any) => ({
-		text: item.label,
-		value: item.value
-	})), []);
-	const gendersList = useMemo(() => (genders), []);
+	const countriesList = useMemo(
+		() =>
+			countryList()
+				.getData()
+				.map((item: any) => ({
+					text: item.label,
+					value: item.value,
+				})),
+		[],
+	);
+	const gendersList = useMemo(() => genders, []);
 
 	const formRef = useRef<HTMLFormElement>(null);
 
 	useEffect(() => {
 		formik.setValues({
 			...userData,
-			language
-		})
-	}, [userData])
+			language,
+		});
+	}, [userData]);
 
 	const formik = useFormik({
-		initialValues: {...userData, language},
+		initialValues: { ...userData, language },
 		validate,
-		onSubmit: (event) => {
-		},
+		onSubmit: (event) => {},
 	});
 
 	const percentFilling = useMemo(() => {
-		const filledValues = Object.values(formik.values).filter((val: string) => val && val.length);
+		const filledValues = Object.values(formik.values).filter(
+			(val: string) => val && val.length,
+		);
 		const allValues = Object.values(formik.values);
-		return filledValues.length / allValues.length * 100;
-	}, [formik.values])
+		return (filledValues.length / allValues.length) * 100;
+	}, [formik.values]);
 
 	const savePhoto = (photo: string) => {
-		formik.values.image = photo
-	}
+		formik.values.image = photo;
+	};
 
 	const deletePhoto = () => {
 		formik.values.image = '';
-	}
+	};
 
-
-
-	const submitHandler = async (event:React.MouseEvent<HTMLElement>) => {
+	const submitHandler = async (event: React.MouseEvent<HTMLElement>) => {
 		event.preventDefault();
 		const result = await formik.validateForm();
 		await formik.submitForm();
-		const {initialValues : availableValues,  values} = formik;
-		const availableErrors = Object.entries(result).reduce((acc:any, [key, value]: [string, string]) => {
-			if(availableValues.hasOwnProperty(key)){
-				acc[key] = value
-			}
-			return acc
-		}, {} )
+		const { initialValues: availableValues } = formik;
+		const availableErrors = Object.entries(result).reduce(
+			(acc: any, [key, value]: [string, string]) => {
+				if (availableValues.hasOwnProperty(key)) {
+					acc[key] = value;
+				}
+				return acc;
+			},
+			{},
+		);
 		//@ts-ignore
-		const isValid = !Object.values(availableErrors).some((val:string) => !!val)
-		if(!isValid) {
+		const isValid = !Object.values(availableErrors).some((val: string) => !!val);
+		if (!isValid) {
 			addToast(
-				<Toasts
-					title='Validation error'
-					icon='Error'
-					iconColor='danger'
-					isDismiss>
+				<Toasts title='Validation error' icon='Error' iconColor='danger' isDismiss>
 					Please, feel all required fields
 				</Toasts>,
 				{
 					autoDismiss: true,
 				},
-			)
+			);
 			formik.setSubmitting(false);
-			return
+			return;
 		}
 
 		addToast(
-			<Toasts
-				title='Congrats'
-				icon='Person'
-				iconColor='success'
-				isDismiss>
+			<Toasts title='Congrats' icon='Person' iconColor='success' isDismiss>
 				Your changes is saved
 			</Toasts>,
 			{
 				autoDismiss: true,
 			},
-		)
+		);
 
 		setTimeout(() => {
 			// @ts-ignore
-			formik.setTouched(false)
-		}, 1500)
-
-	}
-
-
-
+			formik.setTouched(false);
+		}, 1500);
+	};
 
 	return (
 		<PageWrapper title={'Profile page'}>
-			<SubHeader >
-				<Progress value={percentFilling} isAutoColor height={10} style={{marginBottom: '20px', padding: 0}}/>
+			<SubHeader>
+				<Progress
+					value={percentFilling}
+					isAutoColor
+					height={10}
+					style={{ marginBottom: '20px', padding: 0 }}
+				/>
 				<SubHeaderLeft>
 					<span className='h4 mb-0 fw-bold'>Profile</span>
 				</SubHeaderLeft>
@@ -133,9 +142,8 @@ const DashboardPage = () => {
 						color='primary'
 						isLight
 						icon='Save'
-						style={{marginBottom: '20px'}}
-						onClick={(event) => submitHandler((event as React.MouseEvent<HTMLElement>))}
-					>
+						style={{ marginBottom: '20px' }}
+						onClick={(event) => submitHandler(event as React.MouseEvent<HTMLElement>)}>
 						Save changes
 					</Button>
 				</SubHeaderRight>
@@ -151,22 +159,23 @@ const DashboardPage = () => {
 						</CardHeader>
 						<CardBody>
 							<div className='col-12'>
-								<Dropzone photo={formik.values.image} savePhoto={savePhoto} deletePhoto={deletePhoto}/>
+								<Dropzone
+									photo={formik.values.image}
+									savePhoto={savePhoto}
+									deletePhoto={deletePhoto}
+								/>
 							</div>
 						</CardBody>
 					</Card>
 					<Card>
 						<CardHeader>
-
-							<CardLabel icon='Person' iconColor='success' style={{flex: 1}}>
+							<CardLabel icon='Person' iconColor='success' style={{ flex: 1 }}>
 								<CardTitle>Personal Information</CardTitle>
 								<CardSubTitle>User's credentials</CardSubTitle>
 							</CardLabel>
 							<div className='col-md-6 d-flex justify-content-end'>
-								<ChangeLang/>
+								<ChangeLang />
 							</div>
-
-
 						</CardHeader>
 						<CardBody>
 							<div className='row g-4'>
@@ -292,8 +301,6 @@ const DashboardPage = () => {
 									/>
 								</div>
 							</div>
-
-
 						</CardBody>
 					</Card>
 
@@ -321,7 +328,10 @@ const DashboardPage = () => {
 									</FormGroup>
 								</div>
 								<div className='col-md-6'>
-									<FormGroup id='password_confirmation' label='Password confirmation' isFloating>
+									<FormGroup
+										id='password_confirmation'
+										label='Password confirmation'
+										isFloating>
 										<Input
 											placeholder='Password confirmation'
 											onChange={formik.handleChange}

@@ -10,15 +10,12 @@ import OffCanvas, {
 	OffCanvasTitle,
 } from '../../../components/bootstrap/OffCanvas';
 import Alert from '../../../components/bootstrap/Alert';
-import Dropdown, {
-	DropdownMenu,
-	DropdownToggle,
-} from '../../../components/bootstrap/Dropdown';
+import Dropdown, { DropdownMenu, DropdownToggle } from '../../../components/bootstrap/Dropdown';
 import Icon from '../../../components/icon/Icon';
 import ThemeContext from '../../../contexts/themeContext';
 import useDarkMode from '../../../hooks/useDarkMode';
 import Popovers from '../../../components/bootstrap/Popovers';
-import ChangeLang from "./ChangeLang";
+import ChangeLang from './ChangeLang';
 
 interface ICommonHeaderRightProps {
 	beforeChildren?: ReactNode;
@@ -36,8 +33,6 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 	};
 
 	const [offcanvasStatus, setOffcanvasStatus] = useState(false);
-
-
 
 	const { setIsOpen } = useTour();
 
@@ -101,7 +96,7 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 
 				{/* Lang Selector */}
 
-				<ChangeLang/>
+				<ChangeLang />
 				{/* Quick Panel */}
 				<div className='col-auto'>
 					<Dropdown>

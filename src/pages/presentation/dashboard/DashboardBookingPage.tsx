@@ -39,7 +39,6 @@ import {
 	getUnitType,
 	getViews,
 } from '../../../components/extras/calendarHelper';
-import { demoPagesMenu } from '../../../menu';
 import SERVICES, { getServiceDataWithServiceName } from '../../../common/data/serviceDummyData';
 import Option from '../../../components/bootstrap/Option';
 import CommonApprovedAppointmentChart from '../../_common/CommonApprovedAppointmentChart';

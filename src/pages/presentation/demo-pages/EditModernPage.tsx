@@ -36,7 +36,6 @@ import Avatar from '../../../components/Avatar';
 import USERS from '../../../common/data/userDummyData';
 import CommonDesc from '../../../common/other/CommonDesc';
 import Label from '../../../components/bootstrap/forms/Label';
-import Checks, { ChecksGroup } from '../../../components/bootstrap/forms/Checks';
 
 const EditModernPage = () => {
 	const { themeStatus } = useDarkMode();

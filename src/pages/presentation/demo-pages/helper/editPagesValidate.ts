@@ -1,6 +1,11 @@
-import {simpleStringValidation, emailValidation, telegramValidation, phoneValidation, passwordValidation} from './validationFuncs'
+import {
+	simpleStringValidation,
+	emailValidation,
+	telegramValidation,
+	phoneValidation,
+	passwordValidation,
+} from './validationFuncs';
 export type IValues = {
-
 	image?: string;
 	name?: string;
 	second_name?: string;
@@ -21,13 +26,9 @@ export type IValues = {
 	currentPassword?: string;
 	newPassword?: string;
 	confirmPassword?: string;
-}
-
-
+};
 
 const validate = (values: IValues) => {
-
-
 	const errors: IValues = {
 		image: '',
 		name: '',
@@ -42,7 +43,6 @@ const validate = (values: IValues) => {
 		password_confirmation: '',
 		phone: '',
 
-
 		firstName: '',
 		lastName: '',
 		displayName: '',
@@ -50,9 +50,6 @@ const validate = (values: IValues) => {
 		currentPassword: '',
 		newPassword: '',
 		confirmPassword: '',
-
-
-
 	};
 
 	simpleStringValidation(values.firstName || '', 'firstName', errors);
@@ -62,8 +59,14 @@ const validate = (values: IValues) => {
 	emailValidation(values.emailAddress || '', 'emailAddress', errors);
 	emailValidation(values.email || '', 'email', errors);
 	telegramValidation(values.telegram || '', 'telegram', errors);
-	phoneValidation(values.phone || '', 'phone', errors)
-	passwordValidation(values.password || '', values.password_confirmation || '', 'password', 'password_confirmation', errors)
+	phoneValidation(values.phone || '', 'phone', errors);
+	passwordValidation(
+		values.password || '',
+		values.password_confirmation || '',
+		'password',
+		'password_confirmation',
+		errors,
+	);
 
 	if (values.currentPassword) {
 		if (!values.newPassword) {

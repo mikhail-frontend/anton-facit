@@ -198,7 +198,6 @@ const OffCanvas: FC<IOffCanvasProps> = ({
 	// @ts-ignore
 	const MotionTagWrapper = motion[Tag];
 
-
 	return (
 		<Portal>
 			<AnimatePresence exitBeforeEnter>
@@ -229,7 +228,7 @@ const OffCanvas: FC<IOffCanvasProps> = ({
 							data-bs-backdrop={initialProps.isBackdrop}
 							// eslint-disable-next-line react/jsx-props-no-spreading
 							// @ts-ignore
-							style={{ 'visibility': isOpen ? 'visible' : 'auto' }}
+							style={{ visibility: isOpen ? 'visible' : 'auto' }}
 							// eslint-disable-next-line react/jsx-props-no-spreading
 							{...props}>
 							{children}

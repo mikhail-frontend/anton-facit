@@ -6,7 +6,6 @@ import Textarea from '../../../components/bootstrap/forms/Textarea';
 import Button from '../../../components/bootstrap/Button';
 import USERS from '../../../common/data/userDummyData';
 import Avatar from '../../../components/Avatar';
-import showNotification from '../../../components/extras/showNotification';
 import CHATS from '../../../common/data/chatDummyData';
 
 const CommonHeaderChat = () => {

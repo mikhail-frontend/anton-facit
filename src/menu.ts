@@ -406,8 +406,6 @@ export const demoPagesMenu = {
 	},
 };
 
-
-
 export const gettingStartedPagesMenu = {
 	gettingStarted: {
 		id: 'gettingStarted',
