@@ -58,7 +58,7 @@ const DashboardPage = () => {
 
 	const { addToast } = useToasts();
 
-	const submitClickHandler = async (event) => {
+	const submitClickHandler = async (event:React.MouseEvent<any>) => {
 		event.preventDefault();
 		const result = await formik.validateForm();
 		await formik.submitForm();
@@ -69,8 +69,8 @@ const DashboardPage = () => {
 			}
 			return acc
 		}, {} )
-		const isValid = !Object.values(availableErrors).some((val:string) => val)
-
+		//@ts-ignore
+		const isValid = !Object.values(availableErrors).some((val:string) => !!val)
 		if(!isValid) {
 			addToast(
 				<Toasts
@@ -122,7 +122,7 @@ const DashboardPage = () => {
 						color='primary'
 						isLight
 						icon='Save'
-						onClick={(event) => submitClickHandler(event)}
+						onClick={(event) => submitClickHandler((event as any))}
 					>
 						Save changes
 					</Button>

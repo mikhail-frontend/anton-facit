@@ -33,21 +33,23 @@ const img:any = {
 };
 
 
-export default function Dropzone(props) {
-    const [files, setFiles] = useState([]);
+export default function Dropzone(props: any) {
+    const [files, setFiles] = useState<any>([]);
     const {getRootProps, getInputProps} = useDropzone({
         accept: {
             'image/*': []
         },
+        //@ts-ignore
         onDrop: acceptedFiles => {
-            setFiles(acceptedFiles.map(file => Object.assign(file, {
+            //@ts-ignore
+            setFiles(acceptedFiles.map((file:any) => Object.assign(file, {
                 preview: URL.createObjectURL(file)
             })));
         },
         maxFiles: 1
     });
 
-    const thumbs = files.map(file => (
+    const thumbs:any = files.map((file:any) => (
         <div style={thumb} key={file.name}>
             <div style={thumbInner}>
                 <img
@@ -62,7 +64,7 @@ export default function Dropzone(props) {
 
     useEffect(() => {
         // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
-        return () => files.forEach(file => URL.revokeObjectURL(file.preview));
+        return () => files.forEach((file:any) => URL.revokeObjectURL(file.preview));
     }, []);
 
 
@@ -70,7 +72,7 @@ export default function Dropzone(props) {
         <section className="container">
             <div {...getRootProps({className: 'dropzone'})}>
                 <input {...getInputProps()} />
-                <p>Drag 'n' drop some files here, or click to select files</p>
+                <p>Drag 'n' drop your photo here, or click to select it</p>
             </div>
 
             <aside style={thumbsContainer}>
