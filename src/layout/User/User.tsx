@@ -20,7 +20,7 @@ const User = () => {
 
 	const userData = useSelector((state:any) => state.user.userData);
 	const logOutAndRedirect = async () => {
-		await dispatch(logOutUser({user_id: 1}));
+		await dispatch(logOutUser());
 		navigate(`../${demoPagesMenu.login.path}`);
 	}
 

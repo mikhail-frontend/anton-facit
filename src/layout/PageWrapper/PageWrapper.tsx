@@ -39,7 +39,6 @@ const PageWrapper = forwardRef<HTMLDivElement, IPageWrapperProps>(
 		/// ЛОГИКА ПРОВЕРКИ ЗАЛОГИНЕННОСТИ БУДЕТ ТУТ
 		useEffect(() => {
 			const user = localStorage.getItem('userU10');
-
 			if(user && JSON.parse(user) && JSON.parse(user).email) {
 				dispatch(simpleLogin());
 				dispatch(setUserFromStorage(JSON.parse(user)))

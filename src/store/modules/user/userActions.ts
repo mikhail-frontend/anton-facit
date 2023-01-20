@@ -18,6 +18,14 @@ export const setUserFromStorage = (payload:Record<string, unknown> = {}) => {
 }
 
 
+export const logOutUser = () => {
+    return (dispatch) => {
+        localStorage.removeItem('userU10')
+        dispatch(user.actions.setIsLoggedIn(false));
+    }
+}
+
+
 export const getUser = (user_id) => {
     return async (dispatch) => {
         await getData('https://httpbin.org/get', {user_id});
@@ -26,12 +34,6 @@ export const getUser = (user_id) => {
     }
 }
 
-export const logOutUser = ({user_id}) => {
-    return async (dispatch) => {
-        await postData('https://httpbin.org/post', {user_id}, 'POST')
-        dispatch(user.actions.setIsLoggedIn(false));
-    }
-}
 
 export const logInUser = ({email, password}) => {
     return async (dispatch) => {
@@ -39,7 +41,7 @@ export const logInUser = ({email, password}) => {
         if (email === 'belovedoff@gmail.com' && password === 'countryList1') {
             dispatch(user.actions.setIsLoggedIn(true));
             dispatch(user.actions.setUserData(fullData));
-            return true
+            return fullData
         }
         return false;
 
