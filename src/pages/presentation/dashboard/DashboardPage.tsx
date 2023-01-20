@@ -1,5 +1,4 @@
 import React, {useMemo, useRef} from 'react';
-import {demoPagesMenu} from '../../../menu';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
 import Page from '../../../layout/Page/Page';
@@ -15,10 +14,10 @@ import Select from "../../../components/bootstrap/forms/Select";
 import classNames from "classnames";
 import useDarkMode from "../../../hooks/useDarkMode";
 import {  useToasts } from 'react-toast-notifications';
-
-// @ts-ignore
 import countryList from 'react-select-country-list';
 import {fullData, emptyData} from "./helpers/formData";
+import Toasts from "../../../components/bootstrap/Toasts";
+import Dropzone from './components/Dropzone'
 
 
 const DashboardPage = () => {
@@ -50,43 +49,69 @@ const DashboardPage = () => {
 	const formRef = useRef<HTMLFormElement>(null);
 
 	const formik = useFormik({
-		initialValues: fullData,
+		initialValues: emptyData,
 		validate,
-		onSubmit: (event) => {},
+		onSubmit: (event) => {
+			console.log(event)
+		},
 	});
 
 	const { addToast } = useToasts();
 
-	const submitClickHandler = () => {
-		const  result = formik.submitForm();
-		const isValid = formik.validateForm();
-		isValid.then((value) => {
-			console.log({value})
-		})
-		const dirty = true
-		console.log({
-			isValid
-		})
-		if(dirty) {
-			// logic to dirty;
-			console.log(1)
+	const submitClickHandler = async (event) => {
+		event.preventDefault();
+		const result = await formik.validateForm();
+		await formik.submitForm();
+		const {initialValues : availableValues,  values} = formik;
+		const availableErrors = Object.entries(result).reduce((acc:any, [key, value]: [string, string]) => {
+			if(availableValues.hasOwnProperty(key)){
+				acc[key] = value
+			}
+			return acc
+		}, {} )
+		const isValid = !Object.values(availableErrors).some((val:string) => val)
+
+		if(!isValid) {
+			addToast(
+				<Toasts
+					title='Validation error'
+					icon='Error'
+					iconColor='danger'
+					isDismiss>
+					Please, feel all required fields
+				</Toasts>,
+				{
+					autoDismiss: true,
+				},
+			)
+			formik.setSubmitting(false);
 			return
 		}
-		console.log(233)
-		formik.setSubmitting(false);
+
+		addToast(
+			<Toasts
+				title='Congrats'
+				icon='Person'
+				iconColor='success'
+				isDismiss>
+				Your changes is saved
+			</Toasts>,
+			{
+				autoDismiss: true,
+			},
+		)
+
+		console.log({formik, values, errors: result, availableErrors, isValid });
 		setTimeout(() => {
 			// @ts-ignore
 			formik.setTouched(false)
 		}, 1500)
 
-
-		// (formik as any).setIsTouched(false)
-		console.log({formik, result})
 	}
 
 
 	return (
-		<PageWrapper title={demoPagesMenu.sales.subMenu.dashboard.text}>
+		<PageWrapper title={'Profile page'}>
 			<SubHeader>
 				<SubHeaderLeft>
 					<span className='h4 mb-0 fw-bold'>Profile</span>
@@ -97,7 +122,7 @@ const DashboardPage = () => {
 						color='primary'
 						isLight
 						icon='Save'
-						onClick={() => submitClickHandler()}
+						onClick={(event) => submitClickHandler(event)}
 					>
 						Save changes
 					</Button>
@@ -105,37 +130,16 @@ const DashboardPage = () => {
 			</SubHeader>
 			<Page container='fluid'>
 				<form className='row g-4' noValidate onSubmit={formik.handleSubmit} ref={formRef}>
-
 					<Card>
+						<CardHeader>
+							<CardLabel icon='Person' iconColor='success'>
+								<CardTitle>Your photo</CardTitle>
+								<CardSubTitle>It helps other users recognize you </CardSubTitle>
+							</CardLabel>
+						</CardHeader>
 						<CardBody>
 							<div className='col-12'>
-								<div className='row g-4 align-items-center'>
-									<div className='col-lg-auto'>
-										<Avatar
-											srcSet={USERS.JOHN.srcSet}
-											src={USERS.JOHN.src}
-											color={USERS.JOHN.color}
-											rounded={3}
-										/>
-									</div>
-									<div className='col-lg'>
-										<div className='row g-4'>
-											<div className='col-auto'>
-												<Input type='file' autoComplete='photo'/>
-											</div>
-											<div className='col-auto'>
-												<Button color='dark' isLight icon='Delete'>
-													Delete Avatar
-												</Button>
-											</div>
-											<div className='col-12'>
-												<p className='lead text-muted'>
-													Avatar helps your teammates get to know you.
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
+								<Dropzone/>
 							</div>
 						</CardBody>
 					</Card>
