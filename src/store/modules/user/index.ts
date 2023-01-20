@@ -22,7 +22,7 @@ const index = createSlice({
     },
     reducers: {
         setUserData(state, {payload}) {
-
+            return { ...state, userData: { ...state.userData, ...payload } };
         },
         setIsLoggedIn(state, {payload}:{payload: boolean}) {
             state.isLoggedIn = payload
