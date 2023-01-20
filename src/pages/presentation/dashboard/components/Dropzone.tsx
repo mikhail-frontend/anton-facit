@@ -2,19 +2,20 @@ import React, {useEffect, useState, useRef} from 'react';
 import {useDropzone} from 'react-dropzone';
 import styles from './Dropzone.module.scss';
 import axios from "axios";
-// src/components/icon/material-icons/ClearAll.tsx
 import SvgClearAll from '../../../../components/icon/material-icons/Close'
+import Spinner from "../../../../components/bootstrap/Spinner";
 
-export default function Dropzone(props: any) {
-    const {photo, savePhoto, deletePhoto} = props;
+export default function Dropzone({photo, savePhoto, deletePhoto}) {
     const inputRef = useRef<HTMLInputElement>(null)
     const [files, setFiles] = useState<any>(photo ? [photo] : []);
     const [isActive, setIsActive] = useState(false);
+    const [loading, setLoading] = useState(false)
     const {getRootProps, getInputProps, acceptedFiles, open} = useDropzone({
         accept: {
             'image/*': []
         },
         onDrop: async (acceptedFiles: any[]) => {
+            setLoading(true)
             const [image] = acceptedFiles;
             if (!image) return;
             const reader = new FileReader();
@@ -26,6 +27,7 @@ export default function Dropzone(props: any) {
             const uploaded = JSON.parse(data.data);
             setFiles([uploaded.image])
             savePhoto(typeof uploaded.image === 'string' ? uploaded.image : uploaded.image.path)
+            setLoading(false)
         },
         
         onDragEnter: () => {
@@ -53,7 +55,6 @@ export default function Dropzone(props: any) {
             <img
                 src={file}
                 alt={'photo'}
-                // Revoke data uri after image is loaded
             />
         </div>
     ));
@@ -62,6 +63,11 @@ export default function Dropzone(props: any) {
         // Make sure to revoke the data uris to avoid memory leaks, will run on unmount
         return () => files.forEach((file:any) => URL.revokeObjectURL(file.preview));
     }, []);
+
+    useEffect(() => {
+        setFiles(() => photo ? [photo] : []);
+        return () => {}
+    }, [photo])
 
 
     return (
@@ -72,7 +78,11 @@ export default function Dropzone(props: any) {
 
                 <div {...getRootProps({className: 'dropzone'})} className={thumbs.length && styles.invisible}>
                     <input {...getInputProps()} ref={inputRef}/>
-                    <p>Drag 'n' drop your photo here, or click to select it</p>
+                    {loading && (
+                        <Spinner   isGrow />
+                    )}
+                    {!loading &&                     <p>Drag 'n' drop your photo here, or click to select it</p>
+                    }
                 </div>
 
                 <aside className={`${styles.thumbs} ${!thumbs.length && styles.invisible}`}>

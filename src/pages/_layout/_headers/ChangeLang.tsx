@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, { useLayoutEffect} from 'react';
 import Dropdown, {DropdownItem, DropdownMenu, DropdownToggle} from "../../../components/bootstrap/Dropdown";
 import LANG, {getLangWithKey, ILang} from "../../../lang";
 import Button, {IButtonProps} from "../../../components/bootstrap/Button";
@@ -28,6 +28,7 @@ const ChangeLang = () => {
             'You updated the language of the site. (Only "Aside" was prepared as an example.)',
         );
     };
+
 
     /**
      * Language attribute

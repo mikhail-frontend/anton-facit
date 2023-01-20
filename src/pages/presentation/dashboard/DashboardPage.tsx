@@ -60,7 +60,7 @@ const DashboardPage = () => {
 
 	const { addToast } = useToasts();
 
-	const submitClickHandler = async (event:React.MouseEvent<any>) => {
+	const submitHandler = async (event:React.MouseEvent<HTMLElement>) => {
 		event.preventDefault();
 		const result = await formik.validateForm();
 		await formik.submitForm();
@@ -131,7 +131,7 @@ const DashboardPage = () => {
 						isLight
 						icon='Save'
 						style={{marginBottom: '20px'}}
-						onClick={(event) => submitClickHandler((event as any))}
+						onClick={(event) => submitHandler((event as React.MouseEvent<HTMLElement>))}
 					>
 						Save changes
 					</Button>
