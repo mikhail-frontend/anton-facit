@@ -6,14 +6,13 @@ const index = createSlice({
     initialState: {
         id: 1,
         userData: emptyData,
-        isLoggedIn: true
+        isLoggedIn: false
     },
     reducers: {
         setUserData(state, {payload}) {
             return { ...state, userData: { ...state.userData, ...payload } };
         },
         setIsLoggedIn(state, {payload}:{payload: boolean}) {
-            console.log(payload)
             state.isLoggedIn = payload
         }
     }

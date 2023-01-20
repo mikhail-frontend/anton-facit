@@ -1,4 +1,4 @@
-import React, {useMemo, useRef} from 'react';
+import React, {useMemo, useRef, useEffect} from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
 import Page from '../../../layout/Page/Page';
@@ -27,6 +27,8 @@ const DashboardPage = () => {
 
 	const {i18n: {language}} = useTranslation();
 	const {darkModeStatus} = useDarkMode();
+
+
 	const countriesList = useMemo(() => countryList().getData().map((item: any) => ({
 		text: item.label,
 		value: item.value
@@ -35,6 +37,11 @@ const DashboardPage = () => {
 
 	const formRef = useRef<HTMLFormElement>(null);
 
+	useEffect(() => {
+		formik.setValues({
+			...userData
+		})
+	}, [userData])
 
 	const formik = useFormik({
 		initialValues: {...userData, language},
@@ -96,7 +103,6 @@ const DashboardPage = () => {
 			},
 		)
 
-		console.log({formik, values, errors: result, availableErrors, isValid});
 		setTimeout(() => {
 			// @ts-ignore
 			formik.setTouched(false)
@@ -246,7 +252,6 @@ const DashboardPage = () => {
 										validFeedback='Looks good!'
 										onChange={(e: { target: { value: any } }) => {
 											formik.handleChange(e);
-											console.log(e.target.value)
 										}}
 										value={formik.values.country}
 									/>
@@ -279,7 +284,6 @@ const DashboardPage = () => {
 										validFeedback='Looks good!'
 										onChange={(e: { target: { value: any } }) => {
 											formik.handleChange(e);
-											console.log(e.target.value)
 										}}
 										value={formik.values.gender}
 									/>

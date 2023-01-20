@@ -55,7 +55,8 @@ const SignUp = ({darkModeStatus}) => {
         setIsLoading(true)
         const {password_confirmation, ...rest} = values
         await dispatch(signUpUser(rest as any));
-        setIsLoading(false)
+        setIsLoading(false);
+        localStorage.setItem('userU10', JSON.stringify(values));
         await navigate(`/`);
     }
     const formRef = useRef<HTMLFormElement>(null);
