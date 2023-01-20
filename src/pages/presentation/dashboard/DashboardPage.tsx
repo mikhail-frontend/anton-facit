@@ -11,13 +11,12 @@ import validate from "../demo-pages/helper/editPagesValidate";
 import Select from "../../../components/bootstrap/forms/Select";
 import classNames from "classnames";
 import useDarkMode from "../../../hooks/useDarkMode";
-import {  useToasts } from 'react-toast-notifications';
+import {useToasts} from 'react-toast-notifications';
 import countryList from 'react-select-country-list';
-import {fullData, emptyData} from "./helpers/formData";
+import {fullData} from "./helpers/formData";
 import Toasts from "../../../components/bootstrap/Toasts";
 import Dropzone from './components/Dropzone'
-import LANG, { getLangWithKey, ILang } from '../../../lang';
-
+import ChangeLang from "../../_layout/_headers/ChangeLang";
 
 const DashboardPage = () => {
 	const {darkModeStatus} = useDarkMode();
@@ -50,9 +49,7 @@ const DashboardPage = () => {
 	const formik = useFormik({
 		initialValues: fullData,
 		validate,
-		onSubmit: (event) => {
-			console.log(event)
-		},
+		onSubmit: (event) => {},
 	});
 
 	const savePhoto = (photo:string) => {
@@ -152,10 +149,16 @@ const DashboardPage = () => {
 					</Card>
 					<Card>
 						<CardHeader>
-							<CardLabel icon='Person' iconColor='success'>
+
+							<CardLabel icon='Person' iconColor='success' style={{flex: 1}}>
 								<CardTitle>Personal Information</CardTitle>
 								<CardSubTitle>User's credentials</CardSubTitle>
 							</CardLabel>
+							<div className='col-md-6 d-flex justify-content-end'>
+								<ChangeLang/>
+							</div>
+
+
 						</CardHeader>
 						<CardBody>
 							<div className='row g-4'>
@@ -283,6 +286,8 @@ const DashboardPage = () => {
 									/>
 								</div>
 							</div>
+
+
 						</CardBody>
 					</Card>
 

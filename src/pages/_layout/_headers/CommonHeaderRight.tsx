@@ -23,6 +23,7 @@ import showNotification from '../../../components/extras/showNotification';
 import useDarkMode from '../../../hooks/useDarkMode';
 import Popovers from '../../../components/bootstrap/Popovers';
 import Spinner from '../../../components/bootstrap/Spinner';
+import ChangeLang from "./ChangeLang";
 
 interface ICommonHeaderRightProps {
 	beforeChildren?: ReactNode;
@@ -41,25 +42,7 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 
 	const [offcanvasStatus, setOffcanvasStatus] = useState(false);
 
-	const { i18n } = useTranslation();
 
-	const changeLanguage = (lng: ILang['key']['lng']) => {
-		i18n.changeLanguage(lng).then();
-		showNotification(
-			<span className='d-flex align-items-center'>
-				<Icon icon={getLangWithKey(lng)?.icon} size='lg' className='me-1' />
-				<span>{`Language changed to ${getLangWithKey(lng)?.text}`}</span>
-			</span>,
-			'You updated the language of the site. (Only "Aside" was prepared as an example.)',
-		);
-	};
-
-	/**
-	 * Language attribute
-	 */
-	useLayoutEffect(() => {
-		document.documentElement.setAttribute('lang', i18n.language.substring(0, 2));
-	});
 
 	const { setIsOpen } = useTour();
 
@@ -122,45 +105,8 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 				</div>
 
 				{/* Lang Selector */}
-				<div className='col-auto'>
-					<Dropdown>
-						<DropdownToggle hasIcon={false}>
-							{typeof getLangWithKey(i18n.language as ILang['key']['lng'])?.icon ===
-							'undefined' ? (
-								<Button
-									// eslint-disable-next-line react/jsx-props-no-spreading
-									{...styledBtn}
-									className='btn-only-icon'
-									aria-label='Change language'
-									data-tour='lang-selector'>
-									<Spinner isSmall inButton='onlyIcon' isGrow />
-								</Button>
-							) : (
-								<Button
-									// eslint-disable-next-line react/jsx-props-no-spreading
-									{...styledBtn}
-									icon={
-										getLangWithKey(i18n.language as ILang['key']['lng'])?.icon
-									}
-									aria-label='Change language'
-									data-tour='lang-selector'
-								/>
-							)}
-						</DropdownToggle>
-						<DropdownMenu isAlignmentEnd data-tour='lang-selector-menu'>
-							{Object.keys(LANG).map((i) => (
-								<DropdownItem key={LANG[i].lng}>
-									<Button
-										icon={LANG[i].icon}
-										onClick={() => changeLanguage(LANG[i].lng)}>
-										{LANG[i].text}
-									</Button>
-								</DropdownItem>
-							))}
-						</DropdownMenu>
-					</Dropdown>
-				</div>
 
+				<ChangeLang/>
 				{/* Quick Panel */}
 				<div className='col-auto'>
 					<Dropdown>
