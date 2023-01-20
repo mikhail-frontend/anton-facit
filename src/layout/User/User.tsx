@@ -13,6 +13,7 @@ import useNavigationItemHandle from '../../hooks/useNavigationItemHandle';
 import {useDispatch, useSelector} from "react-redux";
 import {logOutUser} from "../../store/modules/user/asyncActions";
 
+import UserImage4 from '../../assets/img/wanna/wanna4.png';
 
 const User = () => {
 	const dispatch:any = useDispatch();
@@ -38,12 +39,22 @@ const User = () => {
 				role='presentation'
 				onClick={() => setCollapseStatus(!collapseStatus)}>
 				<div className='user-avatar'>
-					<img
-						src={userData.image}
-						alt='Avatar'
-						width={128}
-						height={128}
-					/>
+					{
+						userData.image && <img
+							src={userData.image}
+							alt='Avatar'
+							width={128}
+							height={128}
+						/>
+					}
+					{
+						!userData.image && <img
+							src={UserImage4}
+							alt='Avatar'
+							width={128}
+							height={128}
+						/>
+					}
 				</div>
 				<div className='user-info'>
 					<div className='user-name d-flex align-items-center'>
