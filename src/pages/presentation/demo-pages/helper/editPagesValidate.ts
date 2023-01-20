@@ -1,14 +1,91 @@
+
+
+// 	country: '',
+// 	city: '',
+// 	gender: '',
+// 	language: '',
+// 	password: '',
+// 	password_confirmation: ''
+
+// 	phone: '',
+
+
+
 interface IValues {
-	firstName: string;
-	lastName: string;
-	displayName: string;
-	emailAddress: string;
-	currentPassword: string;
-	newPassword: string;
-	confirmPassword: string;
+
+	image?: string;
+	name?: string;
+	second_name?: string;
+	email?: string;
+	telegram?: string;
+	country?: string;
+	city?: string;
+	gender?: string;
+	language?: string;
+	password?: string;
+	password_confirmation?: string;
+	phone?: string;
+
+	firstName?: string;
+	lastName?: string;
+	displayName?: string;
+	emailAddress?: string;
+	currentPassword?: string;
+	newPassword?: string;
+	confirmPassword?: string;
+}
+
+const simpleStringValidation = (value:string, key:keyof IValues, errors:IValues) => {
+	if (!value) {
+		errors[key] = 'Required';
+	} else if (value.length < 3) {
+		errors[key] = 'Must be 3 characters or more';
+	} else if (value.length > 20) {
+		errors[key] = 'Must be 20 characters or less';
+	}
+};
+
+const emailValidation = (value:string, key:keyof IValues, errors:IValues) => {
+	if (!value) {
+		errors[key] = 'Required';
+	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
+		errors[key] = 'Invalid email address';
+	}
+};
+
+const urlValidation =  (v:string, key:keyof IValues, errors:IValues) => {
+	const value = v || '';
+	if (!value) {
+		errors[key] = 'Required';
+	} else if(!value.match(/^https?:\/\/.*/gm)) {
+		errors[key] = 'Invalid URL';
+	}
+};
+const phoneValidation = (value:string, key:keyof IValues, errors:IValues) => {
+	if (!value) {
+		errors[key] = 'Required';
+	} else if (value.length !== 17) {
+		errors[key] = 'Invalid phone length';
+	}
 }
 const validate = (values: IValues) => {
+
+
 	const errors: IValues = {
+		image: '',
+		name: '',
+		second_name: '',
+		email: '',
+		telegram: '',
+		country: '',
+		city: '',
+		gender: '',
+		language: '',
+		password: '',
+		password_confirmation: '',
+		phone: '',
+
+
 		firstName: '',
 		lastName: '',
 		displayName: '',
@@ -16,34 +93,20 @@ const validate = (values: IValues) => {
 		currentPassword: '',
 		newPassword: '',
 		confirmPassword: '',
+
+
+
 	};
-	if (!values.firstName) {
-		errors.firstName = 'Required';
-	} else if (values.firstName.length < 3) {
-		errors.firstName = 'Must be 3 characters or more';
-	} else if (values.firstName.length > 20) {
-		errors.firstName = 'Must be 20 characters or less';
-	}
 
-	if (!values.lastName) {
-		errors.lastName = 'Required';
-	} else if (values.lastName.length < 3) {
-		errors.lastName = 'Must be 3 characters or more';
-	} else if (values.lastName.length > 20) {
-		errors.lastName = 'Must be 20 characters or less';
-	}
+	simpleStringValidation(values.firstName || '', 'firstName', errors);
+	simpleStringValidation(values.name || '', 'name', errors);
+	simpleStringValidation(values.second_name || '', 'second_name', errors);
+	simpleStringValidation(values.lastName || '', 'lastName', errors);
+	emailValidation(values.emailAddress || '', 'emailAddress', errors);
+	emailValidation(values.email || '', 'email', errors);
+	urlValidation(values.telegram || '', 'telegram', errors);
+	phoneValidation(values.phone || '', 'phone', errors)
 
-	if (!values.displayName) {
-		errors.displayName = 'Required';
-	} else if (values.displayName.length > 30) {
-		errors.displayName = 'Must be 20 characters or less';
-	}
-
-	if (!values.emailAddress) {
-		errors.emailAddress = 'Required';
-	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.emailAddress)) {
-		errors.emailAddress = 'Invalid email address';
-	}
 
 	if (values.currentPassword) {
 		if (!values.newPassword) {
@@ -80,6 +143,11 @@ const validate = (values: IValues) => {
 		}
 	}
 
+	if (!values.displayName) {
+		errors.displayName = 'Required';
+	} else if (values.displayName.length > 30) {
+		errors.displayName = 'Must be 20 characters or less';
+	}
 	return errors;
 };
 

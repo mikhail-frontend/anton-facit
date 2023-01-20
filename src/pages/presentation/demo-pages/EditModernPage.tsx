@@ -68,9 +68,9 @@ const EditModernPage = () => {
 			currentPassword: '',
 			newPassword: '',
 			confirmPassword: '',
-			checkOne: true,
-			checkTwo: false,
-			checkThree: true,
+			// checkOne: true,
+			// checkTwo: false,
+			// checkThree: true,
 		},
 		validate,
 		onSubmit: () => {
@@ -362,32 +362,32 @@ const EditModernPage = () => {
 												Choose what messages you’d like to receive for each
 												of your accounts.
 											</Label>
-											<ChecksGroup>
-												<Checks
-													type='switch'
-													id='inlineCheckOne'
-													label='Successful Payments'
-													name='checkOne'
-													onChange={formik.handleChange}
-													checked={formik.values.checkOne}
-												/>
-												<Checks
-													type='switch'
-													id='inlineCheckTwo'
-													label='Payouts'
-													name='checkTwo'
-													onChange={formik.handleChange}
-													checked={formik.values.checkTwo}
-												/>
-												<Checks
-													type='switch'
-													id='inlineCheckThree'
-													label='Application fees'
-													name='checkThree'
-													onChange={formik.handleChange}
-													checked={formik.values.checkThree}
-												/>
-											</ChecksGroup>
+											{/*<ChecksGroup>*/}
+											{/*	<Checks*/}
+											{/*		type='switch'*/}
+											{/*		id='inlineCheckOne'*/}
+											{/*		label='Successful Payments'*/}
+											{/*		name='checkOne'*/}
+											{/*		onChange={formik.handleChange}*/}
+											{/*		checked={formik.values.checkOne}*/}
+											{/*	/>*/}
+											{/*	<Checks*/}
+											{/*		type='switch'*/}
+											{/*		id='inlineCheckTwo'*/}
+											{/*		label='Payouts'*/}
+											{/*		name='checkTwo'*/}
+											{/*		onChange={formik.handleChange}*/}
+											{/*		checked={formik.values.checkTwo}*/}
+											{/*	/>*/}
+											{/*	<Checks*/}
+											{/*		type='switch'*/}
+											{/*		id='inlineCheckThree'*/}
+											{/*		label='Application fees'*/}
+											{/*		name='checkThree'*/}
+											{/*		onChange={formik.handleChange}*/}
+											{/*		checked={formik.values.checkThree}*/}
+											{/*	/>*/}
+											{/*</ChecksGroup>*/}
 										</FormGroup>
 									</div>
 								</div>

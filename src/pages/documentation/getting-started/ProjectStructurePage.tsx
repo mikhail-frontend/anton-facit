@@ -51,9 +51,9 @@ const children = (
 \t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
-\t\t\t\t<React.StrictMode>
+\t\t\t\t
 \t\t\t\t\t<App />
-\t\t\t\t</React.StrictMode>
+\t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
 \t</AuthContextProvider>
@@ -85,9 +85,9 @@ const children = (
 \t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
-\t\t\t\t<React.StrictMode>
+\t\t\t\t
 \t\t\t\t\t<App />
-\t\t\t\t</React.StrictMode>
+\t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
 \t</AuthContextProvider>
@@ -119,9 +119,9 @@ const children = (
 \t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
-\t\t\t\t<React.StrictMode>
+\t\t\t\t
 \t\t\t\t\t<App />
-\t\t\t\t</React.StrictMode>
+\t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
 \t</AuthContextProvider>
@@ -212,9 +212,9 @@ const children = (
 \t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
-\t\t\t\t<React.StrictMode>
+\t\t\t\t
 \t\t\t\t\t<App />
-\t\t\t\t</React.StrictMode>
+\t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
 \t</AuthContextProvider>
@@ -289,9 +289,9 @@ const children = (
 \t<AuthContextProvider>
 \t\t<ThemeContextProvider>
 \t\t\t<Router>
-\t\t\t\t<React.StrictMode>
+\t\t\t\t
 \t\t\t\t\t<App />
-\t\t\t\t</React.StrictMode>
+\t\t\t\t
 \t\t\t</Router>
 \t\t</ThemeContextProvider>
 \t</AuthContextProvider>
