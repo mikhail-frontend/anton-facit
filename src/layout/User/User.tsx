@@ -11,7 +11,7 @@ import { NavigationLine } from '../Navigation/Navigation';
 import Icon from '../../components/icon/Icon';
 import useNavigationItemHandle from '../../hooks/useNavigationItemHandle';
 import {useDispatch, useSelector} from "react-redux";
-import {logOutUser} from "../../store/modules/user/asyncActions";
+import {logOutUser} from "../../store/modules/user/userActions";
 
 import UserImage4 from '../../assets/img/wanna/wanna4.png';
 

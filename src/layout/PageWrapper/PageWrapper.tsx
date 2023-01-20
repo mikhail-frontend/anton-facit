@@ -6,7 +6,7 @@ import { IPageProps } from '../Page/Page';
 import { useNavigate } from 'react-router-dom';
 import { demoPagesMenu } from '../../menu';
 import {useSelector, useDispatch} from "react-redux";
-import {simpleLogin, setUserFromStorage} from "../../store/modules/user/asyncActions";
+import {simpleLogin, setUserFromStorage} from "../../store/modules/user/userActions";
 
 interface IPageWrapperProps {
 	isProtected?: boolean;

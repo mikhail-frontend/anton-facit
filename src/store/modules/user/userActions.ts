@@ -1,5 +1,22 @@
 import user from "./";
 import {getData, postData} from "../../../plugins/axios";
+import {fullData} from './entities';
+
+
+export const simpleLogin = () => {
+    return  (dispatch) => {
+        dispatch(user.actions.setIsLoggedIn(true));
+    }
+}
+
+export const setUserFromStorage = (payload:Record<string, unknown> = {}) => {
+    if(payload && payload.email ) {
+        return  (dispatch) => {
+            dispatch(user.actions.setUserData(payload));
+        }
+    }
+}
+
 
 export const getUser = (user_id) => {
     return async (dispatch) => {
@@ -15,26 +32,17 @@ export const logOutUser = ({user_id}) => {
         dispatch(user.actions.setIsLoggedIn(false));
     }
 }
-export const simpleLogin = () => {
-    console.log(234)
-    return  (dispatch) => {
-        dispatch(user.actions.setIsLoggedIn(true));
-    }
-}
-
-export const setUserFromStorage = (payload:Record<string, unknown> = {}) => {
-    if(payload && payload.email ) {
-        return  (dispatch) => {
-            dispatch(user.actions.setUserData(payload));
-        }
-    }
-
-}
 
 export const logInUser = ({email, password}) => {
     return async (dispatch) => {
-        await postData('https://httpbin.org/post', {email, password}, 'POST')
-        dispatch(user.actions.setIsLoggedIn(true));
+        await postData('https://httpbin.org/post', {email, password}, 'POST');
+        if (email === 'belovedoff@gmail.com' && password === 'countryList1') {
+            dispatch(user.actions.setIsLoggedIn(true));
+            dispatch(user.actions.setUserData(fullData));
+            return true
+        }
+        return false;
+
     }
 }
 

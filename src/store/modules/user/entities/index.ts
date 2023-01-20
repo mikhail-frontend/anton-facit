@@ -2,7 +2,7 @@ import {IValues} from "../../../../pages/presentation/demo-pages/helper/editPage
 
 export const fullData:IValues = {
     name: "MIKHAIL",
-    second_name: "",
+    second_name: "KHARITONOV",
     email: "belovedoff@gmail.com",
     phone: "+1 (234) 543-2345",
     telegram: "https://t.me/rus_udemy",
