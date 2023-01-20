@@ -18,7 +18,7 @@ const index = createSlice({
             language: "",
             image: "https://devapi.matetech.space/storage/46982/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA-%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0-2023-01-20-%D0%B2-13.57.48.png"
         },
-        isLoggedIn: false
+        isLoggedIn: true
     },
     reducers: {
         setUserData(state, {payload}) {
