@@ -51,7 +51,7 @@ const data: {
 	content: string;
 }[] = [
 
-	
+
 	{
 		id: 5,
 		title: 'Display property',
