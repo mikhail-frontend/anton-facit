@@ -101,21 +101,21 @@ const Header: FC<IHeaderProps> = ({ children, hasLeftMobileMenu, hasRightMobileM
 									setRightMenuStatus(false);
 								}}
 							/>
-							{hasLeftMobileMenu && (
-								<Button
-									aria-label='Toggle Left Menu'
-									className='mobile-header-toggle'
-									size='lg'
-									color={leftMenuStatus ? 'primary' : themeStatus}
-									isLight={leftMenuStatus}
-									icon={leftMenuStatus ? 'MoreVert' : 'MoreHoriz'}
-									onClick={() => {
-										setAsideStatus(false);
-										setLeftMenuStatus(!leftMenuStatus);
-										setRightMenuStatus(false);
-									}}
-								/>
-							)}
+							{/*{hasLeftMobileMenu && (*/}
+							{/*	<Button*/}
+							{/*		aria-label='Toggle Left Menu'*/}
+							{/*		className='mobile-header-toggle'*/}
+							{/*		size='lg'*/}
+							{/*		color={leftMenuStatus ? 'primary' : themeStatus}*/}
+							{/*		isLight={leftMenuStatus}*/}
+							{/*		icon={leftMenuStatus ? 'MoreVert' : 'MoreHoriz'}*/}
+							{/*		onClick={() => {*/}
+							{/*			setAsideStatus(false);*/}
+							{/*			setLeftMenuStatus(!leftMenuStatus);*/}
+							{/*			setRightMenuStatus(false);*/}
+							{/*		}}*/}
+							{/*	/>*/}
+							{/*)}*/}
 						</div>
 						{hasRightMobileMenu && (
 							<div className='col-auto'>

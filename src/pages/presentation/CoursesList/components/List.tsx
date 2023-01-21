@@ -23,7 +23,9 @@ const List = () => {
 							<CardHeader>
 								<div className="display-2 fw-bold mb-4">{course.title}</div>
 							</CardHeader>
-							<CardBody dangerouslySetInnerHTML={{__html: course.text}}/>
+							<CardBody>
+								<div dangerouslySetInnerHTML={{__html: course.text}}/>
+							</CardBody>
 							<CardFooter>
 								<Button
 									size='lg'
