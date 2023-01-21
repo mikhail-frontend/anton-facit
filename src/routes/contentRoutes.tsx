@@ -4,7 +4,7 @@ import { dashboardPagesMenu, demoPagesMenu } from '../menu';
 import Login from '../pages/presentation/Auth/Login';
 
 const LANDING = {
-	DASHBOARD: lazy(() => import('../pages/presentation/Profile/DashboardPage')),
+	DASHBOARD: lazy(() => import('../pages/presentation/Profile/Profile')),
 	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
 };
 

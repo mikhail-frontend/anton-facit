@@ -240,7 +240,7 @@ interface ICardBodyProps extends HTMLAttributes<HTMLElement> {
 	tag?: string | null;
 	className?: string;
 	isScrollable?: boolean;
-	children: ReactNode;
+	children?: ReactNode;
 }
 export const CardBody = forwardRef<HTMLDivElement, ICardBodyProps>(
 	({ tag, className, isScrollable, children, ...props }, ref) => {

@@ -27,7 +27,7 @@ import Progress from '../../../components/bootstrap/Progress';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-const DashboardPage = () => {
+const Profile = () => {
 	const user = useSelector((state: any) => state.user);
 	const userData: IValues = user.userData;
 
@@ -358,4 +358,4 @@ const DashboardPage = () => {
 	);
 };
 
-export default DashboardPage;
+export default Profile;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {Dispatch, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCoursesList } from '../../../store/modules/courses/coursesActions';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
@@ -8,7 +8,7 @@ import Loading from './components/Loading';
 import List from './components/List';
 
 const Courses = () => {
-	const dispatch: any = useDispatch();
+	const dispatch:Dispatch<any> = useDispatch();
 	const coursesLoading = useSelector((state: any) => state.courses.coursesLoading);
 
 	useEffect(() => {
@@ -25,7 +25,7 @@ const Courses = () => {
 					<span className='h4 mb-0 fw-bold'>Courses</span>
 				</SubHeaderLeft>
 			</SubHeader>
-			<Page>
+			<Page container='fluid'>
 				{coursesLoading && <Loading />}
 				{!coursesLoading && <List />}
 			</Page>

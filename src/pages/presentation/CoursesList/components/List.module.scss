@@ -1,0 +1,19 @@
+.courseImage{
+  width: 400px;
+  height: 400px;
+  max-width: 90%;
+  object-fit: contain;
+  max-height: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.coursesList{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+}
