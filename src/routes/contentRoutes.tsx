@@ -4,7 +4,7 @@ import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../m
 import Login from '../pages/presentation/auth/Login';
 
 const LANDING = {
-	DASHBOARD: lazy(() => import('../pages/presentation/dashboard/DashboardPage')),
+	DASHBOARD: lazy(() => import('../pages/presentation/Profile/DashboardPage')),
 	DASHBOARD_BOOKING: lazy(() => import('../pages/presentation/dashboard/DashboardBookingPage')),
 	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
 };
@@ -60,11 +60,7 @@ const APP = {
 		EMPLOYEE_VIEW: lazy(() => import('../pages/presentation/appointment/EmployeePage')),
 		APPOINTMENT_LIST: lazy(() => import('../pages/presentation/appointment/AppointmentList')),
 	},
-	CRM: {
-		CRM_DASHBOARD: lazy(() => import('../pages/presentation/crm/CrmDashboard')),
-		CUSTOMERS: lazy(() => import('../pages/presentation/crm/CustomersList')),
-		CUSTOMER: lazy(() => import('../pages/presentation/crm/Customer')),
-	},
+
 	CHAT: {
 		WITH_LIST: lazy(() => import('../pages/presentation/chat/WithListChatPage')),
 		ONLY_LIST: lazy(() => import('../pages/presentation/chat/OnlyListChatPage')),
@@ -260,18 +256,9 @@ const presentation: RouteProps[] = [
 	/**
 	 * App > CRM
 	 */
-	{
-		path: demoPagesMenu.crm.subMenu.dashboard.path,
-		element: <APP.CRM.CRM_DASHBOARD />,
-	},
-	{
-		path: demoPagesMenu.crm.subMenu.customersList.path,
-		element: <APP.CRM.CUSTOMERS />,
-	},
-	{
-		path: `${demoPagesMenu.crm.subMenu.customerID.path}/:id`,
-		element: <APP.CRM.CUSTOMER />,
-	},
+
+
+
 
 	/**
 	 * App > Chat
