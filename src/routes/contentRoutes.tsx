@@ -8,10 +8,6 @@ const LANDING = {
 	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
 };
 
-
-const AUTH = {
-	PAGE_404: lazy(() => import('../pages/presentation/auth/Page404')),
-};
 const APP = {
 	KNOWLEDGE: {
 		GRID: lazy(() => import('../pages/presentation/knowledge/KnowledgeGridPage')),
@@ -33,14 +29,6 @@ const presentation: RouteProps[] = [
 	},
 	/** ************************************************** */
 
-
-	/**
-	 * Auth Page
-	 */
-	{
-		path: demoPagesMenu.page404.path,
-		element: <AUTH.PAGE_404 />,
-	},
 	{
 		path: dashboardPagesMenu.login.path,
 		element: <Login />,

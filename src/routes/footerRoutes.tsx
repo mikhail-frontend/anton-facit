@@ -6,7 +6,6 @@ import DefaultFooter from '../pages/_layout/_footers/DefaultFooter';
 const footers: RouteProps[] = [
 	{ path: dashboardPagesMenu.login.path, element: null },
 	{ path: dashboardPagesMenu.signUp.path, element: null },
-	{ path: demoPagesMenu.page404.path, element: null },
 	{ path: demoPagesMenu.knowledge.subMenu.grid.path, element: null },
 	{ path: '*', element: <DefaultFooter /> },
 ];
