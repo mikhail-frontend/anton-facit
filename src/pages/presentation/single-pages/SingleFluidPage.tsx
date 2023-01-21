@@ -363,14 +363,7 @@ const SingleFluidPage = () => {
 								<CardLabel icon='PhotoSizeSelectActual' iconColor='info'>
 									<CardTitle>Photos and Videos</CardTitle>
 								</CardLabel>
-								<CardActions>
-									<Button
-										color='info'
-										isLight
-										onClick={() => setGallerySeeAll(true)}>
-										See All
-									</Button>
-								</CardActions>
+
 							</CardHeader>
 							<CardBody>{GALLERY}</CardBody>
 						</Card>

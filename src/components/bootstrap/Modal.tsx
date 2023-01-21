@@ -65,7 +65,7 @@ export const ModalHeader = forwardRef<HTMLDivElement, IModalHeaderProps>(
 						className='btn-close'
 						data-bs-dismiss='modal'
 						aria-label='Close'
-						onClick={() => setIsOpen(false)}
+						onClick={(event:any) => setIsOpen(false, event)}
 					/>
 				)}
 			</div>
@@ -179,7 +179,7 @@ const Modal: FC<IModalProps> = ({
 	const closeModal = (event: { target: any }) => {
 		// @ts-ignore
 		if (ref.current && !ref.current.contains(event.target) && !isStaticBackdrop) {
-			setIsOpen(false);
+			setIsOpen(false, event);
 		}
 	};
 	useEventListener('mousedown', closeModal);
@@ -201,7 +201,7 @@ const Modal: FC<IModalProps> = ({
 	// Keypress close function
 	const escFunction = (event: { key: string }) => {
 		if (event.key === 'Escape') {
-			setIsOpen(false);
+			setIsOpen(false, event);
 		}
 	};
 	useEventListener('keydown', escFunction);
@@ -222,6 +222,7 @@ const Modal: FC<IModalProps> = ({
 					<>
 						<motion.div
 							ref={refModal}
+							onClick={(event:any) => setIsOpen(false, event)}
 							key='modal'
 							className={classNames('modal', { fade: isAnimation }, 'show')}
 							role='dialog'
