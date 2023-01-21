@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { ISubHeaderProps } from '../SubHeader/SubHeader';
 import { IPageProps } from '../Page/Page';
 import { useNavigate } from 'react-router-dom';
-import { demoPagesMenu } from '../../menu';
+import { dashboardPagesMenu } from '../../menu';
 import { useSelector, useDispatch } from 'react-redux';
 import { simpleLogin, setUserFromStorage } from '../../store/modules/user/userActions';
 
@@ -46,7 +46,7 @@ const PageWrapper = forwardRef<HTMLDivElement, IPageWrapperProps>(
 			}
 
 			if (isProtected && !isLoggedIn) {
-				navigate(`../${demoPagesMenu.login.path}`);
+				navigate(`../${dashboardPagesMenu.login.path}`);
 			}
 			return () => {};
 			// eslint-disable-next-line react-hooks/exhaustive-deps

@@ -2,7 +2,7 @@ import React, { useState, ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
-import { demoPagesMenu } from '../../menu';
+import { dashboardPagesMenu } from '../../menu';
 import { DropdownItem, DropdownMenu } from '../../components/bootstrap/Dropdown';
 import Button from '../../components/bootstrap/Button';
 import useDarkMode from '../../hooks/useDarkMode';
@@ -21,7 +21,7 @@ const User = () => {
 	const userData = useSelector((state: any) => state.user.userData);
 	const logOutAndRedirect = async () => {
 		await dispatch(logOutUser());
-		navigate(`../${demoPagesMenu.login.path}`);
+		navigate(`../${dashboardPagesMenu.login.path}`);
 	};
 
 	const navigate = useNavigate();

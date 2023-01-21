@@ -67,12 +67,6 @@ export const demoPagesMenu = {
 		text: 'Auth Pages',
 		icon: 'Extension',
 	},
-	login: {
-		id: 'login',
-		text: 'Login',
-		path: '/login',
-		icon: 'Login',
-	},
 	signUp: {
 		id: 'signUp',
 		text: 'Sign Up',

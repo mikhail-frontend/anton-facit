@@ -42,7 +42,7 @@ const presentation: RouteProps[] = [
 		element: <AUTH.PAGE_404 />,
 	},
 	{
-		path: demoPagesMenu.login.path,
+		path: dashboardPagesMenu.login.path,
 		element: <Login />,
 	},
 	{
