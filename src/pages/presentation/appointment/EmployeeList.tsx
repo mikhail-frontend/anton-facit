@@ -146,14 +146,6 @@ const EmployeeList = () => {
 							</div>
 						</DropdownMenu>
 					</Dropdown>
-					<Button
-						icon='PersonAdd'
-						color='info'
-						isLight
-						tag='a'
-						to={`../${demoPagesMenu.editPages.subMenu.editWizard.path}`}>
-						New Employee
-					</Button>
 				</SubHeaderRight>
 			</SubHeader>
 			<Page container='fluid'>

@@ -1,4 +1,4 @@
-import { IValues } from '../../../../pages/presentation/demo-pages/helper/editPagesValidate';
+import { IValues } from '../../../../pages/presentation/demo-pages/helper/validationFuncs';
 
 export const fullData: IValues = {
 	name: 'MIKHAIL',

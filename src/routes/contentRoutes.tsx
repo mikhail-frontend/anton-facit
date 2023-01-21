@@ -20,14 +20,7 @@ const GRID = {
 	BOXED: lazy(() => import('../pages/presentation/demo-pages/GridBoxedPage')),
 	FLUID: lazy(() => import('../pages/presentation/demo-pages/GridFluidPage')),
 };
-const EDIT = {
-	MODERN: lazy(() => import('../pages/presentation/demo-pages/EditModernPage')),
-	BOXED: lazy(() => import('../pages/presentation/demo-pages/EditBoxedPage')),
-	FLUID: lazy(() => import('../pages/presentation/demo-pages/EditFluidPage')),
-	WIZARD: lazy(() => import('../pages/presentation/demo-pages/EditWizardPage')),
-	IN_CANVAS: lazy(() => import('../pages/presentation/demo-pages/EditInCanvasPage')),
-	IN_MODAL: lazy(() => import('../pages/presentation/demo-pages/EditInModalPage')),
-};
+
 const PRICING = {
 	PRICING_TABLE: lazy(() => import('../pages/presentation/pricing/PricingTablePage')),
 };
@@ -132,33 +125,6 @@ const presentation: RouteProps[] = [
 		element: <GRID.FLUID />,
 	},
 
-	/**
-	 * Edit
-	 */
-	{
-		path: demoPagesMenu.editPages.subMenu.editModern.path,
-		element: <EDIT.MODERN />,
-	},
-	{
-		path: demoPagesMenu.editPages.subMenu.editBoxed.path,
-		element: <EDIT.BOXED />,
-	},
-	{
-		path: demoPagesMenu.editPages.subMenu.editFluid.path,
-		element: <EDIT.FLUID />,
-	},
-	{
-		path: demoPagesMenu.editPages.subMenu.editWizard.path,
-		element: <EDIT.WIZARD />,
-	},
-	{
-		path: demoPagesMenu.editPages.subMenu.editInCanvas.path,
-		element: <EDIT.IN_CANVAS />,
-	},
-	{
-		path: demoPagesMenu.editPages.subMenu.editInModal.path,
-		element: <EDIT.IN_MODAL />,
-	},
 
 	{
 		path: demoPagesMenu.pricingTable.path,
@@ -303,29 +269,6 @@ const documentation: RouteProps[] = [
 		path: gettingStartedPagesMenu.routes.subMenu.router.path,
 		element: <ROUTES.ROUTER />,
 	},
-	/**
-	 * Bootstrap
-	 */
-
-	/**
-	 * Content
-	 */
-
-	/**
-	 * Forms
-	 */
-
-	/**
-	 * Components
-
-
-	/**
-	 * Utilities
-	 */
-
-	/**
-	 * Extra
-	 */
 ];
 const contents = [...presentation, ...documentation];
 

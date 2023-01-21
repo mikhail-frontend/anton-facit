@@ -110,51 +110,7 @@ export const demoPagesMenu = {
 			},
 		},
 	},
-	editPages: {
-		id: 'editPages',
-		text: 'Edit Pages',
-		path: 'edit-pages',
-		icon: 'drive_file_rename_outline ',
-		subMenu: {
-			editModern: {
-				id: 'editModern',
-				text: 'Modern Edit',
-				path: 'edit-pages/modern',
-				icon: 'AutoAwesomeMosaic',
-				notification: 'primary',
-			},
-			editBoxed: {
-				id: 'editBoxed',
-				text: 'Boxed Edit',
-				path: 'edit-pages/boxed',
-				icon: 'ViewArray',
-			},
-			editFluid: {
-				id: 'editFluid',
-				text: 'Fluid Edit',
-				path: 'edit-pages/fluid',
-				icon: 'ViewDay',
-			},
-			editWizard: {
-				id: 'editWizard',
-				text: 'Wizard Edit',
-				path: 'edit-pages/wizard',
-				icon: 'LinearScale',
-			},
-			editInCanvas: {
-				id: 'editInCanvas',
-				text: 'In Canvas Edit',
-				path: 'edit-pages/in-canvas',
-				icon: 'VerticalSplit',
-			},
-			editInModal: {
-				id: 'editInModal',
-				text: 'In Modal Edit',
-				path: 'edit-pages/in-modal',
-				icon: 'PictureInPicture',
-			},
-		},
-	},
+
 	singlePages: {
 		id: 'singlePages',
 		text: 'Single Pages',

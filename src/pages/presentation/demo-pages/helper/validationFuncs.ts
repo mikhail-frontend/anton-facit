@@ -1,5 +1,25 @@
-import type { IValues } from './editPagesValidate';
+export type IValues = {
+	image?: string;
+	name?: string;
+	second_name?: string;
+	email?: string;
+	telegram?: string;
+	country?: string;
+	city?: string;
+	gender?: string;
+	language?: string;
+	password?: string;
+	password_confirmation?: string;
+	phone?: string;
 
+	firstName?: string;
+	lastName?: string;
+	displayName?: string;
+	emailAddress?: string;
+	currentPassword?: string;
+	newPassword?: string;
+	confirmPassword?: string;
+};
 export const simpleStringValidation = (value: string, key: keyof IValues, errors: IValues) => {
 	if (!value) {
 		errors[key] = 'Required';
