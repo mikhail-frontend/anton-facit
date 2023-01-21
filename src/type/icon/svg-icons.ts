@@ -7,7 +7,6 @@ export type TSvgIcons =
 	| 'CustomGoogle'
 	| 'CustomGithub'
 	| 'CustomHtml5'
-	| 'CustomPayoneer'
 	| 'CustomPaypal'
 	| 'CustomReact'
 	| 'CustomRocketLaunch'
