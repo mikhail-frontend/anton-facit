@@ -11,6 +11,7 @@ import HandWebp from '../../../assets/img/hand.webp';
 import Button from '../../../components/bootstrap/Button';
 import useDarkMode from '../../../hooks/useDarkMode';
 import Aside, { AsideBody, AsideHead } from '../../../layout/Aside/Aside';
+import {UserFoot} from "../../../layout/Aside/UserFoot";
 
 const DefaultAside = () => {
 	const { asideStatus, setAsideStatus } = useContext(ThemeContext);
@@ -70,6 +71,7 @@ const DefaultAside = () => {
 					</Card>
 				)}
 			</AsideBody>
+			<UserFoot/>
 		</Aside>
 	);
 };
