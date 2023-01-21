@@ -7,8 +7,8 @@ import {
 	emailValidation,
 	passwordValidation,
 	simpleStringValidation,
-} from '../demo-pages/helper/validationFuncs';
-import { IValues } from '../demo-pages/helper/editPagesValidate';
+} from '../../../helpers/validations/helper/validationFuncs';
+import { IValues } from '../../../helpers/validations/helper/editPagesValidate';
 import SocialButtons from './SocialButtons';
 import { useDispatch } from 'react-redux';
 import { signUpUser } from '../../../store/modules/user/userActions';

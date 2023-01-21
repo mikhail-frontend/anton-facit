@@ -12,7 +12,6 @@ const headers: RouteProps[] = [
 	{ path: demoPagesMenu.page404.path, element: null },
 	{ path: demoPagesMenu.knowledge.subMenu.grid.path, element: null },
 	{ path: dashboardPagesMenu.dashboard.path, element: <DashboardHeader /> },
-	{ path: demoPagesMenu.pricingTable.path, element: <DashboardHeader /> },
 
 	{
 		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,

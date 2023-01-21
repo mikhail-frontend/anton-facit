@@ -1,27 +1,4 @@
-export const summaryPageTopMenu = {
-	intro: { id: 'intro', text: 'Intro', path: '#intro', icon: 'Vrpano', subMenu: null },
-	bootstrap: {
-		id: 'bootstrap',
-		text: 'Bootstrap Components',
-		path: '#bootstrap',
-		icon: 'BootstrapFill',
-		subMenu: null,
-	},
-	storybook: {
-		id: 'storybook',
-		text: 'Storybook',
-		path: '#storybook',
-		icon: 'CustomStorybook',
-		subMenu: null,
-	},
-	formik: {
-		id: 'formik',
-		text: 'Formik',
-		path: '#formik',
-		icon: 'CheckBox',
-		subMenu: null,
-	},
-};
+
 
 export const dashboardPagesMenu = {
 	pages: {
@@ -77,12 +54,6 @@ export const demoPagesMenu = {
 				icon: 'ViewDay',
 			},
 		},
-	},
-	pricingTable: {
-		id: 'pricingTable',
-		text: 'Pricing Table',
-		path: 'pricing-table',
-		icon: 'Local Offer',
 	},
 
 	app: {

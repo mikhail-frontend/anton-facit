@@ -11,9 +11,7 @@ const SINGLE = {
 	FLUID: lazy(() => import('../pages/presentation/single-pages/SingleFluidPage')),
 };
 
-const PRICING = {
-	PRICING_TABLE: lazy(() => import('../pages/presentation/pricing/PricingTablePage')),
-};
+
 
 const AUTH = {
 	PAGE_404: lazy(() => import('../pages/presentation/auth/Page404')),
@@ -55,10 +53,7 @@ const presentation: RouteProps[] = [
 		element: <SINGLE.FLUID />,
 	},
 
-	{
-		path: demoPagesMenu.pricingTable.path,
-		element: <PRICING.PRICING_TABLE />,
-	},
+
 
 	/**
 	 * END - Pages

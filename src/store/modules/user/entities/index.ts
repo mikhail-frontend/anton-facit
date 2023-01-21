@@ -1,4 +1,4 @@
-import { IValues } from '../../../../pages/presentation/demo-pages/helper/validationFuncs';
+import { IValues } from '../../../../helpers/validations/helper/validationFuncs';
 
 export const fullData: IValues = {
 	name: 'MIKHAIL',

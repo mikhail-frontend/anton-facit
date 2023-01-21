@@ -13,7 +13,7 @@ import Input from '../../../components/bootstrap/forms/Input';
 import Button from '../../../components/bootstrap/Button';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import { useFormik } from 'formik';
-import validate, { IValues } from '../demo-pages/helper/editPagesValidate';
+import validate, { IValues } from '../../../helpers/validations/helper/editPagesValidate';
 import Select from '../../../components/bootstrap/forms/Select';
 import classNames from 'classnames';
 import useDarkMode from '../../../hooks/useDarkMode';
