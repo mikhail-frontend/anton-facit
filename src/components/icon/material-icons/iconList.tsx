@@ -1635,7 +1635,6 @@ const MaterialIcons = [
 	'Tonality',
 	'Topic',
 	'TouchApp',
-	'Tour',
 	'Toys',
 	'TrackChanges',
 	'Traffic',

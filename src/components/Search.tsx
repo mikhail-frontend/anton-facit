@@ -28,7 +28,7 @@ const Search = () => {
 
 	return (
 		<>
-			<div className='d-flex' data-tour='search'>
+			<div className='d-flex'>
 				<label className='border-0 bg-transparent cursor-pointer' htmlFor='searchInput'>
 					<Icon icon='Search' size='2x' color='primary' />
 				</label>

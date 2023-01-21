@@ -12,10 +12,8 @@ import Avatar from '../../../components/Avatar';
 import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import USERS from '../../../common/data/userDummyData';
-import useTourStep from '../../../hooks/useTourStep';
 
 const KnowledgeViewPage = () => {
-	useTourStep(16);
 
 	const { id } = useParams();
 	const navigate = useNavigate();

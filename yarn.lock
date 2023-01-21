@@ -2069,37 +2069,6 @@
   resolved "https://registry.yarnpkg.com/@react-oauth/google/-/google-0.6.0.tgz#f0af1e82034420af31be78cbc50d9b095923ed3d"
   integrity sha512-F+VtUk40C5zjL/E3VW5/nsIfm7gmad4HgpGjW3shHqsL6hopOEIncWIGlEzKs2H/hlZw5mHkyq2ONmw5TI2j/g==
 
-"@reactour/mask@*":
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/@reactour/mask/-/mask-1.0.4.tgz"
-  integrity sha512-znMRiDB5GjXlAUFOcmtFlmwy3w2w4xb10pSZofYdvNSl9VHinuAXqJURDIBfpKTB72vx1Tv6FiX5TPN9Wtedzw==
-  dependencies:
-    "@reactour/utils" "*"
-
-"@reactour/popover@*":
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/@reactour/popover/-/popover-1.0.5.tgz"
-  integrity sha512-d6BMcyXGj3RdSc2huiU6v/wG2XG1ad+lAFmjyFerlZNS1ccp/49HvLUnqxE0Td+86e7RPrdEzpZb5PKtBybPrA==
-  dependencies:
-    "@reactour/utils" "*"
-
-"@reactour/tour@^3.1.6":
-  version "3.1.6"
-  resolved "https://registry.npmjs.org/@reactour/tour/-/tour-3.1.6.tgz"
-  integrity sha512-TqKDax1pEqKfzlFyQjRAO8iwzPTK8G6UQtB5MrT0uxJeKNduBcZshcT8lA5GYYJqemCL1gRuhrbjJQZdHft5qg==
-  dependencies:
-    "@reactour/mask" "*"
-    "@reactour/popover" "*"
-    "@reactour/utils" "*"
-
-"@reactour/utils@*":
-  version "0.4.7"
-  resolved "https://registry.npmjs.org/@reactour/utils/-/utils-0.4.7.tgz"
-  integrity sha512-d+/Xhi2nKCc6OrDEFGg15iN8ZyWDTdOrwIKkndJXrnWiN6b+nqoS2Tb7hZvt79rqCyUsQxekUndPFPQyIW81EA==
-  dependencies:
-    "@rooks/use-mutation-observer" "^4.11.2"
-    resize-observer-polyfill "^1.5.1"
-
 "@reduxjs/toolkit@^1.9.1":
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/@reduxjs/toolkit/-/toolkit-1.9.1.tgz#4c34dc4ddcec161535288c60da5c19c3ef15180e"
@@ -2151,11 +2120,6 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
-
-"@rooks/use-mutation-observer@^4.11.2":
-  version "4.11.2"
-  resolved "https://registry.npmjs.org/@rooks/use-mutation-observer/-/use-mutation-observer-4.11.2.tgz"
-  integrity sha512-vpsdrZdr6TkB1zZJcHx+fR1YC/pHs2BaqcuYiEGjBVbwY5xcC49+h0hAUtQKHth3oJqXfIX/Ng8S7s5HFHdM/A==
 
 "@rushstack/eslint-patch@^1.1.0":
   version "1.2.0"

@@ -1622,7 +1622,6 @@ export type TMaterialIcons =
 	| 'Tonality'
 	| 'Topic'
 	| 'TouchApp'
-	| 'Tour'
 	| 'Toys'
 	| 'TrackChanges'
 	| 'Traffic'

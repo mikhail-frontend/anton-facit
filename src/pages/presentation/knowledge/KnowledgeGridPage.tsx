@@ -13,7 +13,6 @@ import Badge from '../../../components/bootstrap/Badge';
 import data, { CATEGORIES, TTags } from './helper/dummyKnowledgeData';
 import { demoPagesMenu } from '../../../menu';
 import useDarkMode from '../../../hooks/useDarkMode';
-import useTourStep from '../../../hooks/useTourStep';
 import { TColor } from '../../../type/color-type';
 
 interface IItemProps {
@@ -25,7 +24,6 @@ interface IItemProps {
 	color: TColor;
 }
 const Item: FC<IItemProps> = ({ id, image, title, description, tags, color }) => {
-	useTourStep(15);
 	const { darkModeStatus } = useDarkMode();
 
 	const navigate = useNavigate();
@@ -37,7 +35,7 @@ const Item: FC<IItemProps> = ({ id, image, title, description, tags, color }) =>
 		<Card
 			className='cursor-pointer shadow-3d-primary shadow-3d-hover'
 			onClick={handleOnClick}
-			data-tour={title}>
+			>
 			<CardBody>
 				<div
 					className={classNames(
@@ -139,7 +137,7 @@ const KnowledgeGridPage = () => {
 					</div>
 					<div
 						className='col-xxl-6 mx-auto text-center my-5'
-						data-tour='knowledge-filter'>
+						>
 						<form
 							className={classNames('row', 'pb-4 px-3 mx-0 g-4', 'rounded-3', [
 								`bg-l${darkModeStatus ? 'o25' : '10'}-primary`,

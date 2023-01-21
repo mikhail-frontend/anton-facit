@@ -1634,7 +1634,6 @@ export { default as Toll } from './Toll';
 export { default as Tonality } from './Tonality';
 export { default as Topic } from './Topic';
 export { default as TouchApp } from './TouchApp';
-export { default as Tour } from './Tour';
 export { default as Toys } from './Toys';
 export { default as TrackChanges } from './TrackChanges';
 export { default as Traffic } from './Traffic';
