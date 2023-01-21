@@ -368,25 +368,6 @@ const KnowledgeItemTour = () => {
 	);
 };
 
-const AppointmentTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy4} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Appointment Pages</p>
-					<p>Examples of admin screens are given for appointment.</p>
-					<p>
-						Click <b>"Employee List"</b> to continue
-					</p>
-				</div>
-			</div>
-		</div>
-	);
-};
 
 const EmployeeTour = () => {
 	const classes = useStyles();
@@ -630,28 +611,6 @@ const steps = [
 		resizeObservables: [getTargetName('Background')],
 	},
 
-	/**
-	 * Appointment
-	 * @step 17
-	 */
-	{
-		selector: '#aside-demo-pages__appointment--link',
-		content: () => <AppointmentTour />,
-		highlightedSelectors: ['#aside-demo-pages__appointment'],
-		mutationObservables: ['#aside-demo-pages__appointment'],
-		resizeObservables: ['#aside-demo-pages__appointment'],
-	},
-	/**
-	 * Employee
-	 * @step 18
-	 */
-	{
-		selector: getTargetName('Grace'),
-		content: () => <EmployeeTour />,
-		highlightedSelectors: [getTargetName('Grace')],
-		mutationObservables: [getTargetName('Grace')],
-		resizeObservables: [getTargetName('Grace')],
-	},
 
 	/**
 	 * Documentation

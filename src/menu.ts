@@ -117,45 +117,6 @@ export const demoPagesMenu = {
 			},
 		},
 	},
-	appointment: {
-		id: 'appointment',
-		text: 'Appointment',
-		path: 'appointment',
-		icon: 'Today',
-		subMenu: {
-			calendar: {
-				id: 'calendar',
-				text: 'Calendar',
-				path: 'appointment/calendar',
-				icon: 'EditCalendar',
-				notification: true,
-			},
-			employeeList: {
-				id: 'employeeList',
-				text: 'Employee List',
-				path: 'appointment/employee-list',
-				icon: 'PersonSearch',
-			},
-			employeeID: {
-				id: 'employeeID',
-				text: 'employeeID',
-				path: 'appointment/employee',
-				hide: true,
-			},
-			employee: {
-				id: 'employee',
-				text: 'Employee',
-				path: 'appointment/employee/1',
-				icon: 'QrCode2',
-			},
-			appointmentList: {
-				id: 'appointmentList',
-				text: 'Appointment List',
-				path: 'appointment/appointment-list',
-				icon: 'Event',
-			},
-		},
-	},
 
 
 
