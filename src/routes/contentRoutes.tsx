@@ -7,9 +7,7 @@ const LANDING = {
 	DASHBOARD: lazy(() => import('../pages/presentation/Profile/DashboardPage')),
 	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
 };
-const SINGLE = {
-	FLUID: lazy(() => import('../pages/presentation/single-pages/SingleFluidPage')),
-};
+
 
 const AUTH = {
 	PAGE_404: lazy(() => import('../pages/presentation/auth/Page404')),
@@ -35,14 +33,6 @@ const presentation: RouteProps[] = [
 	},
 	/** ************************************************** */
 
-	{
-		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,
-		element: <SINGLE.FLUID />,
-	},
-
-	/**
-	 * END - Pages
-	 */
 
 	/**
 	 * Auth Page

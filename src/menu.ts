@@ -39,20 +39,6 @@ export const demoPagesMenu = {
 		icon: 'Extension',
 	},
 
-	singlePages: {
-		id: 'singlePages',
-		text: 'Single Pages',
-		path: 'single-pages',
-		icon: 'Article',
-		subMenu: {
-			fluidSingle: {
-				id: 'fluidSingle',
-				text: 'Fluid',
-				path: 'single-pages/fluid',
-				icon: 'ViewDay',
-			},
-		},
-	},
 
 	app: {
 		id: 'app',

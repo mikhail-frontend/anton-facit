@@ -13,10 +13,6 @@ const headers: RouteProps[] = [
 	{ path: dashboardPagesMenu.dashboard.path, element: <DashboardHeader /> },
 
 	{
-		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,
-		element: <ProfilePageHeader />,
-	},
-	{
 		path: `${demoPagesMenu.knowledge.subMenu.itemID.path}/:id`,
 		element: <ProfilePageHeader />,
 	},
