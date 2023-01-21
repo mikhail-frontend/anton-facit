@@ -3,10 +3,9 @@ import courses from "../courses";
 
 export const getCoursesList = () => {
     return async (dispatch) => {
-        dispatch(courses.actions.setLoading(true))
-        const {data} = await getData('https://httpbin.org/get');
+        const response = await getData('https://httpbin.org/get');
+        console.log({response})
         dispatch(courses.actions.setCourses([]))
-        console.log(data);
-        dispatch(courses.actions.setLoading(true))
+        dispatch(courses.actions.setLoading(false))
     };
 };

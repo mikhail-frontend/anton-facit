@@ -5,7 +5,7 @@ const index = createSlice({
     name: 'courses',
     initialState: {
         coursesList: [],
-        coursesLoading: false
+        coursesLoading: true
     },
     reducers: {
         setCourses(state, { payload }) {

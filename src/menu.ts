@@ -38,7 +38,7 @@ export const dashboardPagesMenu = {
 	},
 	dashboard: {
 		id: 'dashboard',
-		text: 'Dashboard',
+		text: 'Profile',
 		path: '/',
 		icon: 'Badge',
 		subMenu: null,

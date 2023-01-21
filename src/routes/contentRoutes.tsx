@@ -6,7 +6,7 @@ import Login from '../pages/presentation/auth/Login';
 const LANDING = {
 	DASHBOARD: lazy(() => import('../pages/presentation/dashboard/DashboardPage')),
 	DASHBOARD_BOOKING: lazy(() => import('../pages/presentation/dashboard/DashboardBookingPage')),
-	SUMMARY: lazy(() => import('../pages/presentation/CoursesList')),
+	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
 };
 const SINGLE = {
 	BOXED: lazy(() => import('../pages/presentation/single-pages/SingleBoxedPage')),
