@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 import { RouteProps } from 'react-router-dom';
 import { dashboardPagesMenu, demoPagesMenu } from '../menu';
-import Login from '../pages/presentation/auth/Login';
+import Login from '../pages/presentation/Auth/Login';
 
 const LANDING = {
 	DASHBOARD: lazy(() => import('../pages/presentation/Profile/DashboardPage')),
