@@ -1,19 +1,22 @@
-import React, { FC, memo, ReactNode, useCallback, useContext, useRef, useState } from 'react';
-import { TIcons } from '../../type/icons-type';
+import React, {FC, memo, ReactNode, useCallback, useContext, useRef, useState} from 'react';
+import {TIcons} from '../../type/icons-type';
 import useDarkMode from '../../hooks/useDarkMode';
-import { useWindowSize } from 'react-use';
+import {useWindowSize} from 'react-use';
 import ThemeContext from '../../contexts/themeContext';
-import { NavLink, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import {NavLink, useLocation} from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
 import classNames from 'classnames';
 import Icon from '../../components/icon/Icon';
-import { NavHashLink } from 'react-router-hash-link';
-import { Manager, Popper, Reference } from 'react-popper';
+import {NavHashLink} from 'react-router-hash-link';
+import {Manager, Popper, Reference} from 'react-popper';
 import Collapse from '../../components/bootstrap/Collapse';
 import PropTypes from 'prop-types';
-import { List } from './Navigation';
+import {List} from './Navigation';
 // @ts-ignore
 import useEventOutside from '@omtanke/react-use-event-outside';
+import {HeaderOffCanvas} from "../../pages/_layout/_headers/CommonHeaderRight";
+
+// import showNotification from "../../components/extras/showNotification";
 
 interface IItemProps {
 	children?: ReactNode;
@@ -46,7 +49,8 @@ const Item: FC<IItemProps> = ({
 }) => {
 	const { darkModeStatus } = useDarkMode();
 	const { width } = useWindowSize();
-	const { setAsideStatus, setLeftMenuStatus, setRightMenuStatus } = useContext(ThemeContext);
+	const {setAsideStatus, setLeftMenuStatus, setRightMenuStatus} = useContext(ThemeContext);
+	const [offcanvasStatus, setOffcanvasStatus] = useState(false);
 
 	// eslint-disable-next-line react/prop-types
 	const ACTIVE = props.activeItem === id;
@@ -101,12 +105,30 @@ const Item: FC<IItemProps> = ({
 							)}
 						/>
 					)}
-					{!!children && <Icon className='navigation-arrow' icon='ChevronRight' />}
+					{!!children && <Icon className='navigation-arrow' icon='ChevronRight'/>}
 				</span>
 			)}
 		</>
 	);
 
+	const Notifications = () => {
+		return (
+			<>
+				<HeaderOffCanvas setOffcanvasStatus={setOffcanvasStatus} offcanvasStatus={offcanvasStatus} />
+				<div
+					// @ts-ignore
+					className={classNames(LINK_CLASS, ({isActive}) => (isActive ? 'active' : ''))}
+					onClick={(event) => {
+						event.preventDefault();
+						setOffcanvasStatus(true)
+					}}
+					style={{cursor: 'pointer'}}
+				>
+					{INNER}
+				</div>
+			</>
+		)
+	}
 	const WITHOUT_CHILD =
 		!children &&
 		!hide &&
@@ -250,7 +272,7 @@ const Item: FC<IItemProps> = ({
 		);
 	}
 	// without submenu
-	return <li className='navigation-item'>{WITHOUT_CHILD}</li>;
+	return <li className='navigation-item'>{id === 'notifications' ? <Notifications/> : WITHOUT_CHILD}</li>;
 };
 Item.propTypes = {
 	children: PropTypes.node,

@@ -117,7 +117,12 @@ const Navigation = forwardRef<HTMLElement, INavigationProps>(
 		const [activeItem, setActiveItem] = useState(undefined);
 
 		const { t } = useTranslation('menu');
+		const setTo = (item) => {
+			return item.id === 'notifications' ? {} :{
+				to: `${item.path}`
+			}
 
+		}
 		function fillMenu(
 			data:
 				| {
@@ -150,7 +155,7 @@ const Navigation = forwardRef<HTMLElement, INavigationProps>(
 						id={data[item].id}
 						title={data[item].text}
 						icon={data[item].icon}
-						to={`${data[item].path}`}
+						{...setTo(data[item])}
 						parentId={parentId}
 						isHorizontal={isHorizontal}
 						setActiveItem={setActiveItem}
