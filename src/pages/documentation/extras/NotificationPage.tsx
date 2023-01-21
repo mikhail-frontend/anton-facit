@@ -17,7 +17,6 @@ import Icon from '../../../components/icon/Icon';
 import CommonDesc from '../../../common/other/CommonDesc';
 import { AlertLink } from '../../../components/bootstrap/Alert';
 
-
 const NotificationPage = () => {
 	const GENERAL_USAGE = `
 () => {

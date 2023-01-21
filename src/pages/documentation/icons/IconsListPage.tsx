@@ -1,14 +1,13 @@
 import React from 'react';
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import Icon from '../../../components/icon/Icon';
-import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Input from '../../../components/bootstrap/forms/Input';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
 const IconsListPage = () => {
-
 	const formik = useFormik({
 		initialValues: {
 			searchInput: '',
@@ -23,7 +22,7 @@ const IconsListPage = () => {
 					<label
 						className='border-0 bg-transparent cursor-pointer me-0'
 						htmlFor='searchInput'>
-						<Icon icon='Search' size='2x' color='primary'/>
+						<Icon icon='Search' size='2x' color='primary' />
 					</label>
 					<Input
 						id='searchInput'
@@ -35,13 +34,13 @@ const IconsListPage = () => {
 					/>
 				</SubHeaderLeft>
 				<SubHeaderRight>
-					<CommonStoryBtn to='/docs/'/>
+					<CommonStoryBtn to='/docs/' />
 				</SubHeaderRight>
 			</SubHeader>
 			<Page>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequuntur cum doloribus error
-				in, ipsum magni maiores mollitia nihil tempora temporibus velit voluptate? Illo ipsum magnam nobis
-				ratione veritatis vero!
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequuntur
+				cum doloribus error in, ipsum magni maiores mollitia nihil tempora temporibus velit
+				voluptate? Illo ipsum magnam nobis ratione veritatis vero!
 			</Page>
 		</PageWrapper>
 	);

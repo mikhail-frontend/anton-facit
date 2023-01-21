@@ -13,7 +13,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const useStyles = createUseStyles({
 	// stylelint-disable-next-line selector-type-no-unknown
 	example: {

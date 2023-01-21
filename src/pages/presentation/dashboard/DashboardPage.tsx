@@ -58,8 +58,8 @@ const DashboardPage = () => {
 				...userData,
 				language,
 			});
-		})()
-	//eslint-disable-next-line
+		})();
+		//eslint-disable-next-line
 	}, [userData]);
 
 	const formik = useFormik({

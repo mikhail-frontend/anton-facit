@@ -12,7 +12,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const VerticalAlignPage = () => {
 	const VERTICAL = `
 <span className='align-baseline'>baseline</span>

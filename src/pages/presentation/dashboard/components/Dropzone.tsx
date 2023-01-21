@@ -5,10 +5,10 @@ import axios from 'axios';
 import SvgClearAll from '../../../../components/icon/material-icons/Close';
 import Spinner from '../../../../components/bootstrap/Spinner';
 
-const Dropzone:React.FC<{
-	photo: string,
-	savePhoto: (photo:string) => void,
-	deletePhoto: () => void
+const Dropzone: React.FC<{
+	photo: string;
+	savePhoto: (photo: string) => void;
+	deletePhoto: () => void;
 }> = ({ photo, savePhoto, deletePhoto }) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [files, setFiles] = useState<any>(photo ? [photo] : []);
@@ -58,9 +58,10 @@ const Dropzone:React.FC<{
 		deletePhoto();
 	};
 
+	// eslint-disable-next-line
 	const thumbs: any = files.map((file: any) => (
 		<div key={file} className={styles.thumb}>
-			<img src={file} alt='photo' />
+			<img src={file} alt='Users avatar' />
 		</div>
 	));
 
@@ -93,6 +94,6 @@ const Dropzone:React.FC<{
 			</section>
 		</div>
 	);
-}
+};
 
-export default Dropzone
+export default Dropzone;

@@ -16,7 +16,6 @@ import CommonDesc from '../../../common/other/CommonDesc';
 import { AlertHeading } from '../../../components/bootstrap/Alert';
 import PrismCode from '../../../components/extras/PrismCode';
 
-
 const ColorsPage = () => {
 	const COLORS = `
 <p className='text-primary'>.text-primary</p>

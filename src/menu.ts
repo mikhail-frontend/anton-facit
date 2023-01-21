@@ -62,7 +62,6 @@ export const dashboardPagesMenu = {
 		path: '/sign-up',
 		icon: 'PersonAdd',
 	},
-
 };
 
 export const demoPagesMenu = {
@@ -468,7 +467,6 @@ export const gettingStartedPagesMenu = {
 		},
 	},
 };
-
 
 export const productsExampleMenu = {
 	companyA: { id: 'companyA', text: 'Company A', path: 'grid-pages/products', subMenu: null },

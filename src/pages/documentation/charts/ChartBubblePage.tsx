@@ -7,7 +7,6 @@ import BubbleBasic from './chart-bubble/BubbleBasic';
 import Bubble3D from './chart-bubble/Bubble3D';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartBubblePage = () => {
 	return (
 		<PageWrapper title='No title'>

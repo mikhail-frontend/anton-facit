@@ -1,5 +1,5 @@
 import React from 'react';
-import SubHeader, {SubHeaderLeft} from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderLeft } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
@@ -13,7 +13,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonDesc from '../../../common/other/CommonDesc';
-import {AlertLink} from '../../../components/bootstrap/Alert';
+import { AlertLink } from '../../../components/bootstrap/Alert';
 
 const ChartGeneralUsagePage = () => {
 	const GENERAL_USAGE = `
@@ -88,15 +88,14 @@ options: PropTypes.shape({
 	yaxis: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 }).isRequired,`;
 
-
 	return (
 		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb
 						list={[
-							{title: 'Charts', to: '/charts'},
-							{title: 'General Usage', to: '/charts/general-usage'},
+							{ title: 'Charts', to: '/charts' },
+							{ title: 'General Usage', to: '/charts/general-usage' },
 						]}
 					/>
 				</SubHeaderLeft>
@@ -180,9 +179,10 @@ options: PropTypes.shape({
 								</CommonHowToUse>
 							</CardHeader>
 							<CardBody>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae commodi iste similique
-								veritatis? At commodi cum deleniti dignissimos eligendi excepturi, harum in molestias
-								nihil, odio placeat quas reprehenderit sequi temporibus!
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+								commodi iste similique veritatis? At commodi cum deleniti
+								dignissimos eligendi excepturi, harum in molestias nihil, odio
+								placeat quas reprehenderit sequi temporibus!
 							</CardBody>
 						</Card>
 					</div>

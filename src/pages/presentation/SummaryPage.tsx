@@ -15,11 +15,7 @@ import FormikLogo from '../../assets/img/formik.jpeg';
 import FormikLogoWebp from '../../assets/img/formik.webp';
 import ApexLogo from '../../assets/img/apexcharts.png';
 import ApexLogoWebp from '../../assets/img/apexcharts.webp';
-import SubHeader, {
-	SubHeaderLeft,
-	SubHeaderRight,
-	SubheaderSeparator,
-} from '../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderLeft } from '../../layout/SubHeader/SubHeader';
 import Page from '../../layout/Page/Page';
 import Button from '../../components/bootstrap/Button';
 import Badge from '../../components/bootstrap/Badge';

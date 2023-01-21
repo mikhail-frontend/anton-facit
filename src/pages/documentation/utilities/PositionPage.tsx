@@ -15,7 +15,6 @@ import Card, {
 import PrismCode from '../../../components/extras/PrismCode';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const useStyles = createUseStyles({
 	// stylelint-disable-next-line selector-type-no-unknown
 	example: {

@@ -94,8 +94,8 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 								</div>
 
 								<LoginHeader isNewUser={singUpStatus} />
-								{singUpStatus && <SignUp  />}
-								{!singUpStatus && <LoginForm  />}
+								{singUpStatus && <SignUp />}
+								{!singUpStatus && <LoginForm />}
 							</CardBody>
 						</Card>
 

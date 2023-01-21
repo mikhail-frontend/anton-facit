@@ -9,8 +9,8 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import {  gettingStartedPagesMenu } from '../../../menu';
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
+import { gettingStartedPagesMenu } from '../../../menu';
+import SubHeader, { SubHeaderLeft } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Page from '../../../layout/Page/Page';
 import Icon from '../../../components/icon/Icon';
@@ -895,7 +895,6 @@ export default DefaultFooter;
 											If you are ready, you can proceed to the next step.
 										</span>
 									</div>
-
 								</div>
 							</CardBody>
 						</Card>

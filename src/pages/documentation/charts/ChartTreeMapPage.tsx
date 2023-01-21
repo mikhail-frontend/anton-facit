@@ -9,7 +9,6 @@ import TreeMapColorRange from './chart-tree-map/TreeMapColorRange';
 import TreeMapDistributed from './chart-tree-map/TreeMapDistributed';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartTreeMapPage = () => {
 	return (
 		<PageWrapper title='No title'>

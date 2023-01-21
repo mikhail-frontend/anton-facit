@@ -13,7 +13,6 @@ import Card, {
 import CommonDesc from '../../../common/other/CommonDesc';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const VisibilityPage = () => {
 	const VISIBILITY = `
 <div class="visible">...</div>

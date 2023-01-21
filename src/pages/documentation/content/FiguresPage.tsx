@@ -8,7 +8,6 @@ import Card, { CardBody } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import PlaceholderImage from '../../../components/extras/PlaceholderImage';
 
-
 const FiguresPage = () => {
 	const FIGURE = `
 <figure className='figure'>

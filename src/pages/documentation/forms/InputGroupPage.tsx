@@ -35,7 +35,6 @@ import Select from '../../../components/bootstrap/forms/Select';
 import { SELECT_OPTIONS } from './SelectPage';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const InputGroupPage = () => {
 	const [modalStatus, setModalStatus] = useState(false);
 	const GENERAL_USAGE = `

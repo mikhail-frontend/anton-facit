@@ -15,7 +15,6 @@ import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import PrismCode from '../../../components/extras/PrismCode';
 import PlaceholderImage from '../../../components/extras/PlaceholderImage';
 
-
 const ImagesPage = () => {
 	const ALIGN_IMAGE = `
 <img src='...' className='rounded float-start' alt='...' />

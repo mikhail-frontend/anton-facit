@@ -1,8 +1,7 @@
 import React from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
-import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
+import SubHeader, { SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 import Page from '../../../layout/Page/Page';
 import Card, {
@@ -37,7 +36,6 @@ const TooltipPage = () => {
 	return (
 		<PageWrapper title='No title'>
 			<SubHeader>
-
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-tooltips--default' />
 				</SubHeaderRight>

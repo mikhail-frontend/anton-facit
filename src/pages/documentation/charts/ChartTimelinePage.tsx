@@ -10,7 +10,6 @@ import TimelineAdvanced from './chart-timeline/TimelineAdvanced';
 import TimelineMultipleSeries from './chart-timeline/TimelineMultipleSeries';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartTimelinePage = () => {
 	return (
 		<PageWrapper title='No title'>

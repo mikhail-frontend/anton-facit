@@ -7,7 +7,6 @@ import PolarBasic from './chart-polar/PolarBasic';
 import PolarMonochrome from './chart-polar/PolarMonochrome';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartPolarPage = () => {
 	return (
 		<PageWrapper title='No title'>

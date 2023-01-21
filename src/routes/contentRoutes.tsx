@@ -1,10 +1,6 @@
 import React, { lazy } from 'react';
 import { RouteProps } from 'react-router-dom';
-import {
-	dashboardPagesMenu,
-	demoPagesMenu,
-	gettingStartedPagesMenu,
-} from '../menu';
+import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../menu';
 import Login from '../pages/presentation/auth/Login';
 
 const LANDING = {
@@ -75,24 +71,6 @@ const APP = {
 	},
 };
 
-const CONTENT = {
-	CONTENTS: lazy(() => import('../pages/documentation/content/ContentListPage')),
-	TYPOGRAPHY: lazy(() => import('../pages/documentation/content/TypographyPage')),
-	IMAGES: lazy(() => import('../pages/documentation/content/ImagesPage')),
-	TABLES: lazy(() => import('../pages/documentation/content/TablesPage')),
-	FIGURES: lazy(() => import('../pages/documentation/content/FiguresPage')),
-};
-const FORMS_PAGE = {
-	FORMS: lazy(() => import('../pages/documentation/forms/FormsListPage')),
-	FORM_GROUP: lazy(() => import('../pages/documentation/forms/FormGroupPage')),
-	FORM_CONTROLS: lazy(() => import('../pages/documentation/forms/FormControlsPage')),
-	SELECT: lazy(() => import('../pages/documentation/forms/SelectPage')),
-	CHECKS_AND_RADIO: lazy(() => import('../pages/documentation/forms/ChecksAndRadioPage')),
-	RANGE: lazy(() => import('../pages/documentation/forms/RangePage')),
-	INPUT_GROUP: lazy(() => import('../pages/documentation/forms/InputGroupPage')),
-	VALIDATION: lazy(() => import('../pages/documentation/forms/ValidationPage')),
-	WIZARD: lazy(() => import('../pages/documentation/forms/WizardPage')),
-};
 const GETTING_STARTED = {
 	INSTALLATION: lazy(() => import('../pages/documentation/getting-started/InstallationPage')),
 	DEVELOPMENT: lazy(() => import('../pages/documentation/getting-started/DevelopmentPage')),
@@ -102,80 +80,6 @@ const GETTING_STARTED = {
 };
 const ROUTES = {
 	ROUTER: lazy(() => import('../pages/documentation/routes/RouterPage')),
-};
-const COMPONENTS_PAGE = {
-	COMPONENTS: lazy(() => import('../pages/documentation/components/ComponentsListPage')),
-	ACCORDION: lazy(() => import('../pages/documentation/components/AccordionPage')),
-	ALERT: lazy(() => import('../pages/documentation/components/AlertPage')),
-	BADGE: lazy(() => import('../pages/documentation/components/BadgePage')),
-	BREADCRUMB: lazy(() => import('../pages/documentation/components/BreadcrumbPage')),
-	BUTTON: lazy(() => import('../pages/documentation/components/ButtonPage')),
-	BUTTON_GROUP: lazy(() => import('../pages/documentation/components/ButtonGroupPage')),
-	CARD: lazy(() => import('../pages/documentation/components/CardPage')),
-	CAROUSEL: lazy(() => import('../pages/documentation/components/CarouselPage')),
-	COLLAPSE: lazy(() => import('../pages/documentation/components/CollapsePage')),
-	DROPDOWN: lazy(() => import('../pages/documentation/components/DropdownsPage')),
-	LIST_GROUP: lazy(() => import('../pages/documentation/components/ListGroupPage')),
-	MODAL: lazy(() => import('../pages/documentation/components/ModalPage')),
-	NAVS_TABS: lazy(() => import('../pages/documentation/components/NavsTabsPage')),
-	OFF_CANVAS: lazy(() => import('../pages/documentation/components/OffCanvasPage')),
-	PAGINATION: lazy(() => import('../pages/documentation/components/PaginationPage')),
-	POPOVERS: lazy(() => import('../pages/documentation/components/PopoversPage')),
-	PROGRESS: lazy(() => import('../pages/documentation/components/ProgressPage')),
-	SCROLLSPY: lazy(() => import('../pages/documentation/components/ScrollspyPage')),
-	SPINNER: lazy(() => import('../pages/documentation/components/SpinnersPage')),
-	TABLE: lazy(() => import('../pages/documentation/components/TablePage')),
-	TOASTS: lazy(() => import('../pages/documentation/components/ToastsPage')),
-	TOOLTIP: lazy(() => import('../pages/documentation/components/TooltipPage')),
-};
-const UTILITIES = {
-	UTILITIES: lazy(() => import('../pages/documentation/utilities/UtilitiesListPage')),
-	API: lazy(() => import('../pages/documentation/utilities/ApiPage')),
-	BACKGROUND: lazy(() => import('../pages/documentation/utilities/BackgroundPage')),
-	BORDERS: lazy(() => import('../pages/documentation/utilities/BordersPage')),
-	COLORS: lazy(() => import('../pages/documentation/utilities/ColorsPage')),
-	DISPLAY: lazy(() => import('../pages/documentation/utilities/DisplayPage')),
-	FLEX: lazy(() => import('../pages/documentation/utilities/FlexPage')),
-	FLOAT: lazy(() => import('../pages/documentation/utilities/FloatPage')),
-	INTERACTIONS: lazy(() => import('../pages/documentation/utilities/InteractionsPage')),
-	OVERFLOW: lazy(() => import('../pages/documentation/utilities/OverflowPage')),
-	POSITION: lazy(() => import('../pages/documentation/utilities/PositionPage')),
-	SHADOWS: lazy(() => import('../pages/documentation/utilities/ShadowsPage')),
-	SIZING: lazy(() => import('../pages/documentation/utilities/SizingPage')),
-	SPACING: lazy(() => import('../pages/documentation/utilities/SpacingPage')),
-	TEXT: lazy(() => import('../pages/documentation/utilities/TextPage')),
-	VERTICAL_ALIGN: lazy(() => import('../pages/documentation/utilities/VerticalAlignPage')),
-	VISIBILITY: lazy(() => import('../pages/documentation/utilities/VisibilityPage')),
-};
-const ICONS = {
-	ICONS_LIST: lazy(() => import('../pages/documentation/icons/IconsListPage')),
-	ICON: lazy(() => import('../pages/documentation/icons/IconPage')),
-	MATERIAL: lazy(() => import('../pages/documentation/icons/MaterialPage')),
-};
-const CHARTS_PAGE = {
-	CHART_LIST: lazy(() => import('../pages/documentation/charts/ChartsListPage')),
-	GENERAL_USAGE: lazy(() => import('../pages/documentation/charts/ChartGeneralUsagePage')),
-	SPARKLINE: lazy(() => import('../pages/documentation/charts/ChartSparklinePage')),
-	LINE: lazy(() => import('../pages/documentation/charts/ChartLinePage')),
-	AREA: lazy(() => import('../pages/documentation/charts/ChartAreaPage')),
-	COLUMN: lazy(() => import('../pages/documentation/charts/ChartColumnPage')),
-	BAR: lazy(() => import('../pages/documentation/charts/ChartBarPage')),
-	MIXED: lazy(() => import('../pages/documentation/charts/ChartMixedPage')),
-	TIMELINE: lazy(() => import('../pages/documentation/charts/ChartTimelinePage')),
-	CANDLESTICK: lazy(() => import('../pages/documentation/charts/ChartCandlestickPage')),
-	BOX_WHISKER: lazy(() => import('../pages/documentation/charts/ChartBoxWhiskerPage')),
-	PIE_DONUT: lazy(() => import('../pages/documentation/charts/ChartPieDonutPage')),
-	RADAR: lazy(() => import('../pages/documentation/charts/ChartRadarPage')),
-	POLAR: lazy(() => import('../pages/documentation/charts/ChartPolarPage')),
-	RADIAL_BAR: lazy(() => import('../pages/documentation/charts/ChartRadialBarPage')),
-	BUBBLE: lazy(() => import('../pages/documentation/charts/ChartBubblePage')),
-	SCATTER: lazy(() => import('../pages/documentation/charts/ChartScatterPage')),
-	HEAT_MAP: lazy(() => import('../pages/documentation/charts/ChartHeatMapPage')),
-	TREE_MAP: lazy(() => import('../pages/documentation/charts/ChartTreeMapPage')),
-};
-const EXTRA = {
-	NOTIFICATION: lazy(() => import('../pages/documentation/extras/NotificationPage')),
-	HOOKS: lazy(() => import('../pages/documentation/extras/HooksPage')),
 };
 
 const presentation: RouteProps[] = [
@@ -438,11 +342,9 @@ const documentation: RouteProps[] = [
 	 * Utilities
 	 */
 
-
 	/**
 	 * Extra
 	 */
-
 ];
 const contents = [...presentation, ...documentation];
 

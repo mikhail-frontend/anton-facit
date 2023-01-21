@@ -13,7 +13,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const BackgroundPage = () => {
 	const BACKGROUND_COLOR = `
 <div className='p-3 mb-2 bg-primary text-white'>.bg-primary</div>

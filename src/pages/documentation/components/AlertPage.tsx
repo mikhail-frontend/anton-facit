@@ -1,9 +1,8 @@
 import React from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Page from '../../../layout/Page/Page';
 import Alert, { AlertHeading, AlertLink } from '../../../components/bootstrap/Alert';
-import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Card, {
 	CardActions,
 	CardBody,
@@ -15,7 +14,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-
 
 const AlertPage = () => {
 	const GENERAL_USAGE = `

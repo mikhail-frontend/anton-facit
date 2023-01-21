@@ -13,7 +13,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const TypographyPage = () => {
 	const DISPLAY_FONT_SIZE = `
 $display-font-sizes: (

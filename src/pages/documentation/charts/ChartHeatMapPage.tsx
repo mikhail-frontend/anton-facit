@@ -10,7 +10,6 @@ import HeatMapColorRange from './chart-heat-map/HeatMapColorRange';
 import HeatMapRounded from './chart-heat-map/HeatMapRounded';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartHeatMapPage = () => {
 	return (
 		<PageWrapper title='No title'>

@@ -14,7 +14,6 @@ import Card, {
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import PlaceholderImage from '../../../components/extras/PlaceholderImage';
 
-
 const useStyles = createUseStyles({
 	// stylelint-disable-next-line selector-type-no-unknown
 	example: {

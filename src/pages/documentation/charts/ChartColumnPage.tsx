@@ -14,7 +14,6 @@ import ColumnDynamicData from './chart-columns/ColumnDynamicData';
 import ColumnDistributed from './chart-columns/ColumnDistributed';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartColumnPage = () => {
 	return (
 		<PageWrapper title='No title'>

@@ -13,7 +13,6 @@ import DonutPattern from './chart-pieDonut/DonutPattern';
 import PieWithImage from './chart-pieDonut/PieWithImage';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartPieDonutPage = () => {
 	return (
 		<PageWrapper title='No title'>

@@ -8,7 +8,6 @@ import ScatterDateTime from './chart-scatter/ScatterDateTime';
 import ScatterImageFill from './chart-scatter/ScatterImageFill';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartScatterPage = () => {
 	return (
 		<PageWrapper title='No title'>

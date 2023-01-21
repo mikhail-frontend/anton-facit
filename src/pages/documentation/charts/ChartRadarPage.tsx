@@ -8,7 +8,6 @@ import RadarMultipleSeries from './chart-radar/RadarMultipleSeries';
 import RadarPolygonFill from './chart-radar/RadarPolygonFill';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartRadarPage = () => {
 	return (
 		<PageWrapper title='No title'>

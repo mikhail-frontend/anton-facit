@@ -28,7 +28,6 @@ import Button from '../../../components/bootstrap/Button';
 import CommonStoryLink from '../../../common/other/CommonStoryLink';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChecksAndRadioPage = () => {
 	const GENERAL_USAGE = `
 <Checks

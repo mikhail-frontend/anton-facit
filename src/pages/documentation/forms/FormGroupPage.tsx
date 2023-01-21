@@ -35,7 +35,6 @@ import Dropdown, {
 } from '../../../components/bootstrap/Dropdown';
 import CommonStoryLink from '../../../common/other/CommonStoryLink';
 
-
 const FormGroupPage = () => {
 	const [modalStatus, setModalStatus] = useState(false);
 	const [modalStatus2, setModalStatus2] = useState(false);

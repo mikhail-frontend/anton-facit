@@ -12,7 +12,6 @@ import RadialBarStroked from './chart-radial-bar/RadialBarStroked';
 import RadialBarSemiCircleGauge from './chart-radial-bar/RadialBarSemiCircleGauge';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartRadialBarPage = () => {
 	return (
 		<PageWrapper title='No title'>

@@ -6,7 +6,6 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Chart, { IChartOptions } from '../../../components/extras/Chart';
 
-
 const ChartSparklinePage = () => {
 	const randomizeArray = (arg: number[]) => {
 		const array = arg.slice();

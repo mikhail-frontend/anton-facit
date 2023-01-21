@@ -13,7 +13,6 @@ import Card, {
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import PlaceholderImage from '../../../components/extras/PlaceholderImage';
 
-
 const SizingPage = () => {
 	const RELATIVE = `
 <div className='w-25 p-3' style={{ backgroundColor: '#eee' }}>Width 25%</div>

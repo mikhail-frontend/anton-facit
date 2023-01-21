@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Card, {
 	CardActions,
 	CardBody,
@@ -17,7 +17,6 @@ import Card, {
 import Pose from '../../../assets/img/pose.png';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
-import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Button, { ButtonGroup } from '../../../components/bootstrap/Button';
 import Dropdown, {
 	DropdownItem,
@@ -162,7 +161,6 @@ const CardPage = () => {
 	return (
 		<PageWrapper title='No title'>
 			<SubHeader>
-
 				<SubHeaderRight>
 					<Dropdown>
 						<DropdownToggle>

@@ -1,14 +1,13 @@
 import React from 'react';
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import Icon from '../../../components/icon/Icon';
-import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Input from '../../../components/bootstrap/forms/Input';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
 const ComponentsListPage = () => {
-
 	const formik = useFormik({
 		initialValues: {
 			searchInput: '',
@@ -35,13 +34,13 @@ const ComponentsListPage = () => {
 					/>
 				</SubHeaderLeft>
 				<SubHeaderRight>
-					<CommonStoryBtn to='/docs/'/>
+					<CommonStoryBtn to='/docs/' />
 				</SubHeaderRight>
 			</SubHeader>
 			<Page>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum doloribus ducimus eum illo laboriosam
-				obcaecati, odit quisquam quod velit. Adipisci cum delectus dolores iusto quod reiciendis repellendus,
-				sequi similique ullam!
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum doloribus ducimus eum
+				illo laboriosam obcaecati, odit quisquam quod velit. Adipisci cum delectus dolores
+				iusto quod reiciendis repellendus, sequi similique ullam!
 			</Page>
 		</PageWrapper>
 	);

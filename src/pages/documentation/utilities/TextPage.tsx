@@ -13,7 +13,6 @@ import Card, {
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import CommonDesc from '../../../common/other/CommonDesc';
 
-
 const TextPage = () => {
 	const TEXT_ALIGNMENT = `
 <p className='text-start'>Start aligned text on all viewport sizes.</p>

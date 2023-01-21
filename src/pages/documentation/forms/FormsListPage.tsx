@@ -1,15 +1,13 @@
 import React from 'react';
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import Icon from '../../../components/icon/Icon';
-import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Input from '../../../components/bootstrap/forms/Input';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
 const FormsListPage = () => {
-
-
 	const formik = useFormik({
 		initialValues: {
 			searchInput: '',
@@ -24,7 +22,7 @@ const FormsListPage = () => {
 					<label
 						className='border-0 bg-transparent cursor-pointer me-0'
 						htmlFor='searchInput'>
-						<Icon icon='Search' size='2x' color='primary'/>
+						<Icon icon='Search' size='2x' color='primary' />
 					</label>
 					<Input
 						id='searchInput'
@@ -36,13 +34,13 @@ const FormsListPage = () => {
 					/>
 				</SubHeaderLeft>
 				<SubHeaderRight>
-					<CommonStoryBtn to='/docs/'/>
+					<CommonStoryBtn to='/docs/' />
 				</SubHeaderRight>
 			</SubHeader>
 			<Page>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, vero, voluptatibus? A, eaque expedita? A
-				asperiores, commodi cupiditate distinctio itaque laudantium nesciunt numquam odio possimus provident
-				recusandae sunt tempore voluptas.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, vero, voluptatibus?
+				A, eaque expedita? A asperiores, commodi cupiditate distinctio itaque laudantium
+				nesciunt numquam odio possimus provident recusandae sunt tempore voluptas.
 			</Page>
 		</PageWrapper>
 	);

@@ -11,7 +11,6 @@ import Card, {
 import SubHeader, { SubHeaderLeft } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 
-
 const HookLink = ({ hook, path }: { hook: string; path: string }) => {
 	return (
 		<a

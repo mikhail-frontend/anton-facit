@@ -10,7 +10,6 @@ import MixedLineColumnArea from './chart-mixed/MixedLineColumnArea';
 import MixedLineScatter from './chart-mixed/MixedLineScatter';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartMixedPage = () => {
 	return (
 		<PageWrapper title='No title'>

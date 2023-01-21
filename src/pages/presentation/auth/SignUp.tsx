@@ -14,7 +14,6 @@ import { useDispatch } from 'react-redux';
 import { signUpUser } from '../../../store/modules/user/userActions';
 import { useNavigate } from 'react-router-dom';
 import Spinner from '../../../components/bootstrap/Spinner';
-import useDarkMode from "../../../hooks/useDarkMode";
 
 const validate = (values: Partial<IValues>) => {
 	const errors: IValues = {
@@ -37,7 +36,6 @@ const validate = (values: Partial<IValues>) => {
 	return errors;
 };
 const SignUp = () => {
-	const { darkModeStatus } = useDarkMode();
 	const dispatch: any = useDispatch();
 	const navigate = useNavigate();
 	const [isLoading, setIsLoading] = useState<boolean>(false);

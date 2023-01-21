@@ -12,7 +12,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const FloatPage = () => {
 	const OVERVIEW = `
 <div className='float-start'>Float start on all viewport sizes</div><br />

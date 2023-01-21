@@ -11,7 +11,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import PrismCode from '../../../components/extras/PrismCode';
 
-
 const ApiPage = () => {
 	const API_EXPLAINED = `
 $utilities: (

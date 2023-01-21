@@ -1,5 +1,5 @@
 import React from 'react';
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Popovers from '../../../components/bootstrap/Popovers';
@@ -15,7 +15,6 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import Icon from '../../../components/icon/Icon';
-import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonDesc from '../../../common/other/CommonDesc';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
@@ -25,7 +24,6 @@ import Dropdown, {
 	DropdownToggle,
 } from '../../../components/bootstrap/Dropdown';
 import CommonStoryLink from '../../../common/other/CommonStoryLink';
-
 
 const PopoversPage = () => {
 	const GENERAL_USAGE = `

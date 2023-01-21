@@ -9,7 +9,6 @@ import CandlestickCategoryXAxis from './chart-candlestick/CandlestickCategoryXAx
 import CandlestickLine from './chart-candlestick/CandlestickLine';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartCandlestickPage = () => {
 	return (
 		<PageWrapper title='No title'>

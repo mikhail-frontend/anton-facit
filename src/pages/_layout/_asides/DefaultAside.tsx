@@ -4,11 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Brand from '../../../layout/Brand/Brand';
 import Navigation, { NavigationLine } from '../../../layout/Navigation/Navigation';
 import User from '../../../layout/User/User';
-import {
-	dashboardPagesMenu,
-	demoPagesMenu,
-	gettingStartedPagesMenu,
-} from '../../../menu';
+import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../../../menu';
 import ThemeContext from '../../../contexts/themeContext';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Hand from '../../../assets/img/hand.png';

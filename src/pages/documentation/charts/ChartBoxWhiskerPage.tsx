@@ -7,7 +7,6 @@ import BoxWhiskerBasic from './chart-boxWhisker/BoxWhiskerBasic';
 import BoxWhiskerBoxPlotScatter from './chart-boxWhisker/BoxWhiskerBoxPlotScatter';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartBoxWhiskerPage = () => {
 	return (
 		<PageWrapper title='No title'>

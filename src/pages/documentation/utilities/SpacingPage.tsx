@@ -12,7 +12,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const SpacingPage = () => {
 	const EXAMPLE = `.mt-0 {
   margin-top: 0 !important;

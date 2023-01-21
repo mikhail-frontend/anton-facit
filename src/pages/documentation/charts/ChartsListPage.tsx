@@ -1,15 +1,14 @@
 import React from 'react';
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 
 import Icon from '../../../components/icon/Icon';
-import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Input from '../../../components/bootstrap/forms/Input';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
 const ChartsListPage = () => {
-
 	const formik = useFormik({
 		initialValues: {
 			searchInput: '',
@@ -24,7 +23,7 @@ const ChartsListPage = () => {
 					<label
 						className='border-0 bg-transparent cursor-pointer me-0'
 						htmlFor='searchInput'>
-						<Icon icon='Search' size='2x' color='primary'/>
+						<Icon icon='Search' size='2x' color='primary' />
 					</label>
 					<Input
 						id='searchInput'
@@ -36,13 +35,13 @@ const ChartsListPage = () => {
 					/>
 				</SubHeaderLeft>
 				<SubHeaderRight>
-					<CommonStoryBtn to='/docs/'/>
+					<CommonStoryBtn to='/docs/' />
 				</SubHeaderRight>
 			</SubHeader>
 			<Page>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis ducimus ex hic impedit
-				ipsam pariatur, perferendis placeat qui quidem, repellat, repellendus repudiandae sunt suscipit tempore
-				temporibus tenetur ullam veniam.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis
+				ducimus ex hic impedit ipsam pariatur, perferendis placeat qui quidem, repellat,
+				repellendus repudiandae sunt suscipit tempore temporibus tenetur ullam veniam.
 			</Page>
 		</PageWrapper>
 	);

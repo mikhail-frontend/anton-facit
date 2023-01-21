@@ -2,13 +2,11 @@ import Button from '../../../components/bootstrap/Button';
 import classNames from 'classnames';
 import AppleLogin from 'react-apple-login';
 import { GoogleLogin } from '@react-oauth/google';
-import useDarkMode from "../../../hooks/useDarkMode";
-
+import useDarkMode from '../../../hooks/useDarkMode';
 
 import React from 'react';
 
 const SocialButtons = () => {
-
 	const { darkModeStatus } = useDarkMode();
 
 	return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import Badge from '../../../components/bootstrap/Badge';
@@ -13,12 +13,10 @@ import Card, {
 	CardSubTitle,
 	CardTitle,
 } from '../../../components/bootstrap/Card';
-import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Alert from '../../../components/bootstrap/Alert';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonDesc from '../../../common/other/CommonDesc';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-
 
 const BadgePage = () => {
 	const GENERAL_USAGE = `

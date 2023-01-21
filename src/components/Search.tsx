@@ -1,14 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import Icon from './icon/Icon';
 import Input from './bootstrap/forms/Input';
-import Modal, { ModalBody, ModalHeader } from './bootstrap/Modal';
 
 const Search = () => {
 	const refSearchInput = useRef<HTMLInputElement>(null);
-	const navigate = useNavigate();
-	const [searchModalStatus, setSearchModalStatus] = useState(false);
+	const [, setSearchModalStatus] = useState(false);
 	const formik = useFormik({
 		initialValues: {
 			searchInput: '',
@@ -29,8 +26,6 @@ const Search = () => {
 		};
 	}, [formik.values.searchInput]);
 
-
-
 	return (
 		<>
 			<div className='d-flex' data-tour='search'>
@@ -47,7 +42,6 @@ const Search = () => {
 					autoComplete='off'
 				/>
 			</div>
-
 		</>
 	);
 };

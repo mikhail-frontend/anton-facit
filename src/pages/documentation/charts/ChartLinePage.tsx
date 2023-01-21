@@ -16,7 +16,6 @@ import LineDashed from './chart-line/LineDashed';
 import LineWithMissingData from './chart-line/LineWithMissingData';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 
-
 const ChartLinePage = () => {
 	return (
 		<PageWrapper title='No title'>

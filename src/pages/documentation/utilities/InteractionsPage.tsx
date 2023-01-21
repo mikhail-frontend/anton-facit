@@ -13,7 +13,6 @@ import Card, {
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import CommonDesc from '../../../common/other/CommonDesc';
 
-
 const InteractionsPage = () => {
 	const TEXT_SELECTION = `
 <p className='user-select-all'>This paragraph will be entirely selected when clicked by the user.</p>

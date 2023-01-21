@@ -12,7 +12,6 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 
-
 const ShadowsPage = () => {
 	const SHADOW = `
 <div className='shadow-none p-3 mb-5 bg-light rounded'>No shadow</div>

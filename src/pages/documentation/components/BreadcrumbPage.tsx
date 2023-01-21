@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
+import SubHeader, { SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb, { BreadcrumbItem } from '../../../components/bootstrap/Breadcrumb';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 import Page from '../../../layout/Page/Page';

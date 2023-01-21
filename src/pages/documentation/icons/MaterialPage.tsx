@@ -16,7 +16,6 @@ import Input from '../../../components/bootstrap/forms/Input';
 import MaterialIcons from '../../../components/icon/material-icons/iconList';
 import CommonIconPreview from '../../../common/other/CommonIconPreview';
 
-
 const MaterialPage = () => {
 	const formik = useFormik({
 		initialValues: {
