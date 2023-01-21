@@ -13,7 +13,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import PlaceholderImage from '../../../components/extras/PlaceholderImage';
-import { componentPagesMenu } from '../../../menu';
+
 
 const useStyles = createUseStyles({
 	// stylelint-disable-next-line selector-type-no-unknown
@@ -245,7 +245,7 @@ $border-radius-pill:	50rem;`;
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.borders.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

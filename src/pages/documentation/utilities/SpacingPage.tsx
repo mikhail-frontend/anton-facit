@@ -11,7 +11,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const SpacingPage = () => {
 	const EXAMPLE = `.mt-0 {
@@ -190,7 +190,7 @@ $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null);
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.spacing.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

@@ -12,11 +12,10 @@ import AreaStacked from './chart-area/AreaStacked';
 import AreaIrregular from './chart-area/AreaIrregular';
 import AreaMissing from './chart-area/AreaMissing';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
 
 const ChartAreaPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsArea.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

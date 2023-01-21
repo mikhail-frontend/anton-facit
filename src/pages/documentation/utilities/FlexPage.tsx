@@ -13,7 +13,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const useStyles = createUseStyles({
 	example: {
@@ -311,7 +311,7 @@ const FlexPage = () => {
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.flex.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

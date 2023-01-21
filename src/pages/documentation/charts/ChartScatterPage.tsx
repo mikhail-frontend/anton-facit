@@ -7,11 +7,11 @@ import ScatterBasic from './chart-scatter/ScatterBasic';
 import ScatterDateTime from './chart-scatter/ScatterDateTime';
 import ScatterImageFill from './chart-scatter/ScatterImageFill';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartScatterPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsScatter.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

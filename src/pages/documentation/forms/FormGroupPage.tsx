@@ -34,7 +34,7 @@ import Dropdown, {
 	DropdownToggle,
 } from '../../../components/bootstrap/Dropdown';
 import CommonStoryLink from '../../../common/other/CommonStoryLink';
-import { componentPagesMenu } from '../../../menu';
+
 
 const FormGroupPage = () => {
 	const [modalStatus, setModalStatus] = useState(false);
@@ -125,7 +125,7 @@ const FormGroupPage = () => {
 	});
 
 	return (
-		<PageWrapper title={componentPagesMenu.forms.subMenu.formGroup.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

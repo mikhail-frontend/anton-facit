@@ -23,7 +23,6 @@ import Select from '../../../components/bootstrap/forms/Select';
 import Checks, { ChecksGroup } from '../../../components/bootstrap/forms/Checks';
 import Textarea from '../../../components/bootstrap/forms/Textarea';
 import Button from '../../../components/bootstrap/Button';
-import { componentPagesMenu } from '../../../menu';
 
 const GENERAL_USAGE = `<COMPONENT // Input || Select || Textarea || ChecksGroup || Checks
 	onBlur={ Function } // Example: formik.handleBlur , Only Input, Select and Textarea
@@ -165,7 +164,7 @@ const ValidationPage = () => {
 	});
 
 	return (
-		<PageWrapper title={componentPagesMenu.forms.subMenu.validation.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

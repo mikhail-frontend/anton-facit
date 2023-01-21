@@ -9,11 +9,11 @@ import TimelineMultiSeries from './chart-timeline/TimelineMultiSeries';
 import TimelineAdvanced from './chart-timeline/TimelineAdvanced';
 import TimelineMultipleSeries from './chart-timeline/TimelineMultipleSeries';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartTimelinePage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsTimeline.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

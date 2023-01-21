@@ -27,7 +27,7 @@ import Dropdown, {
 import Button from '../../../components/bootstrap/Button';
 import CommonStoryLink from '../../../common/other/CommonStoryLink';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChecksAndRadioPage = () => {
 	const GENERAL_USAGE = `
@@ -110,7 +110,7 @@ const ChecksAndRadioPage = () => {
 	});
 
 	return (
-		<PageWrapper title={componentPagesMenu.forms.subMenu.checksAndRadio.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

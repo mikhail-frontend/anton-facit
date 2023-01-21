@@ -14,7 +14,7 @@ import Card, {
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import PrismCode from '../../../components/extras/PrismCode';
 import PlaceholderImage from '../../../components/extras/PlaceholderImage';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ImagesPage = () => {
 	const ALIGN_IMAGE = `
@@ -33,7 +33,7 @@ const ImagesPage = () => {
 </picture>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.content.subMenu.images.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

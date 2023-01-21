@@ -37,7 +37,7 @@ import Dropdown, {
 } from '../../../components/bootstrap/Dropdown';
 import CommonStoryLink from '../../../common/other/CommonStoryLink';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 import { TInputTypes } from '../../../type/input-type';
 
 const FormControlsPage = () => {
@@ -159,7 +159,7 @@ const FormControlsPage = () => {
 	];
 
 	return (
-		<PageWrapper title={componentPagesMenu.forms.subMenu.formControl.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

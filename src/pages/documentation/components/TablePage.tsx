@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { componentPagesMenu } from '../../../menu';
+
 import SubHeader, { SubHeaderLeft } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Page from '../../../layout/Page/Page';

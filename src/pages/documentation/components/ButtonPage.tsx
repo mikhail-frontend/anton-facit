@@ -22,7 +22,7 @@ import Dropdown, {
 	DropdownToggle,
 } from '../../../components/bootstrap/Dropdown';
 import CommonStoryLink from '../../../common/other/CommonStoryLink';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ButtonPage = () => {
 	const GENERAL_USAGE = `

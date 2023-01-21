@@ -6,11 +6,11 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import PolarBasic from './chart-polar/PolarBasic';
 import PolarMonochrome from './chart-polar/PolarMonochrome';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartPolarPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsPolar.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

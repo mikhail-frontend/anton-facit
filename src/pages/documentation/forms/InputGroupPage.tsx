@@ -34,7 +34,7 @@ import Checks from '../../../components/bootstrap/forms/Checks';
 import Select from '../../../components/bootstrap/forms/Select';
 import { SELECT_OPTIONS } from './SelectPage';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const InputGroupPage = () => {
 	const [modalStatus, setModalStatus] = useState(false);
@@ -97,7 +97,7 @@ const InputGroupPage = () => {
 	});
 
 	return (
-		<PageWrapper title={componentPagesMenu.forms.subMenu.inputGroup.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

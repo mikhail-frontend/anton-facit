@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import { componentPagesMenu } from '../../../menu';
+
 import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';

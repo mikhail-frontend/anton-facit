@@ -13,11 +13,10 @@ import BarCustomLabel from './chart-bar/BarCustomLabel';
 import BarPatterned from './chart-bar/BarPatterned';
 import BarWithImages from './chart-bar/BarWithImages';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
 
 const ChartBarPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsBar.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

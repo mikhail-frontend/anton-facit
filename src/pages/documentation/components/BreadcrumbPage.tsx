@@ -5,7 +5,7 @@ import Breadcrumb, { BreadcrumbItem } from '../../../components/bootstrap/Breadc
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import { componentPagesMenu } from '../../../menu';
+
 import Card, {
 	CardActions,
 	CardBody,

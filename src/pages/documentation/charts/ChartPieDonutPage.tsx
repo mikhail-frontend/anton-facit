@@ -12,11 +12,11 @@ import DonutSemi from './chart-pieDonut/DonutSemi';
 import DonutPattern from './chart-pieDonut/DonutPattern';
 import PieWithImage from './chart-pieDonut/PieWithImage';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartPieDonutPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsPieDonut.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

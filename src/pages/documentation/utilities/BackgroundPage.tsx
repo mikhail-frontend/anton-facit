@@ -12,7 +12,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const BackgroundPage = () => {
 	const BACKGROUND_COLOR = `
@@ -162,7 +162,7 @@ $grays: (
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.background.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

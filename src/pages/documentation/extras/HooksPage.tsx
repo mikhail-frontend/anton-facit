@@ -10,7 +10,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import SubHeader, { SubHeaderLeft } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
-import { componentPagesMenu } from '../../../menu';
+
 
 const HookLink = ({ hook, path }: { hook: string; path: string }) => {
 	return (
@@ -32,7 +32,7 @@ HookLink.defaultProps = {
 
 const HooksPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.hooks.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb list={[{ title: 'Hooks', to: '/hooks' }]} />

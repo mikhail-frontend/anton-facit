@@ -10,7 +10,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import PrismCode from '../../../components/extras/PrismCode';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ApiPage = () => {
 	const API_EXPLAINED = `
@@ -232,7 +232,7 @@ $utilities: (
 /* rtl:end:remove */`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.api.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

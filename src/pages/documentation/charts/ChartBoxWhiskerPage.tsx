@@ -6,11 +6,11 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import BoxWhiskerBasic from './chart-boxWhisker/BoxWhiskerBasic';
 import BoxWhiskerBoxPlotScatter from './chart-boxWhisker/BoxWhiskerBoxPlotScatter';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartBoxWhiskerPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsBoxWhisker.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

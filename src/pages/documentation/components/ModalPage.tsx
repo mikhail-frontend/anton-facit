@@ -24,7 +24,7 @@ import Icon from '../../../components/icon/Icon';
 import CommonDesc from '../../../common/other/CommonDesc';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 import { TModalFullScreen, TModalSize } from '../../../type/modal-type';
 
 const ModalPage = () => {

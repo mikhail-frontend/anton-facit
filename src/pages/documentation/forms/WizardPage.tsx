@@ -15,7 +15,6 @@ import Card, {
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import Wizard, { WizardItem } from '../../../components/Wizard';
-import { componentPagesMenu } from '../../../menu';
 import { TColor } from '../../../type/color-type';
 
 const WizardPage = () => {
@@ -47,7 +46,7 @@ const WizardPage = () => {
 	];
 
 	return (
-		<PageWrapper title={componentPagesMenu.forms.subMenu.wizard.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

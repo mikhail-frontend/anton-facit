@@ -22,7 +22,6 @@ import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Label from '../../../components/bootstrap/forms/Label';
 import Button from '../../../components/bootstrap/Button';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
 
 export const SELECT_OPTIONS = [
 	{ value: 1, text: 'One' },
@@ -169,7 +168,7 @@ const SelectPage = () => {
 	});
 
 	return (
-		<PageWrapper title={componentPagesMenu.forms.subMenu.select.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

@@ -25,7 +25,7 @@ import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonDesc from '../../../common/other/CommonDesc';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 import { TColor } from '../../../type/color-type';
 import { TDropdownDirection } from '../../../type/dropdown-type';
 

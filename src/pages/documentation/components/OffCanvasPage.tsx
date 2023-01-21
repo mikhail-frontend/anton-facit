@@ -24,7 +24,7 @@ import OffCanvas, {
 } from '../../../components/bootstrap/OffCanvas';
 import Alert from '../../../components/bootstrap/Alert';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 import { TOffCanvasPlacement } from '../../../type/offCanvas-type';
 
 const OffCanvasPage = () => {

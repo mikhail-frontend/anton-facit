@@ -15,7 +15,7 @@ import Card, {
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import Icon from '../../../components/icon/Icon';
 import CommonDesc from '../../../common/other/CommonDesc';
-import { componentPagesMenu } from '../../../menu';
+
 import { TIconsSize } from '../../../type/icons-type';
 import { TColor } from '../../../type/color-type';
 
@@ -55,7 +55,7 @@ const SIZES: TIconsSize[] = [
 
 const IconPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.icons.subMenu.icon.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

@@ -12,7 +12,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import CommonDesc from '../../../common/other/CommonDesc';
-import { componentPagesMenu } from '../../../menu';
+
 
 const TextPage = () => {
 	const TEXT_ALIGNMENT = `
@@ -199,7 +199,7 @@ $font-sizes: (
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.text.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

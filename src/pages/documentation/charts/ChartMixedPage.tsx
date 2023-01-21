@@ -9,11 +9,11 @@ import MixedLineArea from './chart-mixed/MixedLineArea';
 import MixedLineColumnArea from './chart-mixed/MixedLineColumnArea';
 import MixedLineScatter from './chart-mixed/MixedLineScatter';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartMixedPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsMixed.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

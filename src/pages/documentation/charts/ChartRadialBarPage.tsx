@@ -11,11 +11,11 @@ import RadialBarWithImage from './chart-radial-bar/RadialBarWithImage';
 import RadialBarStroked from './chart-radial-bar/RadialBarStroked';
 import RadialBarSemiCircleGauge from './chart-radial-bar/RadialBarSemiCircleGauge';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartRadialBarPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsRadialBar.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

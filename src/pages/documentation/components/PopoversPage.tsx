@@ -25,7 +25,7 @@ import Dropdown, {
 	DropdownToggle,
 } from '../../../components/bootstrap/Dropdown';
 import CommonStoryLink from '../../../common/other/CommonStoryLink';
-import { componentPagesMenu } from '../../../menu';
+
 
 const PopoversPage = () => {
 	const GENERAL_USAGE = `

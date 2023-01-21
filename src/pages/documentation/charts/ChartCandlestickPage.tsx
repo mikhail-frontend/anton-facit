@@ -8,11 +8,11 @@ import CandlestickCombo from './chart-candlestick/CandlestickCombo';
 import CandlestickCategoryXAxis from './chart-candlestick/CandlestickCategoryXAxis';
 import CandlestickLine from './chart-candlestick/CandlestickLine';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartCandlestickPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsCandleStick.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

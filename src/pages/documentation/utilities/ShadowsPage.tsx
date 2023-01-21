@@ -11,7 +11,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ShadowsPage = () => {
 	const SHADOW = `
@@ -43,7 +43,7 @@ $box-shadow-lg:               0 1.6rem 3rem rgba($black, 0.175);`;
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.shadows.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

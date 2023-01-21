@@ -12,7 +12,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import CommonDesc from '../../../common/other/CommonDesc';
-import { componentPagesMenu } from '../../../menu';
+
 
 const InteractionsPage = () => {
 	const TEXT_SELECTION = `
@@ -37,7 +37,7 @@ const InteractionsPage = () => {
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.interactions.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

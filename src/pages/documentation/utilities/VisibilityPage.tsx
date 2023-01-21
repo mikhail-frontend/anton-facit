@@ -12,7 +12,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonDesc from '../../../common/other/CommonDesc';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const VisibilityPage = () => {
 	const VISIBILITY = `
@@ -38,7 +38,7 @@ const VisibilityPage = () => {
 )`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.visibility.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

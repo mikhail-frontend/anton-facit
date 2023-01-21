@@ -15,7 +15,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const AlertPage = () => {
 	const GENERAL_USAGE = `

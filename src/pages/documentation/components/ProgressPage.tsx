@@ -1,5 +1,5 @@
 import React from 'react';
-import { componentPagesMenu } from '../../../menu';
+
 import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';

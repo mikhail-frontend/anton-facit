@@ -14,7 +14,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import PrismCode from '../../../components/extras/PrismCode';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const useStyles = createUseStyles({
 	// stylelint-disable-next-line selector-type-no-unknown
@@ -168,7 +168,7 @@ $position-values: (
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.position.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

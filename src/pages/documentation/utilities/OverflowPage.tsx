@@ -11,7 +11,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const OverflowPage = () => {
 	const OVERFLOW = `
@@ -27,7 +27,7 @@ const OverflowPage = () => {
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.overflow.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

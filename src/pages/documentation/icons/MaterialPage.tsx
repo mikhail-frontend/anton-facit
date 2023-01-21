@@ -15,7 +15,7 @@ import Card, {
 import Input from '../../../components/bootstrap/forms/Input';
 import MaterialIcons from '../../../components/icon/material-icons/iconList';
 import CommonIconPreview from '../../../common/other/CommonIconPreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const MaterialPage = () => {
 	const formik = useFormik({
@@ -28,7 +28,7 @@ const MaterialPage = () => {
 		name.toLowerCase().includes(formik.values.filterIcon.toLowerCase()),
 	);
 	return (
-		<PageWrapper title={componentPagesMenu.icons.subMenu.material.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

@@ -11,7 +11,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const VerticalAlignPage = () => {
 	const VERTICAL = `
@@ -43,7 +43,7 @@ const VerticalAlignPage = () => {
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.verticalAlign.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

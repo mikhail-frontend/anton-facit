@@ -15,11 +15,11 @@ import LineRealtime from './chart-line/LineRealtime';
 import LineDashed from './chart-line/LineDashed';
 import LineWithMissingData from './chart-line/LineWithMissingData';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartLinePage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsLine.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

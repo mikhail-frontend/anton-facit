@@ -16,7 +16,7 @@ import Button from '../../../components/bootstrap/Button';
 import Icon from '../../../components/icon/Icon';
 import CommonDesc from '../../../common/other/CommonDesc';
 import { AlertLink } from '../../../components/bootstrap/Alert';
-import { componentPagesMenu } from '../../../menu';
+
 
 const NotificationPage = () => {
 	const GENERAL_USAGE = `
@@ -44,7 +44,7 @@ const NotificationPage = () => {
 	);
 
 	return (
-		<PageWrapper title={componentPagesMenu.notification.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb list={[{ title: 'Notification', to: '/notifications' }]} />

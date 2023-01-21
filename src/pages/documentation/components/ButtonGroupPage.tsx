@@ -18,7 +18,7 @@ import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
 import CommonDesc from '../../../common/other/CommonDesc';
 import { AlertLink } from '../../../components/bootstrap/Alert';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ButtonGroupPage = () => {
 	const GENERAL_USAGE = `

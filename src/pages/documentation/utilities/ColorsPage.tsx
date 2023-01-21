@@ -15,7 +15,7 @@ import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import CommonDesc from '../../../common/other/CommonDesc';
 import { AlertHeading } from '../../../components/bootstrap/Alert';
 import PrismCode from '../../../components/extras/PrismCode';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ColorsPage = () => {
 	const COLORS = `
@@ -99,7 +99,7 @@ $grays: (
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.colors.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

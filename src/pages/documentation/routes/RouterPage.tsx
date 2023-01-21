@@ -9,7 +9,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import { componentPagesMenu, gettingStartedPagesMenu } from '../../../menu';
+import {  gettingStartedPagesMenu } from '../../../menu';
 import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import Page from '../../../layout/Page/Page';
@@ -427,16 +427,6 @@ export default DefaultFooter;
 						]}
 					/>
 				</SubHeaderLeft>
-				<SubHeaderRight>
-					<Button
-						tag='a'
-						color='info'
-						isLight
-						icon={componentPagesMenu.forms.icon}
-						to={`../${componentPagesMenu.forms.path}`}>
-						{componentPagesMenu.forms.text}
-					</Button>
-				</SubHeaderRight>
 			</SubHeader>
 			<Page>
 				<div className='row h-100 align-content-start'>
@@ -905,16 +895,7 @@ export default DefaultFooter;
 											If you are ready, you can proceed to the next step.
 										</span>
 									</div>
-									<div className='col-auto'>
-										<Button
-											tag='a'
-											color='info'
-											isLight
-											icon={componentPagesMenu.forms.icon}
-											to={`../${componentPagesMenu.forms.path}`}>
-											{componentPagesMenu.forms.text}
-										</Button>
-									</div>
+
 								</div>
 							</CardBody>
 						</Card>

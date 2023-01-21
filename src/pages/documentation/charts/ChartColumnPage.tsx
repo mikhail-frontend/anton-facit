@@ -13,11 +13,11 @@ import ColumnWithNegativeValues from './chart-columns/ColumnWithNegativeValues';
 import ColumnDynamicData from './chart-columns/ColumnDynamicData';
 import ColumnDistributed from './chart-columns/ColumnDistributed';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartColumnPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsColumn.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

@@ -1,7 +1,6 @@
 import React, { lazy } from 'react';
 import { RouteProps } from 'react-router-dom';
 import {
-	componentPagesMenu,
 	dashboardPagesMenu,
 	demoPagesMenu,
 	gettingStartedPagesMenu,
@@ -426,66 +425,10 @@ const documentation: RouteProps[] = [
 	/**
 	 * Content
 	 */
-	{
-		path: componentPagesMenu.content.path,
-		element: <CONTENT.CONTENTS />,
-	},
-	{
-		path: componentPagesMenu.content.subMenu.typography.path,
-		element: <CONTENT.TYPOGRAPHY />,
-	},
-	{
-		path: componentPagesMenu.content.subMenu.images.path,
-		element: <CONTENT.IMAGES />,
-	},
-	{
-		path: componentPagesMenu.content.subMenu.tables.path,
-		element: <CONTENT.TABLES />,
-	},
-	{
-		path: componentPagesMenu.content.subMenu.figures.path,
-		element: <CONTENT.FIGURES />,
-	},
 
 	/**
 	 * Forms
 	 */
-	{
-		path: componentPagesMenu.forms.path,
-		element: <FORMS_PAGE.FORMS />,
-	},
-	{
-		path: componentPagesMenu.forms.subMenu.formGroup.path,
-		element: <FORMS_PAGE.FORM_GROUP />,
-	},
-	{
-		path: componentPagesMenu.forms.subMenu.formControl.path,
-		element: <FORMS_PAGE.FORM_CONTROLS />,
-	},
-	{
-		path: componentPagesMenu.forms.subMenu.select.path,
-		element: <FORMS_PAGE.SELECT />,
-	},
-	{
-		path: componentPagesMenu.forms.subMenu.checksAndRadio.path,
-		element: <FORMS_PAGE.CHECKS_AND_RADIO />,
-	},
-	{
-		path: componentPagesMenu.forms.subMenu.range.path,
-		element: <FORMS_PAGE.RANGE />,
-	},
-	{
-		path: componentPagesMenu.forms.subMenu.inputGroup.path,
-		element: <FORMS_PAGE.INPUT_GROUP />,
-	},
-	{
-		path: componentPagesMenu.forms.subMenu.validation.path,
-		element: <FORMS_PAGE.VALIDATION />,
-	},
-	{
-		path: componentPagesMenu.forms.subMenu.wizard.path,
-		element: <FORMS_PAGE.WIZARD />,
-	},
 
 	/**
 	 * Components
@@ -494,183 +437,12 @@ const documentation: RouteProps[] = [
 	/**
 	 * Utilities
 	 */
-	{
-		path: componentPagesMenu.utilities.path,
-		element: <UTILITIES.UTILITIES />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.api.path,
-		element: <UTILITIES.API />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.background.path,
-		element: <UTILITIES.BACKGROUND />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.borders.path,
-		element: <UTILITIES.BORDERS />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.colors.path,
-		element: <UTILITIES.COLORS />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.display.path,
-		element: <UTILITIES.DISPLAY />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.flex.path,
-		element: <UTILITIES.FLEX />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.float.path,
-		element: <UTILITIES.FLOAT />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.interactions.path,
-		element: <UTILITIES.INTERACTIONS />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.overflow.path,
-		element: <UTILITIES.OVERFLOW />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.position.path,
-		element: <UTILITIES.POSITION />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.shadows.path,
-		element: <UTILITIES.SHADOWS />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.sizing.path,
-		element: <UTILITIES.SIZING />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.spacing.path,
-		element: <UTILITIES.SPACING />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.text.path,
-		element: <UTILITIES.TEXT />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.verticalAlign.path,
-		element: <UTILITIES.VERTICAL_ALIGN />,
-	},
-	{
-		path: componentPagesMenu.utilities.subMenu.visibility.path,
-		element: <UTILITIES.VISIBILITY />,
-	},
+
 
 	/**
 	 * Extra
 	 */
 
-	/**
-	 * Icons
-	 */
-	{
-		path: componentPagesMenu.icons.path,
-		element: <ICONS.ICONS_LIST />,
-	},
-	{
-		path: componentPagesMenu.icons.subMenu.icon.path,
-		element: <ICONS.ICON />,
-	},
-	{
-		path: componentPagesMenu.icons.subMenu.material.path,
-		element: <ICONS.MATERIAL />,
-	},
-
-	/**
-	 * Charts
-	 */
-	{
-		path: componentPagesMenu.charts.path,
-		element: <CHARTS_PAGE.CHART_LIST />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsUsage.path,
-		element: <CHARTS_PAGE.GENERAL_USAGE />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsSparkline.path,
-		element: <CHARTS_PAGE.SPARKLINE />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsLine.path,
-		element: <CHARTS_PAGE.LINE />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsArea.path,
-		element: <CHARTS_PAGE.AREA />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsColumn.path,
-		element: <CHARTS_PAGE.COLUMN />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsBar.path,
-		element: <CHARTS_PAGE.BAR />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsMixed.path,
-		element: <CHARTS_PAGE.MIXED />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsTimeline.path,
-		element: <CHARTS_PAGE.TIMELINE />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsCandleStick.path,
-		element: <CHARTS_PAGE.CANDLESTICK />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsBoxWhisker.path,
-		element: <CHARTS_PAGE.BOX_WHISKER />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsPieDonut.path,
-		element: <CHARTS_PAGE.PIE_DONUT />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsRadar.path,
-		element: <CHARTS_PAGE.RADAR />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsPolar.path,
-		element: <CHARTS_PAGE.POLAR />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsRadialBar.path,
-		element: <CHARTS_PAGE.RADIAL_BAR />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsBubble.path,
-		element: <CHARTS_PAGE.BUBBLE />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsScatter.path,
-		element: <CHARTS_PAGE.SCATTER />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsHeatMap.path,
-		element: <CHARTS_PAGE.HEAT_MAP />,
-	},
-	{
-		path: componentPagesMenu.charts.subMenu.chartsTreeMap.path,
-		element: <CHARTS_PAGE.TREE_MAP />,
-	},
-
-	{
-		path: componentPagesMenu.notification.path,
-		element: <EXTRA.NOTIFICATION />,
-	},
-	{
-		path: componentPagesMenu.hooks.path,
-		element: <EXTRA.HOOKS />,
-	},
 ];
 const contents = [...presentation, ...documentation];
 

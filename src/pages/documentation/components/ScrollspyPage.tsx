@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import { componentPagesMenu } from '../../../menu';
+
 import SubHeader, {
 	SubHeaderLeft,
 	SubHeaderRight,

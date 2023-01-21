@@ -15,7 +15,7 @@ import Card, {
 import Breadcrumb from '../../../components/bootstrap/Breadcrumb';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 import { TColor } from '../../../type/color-type';
 
 const AccordionPage = () => {

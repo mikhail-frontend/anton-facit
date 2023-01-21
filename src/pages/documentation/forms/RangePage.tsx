@@ -17,7 +17,6 @@ import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Input from '../../../components/bootstrap/forms/Input';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
 
 const RangePage = () => {
 	const GENERAL_USAGE = `
@@ -58,7 +57,7 @@ const RangePage = () => {
 	});
 
 	return (
-		<PageWrapper title={componentPagesMenu.forms.subMenu.range.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

@@ -12,7 +12,7 @@ import Card, {
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import PlaceholderImage from '../../../components/extras/PlaceholderImage';
-import { componentPagesMenu } from '../../../menu';
+
 
 const SizingPage = () => {
 	const RELATIVE = `
@@ -97,7 +97,7 @@ const SizingPage = () => {
 ),`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.utilities.subMenu.sizing.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

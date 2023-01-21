@@ -5,7 +5,7 @@ import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Chart, { IChartOptions } from '../../../components/extras/Chart';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartSparklinePage = () => {
 	const randomizeArray = (arg: number[]) => {
@@ -417,7 +417,7 @@ const ChartSparklinePage = () => {
 		},
 	});
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsSparkline.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

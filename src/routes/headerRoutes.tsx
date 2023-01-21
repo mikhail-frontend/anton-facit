@@ -1,7 +1,6 @@
 import React from 'react';
 import { RouteProps } from 'react-router-dom';
 import {
-	componentPagesMenu,
 	dashboardPagesMenu,
 	demoPagesMenu,
 	gettingStartedPagesMenu,
@@ -117,26 +116,7 @@ const headers: RouteProps[] = [
 		path: `${demoPagesMenu.sales.subMenu.productID.path}/:id`,
 		element: <ProductListHeader />,
 	},
-	{
-		path: `${componentPagesMenu.forms.path}/*`,
-		element: <FormHeader />,
-	},
-	{
-		path: `${componentPagesMenu.charts.path}/*`,
-		element: <ChartsHeader />,
-	},
-	{
-		path: `${componentPagesMenu.content.path}/*`,
-		element: <ContentHeader />,
-	},
-	{
-		path: `${componentPagesMenu.utilities.path}/*`,
-		element: <UtilitiesHeader />,
-	},
-	{
-		path: `${componentPagesMenu.icons.path}/*`,
-		element: <IconHeader />,
-	},
+
 	{
 		path: `${gettingStartedPagesMenu.gettingStarted.path}/*`,
 		element: <DocumentationHeader />,

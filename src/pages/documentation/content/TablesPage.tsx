@@ -17,7 +17,7 @@ import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import CommonDesc from '../../../common/other/CommonDesc';
 import { AlertHeading } from '../../../components/bootstrap/Alert';
 import PrismCode from '../../../components/extras/PrismCode';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ExampleTable = ({
 	className,
@@ -522,7 +522,7 @@ $table-variants: (
 );`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.content.subMenu.tables.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

@@ -29,7 +29,7 @@ import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonDesc from '../../../common/other/CommonDesc';
 import Popovers from '../../../components/bootstrap/Popovers';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 import { TColor } from '../../../type/color-type';
 import { TCardBorderSize, TCardShadow, TCardSize } from '../../../type/card-type';
 

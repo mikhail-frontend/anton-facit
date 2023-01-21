@@ -18,7 +18,7 @@ import Alert from '../../../components/bootstrap/Alert';
 import CommonHowToUse from '../../../common/other/CommonHowToUse';
 import CommonDesc from '../../../common/other/CommonDesc';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const BadgePage = () => {
 	const GENERAL_USAGE = `

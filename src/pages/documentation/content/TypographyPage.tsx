@@ -12,7 +12,7 @@ import Card, {
 	CardTitle,
 } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
-import { componentPagesMenu } from '../../../menu';
+
 
 const TypographyPage = () => {
 	const DISPLAY_FONT_SIZE = `
@@ -149,7 +149,7 @@ $display-line-height: $headings-line-height;`;
 </dl>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.content.subMenu.typography.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

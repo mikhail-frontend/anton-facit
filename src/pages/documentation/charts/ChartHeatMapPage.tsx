@@ -9,11 +9,11 @@ import HeatMapMultipleSeries from './chart-heat-map/HeatMapMultipleSeries';
 import HeatMapColorRange from './chart-heat-map/HeatMapColorRange';
 import HeatMapRounded from './chart-heat-map/HeatMapRounded';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartHeatMapPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsHeatMap.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

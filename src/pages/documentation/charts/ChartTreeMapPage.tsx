@@ -8,11 +8,11 @@ import TreeMapMultipleSeries from './chart-tree-map/TreeMapMultipleSeries';
 import TreeMapColorRange from './chart-tree-map/TreeMapColorRange';
 import TreeMapDistributed from './chart-tree-map/TreeMapDistributed';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartTreeMapPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsTreeMap.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

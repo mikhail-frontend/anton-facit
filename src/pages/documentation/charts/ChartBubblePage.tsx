@@ -6,11 +6,11 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import BubbleBasic from './chart-bubble/BubbleBasic';
 import Bubble3D from './chart-bubble/Bubble3D';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartBubblePage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsBubble.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

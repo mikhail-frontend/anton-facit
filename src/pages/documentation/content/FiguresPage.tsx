@@ -7,7 +7,7 @@ import Page from '../../../layout/Page/Page';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
 import CommonCodePreview from '../../../common/other/CommonCodePreview';
 import PlaceholderImage from '../../../components/extras/PlaceholderImage';
-import { componentPagesMenu } from '../../../menu';
+
 
 const FiguresPage = () => {
 	const FIGURE = `
@@ -22,7 +22,7 @@ const FiguresPage = () => {
 </figure>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.content.subMenu.figures.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb

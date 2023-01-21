@@ -1,22 +1,18 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import classNames from 'classnames';
-import { useFormik } from 'formik';
+import {useNavigate} from 'react-router-dom';
+import {useFormik} from 'formik';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
-import Card, { CardBody } from '../../../components/bootstrap/Card';
-import { componentPagesMenu } from '../../../menu';
+
 import Icon from '../../../components/icon/Icon';
 import useDarkMode from '../../../hooks/useDarkMode';
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
+import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
 import Input from '../../../components/bootstrap/forms/Input';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { TMenu } from '../../../type/menu-type';
 
 const ContentListPage = () => {
 	const { darkModeStatus } = useDarkMode();
 
-	const contents: TMenu = componentPagesMenu.content.subMenu;
 
 	const navigate = useNavigate();
 
@@ -28,13 +24,13 @@ const ContentListPage = () => {
 	});
 
 	return (
-		<PageWrapper title={`${componentPagesMenu.content.text} List`}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<label
 						className='border-0 bg-transparent cursor-pointer me-0'
 						htmlFor='searchInput'>
-						<Icon icon='Search' size='2x' color='primary' />
+						<Icon icon='Search' size='2x' color='primary'/>
 					</label>
 					<Input
 						id='searchInput'
@@ -46,58 +42,13 @@ const ContentListPage = () => {
 					/>
 				</SubHeaderLeft>
 				<SubHeaderRight>
-					<CommonStoryBtn to='/docs/' />
+					<CommonStoryBtn to='/docs/'/>
 				</SubHeaderRight>
 			</SubHeader>
 			<Page>
-				<div className='row'>
-					{Object.keys(contents)
-						.filter((key) =>
-							contents[key].text
-								.toLowerCase()
-								.includes(formik.values.searchInput.toLowerCase()),
-						)
-						.map((i) => (
-							<div key={contents[i].id} className='col-md-3'>
-								<Card
-									className={classNames('cursor-pointer transition-base', {
-										'bg-lo25-info-hover': darkModeStatus,
-										'bg-l25-info-hover': !darkModeStatus,
-									})}
-									onClick={() => navigate(`../${contents[i].path}`)}>
-									<CardBody>
-										<div className='d-flex align-items-center'>
-											<div className='flex-shrink-0'>
-												<div
-													className='ratio ratio-1x1'
-													style={{ width: 72 }}>
-													<div
-														className={classNames(
-															'rounded-2 d-flex align-items-center justify-content-center',
-															{
-																'bg-lo25-info': darkModeStatus,
-																'bg-l25-info': !darkModeStatus,
-															},
-														)}>
-														<span className='text-info fs-1 fw-bold'>
-															<Icon icon={contents[i].icon} />
-														</span>
-													</div>
-												</div>
-											</div>
-											<div className='flex-grow-1 ms-3 d-flex justify-content-between align-items-center'>
-												<div>
-													<div className='fw-bold fs-5 mb-0'>
-														{contents[i].text}
-													</div>
-												</div>
-											</div>
-										</div>
-									</CardBody>
-								</Card>
-							</div>
-						))}
-				</div>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cumque, dolorum ea esse eum
+				exercitationem maxime necessitatibus non quae quam! Architecto culpa dolore, earum laboriosam sequi
+				voluptatem. Fuga illo, possimus.
 			</Page>
 		</PageWrapper>
 	);

@@ -7,11 +7,11 @@ import RadarBasic from './chart-radar/RadarBasic';
 import RadarMultipleSeries from './chart-radar/RadarMultipleSeries';
 import RadarPolygonFill from './chart-radar/RadarPolygonFill';
 import CommonStoryBtn from '../../../common/other/CommonStoryBtn';
-import { componentPagesMenu } from '../../../menu';
+
 
 const ChartRadarPage = () => {
 	return (
-		<PageWrapper title={componentPagesMenu.charts.subMenu.chartsRadar.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
 				<SubHeaderLeft>
 					<Breadcrumb
