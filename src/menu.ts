@@ -64,46 +64,6 @@ export const demoPagesMenu = {
 		text: 'Pages',
 		icon: 'Extension',
 	},
-	listPages: {
-		id: 'listPages',
-		text: 'List Pages',
-		path: 'list-pages',
-		icon: 'Dvr',
-		subMenu: {
-			listBoxed: {
-				id: 'listBoxed',
-				text: 'Boxed List',
-				path: 'list-pages/boxed-list',
-				icon: 'ViewArray',
-			},
-			listFluid: {
-				id: 'listFluid',
-				text: 'Fluid List',
-				path: 'list-pages/fluid-list',
-				icon: 'ViewDay',
-			},
-		},
-	},
-	gridPages: {
-		id: 'gridPages',
-		text: 'Grid Pages',
-		path: 'grid-pages',
-		icon: 'Window',
-		subMenu: {
-			gridBoxed: {
-				id: 'gridBoxed',
-				text: 'Boxed Grid',
-				path: 'grid-pages/boxed',
-				icon: 'ViewArray',
-			},
-			gridFluid: {
-				id: 'gridFluid',
-				text: 'Fluid Grid',
-				path: 'grid-pages/fluid',
-				icon: 'ViewDay',
-			},
-		},
-	},
 
 	singlePages: {
 		id: 'singlePages',

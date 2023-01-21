@@ -11,14 +11,7 @@ const SINGLE = {
 	BOXED: lazy(() => import('../pages/presentation/single-pages/SingleBoxedPage')),
 	FLUID: lazy(() => import('../pages/presentation/single-pages/SingleFluidPage')),
 };
-const LIST = {
-	BOXED: lazy(() => import('../pages/presentation/demo-pages/ListBoxedPage')),
-	FLUID: lazy(() => import('../pages/presentation/demo-pages/ListFluidPage')),
-};
-const GRID = {
-	BOXED: lazy(() => import('../pages/presentation/demo-pages/GridBoxedPage')),
-	FLUID: lazy(() => import('../pages/presentation/demo-pages/GridFluidPage')),
-};
+
 
 const PRICING = {
 	PRICING_TABLE: lazy(() => import('../pages/presentation/pricing/PricingTablePage')),
@@ -92,29 +85,7 @@ const presentation: RouteProps[] = [
 		element: <SINGLE.FLUID />,
 	},
 
-	/**
-	 * List
-	 */
-	{
-		path: demoPagesMenu.listPages.subMenu.listBoxed.path,
-		element: <LIST.BOXED />,
-	},
-	{
-		path: demoPagesMenu.listPages.subMenu.listFluid.path,
-		element: <LIST.FLUID />,
-	},
 
-	/**
-	 * Grid
-	 */
-	{
-		path: demoPagesMenu.gridPages.subMenu.gridBoxed.path,
-		element: <GRID.BOXED />,
-	},
-	{
-		path: demoPagesMenu.gridPages.subMenu.gridFluid.path,
-		element: <GRID.FLUID />,
-	},
 
 
 	{

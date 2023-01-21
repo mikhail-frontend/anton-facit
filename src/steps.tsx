@@ -605,13 +605,7 @@ const steps = [
 	 * List Page
 	 * @step 5
 	 */
-	{
-		selector: '#aside-demo-pages__listPages--link',
-		content: () => <ListPageTour />,
-		highlightedSelectors: ['#aside-demo-pages__listPages'],
-		mutationObservables: ['#aside-demo-pages__listPages'],
-		resizeObservables: ['#aside-demo-pages__listPages'],
-	},
+
 	/**
 	 * Filter
 	 * @step 6
@@ -634,17 +628,7 @@ const steps = [
 		mutationObservables: [getTargetName('list')],
 		resizeObservables: [getTargetName('list')],
 	},
-	/**
-	 * Grid Page
-	 * @step 8
-	 */
-	{
-		selector: '#aside-demo-pages__gridPages--link',
-		content: () => <GridPageTour />,
-		highlightedSelectors: ['#aside-demo-pages__gridPages'],
-		mutationObservables: ['#aside-demo-pages__gridPages'],
-		resizeObservables: ['#aside-demo-pages__gridPages'],
-	},
+
 	/**
 	 * Edit Page
 	 * @step 9

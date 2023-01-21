@@ -4,7 +4,6 @@ import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../m
 import DashboardHeader from '../pages/_layout/_headers/DashboardHeader';
 import DashboardBookingHeader from '../pages/_layout/_headers/DashboardBookingHeader';
 import ProfilePageHeader from '../pages/_layout/_headers/ProfilePageHeader';
-import ProductsHeader from '../pages/_layout/_headers/ProductsHeader';
 import ProductListHeader from '../pages/_layout/_headers/ProductListHeader';
 import DefaultHeader from '../pages/_layout/_headers/DefaultHeader';
 import DocumentationHeader from '../pages/_layout/_headers/DocumentationHeader';
@@ -26,10 +25,7 @@ const headers: RouteProps[] = [
 		path: demoPagesMenu.appointment.subMenu.employeeList.path,
 		element: <DashboardBookingHeader />,
 	},
-	{
-		path: demoPagesMenu.listPages.subMenu.listFluid.path,
-		element: <DashboardBookingHeader />,
-	},
+
 	{
 		path: `${demoPagesMenu.appointment.subMenu.employeeID.path}/*`,
 		element: <DashboardBookingHeader />,
@@ -60,20 +56,6 @@ const headers: RouteProps[] = [
 		element: <ProfilePageHeader />,
 	},
 
-
-
-	{
-		path: demoPagesMenu.gridPages.subMenu.gridBoxed.path,
-		element: <ProductsHeader />,
-	},
-	{
-		path: demoPagesMenu.gridPages.subMenu.gridFluid.path,
-		element: <ProductsHeader />,
-	},
-	{
-		path: demoPagesMenu.listPages.subMenu.listBoxed.path,
-		element: <ProductListHeader />,
-	},
 	{
 		path: demoPagesMenu.sales.subMenu.salesList.path,
 		element: <ProductListHeader />,
