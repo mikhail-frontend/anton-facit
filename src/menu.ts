@@ -33,18 +33,7 @@ export const dashboardPagesMenu = {
 };
 
 export const demoPagesMenu = {
-	pages: {
-		id: 'pages',
-		text: 'Pages',
-		icon: 'Extension',
-	},
 
-
-	app: {
-		id: 'app',
-		text: 'Apps',
-		icon: 'Extension',
-	},
 
 	knowledge: {
 		id: 'knowledge',
