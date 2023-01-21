@@ -6,7 +6,7 @@ import Page from '../../layout/Page/Page';
 import Card, {CardBody} from '../../components/bootstrap/Card';
 
 
-const SummaryPage = () => {
+const CoursesList = () => {
 
 	return (
 		<PageWrapper  title='Courses'>
@@ -16,6 +16,7 @@ const SummaryPage = () => {
 				</SubHeaderLeft>
 			</SubHeader>
 			<Page>
+
 
 			<div className='col-12'>
 						<Card >
@@ -30,4 +31,4 @@ const SummaryPage = () => {
 	);
 };
 
-export default SummaryPage;
+export default CoursesList;
