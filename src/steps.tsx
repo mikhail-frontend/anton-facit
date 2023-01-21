@@ -410,23 +410,7 @@ const KnowledgeItemTour = () => {
 	);
 };
 
-const SalesTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Sales pages</p>
-					<p>Examples of admin screens for e-commerce are given.</p>
-				</div>
-			</div>
-			<TourNavigation />
-		</div>
-	);
-};
+
 
 const AppointmentTour = () => {
 	const classes = useStyles();
@@ -711,17 +695,7 @@ const steps = [
 		mutationObservables: [getTargetName('Background')],
 		resizeObservables: [getTargetName('Background')],
 	},
-	/**
-	 * Sales
-	 * @step 16
-	 */
-	{
-		selector: '#aside-demo-pages__sales--link',
-		content: () => <SalesTour />,
-		highlightedSelectors: ['#aside-demo-pages__sales'],
-		mutationObservables: ['#aside-demo-pages__sales'],
-		resizeObservables: ['#aside-demo-pages__sales'],
-	},
+
 	/**
 	 * Appointment
 	 * @step 17

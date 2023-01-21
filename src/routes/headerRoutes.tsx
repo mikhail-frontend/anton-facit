@@ -35,14 +35,7 @@ const headers: RouteProps[] = [
 		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,
 		element: <ProfilePageHeader />,
 	},
-	{
-		path: demoPagesMenu.singlePages.subMenu.boxedSingle.path,
-		element: <ProfilePageHeader />,
-	},
-	{
-		path: demoPagesMenu.sales.subMenu.transactions.path,
-		element: <ProfilePageHeader />,
-	},
+
 	{
 		path: demoPagesMenu.chat.subMenu.withListChat.path,
 		element: <ProfilePageHeader />,
@@ -54,19 +47,6 @@ const headers: RouteProps[] = [
 	{
 		path: `${demoPagesMenu.knowledge.subMenu.itemID.path}/:id`,
 		element: <ProfilePageHeader />,
-	},
-
-	{
-		path: demoPagesMenu.sales.subMenu.salesList.path,
-		element: <ProductListHeader />,
-	},
-	{
-		path: demoPagesMenu.sales.subMenu.productsGrid.path,
-		element: <ProductListHeader />,
-	},
-	{
-		path: `${demoPagesMenu.sales.subMenu.productID.path}/:id`,
-		element: <ProductListHeader />,
 	},
 	{
 		path: `${gettingStartedPagesMenu.gettingStarted.path}/*`,

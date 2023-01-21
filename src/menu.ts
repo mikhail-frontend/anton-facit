@@ -71,12 +71,6 @@ export const demoPagesMenu = {
 		path: 'single-pages',
 		icon: 'Article',
 		subMenu: {
-			boxedSingle: {
-				id: 'boxedSingle',
-				text: 'Boxed',
-				path: 'single-pages/boxed',
-				icon: 'ViewArray',
-			},
 			fluidSingle: {
 				id: 'fluidSingle',
 				text: 'Fluid',
@@ -121,45 +115,6 @@ export const demoPagesMenu = {
 				text: 'Item',
 				path: 'knowledge/item/1',
 				icon: 'Book',
-			},
-		},
-	},
-	sales: {
-		id: 'sales',
-		text: 'Sales',
-		path: 'sales',
-		icon: 'Store',
-		subMenu: {
-			dashboard: dashboardPagesMenu.dashboard,
-			salesList: {
-				id: 'products',
-				text: 'Sales List',
-				path: 'sales/sales-list',
-				icon: 'FactCheck',
-			},
-			productsGrid: {
-				id: 'productsGrid',
-				text: 'Products Grid',
-				path: 'sales/grid',
-				icon: 'CalendarViewMonth',
-			},
-			productID: {
-				id: 'productID',
-				text: 'productID',
-				path: 'sales/product',
-				hide: true,
-			},
-			product: {
-				id: 'product',
-				text: 'Product',
-				path: 'sales/product/1',
-				icon: 'QrCode2',
-			},
-			transactions: {
-				id: 'transactions',
-				text: 'Transactions',
-				path: 'sales/transactions',
-				icon: 'PublishedWithChanges',
 			},
 		},
 	},

@@ -229,7 +229,6 @@ const SingleFluidPage = () => {
 											</div>
 											<div className='flex-grow-1 ms-3'>
 												<div className='fw-bold fs-3 mb-0'>183K</div>
-												<div className='text-muted mt-n2'>Sales</div>
 											</div>
 										</div>
 									</div>
@@ -343,19 +342,7 @@ const SingleFluidPage = () => {
 											className='col-6 carousel-slide-bg'
 											style={{ backgroundImage: `url(${WannaImg1})` }}
 										/>
-										<div className='col-6'>
-											<h2>New Products</h2>
-											<p className='lead'>New products ready for sale.</p>
-											<Button
-												color={darkModeStatus ? 'light' : 'dark'}
-												onClick={() =>
-													navigate(
-														`../${demoPagesMenu.sales.subMenu.productsGrid.path}`,
-													)
-												}>
-												Click
-											</Button>
-										</div>
+
 									</div>
 								</CarouselSlide>
 								<CarouselSlide background={WannaImg5} />
@@ -364,15 +351,7 @@ const SingleFluidPage = () => {
 										<div className='col-6 text-end'>
 											<h2>Customize</h2>
 											<h5>You can design your own screens</h5>
-											<Button
-												color={darkModeStatus ? 'light' : 'dark'}
-												onClick={() =>
-													navigate(
-														`../${demoPagesMenu.sales.subMenu.dashboard.path}`,
-													)
-												}>
-												Click
-											</Button>
+
 										</div>
 										<div
 											className='col-6 carousel-slide-bg'

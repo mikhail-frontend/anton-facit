@@ -8,7 +8,6 @@ const LANDING = {
 	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
 };
 const SINGLE = {
-	BOXED: lazy(() => import('../pages/presentation/single-pages/SingleBoxedPage')),
 	FLUID: lazy(() => import('../pages/presentation/single-pages/SingleFluidPage')),
 };
 
@@ -26,11 +25,7 @@ const APP = {
 		GRID: lazy(() => import('../pages/presentation/knowledge/KnowledgeGridPage')),
 		VIEW: lazy(() => import('../pages/presentation/knowledge/KnowledgeViewPage')),
 	},
-	SALES: {
-		TRANSACTIONS: lazy(() => import('../pages/presentation/sales/TransActionsPage')),
-		PRODUCTS: lazy(() => import('../pages/presentation/sales/SalesListPage')),
-		PRODUCTS_GRID: lazy(() => import('../pages/presentation/sales/ProductsGridPage')),
-	},
+
 	APPOINTMENT: {
 		CALENDAR: lazy(() => import('../pages/presentation/appointment/CalendarPage')),
 		EMPLOYEE_LIST: lazy(() => import('../pages/presentation/appointment/EmployeeList')),
@@ -76,10 +71,7 @@ const presentation: RouteProps[] = [
 	/**
 	 * Single Pages
 	 */
-	{
-		path: demoPagesMenu.singlePages.subMenu.boxedSingle.path,
-		element: <SINGLE.BOXED />,
-	},
+
 	{
 		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,
 		element: <SINGLE.FLUID />,
@@ -126,21 +118,6 @@ const presentation: RouteProps[] = [
 		element: <APP.KNOWLEDGE.VIEW />,
 	},
 
-	/**
-	 * App > Sales
-	 */
-	{
-		path: demoPagesMenu.sales.subMenu.transactions.path,
-		element: <APP.SALES.TRANSACTIONS />,
-	},
-	{
-		path: demoPagesMenu.sales.subMenu.salesList.path,
-		element: <APP.SALES.PRODUCTS />,
-	},
-	{
-		path: demoPagesMenu.sales.subMenu.productsGrid.path,
-		element: <APP.SALES.PRODUCTS_GRID />,
-	},
 
 	/**
 	 * App > Appointment
