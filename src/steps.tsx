@@ -160,29 +160,7 @@ const SearchTour = () => {
 	);
 };
 
-const CrmTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy8} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Customizable</p>
-					<p>
-						With the UI, form and layout components specially prepared for Facit, you
-						can easily set the screens suitable for your project.
-					</p>
-					<p>
-						As an example, dashboard screens are made. Click to see the{' '}
-						<b>"CRM Dashboard"</b> screen.
-					</p>
-				</div>
-			</div>
-		</div>
-	);
-};
+
 
 const DateRangeTour = () => {
 	const { darkModeStatus, setDarkModeStatus } = useDarkMode();
@@ -509,26 +487,7 @@ const EmployeeTour = () => {
 	);
 };
 
-const CRMPagesTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy5} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>CRM pages</p>
-					<p>Examples are given for CRM screens.</p>
-					<small>
-						With accordion, you can expand the menu and browse the pages in it.
-					</small>
-				</div>
-			</div>
-			<TourNavigation />
-		</div>
-	);
-};
+
 
 const ChatPagesTour = () => {
 	const classes = useStyles();
@@ -651,14 +610,7 @@ const steps = [
 		mutationObservables: [getTargetName('search-modal'), getTargetName('card')],
 		resizeObservables: [getTargetName('search-modal'), getTargetName('card')],
 	},
-	/**
-	 * CRM
-	 * @step 3
-	 */
-	{
-		selector: `[href="/crm/dashboard"]`,
-		content: () => <CrmTour />,
-	},
+
 	/**
 	 * Date Range
 	 * @step 4
@@ -839,17 +791,8 @@ const steps = [
 		mutationObservables: [getTargetName('Grace')],
 		resizeObservables: [getTargetName('Grace')],
 	},
-	/**
-	 * CRM Pages
-	 * @step 19
-	 */
-	{
-		selector: '#aside-demo-pages__crm--link',
-		content: () => <CRMPagesTour />,
-		highlightedSelectors: ['#aside-demo-pages__crm'],
-		mutationObservables: ['#aside-demo-pages__crm'],
-		resizeObservables: ['#aside-demo-pages__crm'],
-	},
+
+
 	/**
 	 * Chat Pages
 	 * @step 20

@@ -253,12 +253,6 @@ const presentation: RouteProps[] = [
 		element: <APP.APPOINTMENT.APPOINTMENT_LIST />,
 	},
 
-	/**
-	 * App > CRM
-	 */
-
-
-
 
 	/**
 	 * App > Chat

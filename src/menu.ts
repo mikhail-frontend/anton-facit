@@ -317,56 +317,7 @@ export const demoPagesMenu = {
 			},
 		},
 	},
-	crm: {
-		id: 'crm',
-		text: 'CRM',
-		path: 'crm',
-		icon: 'Contacts',
-		subMenu: {
-			dashboard: {
-				id: 'dashboard',
-				text: 'CRM Dashboard',
-				path: 'crm/dashboard',
-				icon: 'RecentActors',
-			},
-			customersList: {
-				id: 'customersList',
-				text: 'Customers',
-				path: 'crm/customers',
-				icon: 'PersonSearch',
-			},
-			customerID: {
-				id: 'customerID',
-				text: 'customerID',
-				path: 'crm/customer',
-				hide: true,
-			},
-			customer: {
-				id: 'customer',
-				text: 'Customer',
-				path: 'crm/customer/1',
-				icon: 'Badge',
-			},
-			// sales: {
-			// 	id: 'sales',
-			// 	text: 'Sales',
-			// 	path: 'crm/sales',
-			// 	icon: 'Storefront',
-			// },
-			// invoiceID: {
-			// 	id: 'invoiceID',
-			// 	text: 'invoiceID',
-			// 	path: 'crm/invoice',
-			// 	hide: true,
-			// },
-			// invoice: {
-			// 	id: 'invoice',
-			// 	text: 'Invoice',
-			// 	path: 'crm/invoice/1',
-			// 	icon: 'Receipt',
-			// },
-		},
-	},
+
 	chat: {
 		id: 'chat',
 		text: 'Chat',
