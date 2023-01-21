@@ -369,24 +369,6 @@ const KnowledgeItemTour = () => {
 };
 
 
-const EmployeeTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Employee</p>
-					<p>We wanted to show an example for employee profiles.</p>
-					<p>Click the button to see detailed information.</p>
-				</div>
-			</div>
-		</div>
-	);
-};
-
 
 const DocTour = () => {
 	const classes = useStyles();
@@ -610,7 +592,6 @@ const steps = [
 		mutationObservables: [getTargetName('Background')],
 		resizeObservables: [getTargetName('Background')],
 	},
-
 
 	/**
 	 * Documentation

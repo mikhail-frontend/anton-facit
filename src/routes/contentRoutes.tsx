@@ -22,7 +22,7 @@ const APP = {
 	KNOWLEDGE: {
 		GRID: lazy(() => import('../pages/presentation/knowledge/KnowledgeGridPage')),
 		VIEW: lazy(() => import('../pages/presentation/knowledge/KnowledgeViewPage')),
-	}
+	},
 };
 
 const GETTING_STARTED = {
@@ -49,7 +49,6 @@ const presentation: RouteProps[] = [
 		element: <LANDING.SUMMARY />,
 	},
 	/** ************************************************** */
-
 
 	{
 		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,
@@ -92,7 +91,6 @@ const presentation: RouteProps[] = [
 		path: `${demoPagesMenu.knowledge.subMenu.itemID.path}/:id`,
 		element: <APP.KNOWLEDGE.VIEW />,
 	},
-
 
 	/**
 	 * END - App

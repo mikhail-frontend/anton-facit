@@ -118,8 +118,6 @@ export const demoPagesMenu = {
 		},
 	},
 
-
-
 	auth: {
 		id: 'auth',
 		text: 'Auth Pages',

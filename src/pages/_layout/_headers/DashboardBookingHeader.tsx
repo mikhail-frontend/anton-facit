@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import Header, { HeaderLeft, HeaderRight } from '../../../layout/Header/Header';
+import Header, { HeaderLeft } from '../../../layout/Header/Header';
 import useDarkMode from '../../../hooks/useDarkMode';
 
 const DashboardBookingHeader = () => {
