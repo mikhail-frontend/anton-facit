@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 import { RouteProps } from 'react-router-dom';
-import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../menu';
+import { dashboardPagesMenu, demoPagesMenu } from '../menu';
 import Login from '../pages/presentation/auth/Login';
 
 const LANDING = {
@@ -20,8 +20,6 @@ const APP = {
 		VIEW: lazy(() => import('../pages/presentation/knowledge/KnowledgeViewPage')),
 	},
 };
-
-
 
 const presentation: RouteProps[] = [
 	/**

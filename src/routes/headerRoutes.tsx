@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouteProps } from 'react-router-dom';
-import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../menu';
+import { dashboardPagesMenu, demoPagesMenu } from '../menu';
 import DashboardHeader from '../pages/_layout/_headers/DashboardHeader';
 import ProfilePageHeader from '../pages/_layout/_headers/ProfilePageHeader';
 import DefaultHeader from '../pages/_layout/_headers/DefaultHeader';
@@ -20,7 +20,6 @@ const headers: RouteProps[] = [
 		path: `${demoPagesMenu.knowledge.subMenu.itemID.path}/:id`,
 		element: <ProfilePageHeader />,
 	},
-
 	{
 		path: `*`,
 		element: <DefaultHeader />,

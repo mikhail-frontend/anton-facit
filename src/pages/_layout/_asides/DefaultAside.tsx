@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import Brand from '../../../layout/Brand/Brand';
 import Navigation, { NavigationLine } from '../../../layout/Navigation/Navigation';
-import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../../../menu';
+import { dashboardPagesMenu, demoPagesMenu } from '../../../menu';
 import ThemeContext from '../../../contexts/themeContext';
 import Card, { CardBody } from '../../../components/bootstrap/Card';
 import Hand from '../../../assets/img/hand.png';
 import HandWebp from '../../../assets/img/hand.webp';
 import Button from '../../../components/bootstrap/Button';
 import useDarkMode from '../../../hooks/useDarkMode';
-import Aside, { AsideBody,  AsideHead } from '../../../layout/Aside/Aside';
+import Aside, { AsideBody, AsideHead } from '../../../layout/Aside/Aside';
 
 const DefaultAside = () => {
 	const { asideStatus, setAsideStatus } = useContext(ThemeContext);
@@ -40,7 +40,6 @@ const DefaultAside = () => {
 
 				{doc && (
 					<>
-						<Navigation menu={gettingStartedPagesMenu} id='aside-docMenu' />
 						<NavigationLine />
 						<NavigationLine />
 					</>

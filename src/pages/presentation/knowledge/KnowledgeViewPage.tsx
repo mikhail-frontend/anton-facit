@@ -11,14 +11,11 @@ import Button from '../../../components/bootstrap/Button';
 import Avatar from '../../../components/Avatar';
 import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import Badge from '../../../components/bootstrap/Badge';
 import USERS from '../../../common/data/userDummyData';
-import useDarkMode from '../../../hooks/useDarkMode';
 import useTourStep from '../../../hooks/useTourStep';
 
 const KnowledgeViewPage = () => {
 	useTourStep(16);
-	const { darkModeStatus } = useDarkMode();
 
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -33,7 +30,6 @@ const KnowledgeViewPage = () => {
 						Back to List
 					</Button>
 					<SubheaderSeparator />
-
 				</SubHeaderLeft>
 				<SubHeaderRight>
 					<span className='text-muted fst-italic'>Written by</span>
@@ -48,12 +44,7 @@ const KnowledgeViewPage = () => {
 				<div className='display-4 fw-bold pt-3 pb-5'>Title will be here</div>
 				<div className='row g-4'>
 					<div className='col-12'>
-						<div
-							className={classNames(
-								'ratio ratio-21x9',
-								'rounded-2',
-								'mb-3',
-							)}>
+						<div className={classNames('ratio ratio-21x9', 'rounded-2', 'mb-3')}>
 							<img
 								src={item?.image || ''}
 								alt={item?.title || ''}

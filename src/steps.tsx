@@ -366,8 +366,6 @@ const KnowledgeItemTour = () => {
 	);
 };
 
-
-
 const LastTour = () => {
 	const { setIsOpen, setCurrentStep } = useTour();
 	const classes = useStyles();

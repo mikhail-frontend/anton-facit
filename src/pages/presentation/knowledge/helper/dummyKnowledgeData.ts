@@ -1,6 +1,4 @@
-import Img1 from '../../../../assets/img/scene1.png';
 import Img2 from '../../../../assets/img/scene2.png';
-import Img3 from '../../../../assets/img/scene3.png';
 import Img4 from '../../../../assets/img/scene4.png';
 import Img5 from '../../../../assets/img/scene5.png';
 import Img6 from '../../../../assets/img/scene6.png';
@@ -29,7 +27,6 @@ const TAGS: { [key: string]: TTags } = {
 
 type TCategories = { value: string; text: string };
 export const CATEGORIES: { [key: string]: TCategories } = {
-
 	SETTINGS: {
 		value: 'settings',
 		text: 'Settings',
@@ -50,8 +47,6 @@ const data: {
 	categories: TCategories[];
 	content: string;
 }[] = [
-
-
 	{
 		id: 5,
 		title: 'Display property',
