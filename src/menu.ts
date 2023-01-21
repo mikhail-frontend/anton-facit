@@ -1,9 +1,4 @@
 export const dashboardPagesMenu = {
-	pages: {
-		id: 'pages',
-		text: 'Ready pages',
-		icon: 'Extension',
-	},
 	dashboard: {
 		id: 'dashboard',
 		text: 'Profile',
@@ -18,6 +13,12 @@ export const dashboardPagesMenu = {
 		icon: 'sticky_note_2',
 		subMenu: null,
 	},
+	notifications: {
+		id: 'notifications',
+		text: 'Notifications',
+		icon: 'Notifications',
+		path: '/'
+	},
 	login: {
 		id: 'login',
 		text: 'Login',
@@ -30,6 +31,7 @@ export const dashboardPagesMenu = {
 		path: '/sign-up',
 		icon: 'PersonAdd',
 	},
+
 };
 
 export const demoPagesMenu = {

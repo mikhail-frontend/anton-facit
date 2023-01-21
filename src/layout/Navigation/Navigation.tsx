@@ -76,7 +76,7 @@ export const NavigationTitle: FC<INavigationTitleProps> = ({ className, children
 		<li className='navigation-item'>
 			{/* eslint-disable-next-line react/jsx-props-no-spreading */}
 			<span className={classNames('navigation-title', className)} {...props}>
-				{children}
+				 {children}
 			</span>
 		</li>
 	);

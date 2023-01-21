@@ -33,9 +33,9 @@ const DefaultAside = () => {
 				{!doc && (
 					<>
 						<Navigation menu={dashboardPagesMenu} id='aside-dashboard' />
-						<NavigationLine />
-						<Navigation menu={demoPagesMenu} id='aside-demo-pages' />
-						<NavigationLine />
+						{/*<NavigationLine />*/}
+						{/*<Navigation menu={demoPagesMenu} id='aside-demo-pages' />*/}
+						{/*<NavigationLine />*/}
 					</>
 				)}
 
