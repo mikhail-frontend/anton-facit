@@ -187,7 +187,10 @@ const presentation: RouteProps[] = [
 		path: dashboardPagesMenu.dashboard.path,
 		element: <LANDING.DASHBOARD />,
 	},
-
+	{
+		path: dashboardPagesMenu.summary.path,
+		element: <LANDING.SUMMARY />,
+	},
 	/** ************************************************** */
 
 	/**
@@ -486,99 +489,7 @@ const documentation: RouteProps[] = [
 
 	/**
 	 * Components
-	 */
-	{
-		path: componentPagesMenu.components.path,
-		element: <COMPONENTS_PAGE.COMPONENTS />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.tooltip.path,
-		element: <COMPONENTS_PAGE.TOOLTIP />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.toasts.path,
-		element: <COMPONENTS_PAGE.TOASTS />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.scrollspy.path,
-		element: <COMPONENTS_PAGE.SCROLLSPY />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.carousel.path,
-		element: <COMPONENTS_PAGE.CAROUSEL />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.spinners.path,
-		element: <COMPONENTS_PAGE.SPINNER />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.listGroup.path,
-		element: <COMPONENTS_PAGE.LIST_GROUP />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.breadcrumb.path,
-		element: <COMPONENTS_PAGE.BREADCRUMB />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.collapse.path,
-		element: <COMPONENTS_PAGE.COLLAPSE />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.pagination.path,
-		element: <COMPONENTS_PAGE.PAGINATION />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.progress.path,
-		element: <COMPONENTS_PAGE.PROGRESS />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.card.path,
-		element: <COMPONENTS_PAGE.CARD />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.button.path,
-		element: <COMPONENTS_PAGE.BUTTON />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.buttonGroup.path,
-		element: <COMPONENTS_PAGE.BUTTON_GROUP />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.alert.path,
-		element: <COMPONENTS_PAGE.ALERT />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.badge.path,
-		element: <COMPONENTS_PAGE.BADGE />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.popovers.path,
-		element: <COMPONENTS_PAGE.POPOVERS />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.dropdowns.path,
-		element: <COMPONENTS_PAGE.DROPDOWN />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.accordion.path,
-		element: <COMPONENTS_PAGE.ACCORDION />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.modal.path,
-		element: <COMPONENTS_PAGE.MODAL />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.navsTabs.path,
-		element: <COMPONENTS_PAGE.NAVS_TABS />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.offcanvas.path,
-		element: <COMPONENTS_PAGE.OFF_CANVAS />,
-	},
-	{
-		path: componentPagesMenu.components.subMenu.table.path,
-		element: <COMPONENTS_PAGE.TABLE />,
-	},
+
 
 	/**
 	 * Utilities

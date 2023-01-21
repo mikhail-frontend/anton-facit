@@ -46,22 +46,8 @@ const CollapsePage = () => {
 	const setSecondElement = () => setIsOpenTwo(!isOpenTwo);
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.collapse.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.collapse.text,
-								to: `/${componentPagesMenu.components.subMenu.collapse.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-collapse--default' />
 				</SubHeaderRight>

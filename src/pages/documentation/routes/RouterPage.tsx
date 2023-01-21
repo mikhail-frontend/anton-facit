@@ -432,14 +432,6 @@ export default DefaultFooter;
 						tag='a'
 						color='info'
 						isLight
-						icon={componentPagesMenu.components.icon}
-						to={`../${componentPagesMenu.components.path}`}>
-						{componentPagesMenu.components.text}
-					</Button>
-					<Button
-						tag='a'
-						color='info'
-						isLight
 						icon={componentPagesMenu.forms.icon}
 						to={`../${componentPagesMenu.forms.path}`}>
 						{componentPagesMenu.forms.text}
@@ -912,16 +904,6 @@ export default DefaultFooter;
 										<span>
 											If you are ready, you can proceed to the next step.
 										</span>
-									</div>
-									<div className='col-auto'>
-										<Button
-											tag='a'
-											color='info'
-											isLight
-											icon={componentPagesMenu.components.icon}
-											to={`../${componentPagesMenu.components.path}`}>
-											{componentPagesMenu.components.text}
-										</Button>
 									</div>
 									<div className='col-auto'>
 										<Button

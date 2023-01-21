@@ -118,10 +118,6 @@ const headers: RouteProps[] = [
 		element: <ProductListHeader />,
 	},
 	{
-		path: `${componentPagesMenu.components.path}/*`,
-		element: <ComponentsHeader />,
-	},
-	{
 		path: `${componentPagesMenu.forms.path}/*`,
 		element: <FormHeader />,
 	},

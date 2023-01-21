@@ -290,15 +290,6 @@ const ListTour = () => {
 						<li>Paging and number of items on the page</li>
 						<li>and more...</li>
 					</ul>
-					<Button
-						color='info'
-						isOutline
-						tag='a'
-						size='sm'
-						to={`../${componentPagesMenu.components.subMenu.table.path}`}
-						target='_blank'>
-						More Information
-					</Button>
 				</div>
 			</div>
 			<TourNavigation />

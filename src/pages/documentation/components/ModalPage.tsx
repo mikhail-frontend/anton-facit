@@ -177,22 +177,8 @@ const ModalPage = () => {
 </Modal>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.modal.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.modal.text,
-								to: `/${componentPagesMenu.components.subMenu.modal.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-modal--default' />
 				</SubHeaderRight>

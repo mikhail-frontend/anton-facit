@@ -43,6 +43,13 @@ export const dashboardPagesMenu = {
 		icon: 'Badge',
 		subMenu: null,
 	},
+	summary: {
+		id: 'courses',
+		text: 'Courses',
+		path: '/courses',
+		icon: 'sticky_note_2',
+		subMenu: null,
+	},
 	login: {
 		id: 'login',
 		text: 'Login',
@@ -55,6 +62,7 @@ export const dashboardPagesMenu = {
 		path: '/sign-up',
 		icon: 'PersonAdd',
 	},
+
 };
 
 export const demoPagesMenu = {
@@ -468,147 +476,7 @@ export const componentPagesMenu = {
 		icon: 'Extension',
 	},
 	components: {
-		id: 'components',
-		text: 'Component',
-		path: 'components',
-		icon: 'Extension',
-		notification: 'success',
-		subMenu: {
-			accordion: {
-				id: 'accordion',
-				text: 'Accordion',
-				path: 'components/accordion',
-				icon: 'ViewDay',
-			},
-			alert: {
-				id: 'alert',
-				text: 'Alert',
-				path: 'components/alert',
-				icon: 'Announcement',
-			},
-			badge: {
-				id: 'badge',
-				text: 'Badge',
-				path: 'components/badge',
-				icon: 'Vibration',
-			},
-			breadcrumb: {
-				id: 'breadcrumb',
-				text: 'Breadcrumb',
-				path: 'components/breadcrumb',
-				icon: 'AddRoad',
-			},
-			button: {
-				id: 'button',
-				text: 'Button',
-				path: 'components/button',
-				icon: 'SmartButton',
-			},
-			buttonGroup: {
-				id: 'buttonGroup',
-				text: 'Button Group',
-				path: 'components/button-group',
-				icon: 'Splitscreen',
-			},
-			card: {
-				id: 'card',
-				text: 'Card',
-				path: 'components/card',
-				icon: 'Crop32',
-			},
-			carousel: {
-				id: 'carousel',
-				text: 'Carousel',
-				path: 'components/carousel',
-				icon: 'RecentActors',
-			},
-			// Close
-			collapse: {
-				id: 'collapse',
-				text: 'Collapse',
-				path: 'components/collapse',
-				icon: 'UnfoldLess',
-			},
-			dropdowns: {
-				id: 'dropdowns',
-				text: 'Dropdowns',
-				path: 'components/dropdowns',
-				icon: 'Inventory',
-			},
-			listGroup: {
-				id: 'listGroup',
-				text: 'List Group',
-				path: 'components/list-group',
-				icon: 'ListAlt',
-			},
-			modal: {
-				id: 'modal',
-				text: 'Modal',
-				path: 'components/modal',
-				icon: 'PictureInPicture',
-			},
-			navsTabs: {
-				id: 'navsTabs',
-				text: 'Navs & Tabs',
-				path: 'components/navs-and-tabs',
-				icon: 'PivotTableChart',
-			},
-			// Navbar
-			offcanvas: {
-				id: 'offcanvas',
-				text: 'Offcanvas',
-				path: 'components/offcanvas',
-				icon: 'VerticalSplit',
-			},
-			pagination: {
-				id: 'pagination',
-				text: 'Pagination',
-				path: 'components/pagination',
-				icon: 'Money',
-			},
-			popovers: {
-				id: 'popovers',
-				text: 'Popovers',
-				path: 'components/popovers',
-				icon: 'Assistant',
-			},
-			progress: {
-				id: 'progress',
-				text: 'Progress',
-				path: 'components/progress',
-				icon: 'HourglassTop',
-			},
-			scrollspy: {
-				id: 'scrollspy',
-				text: 'Scrollspy',
-				path: 'components/scrollspy',
-				icon: 'KeyboardHide',
-			},
-			spinners: {
-				id: 'spinners',
-				text: 'Spinners',
-				path: 'components/spinners',
-				icon: 'RotateRight',
-			},
-			table: {
-				id: 'table',
-				text: 'Table',
-				path: 'components/table',
-				icon: 'TableChart',
-			},
-			toasts: {
-				id: 'toasts',
-				text: 'Toasts',
-				path: 'components/toasts',
-				icon: 'RotateRight',
-			},
-			tooltip: {
-				id: 'tooltip',
-				text: 'Tooltip',
-				path: 'components/tooltip',
-				icon: 'Assistant',
-			},
-		},
+
 	},
 	forms: {
 		id: 'forms',

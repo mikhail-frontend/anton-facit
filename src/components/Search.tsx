@@ -38,7 +38,6 @@ const Search = () => {
 			icon: string;
 		};
 	} = {
-		...componentPagesMenu.components.subMenu,
 		...componentPagesMenu.content.subMenu,
 		...componentPagesMenu.forms.subMenu,
 		...componentPagesMenu.utilities.subMenu,

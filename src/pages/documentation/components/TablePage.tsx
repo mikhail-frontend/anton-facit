@@ -129,23 +129,7 @@ const Foo = () => {
 	const { selectTable, SelectAllCheck } = useSelectTable(onCurrentPageData);
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.table.text}>
-			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.table.text,
-								to: `/${componentPagesMenu.components.subMenu.table.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
-			</SubHeader>
+		<PageWrapper title='No title'>
 			<Page>
 				<div className='row'>
 					<div className='col-12'>

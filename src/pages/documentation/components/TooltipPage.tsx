@@ -35,22 +35,9 @@ const TooltipPage = () => {
 	... { // String, HTML tag or React Component }
 </Tooltips>`;
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.tooltip.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.tooltip.text,
-								to: `/${componentPagesMenu.components.subMenu.tooltip.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
+
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-tooltips--default' />
 				</SubHeaderRight>

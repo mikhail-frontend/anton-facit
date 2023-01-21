@@ -56,22 +56,8 @@ const ButtonGroupPage = () => {
 </ButtonGroup>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.buttonGroup.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.buttonGroup.text,
-								to: `/${componentPagesMenu.components.subMenu.buttonGroup.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/story/components-buttongroup--default' />
 				</SubHeaderRight>

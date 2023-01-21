@@ -72,22 +72,8 @@ const OffCanvasPage = () => {
 </OffCanvas>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.offcanvas.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.offcanvas.text,
-								to: `/${componentPagesMenu.components.subMenu.offcanvas.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-offcanvas--default' />
 				</SubHeaderRight>

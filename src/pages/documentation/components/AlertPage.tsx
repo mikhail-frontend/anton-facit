@@ -42,22 +42,8 @@ const AlertPage = () => {
 </Alert>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.alert.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.alert.text,
-								to: `/${componentPagesMenu.components.subMenu.alert.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-alert--default' />
 				</SubHeaderRight>

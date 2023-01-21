@@ -40,22 +40,8 @@ const ProgressPage = () => {
 	...
 </Progress>`;
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.progress.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.progress.text,
-								to: `/${componentPagesMenu.components.subMenu.progress.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-progress--default' />
 				</SubHeaderRight>

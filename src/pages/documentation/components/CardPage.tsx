@@ -160,22 +160,9 @@ const CardPage = () => {
 	];
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.card.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.card.text,
-								to: `/${componentPagesMenu.components.subMenu.card.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
+
 				<SubHeaderRight>
 					<Dropdown>
 						<DropdownToggle>

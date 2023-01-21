@@ -54,22 +54,8 @@ const BreadcrumbPage = () => {
 </Breadcrumb>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.breadcrumb.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.breadcrumb.text,
-								to: `/${componentPagesMenu.components.subMenu.breadcrumb.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-breadcrumb--default' />
 				</SubHeaderRight>

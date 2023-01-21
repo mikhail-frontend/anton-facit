@@ -279,33 +279,11 @@ const SummaryPage = () => {
 	const [ref, { height }] = useMeasure<HTMLDivElement>();
 
 	return (
-		<PageWrapper ref={ref} title='React Admin Dashboard Template'>
+		<PageWrapper ref={ref} title='Courses'>
 			<SubHeader>
 				<SubHeaderLeft>
-					<span className='fw-bold'>React Admin Dashboard Template</span>
-					<SubheaderSeparator />
-					<span>
-						incl. Bootstrap{' '}
-						<sup>
-							<Badge color='primary' isLight rounded={1}>
-								5
-							</Badge>
-						</sup>
-					</span>
+					<span className='h4 mb-0 fw-bold'>Courses</span>
 				</SubHeaderLeft>
-				<SubHeaderRight>
-					<Button color='success' isLight icon='ShoppingCart' tag='a' href='/'>
-						Buy on Envato
-					</Button>
-					<Button
-						color='info'
-						isLight
-						tag='a'
-						href='mailto:info@omtanke.studio'
-						icon='MarkunreadMailbox'>
-						Support
-					</Button>
-				</SubHeaderRight>
 			</SubHeader>
 			<Page>
 				<div id='intro' className='scroll-margin'>

@@ -38,22 +38,8 @@ const PaginationPage = () => {
 </Pagination>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.pagination.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.pagination.text,
-								to: `/${componentPagesMenu.components.subMenu.pagination.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-pagination--default' />
 				</SubHeaderRight>

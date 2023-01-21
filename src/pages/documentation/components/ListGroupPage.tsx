@@ -41,22 +41,8 @@ const ListGroupPage = () => {
 </ListGroup>`;
 
 	return (
-		<PageWrapper title={componentPagesMenu.components.subMenu.listGroup.text}>
+		<PageWrapper title='No title'>
 			<SubHeader>
-				<SubHeaderLeft>
-					<Breadcrumb
-						list={[
-							{
-								title: componentPagesMenu.components.text,
-								to: `/${componentPagesMenu.components.path}`,
-							},
-							{
-								title: componentPagesMenu.components.subMenu.listGroup.text,
-								to: `/${componentPagesMenu.components.subMenu.listGroup.path}`,
-							},
-						]}
-					/>
-				</SubHeaderLeft>
 				<SubHeaderRight>
 					<CommonStoryBtn to='/docs/components-listgroup--default' />
 				</SubHeaderRight>
