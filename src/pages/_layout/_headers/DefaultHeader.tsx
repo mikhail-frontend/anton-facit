@@ -5,7 +5,10 @@ import CommonHeaderRight from './CommonHeaderRight';
 const DefaultHeader = () => {
 	return (
 		<Header>
-			<CommonHeaderRight />
+			<div className="d-flex justify-content-end">
+				<CommonHeaderRight />
+			</div>
+
 		</Header>
 	);
 };
