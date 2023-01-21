@@ -64,22 +64,20 @@ const App = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<ToastProvider components={{ ToastContainer, Toast }}>
-
-					<div
-						ref={ref}
-						className='app'
-						style={{
-							backgroundColor: fullScreenStatus ? 'var(--bs-body-bg)' : undefined,
-							zIndex: fullScreenStatus ? 1 : undefined,
-							overflow: fullScreenStatus ? 'scroll' : undefined,
-						}}>
-						<AsideRoutes />
-						<Wrapper />
-					</div>
-					<Portal id='portal-notification'>
-						<ReactNotifications />
-					</Portal>
-
+				<div
+					ref={ref}
+					className='app'
+					style={{
+						backgroundColor: fullScreenStatus ? 'var(--bs-body-bg)' : undefined,
+						zIndex: fullScreenStatus ? 1 : undefined,
+						overflow: fullScreenStatus ? 'scroll' : undefined,
+					}}>
+					<AsideRoutes />
+					<Wrapper />
+				</div>
+				<Portal id='portal-notification'>
+					<ReactNotifications />
+				</Portal>
 			</ToastProvider>
 		</ThemeProvider>
 	);

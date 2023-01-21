@@ -65,7 +65,7 @@ export const ModalHeader = forwardRef<HTMLDivElement, IModalHeaderProps>(
 						className='btn-close'
 						data-bs-dismiss='modal'
 						aria-label='Close'
-						onClick={(event:any) => setIsOpen(false, event)}
+						onClick={(event: any) => setIsOpen(false, event)}
 					/>
 				)}
 			</div>
@@ -222,7 +222,7 @@ const Modal: FC<IModalProps> = ({
 					<>
 						<motion.div
 							ref={refModal}
-							onClick={(event:any) => setIsOpen(false, event)}
+							onClick={(event: any) => setIsOpen(false, event)}
 							key='modal'
 							className={classNames('modal', { fade: isAnimation }, 'show')}
 							role='dialog'

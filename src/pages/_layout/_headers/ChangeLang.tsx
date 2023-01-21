@@ -50,8 +50,7 @@ const ChangeLang = () => {
 								// eslint-disable-next-line react/jsx-props-no-spreading
 								{...styledBtn}
 								className='btn-only-icon'
-								aria-label='Change language'
-							>
+								aria-label='Change language'>
 								<Spinner isSmall inButton='onlyIcon' isGrow />
 							</Button>
 						) : (

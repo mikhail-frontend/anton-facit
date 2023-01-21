@@ -46,7 +46,7 @@ const Login: FC<ILoginProps> = ({ isSignUp }) => {
 			<Page className='p-0'>
 				<div className='row h-100 align-items-center justify-content-center'>
 					<div className='col-xl-4 col-lg-6 col-md-8 shadow-3d-container'>
-						<Card className='shadow-3d-dark' >
+						<Card className='shadow-3d-dark'>
 							<CardBody>
 								<div className='text-center my-5'>
 									<div

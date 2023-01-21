@@ -14,7 +14,6 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import USERS from '../../../common/data/userDummyData';
 
 const KnowledgeViewPage = () => {
-
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const itemData = data.filter((item) => item.id.toString() === id?.toString());

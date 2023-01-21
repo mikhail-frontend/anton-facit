@@ -32,10 +32,7 @@ const Item: FC<IItemProps> = ({ id, image, title, description, tags, color }) =>
 		[navigate, id],
 	);
 	return (
-		<Card
-			className='cursor-pointer shadow-3d-primary shadow-3d-hover'
-			onClick={handleOnClick}
-			>
+		<Card className='cursor-pointer shadow-3d-primary shadow-3d-hover' onClick={handleOnClick}>
 			<CardBody>
 				<div
 					className={classNames(
@@ -135,9 +132,7 @@ const KnowledgeGridPage = () => {
 					<div className='col-12 text-center my-5'>
 						<span className='display-5 fw-bold'>Hello, May I help you?</span>
 					</div>
-					<div
-						className='col-xxl-6 mx-auto text-center my-5'
-						>
+					<div className='col-xxl-6 mx-auto text-center my-5'>
 						<form
 							className={classNames('row', 'pb-4 px-3 mx-0 g-4', 'rounded-3', [
 								`bg-l${darkModeStatus ? 'o25' : '10'}-primary`,

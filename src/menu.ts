@@ -33,8 +33,6 @@ export const dashboardPagesMenu = {
 };
 
 export const demoPagesMenu = {
-
-
 	knowledge: {
 		id: 'knowledge',
 		text: 'Knowledge',
@@ -61,5 +59,4 @@ export const demoPagesMenu = {
 			},
 		},
 	},
-
 };

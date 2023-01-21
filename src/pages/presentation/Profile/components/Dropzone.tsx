@@ -1,22 +1,20 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {useDropzone} from 'react-dropzone';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
 import styles from './Dropzone.module.scss';
 import axios from 'axios';
 import SvgClearAll from '../../../../components/icon/material-icons/Close';
 import Spinner from '../../../../components/bootstrap/Spinner';
-import Modal, {ModalBody, ModalHeader, ModalTitle} from "../../../../components/bootstrap/Modal";
-import useDarkMode from "../../../../hooks/useDarkMode";
-import Button from "../../../../components/bootstrap/Button";
+import Modal, { ModalBody, ModalHeader, ModalTitle } from '../../../../components/bootstrap/Modal';
+import Button from '../../../../components/bootstrap/Button';
 
 const Dropzone: React.FC<{
 	photo: string;
 	savePhoto: (photo: string) => void;
 	deletePhoto: () => void;
-}> = ({photo, savePhoto, deletePhoto}) => {
+}> = ({ photo, savePhoto, deletePhoto }) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [files, setFiles] = useState<any>(photo ? [photo] : []);
 	const [isActive, setIsActive] = useState(false);
-	const {darkModeStatus} = useDarkMode();
 
 	const [loading, setLoading] = useState(false);
 	//eslint-disable-next-line
@@ -77,37 +75,38 @@ const Dropzone: React.FC<{
 
 	useEffect(() => {
 		setFiles(() => (photo ? [photo] : []));
-		return () => {
-		};
+		return () => {};
 	}, [photo]);
 
 	const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
 
-
-	const setImageUltimately = (image: string | undefined, event: React.MouseEvent<HTMLButtonElement>) => {
+	const setImageUltimately = (
+		image: string | undefined,
+		event: React.MouseEvent<HTMLButtonElement>,
+	) => {
 		event && event?.preventDefault ? event?.preventDefault() : void null;
 		event && event?.stopPropagation ? event?.stopPropagation() : void null;
-		setSelectedImage(image)
-	}
+		setSelectedImage(image);
+	};
 
 	const setIsOpen = (value, event) => {
 		event && event?.preventDefault ? event?.preventDefault() : void null;
 		event && event?.stopPropagation ? event?.stopPropagation() : void null;
 		event && event?.stopImmediatePropagation ? event?.stopImmediatePropagation() : void null;
-		setImageUltimately(undefined, event)
-	}
+		setImageUltimately(undefined, event);
+	};
 
 	return (
 		<>
-			<div style={{position: 'relative', width: 'max-content'}} onClick={open}>
-				<SvgClearAll onClick={removeAll} className={styles.close}/>
+			<div style={{ position: 'relative', width: 'max-content' }} onClick={open}>
+				<SvgClearAll onClick={removeAll} className={styles.close} />
 
 				<section className={`${styles.dropzone} ${isActive ? styles.active : ''}`}>
 					<div
-						{...getRootProps({className: 'dropzone'})}
+						{...getRootProps({ className: 'dropzone' })}
 						className={thumbs.length && styles.invisible}>
-						<input {...getInputProps()} ref={inputRef}/>
-						{loading && <Spinner isGrow/>}
+						<input {...getInputProps()} ref={inputRef} />
+						{loading && <Spinner isGrow />}
 						{!loading && <p>Drag 'n' drop your photo here, or click to select it</p>}
 					</div>
 
@@ -121,10 +120,9 @@ const Dropzone: React.FC<{
 						<ModalTitle id='preview'>Preview</ModalTitle>
 					</ModalHeader>
 					<ModalBody>
-						<img src={selectedImage} alt='eneme'/>
+						<img src={selectedImage} alt='eneme' />
 					</ModalBody>
 				</Modal>
-
 			</div>
 			<div className='col-md-6 mt-2'>
 				<Button
@@ -133,8 +131,9 @@ const Dropzone: React.FC<{
 					color='primary'
 					isLight
 					icon='Preview'
-					onClick={(event: React.MouseEvent<HTMLButtonElement>) => setImageUltimately(photo, event)}
-				>
+					onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+						setImageUltimately(photo, event)
+					}>
 					Show preview
 				</Button>
 			</div>

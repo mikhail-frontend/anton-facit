@@ -33,7 +33,6 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 
 	const [offcanvasStatus, setOffcanvasStatus] = useState(false);
 
-
 	return (
 		<HeaderRight>
 			<div className='row g-3'>
@@ -45,8 +44,7 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 							// eslint-disable-next-line react/jsx-props-no-spreading
 							{...styledBtn}
 							onClick={() => setDarkModeStatus(!darkModeStatus)}
-							className='btn-only-icon'
-						>
+							className='btn-only-icon'>
 							<Icon
 								icon={darkModeStatus ? 'DarkMode' : 'LightMode'}
 								color={darkModeStatus ? 'info' : 'warning'}
