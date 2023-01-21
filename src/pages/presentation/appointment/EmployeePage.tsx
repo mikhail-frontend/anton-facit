@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import classNames from 'classnames';
@@ -32,7 +32,6 @@ import { priceFormat } from '../../../helpers/helpers';
 import EVENT_STATUS from '../../../common/data/enumEventStatus';
 import Alert from '../../../components/bootstrap/Alert';
 import CommonAvatarTeam from '../../../common/other/CommonAvatarTeam';
-import COLORS from '../../../common/data/enumColors';
 import useDarkMode from '../../../hooks/useDarkMode';
 import useTourStep from '../../../hooks/useTourStep';
 
@@ -42,8 +41,6 @@ const EmployeePage = () => {
 
 	const { id } = useParams();
 	const data = getUserDataWithId(id);
-
-
 
 	const userTasks = dummyEventsData.filter((f) => f.assigned.username === data.username);
 
@@ -390,7 +387,6 @@ const EmployeePage = () => {
 												</CardLabel>
 											</CardHeader>
 											<CardBody className='pt-0'>
-
 												<div className='d-flex align-items-center pb-3'>
 													<div className='flex-shrink-0'>
 														<Icon

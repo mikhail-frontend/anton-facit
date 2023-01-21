@@ -160,8 +160,6 @@ const SearchTour = () => {
 	);
 };
 
-
-
 const DateRangeTour = () => {
 	const { darkModeStatus, setDarkModeStatus } = useDarkMode();
 	const classes = useStyles();
@@ -204,26 +202,6 @@ const DateRangeTour = () => {
 				<img src={Susy3} className={classes.image} width='100%' alt='' />
 			</div>
 			<TourNavigation />
-		</div>
-	);
-};
-
-const ListPageTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy5} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Listing Pages</p>
-					<p>Listing pages are perhaps one of the most important pages.</p>
-					<p>
-						Click the <b>"Boxed List"</b> button to see some details.
-					</p>
-				</div>
-			</div>
 		</div>
 	);
 };
@@ -274,24 +252,6 @@ const ListTour = () => {
 	);
 };
 
-const GridPageTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy5} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Grid List</p>
-					<p>You can list your items in grid form.</p>
-				</div>
-			</div>
-			<TourNavigation />
-		</div>
-	);
-};
-
 const EditPageTour = () => {
 	const classes = useStyles();
 	return (
@@ -330,8 +290,6 @@ const AuthPageTour = () => {
 		</div>
 	);
 };
-
-
 
 const ProjectsTour = () => {
 	const classes = useStyles();
@@ -410,8 +368,6 @@ const KnowledgeItemTour = () => {
 	);
 };
 
-
-
 const AppointmentTour = () => {
 	const classes = useStyles();
 	return (
@@ -449,8 +405,6 @@ const EmployeeTour = () => {
 		</div>
 	);
 };
-
-
 
 const ChatPagesTour = () => {
 	const classes = useStyles();
@@ -718,7 +672,6 @@ const steps = [
 		mutationObservables: [getTargetName('Grace')],
 		resizeObservables: [getTargetName('Grace')],
 	},
-
 
 	/**
 	 * Chat Pages

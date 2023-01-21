@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import moment from 'moment';
 import classNames from 'classnames';
 import { useMeasure } from 'react-use';
-import { useNavigate } from 'react-router-dom';
 import Button from '../../../components/bootstrap/Button';
 import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
@@ -48,7 +47,6 @@ import useDarkMode from '../../../hooks/useDarkMode';
 const SingleFluidPage = () => {
 	const { darkModeStatus } = useDarkMode();
 
-	const navigate = useNavigate();
 	const formik = useFormik({
 		initialValues: {
 			formPrefix: 'Prof.',
@@ -342,7 +340,6 @@ const SingleFluidPage = () => {
 											className='col-6 carousel-slide-bg'
 											style={{ backgroundImage: `url(${WannaImg1})` }}
 										/>
-
 									</div>
 								</CarouselSlide>
 								<CarouselSlide background={WannaImg5} />
@@ -351,7 +348,6 @@ const SingleFluidPage = () => {
 										<div className='col-6 text-end'>
 											<h2>Customize</h2>
 											<h5>You can design your own screens</h5>
-
 										</div>
 										<div
 											className='col-6 carousel-slide-bg'

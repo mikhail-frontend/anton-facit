@@ -4,7 +4,6 @@ import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../m
 import DashboardHeader from '../pages/_layout/_headers/DashboardHeader';
 import DashboardBookingHeader from '../pages/_layout/_headers/DashboardBookingHeader';
 import ProfilePageHeader from '../pages/_layout/_headers/ProfilePageHeader';
-import ProductListHeader from '../pages/_layout/_headers/ProductListHeader';
 import DefaultHeader from '../pages/_layout/_headers/DefaultHeader';
 import DocumentationHeader from '../pages/_layout/_headers/DocumentationHeader';
 

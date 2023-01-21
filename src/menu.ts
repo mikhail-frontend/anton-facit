@@ -21,7 +21,6 @@ export const summaryPageTopMenu = {
 		icon: 'CheckBox',
 		subMenu: null,
 	},
-
 };
 
 export const dashboardPagesMenu = {

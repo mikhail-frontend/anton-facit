@@ -11,7 +11,6 @@ const SINGLE = {
 	FLUID: lazy(() => import('../pages/presentation/single-pages/SingleFluidPage')),
 };
 
-
 const PRICING = {
 	PRICING_TABLE: lazy(() => import('../pages/presentation/pricing/PricingTablePage')),
 };
@@ -20,7 +19,6 @@ const AUTH = {
 	PAGE_404: lazy(() => import('../pages/presentation/auth/Page404')),
 };
 const APP = {
-
 	KNOWLEDGE: {
 		GRID: lazy(() => import('../pages/presentation/knowledge/KnowledgeGridPage')),
 		VIEW: lazy(() => import('../pages/presentation/knowledge/KnowledgeViewPage')),
@@ -77,9 +75,6 @@ const presentation: RouteProps[] = [
 		element: <SINGLE.FLUID />,
 	},
 
-
-
-
 	{
 		path: demoPagesMenu.pricingTable.path,
 		element: <PRICING.PRICING_TABLE />,
@@ -105,7 +100,6 @@ const presentation: RouteProps[] = [
 		element: <Login isSignUp />,
 	},
 
-
 	/**
 	 * App > Knowledge
 	 */
@@ -117,7 +111,6 @@ const presentation: RouteProps[] = [
 		path: `${demoPagesMenu.knowledge.subMenu.itemID.path}/:id`,
 		element: <APP.KNOWLEDGE.VIEW />,
 	},
-
 
 	/**
 	 * App > Appointment
@@ -138,7 +131,6 @@ const presentation: RouteProps[] = [
 		path: demoPagesMenu.appointment.subMenu.appointmentList.path,
 		element: <APP.APPOINTMENT.APPOINTMENT_LIST />,
 	},
-
 
 	/**
 	 * App > Chat
