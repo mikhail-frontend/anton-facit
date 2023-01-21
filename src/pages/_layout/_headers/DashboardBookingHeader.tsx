@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import Header, { HeaderLeft, HeaderRight } from '../../../layout/Header/Header';
-import CommonHeaderChat from './CommonHeaderChat';
 import useDarkMode from '../../../hooks/useDarkMode';
 
 const DashboardBookingHeader = () => {
@@ -22,9 +21,6 @@ const DashboardBookingHeader = () => {
 					</div>
 				</div>
 			</HeaderLeft>
-			<HeaderRight>
-				<CommonHeaderChat />
-			</HeaderRight>
 		</Header>
 	);
 };

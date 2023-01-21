@@ -31,10 +31,6 @@ const APP = {
 		APPOINTMENT_LIST: lazy(() => import('../pages/presentation/appointment/AppointmentList')),
 	},
 
-	CHAT: {
-		WITH_LIST: lazy(() => import('../pages/presentation/chat/WithListChatPage')),
-		ONLY_LIST: lazy(() => import('../pages/presentation/chat/OnlyListChatPage')),
-	},
 };
 
 const GETTING_STARTED = {
@@ -132,17 +128,6 @@ const presentation: RouteProps[] = [
 		element: <APP.APPOINTMENT.APPOINTMENT_LIST />,
 	},
 
-	/**
-	 * App > Chat
-	 */
-	{
-		path: demoPagesMenu.chat.subMenu.withListChat.path,
-		element: <APP.CHAT.WITH_LIST />,
-	},
-	{
-		path: demoPagesMenu.chat.subMenu.onlyListChat.path,
-		element: <APP.CHAT.ONLY_LIST />,
-	},
 
 	/**
 	 * END - App

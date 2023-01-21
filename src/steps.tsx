@@ -406,26 +406,6 @@ const EmployeeTour = () => {
 	);
 };
 
-const ChatPagesTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy5} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Chat pages</p>
-					<p>Examples are given for Chat screens.</p>
-					<small>
-						With accordion, you can expand the menu and browse the pages in it.
-					</small>
-				</div>
-			</div>
-			<TourNavigation />
-		</div>
-	);
-};
 
 const DocTour = () => {
 	const classes = useStyles();
@@ -673,17 +653,6 @@ const steps = [
 		resizeObservables: [getTargetName('Grace')],
 	},
 
-	/**
-	 * Chat Pages
-	 * @step 20
-	 */
-	{
-		selector: '#aside-demo-pages__chat--link',
-		content: () => <ChatPagesTour />,
-		highlightedSelectors: ['#aside-demo-pages__chat'],
-		mutationObservables: ['#aside-demo-pages__chat'],
-		resizeObservables: ['#aside-demo-pages__chat'],
-	},
 	/**
 	 * Documentation
 	 * @step 21

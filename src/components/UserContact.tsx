@@ -15,7 +15,6 @@ interface IUserContactProps {
 	color?: TColor | 'link' | 'brand' | 'brand-two' | 'storybook';
 	mail?: string;
 	phone?: string;
-	onChat?(...args: unknown[]): unknown;
 }
 const UserContact: FC<IUserContactProps> = ({
 	name,
@@ -25,7 +24,6 @@ const UserContact: FC<IUserContactProps> = ({
 	color,
 	mail,
 	phone,
-	onChat,
 	...props
 }) => {
 	return (
@@ -57,17 +55,6 @@ const UserContact: FC<IUserContactProps> = ({
 									aria-label='Phone'
 									tag='a'
 									href={`tel:${phone}`}
-								/>
-							</div>
-						)}
-						{onChat && (
-							<div className='col-auto'>
-								<Button
-									color='info'
-									icon='Sms'
-									isLight
-									aria-label='Chat'
-									onClick={onChat}
 								/>
 							</div>
 						)}
@@ -111,7 +98,6 @@ UserContact.propTypes = {
 	]),
 	mail: PropTypes.string,
 	phone: PropTypes.string,
-	onChat: PropTypes.func,
 };
 UserContact.defaultProps = {
 	className: undefined,
@@ -120,7 +106,6 @@ UserContact.defaultProps = {
 	color: undefined,
 	mail: undefined,
 	phone: undefined,
-	onChat: undefined,
 };
 
 export default UserContact;

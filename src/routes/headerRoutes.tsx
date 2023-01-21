@@ -34,15 +34,6 @@ const headers: RouteProps[] = [
 		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,
 		element: <ProfilePageHeader />,
 	},
-
-	{
-		path: demoPagesMenu.chat.subMenu.withListChat.path,
-		element: <ProfilePageHeader />,
-	},
-	{
-		path: demoPagesMenu.chat.subMenu.onlyListChat.path,
-		element: <ProfilePageHeader />,
-	},
 	{
 		path: `${demoPagesMenu.knowledge.subMenu.itemID.path}/:id`,
 		element: <ProfilePageHeader />,

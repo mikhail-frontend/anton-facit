@@ -157,26 +157,7 @@ export const demoPagesMenu = {
 		},
 	},
 
-	chat: {
-		id: 'chat',
-		text: 'Chat',
-		path: 'chat',
-		icon: 'Forum',
-		subMenu: {
-			withListChat: {
-				id: 'withListChat',
-				text: 'With List',
-				path: 'chat/with-list',
-				icon: 'Quickreply',
-			},
-			onlyListChat: {
-				id: 'onlyListChat',
-				text: 'Only List',
-				path: 'chat/only-list',
-				icon: 'Dns',
-			},
-		},
-	},
+
 
 	auth: {
 		id: 'auth',
