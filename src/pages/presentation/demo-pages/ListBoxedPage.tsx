@@ -16,7 +16,6 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import Card, {
 	CardActions,
-	CardBody,
 	CardHeader,
 	CardLabel,
 	CardTitle,
@@ -32,7 +31,6 @@ import Input from '../../../components/bootstrap/forms/Input';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Label from '../../../components/bootstrap/forms/Label';
 import CommonFilterTag from '../../_common/CommonFilterTag';
-import CommonTableRow from '../../_common/CommonTableRow';
 import Select from '../../../components/bootstrap/forms/Select';
 import Popovers from '../../../components/bootstrap/Popovers';
 
@@ -330,70 +328,6 @@ const ListBoxedPage = () => {
 							</Dropdown>
 						</CardActions>
 					</CardHeader>
-					<CardBody className='table-responsive' isScrollable>
-						<table className='table table-modern table-hover'>
-							<thead>
-								<tr>
-									<th scope='col'>{SelectAllCheck}</th>
-									<th
-										scope='col'
-										onClick={() => requestSort('id')}
-										className='cursor-pointer text-decoration-underline'>
-										#{' '}
-										<Icon
-											size='lg'
-											className={getClassNamesFor('id')}
-											icon='FilterList'
-										/>
-									</th>
-									<th scope='col'>Image</th>
-									<th scope='col'>Name</th>
-									<th scope='col'>Sales</th>
-									<th
-										scope='col'
-										onClick={() => requestSort('stock')}
-										className='cursor-pointer text-decoration-underline'>
-										Stock{' '}
-										<Icon
-											size='lg'
-											className={getClassNamesFor('stock')}
-											icon='FilterList'
-										/>
-									</th>
-									<th
-										scope='col'
-										onClick={() => requestSort('price')}
-										className='cursor-pointer text-decoration-underline'>
-										Price{' '}
-										<Icon
-											size='lg'
-											className={getClassNamesFor('price')}
-											icon='FilterList'
-										/>
-									</th>
-									<th scope='col'>Store</th>
-									<th scope='col' className='text-end'>
-										Actions
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								{onCurrentPageItems.map((i) => (
-									<CommonTableRow
-										key={i.id}
-										// eslint-disable-next-line react/jsx-props-no-spreading
-										{...i}
-										selectName='selectedList'
-										selectOnChange={selectTable.handleChange}
-										selectChecked={selectTable.values.selectedList.includes(
-											// @ts-ignore
-											i.id.toString(),
-										)}
-									/>
-								))}
-							</tbody>
-						</table>
-					</CardBody>
 					<PaginationButtons
 						data={items}
 						label='items'

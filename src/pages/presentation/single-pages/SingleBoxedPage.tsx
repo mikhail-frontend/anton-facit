@@ -5,7 +5,6 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import useMinimizeAside from '../../../hooks/useMinimizeAside';
 import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
 import Button from '../../../components/bootstrap/Button';
-import CommonTransActions from '../../_common/CommonTransActions';
 import Modal, { ModalBody, ModalHeader, ModalTitle } from '../../../components/bootstrap/Modal';
 import Input from '../../../components/bootstrap/forms/Input';
 import Wizard, { WizardItem } from '../../../components/Wizard';
@@ -106,9 +105,7 @@ const SingleBoxedPage = () => {
 					</Button>
 				</SubHeaderRight>
 			</SubHeader>
-			<Page>
-				<CommonTransActions />
-			</Page>
+
 
 			<Modal
 				setIsOpen={setNewTransferModal}

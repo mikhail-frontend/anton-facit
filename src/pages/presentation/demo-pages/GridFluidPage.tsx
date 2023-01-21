@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
-import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import SubHeader, {
 	SubHeaderLeft,
@@ -10,7 +9,6 @@ import SubHeader, {
 import Button from '../../../components/bootstrap/Button';
 
 import Company2 from '../../../assets/logos/company2.png';
-import CommonGridProductItem from '../../_common/CommonGridProductItem';
 import tableData from '../../../common/data/dummyProductData';
 import OffCanvas, {
 	OffCanvasBody,
@@ -146,29 +144,7 @@ const GridFluidPage = () => {
 					</Button>
 				</SubHeaderRight>
 			</SubHeader>
-			<Page container='fluid'>
-				<div className='display-4 fw-bold py-3'>New Products</div>
-				<div className='row'>
-					{data.map((item) => (
-						<div key={item.id} className='col-xxl-3 col-xl-4 col-md-6'>
-							<CommonGridProductItem
-								id={item.id}
-								name={item.name}
-								category={item.category}
-								img={item.image}
-								color={item.color}
-								series={item.series}
-								price={item.price}
-								editAction={() => {
-									setEditPanel(true);
-									handleEdit(item.id);
-								}}
-								deleteAction={() => handleRemove(item.id)}
-							/>
-						</div>
-					))}
-				</div>
-			</Page>
+
 
 			<OffCanvas
 				setOpen={setEditPanel}

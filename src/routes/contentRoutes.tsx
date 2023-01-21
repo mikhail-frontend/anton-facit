@@ -5,7 +5,6 @@ import Login from '../pages/presentation/auth/Login';
 
 const LANDING = {
 	DASHBOARD: lazy(() => import('../pages/presentation/Profile/DashboardPage')),
-	DASHBOARD_BOOKING: lazy(() => import('../pages/presentation/dashboard/DashboardBookingPage')),
 	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
 };
 const SINGLE = {
@@ -38,7 +37,6 @@ const APP = {
 		TRANSACTIONS: lazy(() => import('../pages/presentation/sales/TransActionsPage')),
 		PRODUCTS: lazy(() => import('../pages/presentation/sales/SalesListPage')),
 		PRODUCTS_GRID: lazy(() => import('../pages/presentation/sales/ProductsGridPage')),
-		PRODUCTS_VIEW: lazy(() => import('../pages/presentation/sales/ProductViewPage')),
 	},
 	APPOINTMENT: {
 		CALENDAR: lazy(() => import('../pages/presentation/appointment/CalendarPage')),
@@ -171,10 +169,6 @@ const presentation: RouteProps[] = [
 	{
 		path: demoPagesMenu.sales.subMenu.productsGrid.path,
 		element: <APP.SALES.PRODUCTS_GRID />,
-	},
-	{
-		path: `${demoPagesMenu.sales.subMenu.productID.path}/:id`,
-		element: <APP.SALES.PRODUCTS_VIEW />,
 	},
 
 	/**

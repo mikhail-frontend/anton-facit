@@ -21,13 +21,7 @@ export const summaryPageTopMenu = {
 		icon: 'CheckBox',
 		subMenu: null,
 	},
-	apex: {
-		id: 'apex',
-		text: 'Apex Charts',
-		path: '#apex',
-		icon: 'AreaChart',
-		subMenu: null,
-	},
+
 };
 
 export const dashboardPagesMenu = {

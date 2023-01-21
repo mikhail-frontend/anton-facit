@@ -33,7 +33,6 @@ import Input from '../../../components/bootstrap/forms/Input';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
 import Label from '../../../components/bootstrap/forms/Label';
 import CommonFilterTag from '../../_common/CommonFilterTag';
-import CommonTableRow from '../../_common/CommonTableRow';
 import Select from '../../../components/bootstrap/forms/Select';
 import Popovers from '../../../components/bootstrap/Popovers';
 import { demoPagesMenu } from '../../../menu';
@@ -326,21 +325,6 @@ const SalesListPage = () => {
 									</th>
 								</tr>
 							</thead>
-							<tbody>
-								{filteredData.map((i) => (
-									<CommonTableRow
-										key={i.id}
-										// eslint-disable-next-line react/jsx-props-no-spreading
-										{...i}
-										selectName='selectedList'
-										selectOnChange={selectTable.handleChange}
-										selectChecked={selectTable.values.selectedList.includes(
-											// @ts-ignore
-											i.id.toString(),
-										)}
-									/>
-								))}
-							</tbody>
 						</table>
 					</CardBody>
 					<CardFooter className='justify-content-center'>

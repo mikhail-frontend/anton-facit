@@ -27,7 +27,6 @@ import Dropdown, {
 	DropdownMenu,
 	DropdownToggle,
 } from '../../../components/bootstrap/Dropdown';
-import Chart, { IChartOptions } from '../../../components/extras/Chart';
 import dummyEventsData from '../../../common/data/dummyEventsData';
 import { priceFormat } from '../../../helpers/helpers';
 import EVENT_STATUS from '../../../common/data/enumEventStatus';
@@ -44,66 +43,7 @@ const EmployeePage = () => {
 	const { id } = useParams();
 	const data = getUserDataWithId(id);
 
-	const [dayHours] = useState<IChartOptions>({
-		series: [
-			{
-				data: [8, 12, 15, 20, 15, 22, 9],
-			},
-		],
-		options: {
-			colors: [process.env.REACT_APP_SUCCESS_COLOR],
-			chart: {
-				type: 'radar',
-				width: 200,
-				height: 200,
-				sparkline: {
-					enabled: true,
-				},
-			},
-			xaxis: {
-				categories: [
-					'Monday',
-					'Tuesday',
-					'Wednesday',
-					'Thursday',
-					'Friday',
-					'Saturday',
-					'Sunday',
-				],
-				// convertedCatToNumeric: false,
-			},
-			tooltip: {
-				theme: 'dark',
-				fixed: {
-					enabled: false,
-				},
-				x: {
-					show: true,
-				},
-				y: {
-					title: {
-						// eslint-disable-next-line @typescript-eslint/no-unused-vars
-						formatter(seriesName) {
-							return 'Hours';
-						},
-					},
-				},
-			},
-			stroke: {
-				curve: 'smooth',
-				width: 2,
-			},
-			plotOptions: {
-				radar: {
-					polygons: {
-						strokeColors: `${COLORS.SUCCESS.code}50`,
-						strokeWidth: '1',
-						connectorColors: `${COLORS.SUCCESS.code}50`,
-					},
-				},
-			},
-		},
-	});
+
 
 	const userTasks = dummyEventsData.filter((f) => f.assigned.username === data.username);
 
@@ -450,14 +390,7 @@ const EmployeePage = () => {
 												</CardLabel>
 											</CardHeader>
 											<CardBody className='pt-0'>
-												<Chart
-													className='d-flex justify-content-center'
-													series={dayHours.series}
-													options={dayHours.options}
-													type={dayHours.options.chart?.type}
-													height={dayHours.options.chart?.height}
-													width={dayHours.options.chart?.width}
-												/>
+
 												<div className='d-flex align-items-center pb-3'>
 													<div className='flex-shrink-0'>
 														<Icon

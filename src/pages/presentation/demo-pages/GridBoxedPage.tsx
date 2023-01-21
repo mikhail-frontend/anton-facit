@@ -10,7 +10,6 @@ import SubHeader, {
 } from '../../../layout/SubHeader/SubHeader';
 import Button from '../../../components/bootstrap/Button';
 import Company1 from '../../../assets/logos/company1.png';
-import CommonGridProductItem from '../../_common/CommonGridProductItem';
 import tableData from '../../../common/data/dummyProductData';
 import OffCanvas, {
 	OffCanvasBody,
@@ -77,19 +76,11 @@ const validate = (values: IValues) => {
 const GridBoxedPage = () => {
 	const { darkModeStatus } = useDarkMode();
 	useMinimizeAside();
-	const [data, setData] = useState(tableData);
+	const [data] = useState(tableData);
 	const [editItem, setEditItem] = useState<IValues | null>(null);
 	const [editPanel, setEditPanel] = useState<boolean>(false);
 
-	function handleRemove(id: number) {
-		const newData = data.filter((item) => item.id !== id);
-		setData(newData);
-	}
 
-	function handleEdit(id: number) {
-		const newData = data.filter((item) => item.id === id);
-		setEditItem(newData[0]);
-	}
 
 	const formik = useFormik({
 		initialValues: {
@@ -149,26 +140,6 @@ const GridBoxedPage = () => {
 			</SubHeader>
 			<Page>
 				<div className='display-4 fw-bold py-3'>Best Selling Products</div>
-				<div className='row'>
-					{data.map((item) => (
-						<div key={item.id} className='col-xxl-3 col-xl-4 col-md-6'>
-							<CommonGridProductItem
-								id={item.id}
-								name={item.name}
-								category={item.category}
-								img={item.image}
-								color={item.color}
-								series={item.series}
-								price={item.price}
-								editAction={() => {
-									setEditPanel(true);
-									handleEdit(item.id);
-								}}
-								deleteAction={() => handleRemove(item.id)}
-							/>
-						</div>
-					))}
-				</div>
 			</Page>
 
 			<OffCanvas

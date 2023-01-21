@@ -4,7 +4,6 @@ import Button from '../../../components/bootstrap/Button';
 import Page from '../../../layout/Page/Page';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
-import CommonTransActions from '../../_common/CommonTransActions';
 import showNotification from '../../../components/extras/showNotification';
 import Icon from '../../../components/icon/Icon';
 import Modal, { ModalBody, ModalHeader, ModalTitle } from '../../../components/bootstrap/Modal';
@@ -103,9 +102,6 @@ const TransActionsPage = () => {
 					</Button>
 				</SubHeaderRight>
 			</SubHeader>
-			<Page>
-				<CommonTransActions />
-			</Page>
 
 			<Modal
 				setIsOpen={setNewTransferModal}
