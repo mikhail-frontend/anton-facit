@@ -2,7 +2,6 @@ import React from 'react';
 import { useTour } from '@reactour/tour';
 import { createUseStyles } from 'react-jss';
 import SusyDarkMode from './assets/img/wanna/susy/susy-dark-mode.png';
-import Susy from './assets/img/wanna/susy/susy.png';
 import Susy2 from './assets/img/wanna/susy/susy2.png';
 import Susy3 from './assets/img/wanna/susy/susy3.png';
 import Susy4 from './assets/img/wanna/susy/susy4.png';
@@ -10,7 +9,6 @@ import Susy5 from './assets/img/wanna/susy/susy5.png';
 import Susy6 from './assets/img/wanna/susy/susy6.png';
 import Susy7 from './assets/img/wanna/susy/susy7.png';
 import Susy8 from './assets/img/wanna/susy/susy8.png';
-import Susy9 from './assets/img/wanna/susy/susy9.png';
 import Susy10 from './assets/img/wanna/susy/susy10.png';
 import useDarkMode from './hooks/useDarkMode';
 import Button from './components/bootstrap/Button';
@@ -370,24 +368,6 @@ const KnowledgeItemTour = () => {
 
 
 
-const DocTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy9} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Documentation</p>
-					<p>Here you can find detailed usage of ui and form components for Facit.</p>
-				</div>
-			</div>
-			<TourNavigation />
-		</div>
-	);
-};
-
 const LastTour = () => {
 	const { setIsOpen, setCurrentStep } = useTour();
 	const classes = useStyles();
@@ -593,17 +573,6 @@ const steps = [
 		resizeObservables: [getTargetName('Background')],
 	},
 
-	/**
-	 * Documentation
-	 * @step 21
-	 */
-	{
-		selector: getTargetName('documentation'),
-		content: () => <DocTour />,
-		highlightedSelectors: ['#aside-menu-two'],
-		mutationObservables: ['#aside-menu-two', '#aside-demo-pages', '.aside-body'],
-		resizeObservables: ['#aside-menu-two', '#aside-demo-pages', '.aside-body'],
-	},
 	/**
 	 * Last
 	 * @step 22

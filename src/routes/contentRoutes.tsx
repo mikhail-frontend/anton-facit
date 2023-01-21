@@ -11,8 +11,6 @@ const SINGLE = {
 	FLUID: lazy(() => import('../pages/presentation/single-pages/SingleFluidPage')),
 };
 
-
-
 const AUTH = {
 	PAGE_404: lazy(() => import('../pages/presentation/auth/Page404')),
 };
@@ -23,16 +21,7 @@ const APP = {
 	},
 };
 
-const GETTING_STARTED = {
-	INSTALLATION: lazy(() => import('../pages/documentation/getting-started/InstallationPage')),
-	DEVELOPMENT: lazy(() => import('../pages/documentation/getting-started/DevelopmentPage')),
-	FOLDER: lazy(() => import('../pages/documentation/getting-started/FolderStructurePage')),
-	BOOTSTRAP: lazy(() => import('../pages/documentation/getting-started/BootstrapVariablesPage')),
-	PROJECT: lazy(() => import('../pages/documentation/getting-started/ProjectStructurePage')),
-};
-const ROUTES = {
-	ROUTER: lazy(() => import('../pages/documentation/routes/RouterPage')),
-};
+
 
 const presentation: RouteProps[] = [
 	/**
@@ -52,8 +41,6 @@ const presentation: RouteProps[] = [
 		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,
 		element: <SINGLE.FLUID />,
 	},
-
-
 
 	/**
 	 * END - Pages
@@ -93,38 +80,7 @@ const presentation: RouteProps[] = [
 
 	/** ************************************************** */
 ];
-const documentation: RouteProps[] = [
-	/**
-	 * Getting Started
-	 */
-	{
-		path: gettingStartedPagesMenu.gettingStarted.subMenu.installation.path,
-		element: <GETTING_STARTED.INSTALLATION />,
-	},
-	{
-		path: gettingStartedPagesMenu.gettingStarted.subMenu.dev.path,
-		element: <GETTING_STARTED.DEVELOPMENT />,
-	},
-	{
-		path: gettingStartedPagesMenu.gettingStarted.subMenu.folderStructure.path,
-		element: <GETTING_STARTED.FOLDER />,
-	},
-	{
-		path: gettingStartedPagesMenu.gettingStarted.subMenu.bootstrapVariables.path,
-		element: <GETTING_STARTED.BOOTSTRAP />,
-	},
-	{
-		path: gettingStartedPagesMenu.gettingStarted.subMenu.projectStructure.path,
-		element: <GETTING_STARTED.PROJECT />,
-	},
-	/**
-	 * Routes
-	 */
-	{
-		path: gettingStartedPagesMenu.routes.subMenu.router.path,
-		element: <ROUTES.ROUTER />,
-	},
-];
-const contents = [...presentation, ...documentation];
+
+const contents = [...presentation];
 
 export default contents;

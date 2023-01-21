@@ -3,7 +3,10 @@ import Input from '../../../components/bootstrap/forms/Input';
 import Button from '../../../components/bootstrap/Button';
 import React, { useRef, useState } from 'react';
 import { useFormik } from 'formik';
-import { emailValidation, passwordValidation } from '../../../helpers/validations/helper/validationFuncs';
+import {
+	emailValidation,
+	passwordValidation,
+} from '../../../helpers/validations/helper/validationFuncs';
 import { IValues } from '../../../helpers/validations/helper/editPagesValidate';
 import SocialButtons from './SocialButtons';
 import { useDispatch } from 'react-redux';

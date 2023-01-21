@@ -4,7 +4,6 @@ import { dashboardPagesMenu, demoPagesMenu, gettingStartedPagesMenu } from '../m
 import DashboardHeader from '../pages/_layout/_headers/DashboardHeader';
 import ProfilePageHeader from '../pages/_layout/_headers/ProfilePageHeader';
 import DefaultHeader from '../pages/_layout/_headers/DefaultHeader';
-import DocumentationHeader from '../pages/_layout/_headers/DocumentationHeader';
 
 const headers: RouteProps[] = [
 	{ path: demoPagesMenu.login.path, element: null },
@@ -21,14 +20,7 @@ const headers: RouteProps[] = [
 		path: `${demoPagesMenu.knowledge.subMenu.itemID.path}/:id`,
 		element: <ProfilePageHeader />,
 	},
-	{
-		path: `${gettingStartedPagesMenu.gettingStarted.path}/*`,
-		element: <DocumentationHeader />,
-	},
-	{
-		path: `${gettingStartedPagesMenu.routes.path}/*`,
-		element: <DocumentationHeader />,
-	},
+
 	{
 		path: `*`,
 		element: <DefaultHeader />,
