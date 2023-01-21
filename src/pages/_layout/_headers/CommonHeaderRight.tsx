@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useContext, useEffect, useState} from 'react';
+import React, { FC, ReactNode, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import Button, { IButtonProps } from '../../../components/bootstrap/Button';
 import { HeaderRight } from '../../../layout/Header/Header';
@@ -21,9 +21,12 @@ interface ICommonHeaderRightProps {
 
 type IHeaderOffCanvas = {
 	offcanvasStatus: boolean;
-	setOffcanvasStatus: (val:boolean) => void
-}
-export const HeaderOffCanvas:React.FC<IHeaderOffCanvas> = ({offcanvasStatus, setOffcanvasStatus }) => {
+	setOffcanvasStatus: (val: boolean) => void;
+};
+export const HeaderOffCanvas: React.FC<IHeaderOffCanvas> = ({
+	offcanvasStatus,
+	setOffcanvasStatus,
+}) => {
 	return (
 		<OffCanvas
 			id='notificationCanvas'
@@ -52,12 +55,12 @@ export const HeaderOffCanvas:React.FC<IHeaderOffCanvas> = ({offcanvasStatus, set
 				</Alert>
 			</OffCanvasBody>
 		</OffCanvas>
-	)
-}
+	);
+};
 const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterChildren }) => {
 	const { darkModeStatus, setDarkModeStatus } = useDarkMode();
 
-	const { fullScreenStatus, setFullScreenStatus} = useContext(ThemeContext);
+	const { fullScreenStatus, setFullScreenStatus } = useContext(ThemeContext);
 	const styledBtn: IButtonProps = {
 		color: darkModeStatus ? 'dark' : 'light',
 		hoverShadow: 'default',
@@ -117,8 +120,10 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 				</div>
 				{afterChildren}
 			</div>
-			<HeaderOffCanvas offcanvasStatus={offcanvasStatus} setOffcanvasStatus={setOffcanvasStatus}/>
-
+			<HeaderOffCanvas
+				offcanvasStatus={offcanvasStatus}
+				setOffcanvasStatus={setOffcanvasStatus}
+			/>
 		</HeaderRight>
 	);
 };

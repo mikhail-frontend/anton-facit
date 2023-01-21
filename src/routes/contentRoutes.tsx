@@ -6,6 +6,7 @@ import Login from '../pages/presentation/Auth/Login';
 const LANDING = {
 	DASHBOARD: lazy(() => import('../pages/presentation/Profile/Profile')),
 	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
+	COURSE_ITEM: lazy(() => import('../pages/presentation/CourseItem/CourseItem')),
 };
 
 const APP = {
@@ -26,6 +27,10 @@ const presentation: RouteProps[] = [
 	{
 		path: dashboardPagesMenu.summary.path,
 		element: <LANDING.SUMMARY />,
+	},
+	{
+		path: `/courses/course/:courseId`,
+		element: <LANDING.COURSE_ITEM />,
 	},
 	/** ************************************************** */
 

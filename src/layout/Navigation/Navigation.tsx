@@ -76,7 +76,7 @@ export const NavigationTitle: FC<INavigationTitleProps> = ({ className, children
 		<li className='navigation-item'>
 			{/* eslint-disable-next-line react/jsx-props-no-spreading */}
 			<span className={classNames('navigation-title', className)} {...props}>
-				 {children}
+				{children}
 			</span>
 		</li>
 	);
@@ -118,11 +118,12 @@ const Navigation = forwardRef<HTMLElement, INavigationProps>(
 
 		const { t } = useTranslation('menu');
 		const setTo = (item) => {
-			return item.id === 'notifications' ? {} :{
-				to: `${item.path}`
-			}
-
-		}
+			return item.id === 'notifications'
+				? {}
+				: {
+						to: `${item.path}`,
+				  };
+		};
 		function fillMenu(
 			data:
 				| {

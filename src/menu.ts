@@ -10,14 +10,14 @@ export const dashboardPagesMenu = {
 		id: 'courses',
 		text: 'Courses',
 		path: '/courses',
-		icon: 'sticky_note_2',
+		icon: 'Anchor',
 		subMenu: null,
 	},
 	notifications: {
 		id: 'notifications',
 		text: 'Notifications',
 		icon: 'Notifications',
-		path: '/'
+		path: '/',
 	},
 	login: {
 		id: 'login',
@@ -31,7 +31,6 @@ export const dashboardPagesMenu = {
 		path: '/sign-up',
 		icon: 'PersonAdd',
 	},
-
 };
 
 export const demoPagesMenu = {
