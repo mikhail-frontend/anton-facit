@@ -61,18 +61,7 @@ export const demoPagesMenu = {
 			},
 		},
 	},
-
-	auth: {
-		id: 'auth',
-		text: 'Auth Pages',
-		icon: 'Extension',
-	},
-	signUp: {
-		id: 'signUp',
-		text: 'Sign Up',
-		path: '/sign-up',
-		icon: 'PersonAdd',
-	},
+	
 	page404: {
 		id: 'Page404',
 		text: '404 Page',

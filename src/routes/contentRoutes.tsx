@@ -46,7 +46,7 @@ const presentation: RouteProps[] = [
 		element: <Login />,
 	},
 	{
-		path: demoPagesMenu.signUp.path,
+		path: dashboardPagesMenu.signUp.path,
 		element: <Login isSignUp />,
 	},
 
