@@ -15,10 +15,7 @@ const headers: RouteProps[] = [
 	{ path: demoPagesMenu.page404.path, element: null },
 	{ path: demoPagesMenu.knowledge.subMenu.grid.path, element: null },
 	{ path: dashboardPagesMenu.dashboard.path, element: <DashboardHeader /> },
-	{
-		path: demoPagesMenu.projectManagement.subMenu.list.path,
-		element: <DashboardHeader />,
-	},
+
 	{ path: demoPagesMenu.pricingTable.path, element: <DashboardHeader /> },
 
 	{
@@ -37,10 +34,7 @@ const headers: RouteProps[] = [
 		path: `${demoPagesMenu.appointment.subMenu.employeeID.path}/*`,
 		element: <DashboardBookingHeader />,
 	},
-	{
-		path: `${demoPagesMenu.projectManagement.subMenu.itemID.path}/*`,
-		element: <DashboardBookingHeader />,
-	},
+
 	{
 		path: demoPagesMenu.singlePages.subMenu.fluidSingle.path,
 		element: <ProfilePageHeader />,

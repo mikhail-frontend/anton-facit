@@ -331,28 +331,7 @@ const AuthPageTour = () => {
 	);
 };
 
-const PMTour = () => {
-	const classes = useStyles();
-	return (
-		<div className='row'>
-			<div className='col-md-4'>
-				<img src={Susy5} className={classes.image} width='100%' alt='' />
-			</div>
-			<div className='col-md-8 d-flex align-items-center'>
-				<div>
-					<p className='lead'>Apps Examples</p>
-					<p>
-						Some sample screens have been made with "Facit" and it can give you an idea
-						for your project.
-					</p>
-					<p>
-						First, let's start by clicking <b>"Projects"</b> from the accordion menu.
-					</p>
-				</div>
-			</div>
-		</div>
-	);
-};
+
 
 const ProjectsTour = () => {
 	const classes = useStyles();
@@ -703,17 +682,7 @@ const steps = [
 			getTargetName('login-page'),
 		],
 	},
-	/**
-	 * PM
-	 * @step 11
-	 */
-	{
-		selector: '#aside-demo-pages__projectManagement--link',
-		content: () => <PMTour />,
-		highlightedSelectors: ['#aside-demo-pages__projectManagement'],
-		mutationObservables: ['#aside-demo-pages__projectManagement'],
-		resizeObservables: ['#aside-demo-pages__projectManagement'],
-	},
+
 	/**
 	 * Projects
 	 * @step 12

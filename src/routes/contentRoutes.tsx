@@ -29,14 +29,7 @@ const AUTH = {
 	PAGE_404: lazy(() => import('../pages/presentation/auth/Page404')),
 };
 const APP = {
-	PROJECT_MANAGEMENT: {
-		PROJECTS_LIST: lazy(
-			() => import('../pages/presentation/project-management/ProjectManagementsList'),
-		),
-		PROJECT: lazy(
-			() => import('../pages/presentation/project-management/ProjectManagementsProject'),
-		),
-	},
+
 	KNOWLEDGE: {
 		GRID: lazy(() => import('../pages/presentation/knowledge/KnowledgeGridPage')),
 		VIEW: lazy(() => import('../pages/presentation/knowledge/KnowledgeViewPage')),
@@ -151,21 +144,6 @@ const presentation: RouteProps[] = [
 		element: <Login isSignUp />,
 	},
 
-	/**
-	 * App
-	 */
-
-	/**
-	 * App > Project Management
-	 */
-	{
-		path: demoPagesMenu.projectManagement.subMenu.list.path,
-		element: <APP.PROJECT_MANAGEMENT.PROJECTS_LIST />,
-	},
-	{
-		path: `${demoPagesMenu.projectManagement.subMenu.itemID.path}/:id`,
-		element: <APP.PROJECT_MANAGEMENT.PROJECT />,
-	},
 
 	/**
 	 * App > Knowledge

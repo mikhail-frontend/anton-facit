@@ -143,32 +143,7 @@ export const demoPagesMenu = {
 		text: 'Apps',
 		icon: 'Extension',
 	},
-	projectManagement: {
-		id: 'projectManagement',
-		text: 'Project Management',
-		path: 'project-management',
-		icon: 'AutoStories',
-		subMenu: {
-			list: {
-				id: 'list',
-				text: 'Projects',
-				path: 'project-management/list',
-				icon: 'AutoStories',
-			},
-			itemID: {
-				id: 'projectID',
-				text: 'projectID',
-				path: 'project-management/project',
-				hide: true,
-			},
-			item: {
-				id: 'item',
-				text: 'Project',
-				path: 'project-management/project/1',
-				icon: 'Book',
-			},
-		},
-	},
+
 	knowledge: {
 		id: 'knowledge',
 		text: 'Knowledge',
