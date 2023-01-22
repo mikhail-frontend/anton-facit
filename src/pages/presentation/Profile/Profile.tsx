@@ -1,41 +1,36 @@
-import React, { useMemo, useRef, useEffect } from 'react';
+import React, {useEffect, useMemo, useRef} from 'react';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
-import SubHeader, { SubHeaderLeft, SubHeaderRight } from '../../../layout/SubHeader/SubHeader';
+import SubHeader, {SubHeaderLeft, SubHeaderRight} from '../../../layout/SubHeader/SubHeader';
 import Page from '../../../layout/Page/Page';
-import Card, {
-	CardBody,
-	CardHeader,
-	CardLabel,
-	CardSubTitle,
-	CardTitle,
-} from '../../../components/bootstrap/Card';
+import Card, {CardBody, CardHeader, CardLabel, CardSubTitle, CardTitle,} from '../../../components/bootstrap/Card';
 import Input from '../../../components/bootstrap/forms/Input';
 import Button from '../../../components/bootstrap/Button';
 import FormGroup from '../../../components/bootstrap/forms/FormGroup';
-import { useFormik } from 'formik';
-import validate, { IValues } from '../../../helpers/validations/helper/editPagesValidate';
+import {useFormik} from 'formik';
+import validate, {IValues} from '../../../helpers/validations/helper/editPagesValidate';
 import Select from '../../../components/bootstrap/forms/Select';
 import classNames from 'classnames';
 import useDarkMode from '../../../hooks/useDarkMode';
-import { useToasts } from 'react-toast-notifications';
+import {useToasts} from 'react-toast-notifications';
 import countryList from 'react-select-country-list';
 import Toasts from '../../../components/bootstrap/Toasts';
 import Dropzone from './components/Dropzone';
 import ChangeLang from '../../_layout/_headers/ChangeLang';
-import { genders } from './entities';
+import {genders} from './entities';
 import Progress from '../../../components/bootstrap/Progress';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import {useTranslation} from 'react-i18next';
+import {useSelector} from 'react-redux';
+import styles from './Profile.module.scss'
 
 const Profile = () => {
 	const user = useSelector((state: any) => state.user);
 	const userData: IValues = user.userData;
 
 	const {
-		i18n: { language },
+		i18n: {language},
 	} = useTranslation();
-	const { darkModeStatus } = useDarkMode();
-	const { addToast } = useToasts();
+	const {darkModeStatus} = useDarkMode();
+	const {addToast} = useToasts();
 
 	const countriesList = useMemo(
 		() =>
@@ -162,153 +157,166 @@ const Profile = () => {
 				<form className='row g-4' noValidate onSubmit={formik.handleSubmit} ref={formRef}>
 					<Card>
 						<CardHeader>
-							<CardLabel icon='Person' iconColor='success'>
-								<CardTitle>Your photo</CardTitle>
-								<CardSubTitle>It helps other users recognize you </CardSubTitle>
-							</CardLabel>
-						</CardHeader>
-						<CardBody>
-							<div className='col-12'>
-								<Dropzone
-									photo={formik.values.image}
-									savePhoto={savePhoto}
-									deletePhoto={deletePhoto}
-								/>
+							<div className="col-lg-4">
+								<CardLabel icon='Person' iconColor='success'>
+									<CardTitle>Your photo</CardTitle>
+									<CardSubTitle>It helps other users recognize you </CardSubTitle>
+								</CardLabel>
 							</div>
-						</CardBody>
-					</Card>
-					<Card>
-						<CardHeader>
-							<CardLabel icon='Settings' iconColor='success' style={{ flex: 1 }}>
-								<CardTitle>Personal Information</CardTitle>
-								<CardSubTitle>User's credentials</CardSubTitle>
-							</CardLabel>
-							<div className='col-md-6 d-flex justify-content-end'>
-								<ChangeLang />
+							<div className={`col-lg-8 row ${styles.onlyDesc}`}>
+								<CardLabel icon='Settings' iconColor='success' style={{flex: 1}}>
+									<CardTitle>Personal Information</CardTitle>
+									<CardSubTitle>User's credentials</CardSubTitle>
+								</CardLabel>
+								<div className='col-md-6 d-flex justify-content-end'>
+									<ChangeLang/>
+								</div>
 							</div>
 						</CardHeader>
 						<CardBody>
-							<div className='row g-4'>
-								<div className='col-md-6'>
-									<FormGroup id='name' label='First Name' isFloating>
-										<Input
-											placeholder='First Name'
-											onChange={formik.handleChange}
-											onBlur={formik.handleBlur}
-											value={formik.values.name}
-											isValid={formik.isValid}
-											isTouched={formik.touched.name}
-											invalidFeedback={formik.errors.name}
-											validFeedback='Looks good!'
+							<div className="row">
+								<div className="col-lg-4">
+									<div className='col-12'>
+										<Dropzone
+											photo={formik.values.image}
+											savePhoto={savePhoto}
+											deletePhoto={deletePhoto}
 										/>
-									</FormGroup>
+									</div>
 								</div>
-								<div className='col-md-6'>
-									<FormGroup id='second_name' label='Last Name' isFloating>
-										<Input
-											placeholder='Last Name'
-											onChange={formik.handleChange}
-											onBlur={formik.handleBlur}
-											value={formik.values.second_name}
-											isValid={formik.isValid}
-											isTouched={formik.touched.second_name}
-											invalidFeedback={formik.errors.second_name}
-											validFeedback='Looks good!'
-										/>
-									</FormGroup>
-								</div>
-								<div className='col-md-6'>
-									<FormGroup id='email' label='E-mail' isFloating>
-										<Input
-											placeholder='E-mail'
-											onChange={formik.handleChange}
-											onBlur={formik.handleBlur}
-											value={formik.values.email}
-											isValid={formik.isValid}
-											isTouched={formik.touched.email}
-											invalidFeedback={formik.errors.email}
-											validFeedback='Looks good!'
-										/>
-									</FormGroup>
-								</div>
+								<div className="col-lg-8">
+									<div className='row g-4'>
+										<div className={`row ${styles.onlyMob}`}>
+											<CardLabel icon='Settings' iconColor='success' style={{flex: 1}}>
+												<CardTitle>Personal Information</CardTitle>
+												<CardSubTitle>User's credentials</CardSubTitle>
+											</CardLabel>
+											<div className='col-md-6 d-flex justify-content-end'>
+												<ChangeLang/>
+											</div>
+										</div>
+										<div className='col-md-6'>
+											<FormGroup id='name' label='First Name' isFloating>
+												<Input
+													placeholder='First Name'
+													onChange={formik.handleChange}
+													onBlur={formik.handleBlur}
+													value={formik.values.name}
+													isValid={formik.isValid}
+													isTouched={formik.touched.name}
+													invalidFeedback={formik.errors.name}
+													validFeedback='Looks good!'
+												/>
+											</FormGroup>
+										</div>
+										<div className='col-md-6'>
+											<FormGroup id='second_name' label='Last Name' isFloating>
+												<Input
+													placeholder='Last Name'
+													onChange={formik.handleChange}
+													onBlur={formik.handleBlur}
+													value={formik.values.second_name}
+													isValid={formik.isValid}
+													isTouched={formik.touched.second_name}
+													invalidFeedback={formik.errors.second_name}
+													validFeedback='Looks good!'
+												/>
+											</FormGroup>
+										</div>
+										<div className='col-md-6'>
+											<FormGroup id='email' label='E-mail' isFloating>
+												<Input
+													placeholder='E-mail'
+													onChange={formik.handleChange}
+													onBlur={formik.handleBlur}
+													value={formik.values.email}
+													isValid={formik.isValid}
+													isTouched={formik.touched.email}
+													invalidFeedback={formik.errors.email}
+													validFeedback='Looks good!'
+												/>
+											</FormGroup>
+										</div>
 
-								<div className='col-md-6'>
-									<FormGroup id='phone' label='Phone' isFloating>
-										<Input
-											placeholder='Phone number'
-											onChange={formik.handleChange}
-											onBlur={formik.handleBlur}
-											value={formik.values.phone}
-											isValid={formik.isValid}
-											isTouched={formik.touched.phone}
-											invalidFeedback={formik.errors.phone}
-											validFeedback='Looks good!'
-											mask='+1 (999) 999-9999'
-										/>
-									</FormGroup>
-								</div>
-								<div className='col-md-6'>
-									<FormGroup id='telegram' label='Telegram' isFloating>
-										<Input
-											placeholder='Telegram'
-											onChange={formik.handleChange}
-											onBlur={formik.handleBlur}
-											value={formik.values.telegram}
-											isValid={formik.isValid}
-											isTouched={formik.touched.telegram}
-											invalidFeedback={formik.errors.telegram}
-											validFeedback='Looks good!'
-										/>
-									</FormGroup>
-								</div>
-								<div className='col-md-6'>
-									<Select
-										id='country'
-										ariaLabel='country'
-										placeholder='Select your country'
-										size='lg'
-										list={countriesList}
-										className={classNames('rounded-1', {
-											'bg-white': !darkModeStatus,
-										})}
-										validFeedback='Looks good!'
-										onChange={(e: { target: { value: any } }) => {
-											formik.handleChange(e);
-										}}
-										value={formik.values.country}
-									/>
-								</div>
+										<div className='col-md-6'>
+											<FormGroup id='phone' label='Phone' isFloating>
+												<Input
+													placeholder='Phone number'
+													onChange={formik.handleChange}
+													onBlur={formik.handleBlur}
+													value={formik.values.phone}
+													isValid={formik.isValid}
+													isTouched={formik.touched.phone}
+													invalidFeedback={formik.errors.phone}
+													validFeedback='Looks good!'
+													mask='+1 (999) 999-9999'
+												/>
+											</FormGroup>
+										</div>
+										<div className='col-md-6'>
+											<FormGroup id='telegram' label='Telegram' isFloating>
+												<Input
+													placeholder='Telegram'
+													onChange={formik.handleChange}
+													onBlur={formik.handleBlur}
+													value={formik.values.telegram}
+													isValid={formik.isValid}
+													isTouched={formik.touched.telegram}
+													invalidFeedback={formik.errors.telegram}
+													validFeedback='Looks good!'
+												/>
+											</FormGroup>
+										</div>
+										<div className='col-md-6'>
+											<Select
+												id='country'
+												ariaLabel='country'
+												placeholder='Select your country'
+												size='lg'
+												list={countriesList}
+												className={classNames('rounded-1', {
+													'bg-white': !darkModeStatus,
+												})}
+												validFeedback='Looks good!'
+												onChange={(e: { target: { value: any } }) => {
+													formik.handleChange(e);
+												}}
+												value={formik.values.country}
+											/>
+										</div>
 
-								<div className='col-md-6'>
-									<FormGroup id='city' label='City' isFloating>
-										<Input
-											placeholder='Your city'
-											onChange={formik.handleChange}
-											onBlur={formik.handleBlur}
-											value={formik.values.city}
-											isValid={formik.isValid}
-											isTouched={formik.touched.city}
-											invalidFeedback={formik.errors.city}
-										/>
-									</FormGroup>
-								</div>
+										<div className='col-md-6'>
+											<FormGroup id='city' label='City' isFloating>
+												<Input
+													placeholder='Your city'
+													onChange={formik.handleChange}
+													onBlur={formik.handleBlur}
+													value={formik.values.city}
+													isValid={formik.isValid}
+													isTouched={formik.touched.city}
+													invalidFeedback={formik.errors.city}
+												/>
+											</FormGroup>
+										</div>
 
-								<div className='col-md-6'>
-									<Select
-										id='gender'
-										ariaLabel='gender'
-										placeholder='Select your gender'
-										size='lg'
-										list={gendersList}
-										className={classNames('rounded-1', {
-											'bg-white': !darkModeStatus,
-										})}
-										validFeedback='Looks good!'
-										onChange={(e: { target: { value: any } }) => {
-											formik.handleChange(e);
-										}}
-										value={formik.values.gender}
-									/>
+										<div className='col-md-6'>
+											<Select
+												id='gender'
+												ariaLabel='gender'
+												placeholder='Select your gender'
+												size='lg'
+												list={gendersList}
+												className={classNames('rounded-1', {
+													'bg-white': !darkModeStatus,
+												})}
+												validFeedback='Looks good!'
+												onChange={(e: { target: { value: any } }) => {
+													formik.handleChange(e);
+												}}
+												value={formik.values.gender}
+											/>
+										</div>
+									</div>
 								</div>
 							</div>
 						</CardBody>

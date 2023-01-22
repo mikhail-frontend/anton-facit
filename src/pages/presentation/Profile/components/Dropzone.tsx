@@ -102,9 +102,8 @@ const Dropzone: React.FC<{
 
 	return (
 		<>
-			<div style={{ position: 'relative', width: 'max-content' }} onClick={open}>
+			<div style={{ position: 'relative',  margin: 'auto' }} className='col-md-6' onClick={open}>
 				<SvgClearAll onClick={removeAll} className={styles.close} />
-
 				<section className={`${styles.dropzone} ${isActive ? styles.active : ''}`}>
 					<div
 						{...getRootProps({ className: 'dropzone' })}
@@ -129,10 +128,10 @@ const Dropzone: React.FC<{
 				</Modal>
 			</div>
 			{files && files.length ? (
-				<div className='col-md-6 mt-2'>
+				<div className='col-md-6 m-auto'>
 					<Button
 						type='button'
-						className='px-5 py-3'
+						className='px-5 py-3 mb-5 mt-2 ml-auto'
 						color='primary'
 						isLight
 						icon='Preview'
