@@ -32,6 +32,7 @@ const App = () => {
 	};
 
 	useEffect(() => {
+
 		if (darkModeStatus) {
 			document.documentElement.setAttribute('theme', 'dark');
 		}

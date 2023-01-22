@@ -32,4 +32,10 @@ i18n
 		},
 	});
 
+const i18nextLng = localStorage.getItem('i18nextLng');
+if(!i18nextLng || !['en', 'de', 'fr', 'tr'].includes(localStorage.getItem('i18nextLng'))) {
+	i18n.changeLanguage('en')
+}
+
+
 export default i18n;

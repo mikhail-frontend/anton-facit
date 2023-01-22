@@ -1,10 +1,10 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {useDropzone} from 'react-dropzone';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDropzone } from 'react-dropzone';
 import styles from './Dropzone.module.scss';
 import axios from 'axios';
 import SvgClearAll from '../../../../components/icon/material-icons/Close';
 import Spinner from '../../../../components/bootstrap/Spinner';
-import Modal, {ModalBody, ModalHeader, ModalTitle} from '../../../../components/bootstrap/Modal';
+import Modal, { ModalBody, ModalHeader, ModalTitle } from '../../../../components/bootstrap/Modal';
 import Button from '../../../../components/bootstrap/Button';
 
 const Dropzone: React.FC<{
@@ -19,8 +19,12 @@ const Dropzone: React.FC<{
 	const [loading, setLoading] = useState(false);
 	const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
 
-
-	const {getRootProps, getInputProps, acceptedFiles:acceptedFilesList, open} = useDropzone({
+	const {
+		getRootProps,
+		getInputProps,
+		acceptedFiles: acceptedFilesList,
+		open,
+	} = useDropzone({
 		accept: {
 			'image/*': [],
 		},
@@ -57,7 +61,7 @@ const Dropzone: React.FC<{
 		event.preventDefault();
 		event.stopPropagation();
 		acceptedFilesList.length = 0;
-		inputRef && inputRef.current ? inputRef.current.value = '' : void null;
+		inputRef && inputRef.current ? (inputRef.current.value = '') : void null;
 		setFiles([]);
 		deletePhoto();
 		setSelectedImage(undefined);
@@ -79,7 +83,6 @@ const Dropzone: React.FC<{
 		setFiles(() => (photo ? [photo] : []));
 		return () => {};
 	}, [photo]);
-
 
 	const setImageUltimately = (
 		image: string | undefined,
@@ -125,7 +128,7 @@ const Dropzone: React.FC<{
 					</ModalBody>
 				</Modal>
 			</div>
-			{files && files.length ?
+			{files && files.length ? (
 				<div className='col-md-6 mt-2'>
 					<Button
 						type='button'
@@ -138,8 +141,10 @@ const Dropzone: React.FC<{
 						}>
 						Show preview
 					</Button>
-				</div> : ''
-			}
+				</div>
+			) : (
+				''
+			)}
 		</>
 	);
 };

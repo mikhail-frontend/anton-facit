@@ -12,8 +12,8 @@ export const fullData: IValues = {
 	password: 'countryList1',
 	password_confirmation: 'countryList1',
 	language: '',
+	image: 'https://facit-minimal.omtanke.studio/static/media/scene1.79624597a493b55871be.png'
 	// image: '',
-	image: 'https://devapi.matetech.space/storage/46982/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA-%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0-2023-01-20-%D0%B2-13.57.48.png',
 };
 
 export const emptyData: IValues = {

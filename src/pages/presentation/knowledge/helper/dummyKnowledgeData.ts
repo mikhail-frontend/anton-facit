@@ -5,7 +5,6 @@ import Img6 from '../../../../assets/img/scene4.png';
 import COLORS from '../../../../common/data/enumColors';
 import { TColor } from '../../../../type/color-type';
 
-
 export type TTags = { text: string; color: TColor };
 const TAGS: { [key: string]: TTags } = {
 	NPM: {
@@ -26,8 +25,7 @@ const TAGS: { [key: string]: TTags } = {
 	},
 };
 
-
-type dataItemType = {
+type DataItemType = {
 	id: number;
 	title: string;
 	description: string;
@@ -35,8 +33,8 @@ type dataItemType = {
 	tags: TTags[];
 	color: TColor;
 	content: string;
-}
-const data: dataItemType[] = [
+};
+const data: DataItemType[] = [
 	{
 		id: 1,
 		title: 'Display property',

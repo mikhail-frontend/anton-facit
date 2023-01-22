@@ -79,15 +79,15 @@ const Profile = () => {
 	const savePhoto = (image: string) => {
 		formik.setValues({
 			...formik.values,
-			image
-		})
+			image,
+		});
 	};
 
 	const deletePhoto = () => {
 		formik.setValues({
 			...formik.values,
-			image: ''
-		})
+			image: '',
+		});
 	};
 
 	const submitHandler = async (event: React.MouseEvent<HTMLElement>) => {

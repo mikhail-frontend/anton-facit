@@ -28,11 +28,10 @@ const Item: FC<IItemProps> = ({ id, image, title, description, tags, color }) =>
 		[navigate, id],
 	);
 	return (
-		<Card
-			className='cursor-pointer shadow-3d-primary shadow-3d-hover'
-			onClick={handleOnClick}>
-
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consequatur cum cupiditate ea eveniet impedit magnam minima mollitia neque non, nostrum odit officia tenetur, ut velit? Ad commodi ipsam vero?
+		<Card className='cursor-pointer shadow-3d-primary shadow-3d-hover' onClick={handleOnClick}>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consequatur cum
+			cupiditate ea eveniet impedit magnam minima mollitia neque non, nostrum odit officia
+			tenetur, ut velit? Ad commodi ipsam vero?
 			<CardBody>
 				<div
 					className={classNames(
@@ -68,14 +67,12 @@ const Item: FC<IItemProps> = ({ id, image, title, description, tags, color }) =>
 };
 
 const KnowledgeGridPage = () => {
-
 	const [filterableData] = useState(data);
 
 	return (
 		<PageWrapper title={demoPagesMenu.knowledge.subMenu.grid.text}>
 			<Page>
-				<div className='row'>
-				</div>
+				<div className='row'></div>
 				<div className='row mb-5'>
 					{filterableData.map((item) => (
 						<div key={item.id} className='col-xl-3 col-lg-4 col-md-6'>

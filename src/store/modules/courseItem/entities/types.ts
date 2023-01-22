@@ -1,14 +1,12 @@
 import type { TColor } from '../../../../type/color-type';
-export type lessonListItemTag = { text: string; color: TColor };
+export type LessonListItemTag = { text: string; color: TColor };
 
-export type lessonListItem = {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    tags: lessonListItemTag[];
-    color: TColor;
-    content: string;
-}
-
-
+export type LessonListItem = {
+	id: number;
+	title: string;
+	description: string;
+	image: string;
+	tags: LessonListItemTag[];
+	color: TColor;
+	content: string;
+};
