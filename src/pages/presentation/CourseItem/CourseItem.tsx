@@ -25,11 +25,11 @@ const CourseItem = () => {
 	const courseItemLoading = useSelector((state: any) => state.courseItem.courseItemLoading);
 
 	useEffect(() => {
-		if (!courseItemLoading) return;
 		dispatch(getCourse(currentCourse));
 		return () => {};
 		//eslint-disable-next-line
-	}, []);
+	}, [courseId]);
+
 
 	useEffect(() => {
 		if(!currentCourse) {

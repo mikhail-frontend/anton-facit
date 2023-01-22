@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useDropzone } from 'react-dropzone';
+import React, {useEffect, useRef, useState} from 'react';
+import {useDropzone} from 'react-dropzone';
 import styles from './Dropzone.module.scss';
 import axios from 'axios';
 import SvgClearAll from '../../../../components/icon/material-icons/Close';
 import Spinner from '../../../../components/bootstrap/Spinner';
-import Modal, { ModalBody, ModalHeader, ModalTitle } from '../../../../components/bootstrap/Modal';
+import Modal, {ModalBody, ModalHeader, ModalTitle} from '../../../../components/bootstrap/Modal';
 import Button from '../../../../components/bootstrap/Button';
 
 const Dropzone: React.FC<{
@@ -17,6 +17,8 @@ const Dropzone: React.FC<{
 	const [isActive, setIsActive] = useState(false);
 
 	const [loading, setLoading] = useState(false);
+	const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
+
 	//eslint-disable-next-line
 	const {getRootProps, getInputProps, acceptedFiles, open} = useDropzone({
 		accept: {
@@ -59,6 +61,7 @@ const Dropzone: React.FC<{
 		(inputRef as any).current.value = '';
 		setFiles([]);
 		deletePhoto();
+		setSelectedImage(undefined);
 	};
 
 	// eslint-disable-next-line
@@ -78,7 +81,6 @@ const Dropzone: React.FC<{
 		return () => {};
 	}, [photo]);
 
-	const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
 
 	const setImageUltimately = (
 		image: string | undefined,
@@ -124,19 +126,21 @@ const Dropzone: React.FC<{
 					</ModalBody>
 				</Modal>
 			</div>
-			<div className='col-md-6 mt-2'>
-				<Button
-					type='button'
-					className='px-5 py-3'
-					color='primary'
-					isLight
-					icon='Preview'
-					onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
-						setImageUltimately(photo, event)
-					}>
-					Show preview
-				</Button>
-			</div>
+			{files && files.length ?
+				<div className='col-md-6 mt-2'>
+					<Button
+						type='button'
+						className='px-5 py-3'
+						color='primary'
+						isLight
+						icon='Preview'
+						onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
+							setImageUltimately(photo, event)
+						}>
+						Show preview
+					</Button>
+				</div> : ''
+			}
 		</>
 	);
 };
