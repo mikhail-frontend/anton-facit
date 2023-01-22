@@ -173,15 +173,15 @@ Select.propTypes = {
 	isValidMessage: PropTypes.bool,
 	isTooltipFeedback: PropTypes.bool,
 	/**
-	 * Fires the moment that the element loses focus. For formik ***`formik.handleBlur`***
+	 * Fires the no-lib-mAment that the element loses focus. For formik ***`formik.handleBlur`***
 	 */
 	onBlur: PropTypes.func,
 	/**
-	 * Fires the moment when the value of the element is changed. For formik ***`formik.handleChange`***
+	 * Fires  the no-lib-mAment when the value of the element is changed. For formik ***`formik.handleChange`***
 	 */
 	onChange: PropTypes.func,
 	/**
-	 * Fires the moment when the element gets focus
+	 * Fires  the no-lib-mAment when the element gets focus
 	 */
 	onFocus: PropTypes.func,
 	/**
