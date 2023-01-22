@@ -21,6 +21,8 @@ const CourseItem = () => {
 	const dispatch: Dispatch<any> = useDispatch();
 	const courseItemLoading = useSelector((state: any) => state.courseItem.courseItemLoading);
 
+	const userData = useSelector((state: any) => state.user.userData);
+
 	useEffect(() => {
 		dispatch(getCourse(currentCourse));
 		return () => {};

@@ -36,10 +36,8 @@ const presentation: RouteProps[] = [
 	{
 		path: dashboardPagesMenu.signUp.path,
 		element: <Login isSignUp />,
-		
+
 	},
-
-
 
 ];
 
