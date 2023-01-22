@@ -205,7 +205,6 @@ export const UserFoot = () => {
 		<AsideFoot>
 			<nav aria-label='aside-bottom-menu'>
 				<div className='navigation'></div>
-
 			</nav>
 			<User />
 		</AsideFoot>

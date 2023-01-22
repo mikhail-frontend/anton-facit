@@ -1,7 +1,5 @@
-import React from 'react';
 import { RouteProps } from 'react-router-dom';
 import { dashboardPagesMenu } from '../menu';
-import ProfilePageHeader from '../pages/_layout/_headers/ProfilePageHeader';
 // import DefaultHeader from '../pages/_layout/_headers/DefaultHeader';
 
 const headers: RouteProps[] = [

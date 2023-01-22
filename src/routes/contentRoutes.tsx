@@ -9,8 +9,6 @@ const LANDING = {
 	COURSE_ITEM: lazy(() => import('../pages/presentation/CourseItem/CourseItem')),
 };
 
-
-
 const presentation: RouteProps[] = [
 	/**
 	 * Landing
@@ -36,9 +34,7 @@ const presentation: RouteProps[] = [
 	{
 		path: dashboardPagesMenu.signUp.path,
 		element: <Login isSignUp />,
-
 	},
-
 ];
 
 const contents = [...presentation];

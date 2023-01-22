@@ -5,7 +5,6 @@ import React, {
 	ReactNode,
 	useState,
 	ReactElement,
-	memo,
 	HTMLAttributes,
 } from 'react';
 import PropTypes from 'prop-types';

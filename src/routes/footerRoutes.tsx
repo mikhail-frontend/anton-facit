@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouteProps } from 'react-router-dom';
-import {  dashboardPagesMenu } from '../menu';
+import { dashboardPagesMenu } from '../menu';
 import DefaultFooter from '../pages/_layout/_footers/DefaultFooter';
 
 const footers: RouteProps[] = [
