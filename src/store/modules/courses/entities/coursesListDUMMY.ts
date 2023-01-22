@@ -32,6 +32,25 @@ const coursesListDUMMY = [
          </p>
              `,
 	},
+	{
+		id: 4,
+		image: 'https://facit-minimal.omtanke.studio/static/media/scene1.79624597a493b55871be.png',
+		title: 'Course with image in this project',
+		text: `
+        <p> <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem earum eveniet harum necessitatibus, 
+        quos voluptates. Adipisci, asperiores aspernatur, eligendi eum in ipsum iste laborum minus molestias possimus, provident quaerat?</div><div>Accusantium amet consectetur cum doloremque fugiat inventore ipsam laudantium minus quibusdam, rerum. Asperiores aspernatur dolor, doloribus exercitationem facilis fuga id pariatur quas quisquam reiciendis sed sunt tempora ullam, veniam voluptas.</div>
+         </p>
+             `,
+	},
+	{
+		id: 5,
+		image: 'https://facit-minimal.omtanke.studio/static/media/scene1.79624597a493b55871be.png',
+		title: 'One more ',
+		text: `
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid, aperiam assumenda ducimus enim et ipsam magni neque non pariatur repudiandae sed similique suscipit temporibus ut. Excepturi inventore non numquam? </p>
+             `,
+	},
+	// https://facit-minimal.omtanke.studio/static/media/scene1.79624597a493b55871be.png
 ];
 
 export default coursesListDUMMY;

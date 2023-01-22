@@ -13,7 +13,7 @@ const List = () => {
 		<ResponsiveMasonry
 			columnsCountBreakPoints={{ 1199: 1, 1200: 2}}
 		>
-		<Masonry className={styles.coursesList} gutter={'0.5rem 1.5rem'} >
+		<Masonry className={styles.coursesList} gutter={'1rem 1.5rem'} >
 			{coursesList.map((course, index) => {
 				return (
 

@@ -7,9 +7,11 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding: 20px;
   @media (max-width: 1600px) {
     width: 240px;
     height: 240px;
+    padding: 15px;
   }
   @media (max-width: 1200px){
     width: 100%;
