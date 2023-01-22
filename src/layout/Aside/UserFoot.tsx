@@ -1,4 +1,4 @@
-import React, {FC, ReactNode, useState} from 'react';
+import React, {FC, ReactNode, useMemo, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 import classNames from 'classnames';
@@ -7,7 +7,7 @@ import {DropdownItem, DropdownMenu} from '../../components/bootstrap/Dropdown';
 import Button from '../../components/bootstrap/Button';
 import useDarkMode from '../../hooks/useDarkMode';
 import Collapse from '../../components/bootstrap/Collapse';
-import {NavigationLine} from '../Navigation/Navigation';
+import Navigation, {NavigationLine} from '../Navigation/Navigation';
 import Icon from '../../components/icon/Icon';
 import useNavigationItemHandle from '../../hooks/useNavigationItemHandle';
 import {useDispatch, useSelector} from 'react-redux';
@@ -16,6 +16,7 @@ import ChangeLang from "../../pages/_layout/_headers/ChangeLang";
 import UserImage4 from '../../assets/img/wanna/wanna4.png';
 import {INNER} from '../../layout/Navigation/Item';
 import {HeaderOffCanvas} from "../../pages/_layout/_headers/CommonHeaderRight";
+import {dashboardPagesMenu} from "../../menu";
 
 interface IAsideFootProps {
 	children: ReactNode;
@@ -70,6 +71,18 @@ export const User = () => {
 
 	const { t } = useTranslation(['translation', 'menu']);
 
+
+	const resultMenu = useMemo(() => {
+		const notAvailable = ['summary'];
+		return Object.entries(dashboardPagesMenu).reduce((acc, [key, value]) => {
+			if(!notAvailable.includes(key)) {
+				acc[key] = value;
+			}
+			return acc
+		}, {})
+
+	}, [])
+
 	return (
 		<>
 			<div
@@ -110,7 +123,12 @@ export const User = () => {
 
 			<Collapse isOpen={collapseStatus} className='user-menu'>
 				<nav aria-label='aside-bottom-user-menu'>
+					<Navigation menu={resultMenu} id='footer-dashboard' />
+
 					<div className='navigation'>
+						<div className="navigation-item cursor-pointer">
+							<Notifications/>
+						</div>
 						<div
 							role='presentation'
 							className='navigation-item cursor-pointer'>
@@ -118,9 +136,7 @@ export const User = () => {
 								<ChangeLang inFoot={true}/>
 							</div>
 						</div>
-						<div className="navigation-item cursor-pointer">
-							<Notifications/>
-						</div>
+
 						<div role='presentation' className='navigation-item cursor-pointer'
 							 onClick={() => {
 								setDarkModeStatus(!darkModeStatus);

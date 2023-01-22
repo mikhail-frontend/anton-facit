@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useState } from 'react';
+import React, {ReactNode, useContext, useMemo, useState} from 'react';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import Brand from '../../../layout/Brand/Brand';
@@ -24,6 +24,16 @@ const DefaultAside = () => {
 
 	const { darkModeStatus } = useDarkMode();
 
+	const resultMenu = useMemo(() => {
+		const notAvailable = ['courses', 'login', 'signUp'];
+		return Object.entries(dashboardPagesMenu).reduce((acc, [key, value]) => {
+			if(!notAvailable.includes(key)) {
+				acc[key] = value;
+			}
+			return acc
+		}, {})
+
+	}, [])
 	return (
 		<Aside>
 			<AsideHead>
@@ -32,10 +42,7 @@ const DefaultAside = () => {
 			<AsideBody>
 				{!doc && (
 					<>
-						<Navigation menu={dashboardPagesMenu} id='aside-dashboard' />
-						{/*<NavigationLine />*/}
-						{/*<Navigation menu={demoPagesMenu} id='aside-demo-pages' />*/}
-						{/*<NavigationLine />*/}
+						<Navigation menu={resultMenu} id='aside-dashboard' />
 					</>
 				)}
 
