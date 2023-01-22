@@ -14,6 +14,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {logOutUser} from '../../store/modules/user/userActions';
 import ChangeLang from "../../pages/_layout/_headers/ChangeLang";
 import UserImage4 from '../../assets/img/wanna/wanna4.png';
+import {INNER} from '../../layout/Navigation/Item';
+import {HeaderOffCanvas} from "../../pages/_layout/_headers/CommonHeaderRight";
 
 interface IAsideFootProps {
 	children: ReactNode;
@@ -27,6 +29,30 @@ export const AsideFoot: FC<IAsideFootProps> = ({children}) => {
 	return <div className='aside-foot'>{children}</div>;
 };
 
+const Notifications = () => {
+	const [offcanvasStatus, setOffcanvasStatus] = useState(false);
+	const { t } = useTranslation('menu');
+	const LINK_CLASS = classNames('navigation-link', 'navigation-link-pill');
+
+	return (
+		<>
+			<HeaderOffCanvas
+				setOffcanvasStatus={setOffcanvasStatus}
+				offcanvasStatus={offcanvasStatus}
+			/>
+			<div
+				// @ts-ignore
+				className={classNames(LINK_CLASS, ({ isActive }) => (isActive ? 'active' : ''))}
+				onClick={(event) => {
+					event.preventDefault();
+					setOffcanvasStatus(true);
+				}}
+				style={{ cursor: 'pointer' }}>
+				<INNER t={t} icon={'Notifications'} title={'Notifications'} notification={null} > </INNER>
+			</div>
+		</>
+	);
+};
 export const User = () => {
 	const dispatch: any = useDispatch();
 
@@ -92,10 +118,11 @@ export const User = () => {
 								<ChangeLang inFoot={true}/>
 							</div>
 						</div>
-						<div
-							role='presentation'
-							className='navigation-item cursor-pointer'
-							onClick={() => {
+						<div className="navigation-item cursor-pointer">
+							<Notifications/>
+						</div>
+						<div role='presentation' className='navigation-item cursor-pointer'
+							 onClick={() => {
 								setDarkModeStatus(!darkModeStatus);
 								handleItem();
 							}}>
@@ -113,6 +140,16 @@ export const User = () => {
 									</span>
 								</span>
 							</span>
+						</div>
+						<div className="navigation-item">
+							<div className="navigation-link navigation-link-pill" style={{cursor: 'pointer'}}><span
+								className="navigation-link-info"><svg viewBox="0 0 24 24" fill="currentColor"
+																	  className="svg-icon--material svg-icon navigation-icon"
+																	  data-name="Material--Notifications"><path
+								d="M0 0h24v24H0V0z" fill="none"></path><path
+								d="M12 6.5c-2.49 0-4 2.02-4 4.5v6h8v-6c0-2.48-1.51-4.5-4-4.5z" opacity="0.3"></path><path
+								d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"></path></svg><span
+								className="navigation-text">Notifications</span></span></div>
 						</div>
 
 					</div>

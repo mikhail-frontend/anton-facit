@@ -33,6 +33,39 @@ interface IItemProps {
 	activeItem?: string;
 	setActiveItem?(...args: unknown[]): unknown;
 }
+
+export const INNER = ({
+				   icon,
+				   title,
+					t,
+				   children,
+				   notification
+			   }) => (
+	<>
+			<span className='navigation-link-info'>
+				{icon && <Icon className='navigation-icon' icon={icon} />}
+				{title && <span className='navigation-text'>{t(title) as ReactNode}</span>}
+			</span>
+		{/*{(!!children || !!notification) && (*/}
+		{/*	<span className='navigation-link-extra'>*/}
+		{/*			{!!notification && (*/}
+		{/*				<Icon*/}
+		{/*					icon='Circle'*/}
+		{/*					className={classNames(*/}
+		{/*						'navigation-notification',*/}
+		{/*						{*/}
+		{/*							[`text-${notification}`]: typeof notification === 'string',*/}
+		{/*							'text-danger': typeof notification !== 'string',*/}
+		{/*						},*/}
+		{/*						'animate__animated animate__heartBeat animate__infinite animate__slower',*/}
+		{/*					)}*/}
+		{/*				/>*/}
+		{/*			)}*/}
+		{/*		{!!children && <Icon className='navigation-arrow' icon='ChevronRight' />}*/}
+		{/*		</span>*/}
+		{/*)}*/}
+	</>
+);
 const Item: FC<IItemProps> = ({
 	children,
 	to,
@@ -50,7 +83,6 @@ const Item: FC<IItemProps> = ({
 	const { darkModeStatus } = useDarkMode();
 	const { width } = useWindowSize();
 	const { setAsideStatus, setLeftMenuStatus, setRightMenuStatus } = useContext(ThemeContext);
-	const [offcanvasStatus, setOffcanvasStatus] = useState(false);
 
 	// eslint-disable-next-line react/prop-types
 	const ACTIVE = props.activeItem === id;
@@ -84,59 +116,15 @@ const Item: FC<IItemProps> = ({
 		active: isHorizontal ? match : here,
 	});
 
-	const INNER = (
-		<>
-			<span className='navigation-link-info'>
-				{icon && <Icon className='navigation-icon' icon={icon} />}
-				{title && <span className='navigation-text'>{t(title) as ReactNode}</span>}
-			</span>
-			{(!!children || !!notification) && (
-				<span className='navigation-link-extra'>
-					{!!notification && (
-						<Icon
-							icon='Circle'
-							className={classNames(
-								'navigation-notification',
-								{
-									[`text-${notification}`]: typeof notification === 'string',
-									'text-danger': typeof notification !== 'string',
-								},
-								'animate__animated animate__heartBeat animate__infinite animate__slower',
-							)}
-						/>
-					)}
-					{!!children && <Icon className='navigation-arrow' icon='ChevronRight' />}
-				</span>
-			)}
-		</>
-	);
 
-	const Notifications = () => {
-		return (
-			<>
-				<HeaderOffCanvas
-					setOffcanvasStatus={setOffcanvasStatus}
-					offcanvasStatus={offcanvasStatus}
-				/>
-				<div
-					// @ts-ignore
-					className={classNames(LINK_CLASS, ({ isActive }) => (isActive ? 'active' : ''))}
-					onClick={(event) => {
-						event.preventDefault();
-						setOffcanvasStatus(true);
-					}}
-					style={{ cursor: 'pointer' }}>
-					{INNER}
-				</div>
-			</>
-		);
-	};
+
+
 	const WITHOUT_CHILD =
 		!children &&
 		!hide &&
 		((typeof to === 'string' && ANCHOR_LINK_PATTERN.test(to) && (
 			<NavHashLink className={LINK_CLASS} to={to} onClick={linkHandleClick}>
-				{INNER}
+				<INNER t={t} title={title} icon={icon} notification={notification}> </INNER>
 			</NavHashLink>
 		)) || (
 			<NavLink
@@ -145,7 +133,7 @@ const Item: FC<IItemProps> = ({
 				className={classNames(LINK_CLASS, ({ isActive }) => (isActive ? 'active' : ''))}
 				to={`../${to}`}
 				onClick={linkHandleClick}>
-				{INNER}
+				<INNER t={t} title={title} icon={icon} notification={notification}> </INNER>
 			</NavLink>
 		));
 
@@ -202,7 +190,7 @@ const Item: FC<IItemProps> = ({
 									tabIndex={-1}
 									onClick={dropdownButtonHandleClick}
 									onKeyDown={dropdownButtonHandleClick}>
-									{INNER}
+				<INNER t={t} title={title} icon={icon} notification={notification}> </INNER>
 								</span>
 							)}
 						</Reference>
@@ -258,7 +246,7 @@ const Item: FC<IItemProps> = ({
 					tabIndex={-1}
 					onClick={handleClick}
 					onKeyDown={handleClick}>
-					{INNER}
+				<INNER t={t} title={title} icon={icon} notification={notification}> </INNER>
 				</span>
 				<Collapse isOpen={ACTIVE} isChildClone>
 					<List
@@ -276,7 +264,7 @@ const Item: FC<IItemProps> = ({
 	// without submenu
 	return (
 		<li className='navigation-item'>
-			{id === 'notifications' ? <Notifications /> : WITHOUT_CHILD}
+			{WITHOUT_CHILD}
 		</li>
 	);
 };

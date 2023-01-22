@@ -13,12 +13,6 @@ export const dashboardPagesMenu = {
 		icon: 'Anchor',
 		subMenu: null,
 	},
-	notifications: {
-		id: 'notifications',
-		text: 'Notifications',
-		icon: 'Notifications',
-		path: '/',
-	},
 	login: {
 		id: 'login',
 		text: 'Login',
