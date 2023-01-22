@@ -4,49 +4,54 @@ import {useSelector} from 'react-redux';
 import styles from './List.module.scss';
 import Button from '../../../../components/bootstrap/Button';
 import {Link} from 'react-router-dom';
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const List = () => {
 	const coursesList = useSelector((state: any) => state.courses.coursesList);
 
 	return (
-		<div className={styles.coursesList}>
+		<ResponsiveMasonry
+			columnsCountBreakPoints={{ 1199: 1, 1200: 2}}
+		>
+		<Masonry className={styles.coursesList} gutter={'0.5rem 1.5rem'} >
 			{coursesList.map((course, index) => {
 				return (
-					<Card className='col-md-12' key={course.id}>
-						<div className="row g-4">
 
-
-							<div className="col-md-5">
+					<Link to={`/courses/course/${course.id}`} key={course.id}>
+						<Card className={`col-md-12 ${styles.course}`} >
+							<div className={`row g-4 ${styles.courseContent}`}>
 								<img
-									src={course.image}
+									src={`${course.image}`}
 									alt='Storybook'
 									width={400}
 									height={400}
-									className={styles.courseImage}
+									className={`${styles.courseImage}`}
 									loading={[0, 1].includes(index) ? 'eager' : 'lazy'}
 								/>
-							</div>
-							<div className="col-md-6">
+							<div className={styles.courseMain}>
 								<CardHeader>
-									<div className='display-3 fw-bold mb-4'>{course.title}</div>
+									<div className={`display-3 fw-bold mb-4 ${styles.courseTitle}`}>{course.title}</div>
 								</CardHeader>
 								<CardBody>
 									<div dangerouslySetInnerHTML={{__html: course.text}}/>
 								</CardBody>
 								<CardFooter>
-									<Link to={`/courses/course/${course.id}`}>
-										<Button size='lg' color='info' icon='Anchor'>
-											Go to course
-										</Button>
-									</Link>
+
+									<Button size='lg' color='info' icon='Anchor'>
+										Start education
+									</Button>
+
 								</CardFooter>
 							</div>
-						</div>
+							</div>
 
-					</Card>
+						</Card>
+					</Link>
+
 				);
 			})}
-		</div>
+		</Masonry>
+		</ResponsiveMasonry>
 	);
 };
 
