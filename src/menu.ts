@@ -27,31 +27,3 @@ export const dashboardPagesMenu = {
 	},
 };
 
-export const demoPagesMenu = {
-	knowledge: {
-		id: 'knowledge',
-		text: 'Knowledge',
-		path: 'knowledge',
-		icon: 'AutoStories',
-		subMenu: {
-			grid: {
-				id: 'grid',
-				text: 'Knowledge Grid',
-				path: 'knowledge/grid',
-				icon: 'AutoStories',
-			},
-			itemID: {
-				id: 'itemID',
-				text: 'itemID',
-				path: 'knowledge/item',
-				hide: true,
-			},
-			item: {
-				id: 'item',
-				text: 'Item',
-				path: 'knowledge/item/1',
-				icon: 'Book',
-			},
-		},
-	},
-};

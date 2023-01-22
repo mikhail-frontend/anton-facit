@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 import { RouteProps } from 'react-router-dom';
-import { dashboardPagesMenu, demoPagesMenu } from '../menu';
+import { dashboardPagesMenu } from '../menu';
 import Login from '../pages/presentation/Auth/Login';
 
 const LANDING = {
@@ -9,12 +9,7 @@ const LANDING = {
 	COURSE_ITEM: lazy(() => import('../pages/presentation/CourseItem/CourseItem')),
 };
 
-const APP = {
-	KNOWLEDGE: {
-		GRID: lazy(() => import('../pages/presentation/knowledge/KnowledgeGridPage')),
-		VIEW: lazy(() => import('../pages/presentation/knowledge/KnowledgeViewPage')),
-	},
-};
+
 
 const presentation: RouteProps[] = [
 	/**
@@ -41,25 +36,11 @@ const presentation: RouteProps[] = [
 	{
 		path: dashboardPagesMenu.signUp.path,
 		element: <Login isSignUp />,
+		
 	},
 
-	/**
-	 * App > Knowledge
-	 */
-	{
-		path: demoPagesMenu.knowledge.subMenu.grid.path,
-		element: <APP.KNOWLEDGE.GRID />,
-	},
-	{
-		path: `${demoPagesMenu.knowledge.subMenu.itemID.path}/:id`,
-		element: <APP.KNOWLEDGE.VIEW />,
-	},
 
-	/**
-	 * END - App
-	 */
 
-	/** ************************************************** */
 ];
 
 const contents = [...presentation];
