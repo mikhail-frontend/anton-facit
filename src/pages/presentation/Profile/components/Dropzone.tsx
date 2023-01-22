@@ -102,7 +102,10 @@ const Dropzone: React.FC<{
 
 	return (
 		<>
-			<div style={{ position: 'relative',  margin: 'auto' }} className='col-md-6' onClick={open}>
+			<div
+				style={{ position: 'relative', margin: 'auto' }}
+				className='col-md-6'
+				onClick={open}>
 				<SvgClearAll onClick={removeAll} className={styles.close} />
 				<section className={`${styles.dropzone} ${isActive ? styles.active : ''}`}>
 					<div

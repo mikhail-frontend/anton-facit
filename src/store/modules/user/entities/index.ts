@@ -12,7 +12,7 @@ export const fullData: IValues = {
 	password: 'countryList1',
 	password_confirmation: 'countryList1',
 	language: '',
-	image: 'https://facit-minimal.omtanke.studio/static/media/scene1.79624597a493b55871be.png'
+	image: 'https://facit-minimal.omtanke.studio/static/media/scene1.79624597a493b55871be.png',
 	// image: '',
 };
 

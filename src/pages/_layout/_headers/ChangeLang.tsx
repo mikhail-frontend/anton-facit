@@ -1,19 +1,26 @@
-import React, {useLayoutEffect} from 'react';
-import Dropdown, {DropdownItem, DropdownMenu, DropdownToggle,} from '../../../components/bootstrap/Dropdown';
-import LANG, {getLangWithKey, ILang} from '../../../lang';
-import Button, {IButtonProps} from '../../../components/bootstrap/Button';
-import {useTranslation} from 'react-i18next';
+import React, { useLayoutEffect } from 'react';
+import Dropdown, {
+	DropdownItem,
+	DropdownMenu,
+	DropdownToggle,
+} from '../../../components/bootstrap/Dropdown';
+import LANG, { getLangWithKey, ILang } from '../../../lang';
+import Button, { IButtonProps } from '../../../components/bootstrap/Button';
+import { useTranslation } from 'react-i18next';
 import showNotification from '../../../components/extras/showNotification';
 import Icon from '../../../components/icon/Icon';
 import Spinner from '../../../components/bootstrap/Spinner';
 import useDarkMode from '../../../hooks/useDarkMode';
 
-const ChangeLang = ({inFoot = false}) => {
-	const {i18n} = useTranslation();
+type ChangeLangType = {
+	inFoot: boolean;
+};
+const ChangeLang: React.FC<ChangeLangType> = ({ inFoot = false }) => {
+	const { i18n } = useTranslation();
 	const { darkModeStatus } = useDarkMode();
 
 	const styledBtn: IButtonProps = {
-		color: !inFoot ? darkModeStatus ? 'dark' : 'light' : 'dark',
+		color: !inFoot ? (darkModeStatus ? 'dark' : 'light') : 'dark',
 		hoverShadow: 'default',
 		isLight: !inFoot ? !darkModeStatus : false,
 		size: 'lg',
@@ -43,41 +50,41 @@ const ChangeLang = ({inFoot = false}) => {
 					<DropdownToggle hasIcon={false}>
 						{typeof getLangWithKey(i18n.language as ILang['key']['lng'])?.icon ===
 						'undefined' ? (
-							<div className='d-flex align-items-center' style={{cursor: 'pointer'}}>
-
+							<div
+								className='d-flex align-items-center'
+								style={{ cursor: 'pointer' }}>
 								<Button
 									// eslint-disable-next-line react/jsx-props-no-spreading
 									{...styledBtn}
 									className='btn-only-icon'
 									aria-label='Change language'>
-									<Spinner isSmall inButton='onlyIcon' isGrow/>
+									<Spinner isSmall inButton='onlyIcon' isGrow />
 								</Button>
 								<div className='navigation-link navigation-link-pill'>
 									<div className='navigation-link-info'>
-											<span className='navigation-text'>
-							Your language
-									</span>
+										<span className='navigation-text'>Your language</span>
 									</div>
 								</div>
 							</div>
 						) : (
-							<div className='d-flex align-items-center rounded' style={{cursor: 'pointer'}}>
+							<div
+								className='d-flex align-items-center rounded'
+								style={{ cursor: 'pointer' }}>
 								<Button
 									// eslint-disable-next-line react/jsx-props-no-spreading
 									{...styledBtn}
-									icon={getLangWithKey(i18n.language as ILang['key']['lng'])?.icon}
+									icon={
+										getLangWithKey(i18n.language as ILang['key']['lng'])?.icon
+									}
 									aria-label='Change language'
 								/>
 								<div className='navigation-link navigation-link-pill'>
 									<div className='navigation-link-info'>
-											<span className='navigation-text'>
-							Your language
-									</span>
+										<span className='navigation-text'>Your language</span>
 									</div>
 								</div>
 							</div>
 						)}
-
 					</DropdownToggle>
 					<DropdownMenu isAlignmentEnd>
 						{Object.keys(LANG).map((i) => (

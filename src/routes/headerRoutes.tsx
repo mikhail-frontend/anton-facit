@@ -16,7 +16,7 @@ const headers: RouteProps[] = [
 	},
 	{
 		path: `*`,
-		element: null
+		element: null,
 	},
 ];
 

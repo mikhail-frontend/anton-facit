@@ -106,7 +106,7 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({ beforeChildren, afterC
 
 				{/* Lang Selector */}
 
-				<ChangeLang />
+				<ChangeLang inFoot={false} />
 
 				{/*	Notifications */}
 				<div className='col-auto'>

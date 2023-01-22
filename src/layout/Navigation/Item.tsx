@@ -14,7 +14,6 @@ import PropTypes from 'prop-types';
 import { List } from './Navigation';
 // @ts-ignore
 import useEventOutside from '@omtanke/react-use-event-outside';
-import { HeaderOffCanvas } from '../../pages/_layout/_headers/CommonHeaderRight';
 
 // import showNotification from "../../components/extras/showNotification";
 
@@ -34,36 +33,17 @@ interface IItemProps {
 	setActiveItem?(...args: unknown[]): unknown;
 }
 
-export const INNER = ({
-				   icon,
-				   title,
-					t,
-				   children,
-				   notification
-			   }) => (
+type InnerType = {
+	icon: string;
+	title: string;
+	t: any;
+};
+export const INNER: React.FC<InnerType> = ({ icon, title, t }) => (
 	<>
-			<span className='navigation-link-info'>
-				{icon && <Icon className='navigation-icon' icon={icon} />}
-				{title && <span className='navigation-text'>{t(title) as ReactNode}</span>}
-			</span>
-		{/*{(!!children || !!notification) && (*/}
-		{/*	<span className='navigation-link-extra'>*/}
-		{/*			{!!notification && (*/}
-		{/*				<Icon*/}
-		{/*					icon='Circle'*/}
-		{/*					className={classNames(*/}
-		{/*						'navigation-notification',*/}
-		{/*						{*/}
-		{/*							[`text-${notification}`]: typeof notification === 'string',*/}
-		{/*							'text-danger': typeof notification !== 'string',*/}
-		{/*						},*/}
-		{/*						'animate__animated animate__heartBeat animate__infinite animate__slower',*/}
-		{/*					)}*/}
-		{/*				/>*/}
-		{/*			)}*/}
-		{/*		{!!children && <Icon className='navigation-arrow' icon='ChevronRight' />}*/}
-		{/*		</span>*/}
-		{/*)}*/}
+		<span className='navigation-link-info'>
+			{icon && <Icon className='navigation-icon' icon={icon} />}
+			{title && <span className='navigation-text'>{t(title) as ReactNode}</span>}
+		</span>
 	</>
 );
 const Item: FC<IItemProps> = ({
@@ -116,15 +96,12 @@ const Item: FC<IItemProps> = ({
 		active: isHorizontal ? match : here,
 	});
 
-
-
-
 	const WITHOUT_CHILD =
 		!children &&
 		!hide &&
 		((typeof to === 'string' && ANCHOR_LINK_PATTERN.test(to) && (
 			<NavHashLink className={LINK_CLASS} to={to} onClick={linkHandleClick}>
-				<INNER t={t} title={title} icon={icon} notification={notification}> </INNER>
+				<INNER t={t} title={title} icon={icon} />
 			</NavHashLink>
 		)) || (
 			<NavLink
@@ -133,7 +110,7 @@ const Item: FC<IItemProps> = ({
 				className={classNames(LINK_CLASS, ({ isActive }) => (isActive ? 'active' : ''))}
 				to={`../${to}`}
 				onClick={linkHandleClick}>
-				<INNER t={t} title={title} icon={icon} notification={notification}> </INNER>
+				<INNER t={t} title={title} icon={icon} />
 			</NavLink>
 		));
 
@@ -190,7 +167,7 @@ const Item: FC<IItemProps> = ({
 									tabIndex={-1}
 									onClick={dropdownButtonHandleClick}
 									onKeyDown={dropdownButtonHandleClick}>
-				<INNER t={t} title={title} icon={icon} notification={notification}> </INNER>
+									<INNER t={t} title={title} icon={icon} />
 								</span>
 							)}
 						</Reference>
@@ -246,7 +223,7 @@ const Item: FC<IItemProps> = ({
 					tabIndex={-1}
 					onClick={handleClick}
 					onKeyDown={handleClick}>
-				<INNER t={t} title={title} icon={icon} notification={notification}> </INNER>
+					<INNER t={t} title={title} icon={icon} />
 				</span>
 				<Collapse isOpen={ACTIVE} isChildClone>
 					<List
@@ -262,11 +239,7 @@ const Item: FC<IItemProps> = ({
 		);
 	}
 	// without submenu
-	return (
-		<li className='navigation-item'>
-			{WITHOUT_CHILD}
-		</li>
-	);
+	return <li className='navigation-item'>{WITHOUT_CHILD}</li>;
 };
 Item.propTypes = {
 	children: PropTypes.node,

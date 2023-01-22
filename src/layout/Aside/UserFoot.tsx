@@ -1,22 +1,22 @@
-import React, {FC, ReactNode, useMemo, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
-import {useTranslation} from 'react-i18next';
+import React, { FC, ReactNode, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import classNames from 'classnames';
 
-import {DropdownItem, DropdownMenu} from '../../components/bootstrap/Dropdown';
+import { DropdownItem, DropdownMenu } from '../../components/bootstrap/Dropdown';
 import Button from '../../components/bootstrap/Button';
 import useDarkMode from '../../hooks/useDarkMode';
 import Collapse from '../../components/bootstrap/Collapse';
-import Navigation, {NavigationLine} from '../Navigation/Navigation';
+import Navigation, { NavigationLine } from '../Navigation/Navigation';
 import Icon from '../../components/icon/Icon';
 import useNavigationItemHandle from '../../hooks/useNavigationItemHandle';
-import {useDispatch, useSelector} from 'react-redux';
-import {logOutUser} from '../../store/modules/user/userActions';
-import ChangeLang from "../../pages/_layout/_headers/ChangeLang";
+import { useDispatch, useSelector } from 'react-redux';
+import { logOutUser } from '../../store/modules/user/userActions';
+import ChangeLang from '../../pages/_layout/_headers/ChangeLang';
 import UserImage4 from '../../assets/img/wanna/wanna4.png';
-import {INNER} from '../../layout/Navigation/Item';
-import {HeaderOffCanvas} from "../../pages/_layout/_headers/CommonHeaderRight";
-import {dashboardPagesMenu} from "../../menu";
+import { INNER } from '../Navigation/Item';
+import { HeaderOffCanvas } from '../../pages/_layout/_headers/CommonHeaderRight';
+import { dashboardPagesMenu } from '../../menu';
 
 interface IAsideFootProps {
 	children: ReactNode;
@@ -26,7 +26,7 @@ interface IAsideFootProps {
 	children: ReactNode;
 }
 
-export const AsideFoot: FC<IAsideFootProps> = ({children}) => {
+export const AsideFoot: FC<IAsideFootProps> = ({ children }) => {
 	return <div className='aside-foot'>{children}</div>;
 };
 
@@ -49,7 +49,7 @@ const Notifications = () => {
 					setOffcanvasStatus(true);
 				}}
 				style={{ cursor: 'pointer' }}>
-				<INNER t={t} icon={'Notifications'} title={'Notifications'} notification={null} > </INNER>
+				<INNER t={t} icon={'Notifications'} title={'Notifications'} />
 			</div>
 		</>
 	);
@@ -71,17 +71,15 @@ export const User = () => {
 
 	const { t } = useTranslation(['translation', 'menu']);
 
-
 	const resultMenu = useMemo(() => {
 		const notAvailable = ['summary'];
 		return Object.entries(dashboardPagesMenu).reduce((acc, [key, value]) => {
-			if(!notAvailable.includes(key)) {
+			if (!notAvailable.includes(key)) {
 				acc[key] = value;
 			}
-			return acc
-		}, {})
-
-	}, [])
+			return acc;
+		}, {});
+	}, []);
 
 	return (
 		<>
@@ -126,19 +124,19 @@ export const User = () => {
 					<Navigation menu={resultMenu} id='footer-dashboard' />
 
 					<div className='navigation'>
-						<div className="navigation-item cursor-pointer">
-							<Notifications/>
+						<div className='navigation-item cursor-pointer'>
+							<Notifications />
 						</div>
-						<div
-							role='presentation'
-							className='navigation-item cursor-pointer'>
-							<div className="d-flex align-items-center">
-								<ChangeLang inFoot={true}/>
+						<div role='presentation' className='navigation-item cursor-pointer'>
+							<div className='d-flex align-items-center'>
+								<ChangeLang inFoot={true} />
 							</div>
 						</div>
 
-						<div role='presentation' className='navigation-item cursor-pointer'
-							 onClick={() => {
+						<div
+							role='presentation'
+							className='navigation-item cursor-pointer'
+							onClick={() => {
 								setDarkModeStatus(!darkModeStatus);
 								handleItem();
 							}}>
@@ -157,30 +155,38 @@ export const User = () => {
 								</span>
 							</span>
 						</div>
-						<div className="navigation-item">
-							<div className="navigation-link navigation-link-pill" style={{cursor: 'pointer'}}><span
-								className="navigation-link-info"><svg viewBox="0 0 24 24" fill="currentColor"
-																	  className="svg-icon--material svg-icon navigation-icon"
-																	  data-name="Material--Notifications"><path
-								d="M0 0h24v24H0V0z" fill="none"></path><path
-								d="M12 6.5c-2.49 0-4 2.02-4 4.5v6h8v-6c0-2.48-1.51-4.5-4-4.5z" opacity="0.3"></path><path
-								d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"></path></svg><span
-								className="navigation-text">Notifications</span></span></div>
+						<div className='navigation-item'>
+							<div
+								className='navigation-link navigation-link-pill'
+								style={{ cursor: 'pointer' }}>
+								<span className='navigation-link-info'>
+									<svg
+										viewBox='0 0 24 24'
+										fill='currentColor'
+										className='svg-icon--material svg-icon navigation-icon'
+										data-name='Material--Notifications'>
+										<path d='M0 0h24v24H0V0z' fill='none'></path>
+										<path
+											d='M12 6.5c-2.49 0-4 2.02-4 4.5v6h8v-6c0-2.48-1.51-4.5-4-4.5z'
+											opacity='0.3'></path>
+										<path d='M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z'></path>
+									</svg>
+									<span className='navigation-text'>Notifications</span>
+								</span>
+							</div>
 						</div>
-
 					</div>
 				</nav>
 				<NavigationLine />
 				<nav aria-label='aside-bottom-user-menu-2'>
 					<div className='navigation'>
-
 						<div
 							role='presentation'
 							className='navigation-item cursor-pointer'
 							onClick={() => logOutAndRedirect()}>
 							<span className='navigation-link navigation-link-pill'>
 								<span className='navigation-link-info'>
-									<Icon icon='Logout' className='navigation-icon'/>
+									<Icon icon='Logout' className='navigation-icon' />
 									<span className='navigation-text'>
 										{t('menu:Logout') as ReactNode}
 									</span>
@@ -188,7 +194,6 @@ export const User = () => {
 							</span>
 						</div>
 					</div>
-
 				</nav>
 			</Collapse>
 		</>
@@ -200,6 +205,7 @@ export const UserFoot = () => {
 		<AsideFoot>
 			<nav aria-label='aside-bottom-menu'>
 				<div className='navigation'></div>
+
 			</nav>
 			<User />
 		</AsideFoot>
