@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import coursesListDUMMY from '../../modules/courses/entities/coursesListDUMMY';
 
 const index = createSlice({
     name: 'courseItem',
     initialState: {
         currentCourse: null,
-        coursesLoading: true,
+        courseItemLoading: true,
     },
     reducers: {
         setCurrentCourse(state, { payload }) {
@@ -14,7 +13,7 @@ const index = createSlice({
             return { ...state, currentCourse: {...course, ...payload} };
         },
         setLoading(state, { payload }) {
-            return { ...state, coursesLoading: payload };
+            return { ...state, courseItemLoading: payload };
         },
     },
 });

@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from 'react';
+import React, {Dispatch, useEffect, useMemo} from 'react';
 import SubHeader, {
 	SubHeaderLeft,
 	SubheaderSeparator,
@@ -7,24 +7,41 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import Button from '../../../components/bootstrap/Button';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import classNames from "classnames";
+import { useSelector, useDispatch } from 'react-redux';
+import CourseContent from "./components/CourseContent";
+import {getCourse} from "../../../store/modules/courseItem/courseItemActions";
+import Loading from '../CoursesList/components/Loading';
 
 const CourseItem = () => {
 	const navigate = useNavigate();
 	const { courseId } = useParams();
 	const coursesList = useSelector((state: any) => state.courses.coursesList);
+
 	const currentCourse = useMemo(() => {
 		return coursesList.find((course) => Number(course.id) === Number(courseId));
 	}, [courseId, coursesList]);
+
+	const dispatch: Dispatch<any> = useDispatch();
+	const courseItemLoading = useSelector((state: any) => state.courseItem.courseItemLoading);
+
+	useEffect(() => {
+		if (!courseItemLoading) return;
+		dispatch(getCourse(currentCourse));
+		return () => {};
+		//eslint-disable-next-line
+	}, []);
 
 	useEffect(() => {
 		if(!currentCourse) {
 			navigate('/404')
 		}
+		return () => {}
 	}, [currentCourse])
 
+
 	if(!currentCourse) return <></>;
+
+
 	return (
 		<PageWrapper title={currentCourse ? currentCourse.title : 'Course page'}>
 			<SubHeader>
@@ -36,24 +53,8 @@ const CourseItem = () => {
 				</SubHeaderLeft>
 			</SubHeader>
 			<Page>
-				<div className='display-4 fw-bold pt-3 pb-5'>{currentCourse ? currentCourse.title : 'Course page'}</div>
-				<div className='row g-4'>
-					<div className='col-12'>
-						<div className={classNames('ratio ratio-21x9', 'rounded-2', 'mb-3', 'bg-l10-danger')}>
-							<img
-								src={currentCourse?.image || ''}
-								alt={currentCourse ? currentCourse.title : 'Course page'}
-								width='100%'
-								height='auto'
-								className='object-fit-contain p-5'
-							/>
-						</div>
-					</div>
-					<div className='col-12'>
-						<h3 className='text-muted'>Subheading will be here</h3>
-					</div>
-					<div className='col-12' dangerouslySetInnerHTML={{__html: currentCourse.text}}/>
-				</div>
+				{courseItemLoading && <Loading/>}
+				{!courseItemLoading && <CourseContent/>}
 			</Page>
 		</PageWrapper>
 	);
