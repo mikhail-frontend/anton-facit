@@ -1,4 +1,4 @@
-# Facit | React Admin Dashboard Template V4.1.4
+# U10 university | React Admin Dashboard Template V4.1.4
 
 #### Required files (Checked ones should definitely be in your project)
 - [ ] .storybook

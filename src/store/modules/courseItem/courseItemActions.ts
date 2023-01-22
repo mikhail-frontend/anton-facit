@@ -5,6 +5,5 @@ export const getCourse = () => {
     return async (dispatch) => {
         await getData('https://httpbin.org/get');
         dispatch(courseItem.actions.setLoading(false));
-        dispatch(courseItem.actions.setLoading(false));
     };
 };

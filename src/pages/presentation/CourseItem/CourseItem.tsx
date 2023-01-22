@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import React, {useEffect, useMemo} from 'react';
 import SubHeader, {
 	SubHeaderLeft,
-	SubHeaderRight,
 	SubheaderSeparator,
 } from '../../../layout/SubHeader/SubHeader';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
@@ -9,6 +8,7 @@ import Page from '../../../layout/Page/Page';
 import Button from '../../../components/bootstrap/Button';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import classNames from "classnames";
 
 const CourseItem = () => {
 	const navigate = useNavigate();
@@ -18,6 +18,13 @@ const CourseItem = () => {
 		return coursesList.find((course) => Number(course.id) === Number(courseId));
 	}, [courseId, coursesList]);
 
+	useEffect(() => {
+		if(!currentCourse) {
+			navigate('/404')
+		}
+	}, [currentCourse])
+
+	if(!currentCourse) return <></>;
 	return (
 		<PageWrapper title={currentCourse ? currentCourse.title : 'Course page'}>
 			<SubHeader>
@@ -26,18 +33,26 @@ const CourseItem = () => {
 						Back to List
 					</Button>
 					<SubheaderSeparator />
-					<SubHeaderRight>
-						<h1 className='display-8'>
-							{currentCourse ? currentCourse.title : 'Course page'}
-						</h1>
-					</SubHeaderRight>
 				</SubHeaderLeft>
 			</SubHeader>
-			<Page container='fluid'>
-				<div>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusamus assumenda
-					aut corporis dolores eius eos ex harum hic, mollitia officiis praesentium quae
-					quas quisquam saepe, similique soluta velit voluptatibus.
+			<Page>
+				<div className='display-4 fw-bold pt-3 pb-5'>{currentCourse ? currentCourse.title : 'Course page'}</div>
+				<div className='row g-4'>
+					<div className='col-12'>
+						<div className={classNames('ratio ratio-21x9', 'rounded-2', 'mb-3')}>
+							<img
+								src={currentCourse?.image || ''}
+								alt={currentCourse ? currentCourse.title : 'Course page'}
+								width='100%'
+								height='auto'
+								className='object-fit-contain p-5'
+							/>
+						</div>
+					</div>
+					<div className='col-12'>
+						<h3 className='text-muted'>Subheading will be here</h3>
+					</div>
+					<div className='col-12' dangerouslySetInnerHTML={{__html: currentCourse.text}}/>
 				</div>
 			</Page>
 		</PageWrapper>

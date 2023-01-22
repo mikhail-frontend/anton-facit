@@ -5,6 +5,9 @@ import Img6 from '../../../../assets/img/scene4.png';
 import COLORS from '../../../../common/data/enumColors';
 import { TColor } from '../../../../type/color-type';
 
+const test = require('../../../../assets/img/scene1.png');
+console.log(test)
+
 export type TTags = { text: string; color: TColor };
 const TAGS: { [key: string]: TTags } = {
 	NPM: {

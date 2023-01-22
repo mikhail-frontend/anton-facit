@@ -30,8 +30,9 @@ const Item: FC<IItemProps> = ({ id, image, title, description, tags, color }) =>
 	return (
 		<Card
 			className='cursor-pointer shadow-3d-primary shadow-3d-hover'
-			onClick={handleOnClick}
-			data-tour={title}>
+			onClick={handleOnClick}>
+
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consequatur cum cupiditate ea eveniet impedit magnam minima mollitia neque non, nostrum odit officia tenetur, ut velit? Ad commodi ipsam vero?
 			<CardBody>
 				<div
 					className={classNames(
