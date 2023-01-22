@@ -179,7 +179,7 @@ const Profile = () => {
 					</Card>
 					<Card>
 						<CardHeader>
-							<CardLabel icon='Person' iconColor='success' style={{ flex: 1 }}>
+							<CardLabel icon='Settings' iconColor='success' style={{ flex: 1 }}>
 								<CardTitle>Personal Information</CardTitle>
 								<CardSubTitle>User's credentials</CardSubTitle>
 							</CardLabel>
@@ -316,7 +316,7 @@ const Profile = () => {
 
 					<Card>
 						<CardHeader>
-							<CardLabel icon='Settings' iconColor='success'>
+							<CardLabel icon='LocalPolice' iconColor='primary'>
 								<CardTitle>Password Settings</CardTitle>
 							</CardLabel>
 						</CardHeader>

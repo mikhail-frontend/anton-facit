@@ -19,12 +19,11 @@ const Dropzone: React.FC<{
 	const [loading, setLoading] = useState(false);
 	const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
 
-	//eslint-disable-next-line
-	const {getRootProps, getInputProps, acceptedFiles, open} = useDropzone({
+
+	const {getRootProps, getInputProps, acceptedFiles:acceptedFilesList, open} = useDropzone({
 		accept: {
 			'image/*': [],
 		},
-		//eslint-disable-next-line
 		onDrop: async (acceptedFiles: any[]) => {
 			setLoading(true);
 			const [image] = acceptedFiles;
@@ -57,8 +56,8 @@ const Dropzone: React.FC<{
 	const removeAll = (event: React.MouseEvent<any>) => {
 		event.preventDefault();
 		event.stopPropagation();
-		acceptedFiles.length = 0;
-		(inputRef as any).current.value = '';
+		acceptedFilesList.length = 0;
+		inputRef && inputRef.current ? inputRef.current.value = '' : void null;
 		setFiles([]);
 		deletePhoto();
 		setSelectedImage(undefined);
