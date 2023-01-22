@@ -1,8 +1,9 @@
 import React from 'react';
 import classNames from "classnames";
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 import type {IItemProps} from './CourseLesson';
 import CourseLesson from './CourseLesson'
+import Comments from "./Comments";
 type currentCourseType = {
     id: number
     title: string
@@ -53,8 +54,11 @@ const CourseContent:React.FC<CourseContentType> = ({ showLessons}) => {
                     )
                 })}
             </div>}
+            <Comments/>
         </>
-    );
+
+    )
+        ;
 };
 
 CourseContent.defaultProps = {
