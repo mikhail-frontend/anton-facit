@@ -1,18 +1,18 @@
-import React, { FC, useState, ReactNode } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import React, {FC, ReactNode, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
 import classNames from 'classnames';
 
-import { DropdownItem, DropdownMenu } from '../../components/bootstrap/Dropdown';
+import {DropdownItem, DropdownMenu} from '../../components/bootstrap/Dropdown';
 import Button from '../../components/bootstrap/Button';
 import useDarkMode from '../../hooks/useDarkMode';
 import Collapse from '../../components/bootstrap/Collapse';
-import { NavigationLine } from '../Navigation/Navigation';
+import {NavigationLine} from '../Navigation/Navigation';
 import Icon from '../../components/icon/Icon';
 import useNavigationItemHandle from '../../hooks/useNavigationItemHandle';
-import { useDispatch, useSelector } from 'react-redux';
-import { logOutUser } from '../../store/modules/user/userActions';
-
+import {useDispatch, useSelector} from 'react-redux';
+import {logOutUser} from '../../store/modules/user/userActions';
+import ChangeLang from "../../pages/_layout/_headers/ChangeLang";
 import UserImage4 from '../../assets/img/wanna/wanna4.png';
 
 interface IAsideFootProps {
@@ -22,7 +22,8 @@ interface IAsideFootProps {
 interface IAsideFootProps {
 	children: ReactNode;
 }
-export const AsideFoot: FC<IAsideFootProps> = ({ children }) => {
+
+export const AsideFoot: FC<IAsideFootProps> = ({children}) => {
 	return <div className='aside-foot'>{children}</div>;
 };
 
@@ -86,6 +87,13 @@ export const User = () => {
 					<div className='navigation'>
 						<div
 							role='presentation'
+							className='navigation-item cursor-pointer'>
+							<div className="d-flex align-items-center">
+								<ChangeLang inFoot={true}/>
+							</div>
+						</div>
+						<div
+							role='presentation'
 							className='navigation-item cursor-pointer'
 							onClick={() => {
 								setDarkModeStatus(!darkModeStatus);
@@ -106,18 +114,20 @@ export const User = () => {
 								</span>
 							</span>
 						</div>
+
 					</div>
 				</nav>
 				<NavigationLine />
 				<nav aria-label='aside-bottom-user-menu-2'>
 					<div className='navigation'>
+
 						<div
 							role='presentation'
 							className='navigation-item cursor-pointer'
 							onClick={() => logOutAndRedirect()}>
 							<span className='navigation-link navigation-link-pill'>
 								<span className='navigation-link-info'>
-									<Icon icon='Logout' className='navigation-icon' />
+									<Icon icon='Logout' className='navigation-icon'/>
 									<span className='navigation-text'>
 										{t('menu:Logout') as ReactNode}
 									</span>
@@ -125,6 +135,7 @@ export const User = () => {
 							</span>
 						</div>
 					</div>
+
 				</nav>
 			</Collapse>
 		</>

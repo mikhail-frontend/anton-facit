@@ -28,7 +28,7 @@ const List = () => {
 									<div className={styles.courseMain}>
 										<CardHeader>
 											<div
-												className={`display-3 fw-bold mb-4 ${styles.courseTitle}`}>
+												className={`display-4 fw-bold mb-4 ${styles.courseTitle}`}>
 												{course.title}
 											</div>
 										</CardHeader>
