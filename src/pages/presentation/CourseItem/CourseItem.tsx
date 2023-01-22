@@ -15,7 +15,6 @@ const CourseItem = () => {
 	const { courseId } = useParams();
 	const coursesList = useSelector((state: any) => state.courses.coursesList);
 	const currentCourse = useMemo(() => {
-		console.log(coursesList);
 		return coursesList.find((course) => Number(course.id) === Number(courseId));
 	}, [courseId, coursesList]);
 
@@ -23,7 +22,7 @@ const CourseItem = () => {
 		<PageWrapper title={currentCourse ? currentCourse.title : 'Course page'}>
 			<SubHeader>
 				<SubHeaderLeft>
-					<Button color='info' isLink icon='ArrowBack' onClick={() => navigate(-1)}>
+					<Button color='info' isLink icon='ArrowBack' onClick={() => navigate('/courses')}>
 						Back to List
 					</Button>
 					<SubheaderSeparator />

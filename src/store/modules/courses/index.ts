@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import coursesListDUMMY from './entities/coursesListDUMMY';
 
 const index = createSlice({
 	name: 'courses',
 	initialState: {
-		coursesList: [],
+		coursesList: coursesListDUMMY,
 		coursesLoading: true,
 	},
 	reducers: {
