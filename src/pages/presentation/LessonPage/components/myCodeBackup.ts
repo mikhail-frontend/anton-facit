@@ -1,4 +1,6 @@
 // eslint-disable-next-line
+import {useCallback} from "react";
+
 export default '';
 // import {useCallback} from "react";
 //
@@ -26,3 +28,18 @@ export default '';
 //         });
 //     });
 // }, [])
+
+
+// // eslint-disable-next-line
+// const getTimecodeValue = useCallback((time: string): string => {
+//     if (!timecodes || !timecodes.length) return '';
+//     const timeValue = time
+//         .split(':')
+//         .reverse()
+//         .reduce((result, timePart, index) => result + Number(timePart) * 60 ** index, 0);
+//     for (let i = 0; i < timecodes.length; i++) {
+//         if (timecodes[i].seconds > timeValue) return timecodes[i - 1]?.description;
+//     }
+//     return timecodes[timecodes.length - 1]?.description;
+//     // eslint-disable-next-line
+// }, []);
