@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import Comments from '../../CourseItem/components/Comments';
+import VideoPlayer from "./VideoPlayer";
 
 const LessonContent = () => {
 	const { currentLesson } = useSelector((state: any) => state.lesson);
@@ -33,6 +34,7 @@ const LessonContent = () => {
 					className='col-12 mb-4'
 					dangerouslySetInnerHTML={{ __html: currentLesson.description }}
 				/>
+				<VideoPlayer/>
 			</div>
 
 			<Comments />
