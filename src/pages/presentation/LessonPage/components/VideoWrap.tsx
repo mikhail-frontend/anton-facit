@@ -3,15 +3,29 @@ import React, {useMemo} from 'react';
 import VideoPlayer from "./VideoPlayer";
 //@ts-ignore
 import type {VideoJsPlayerPluginOptions} from 'video.js';
-
-const VideoWrap:React.FC<Partial<{
-    videoSources: any,
+type VideoWrapType = {
+    videoUrl: string
+    defaultPoster: string
+    customPoster: string
+    videoSources: any
+    currentTime: number
+    autoplay: boolean
     timecodes: any[]
-}>> = ({videoSources, timecodes = []}) => {
+
+}
+const VideoWrap:React.FC<Partial<VideoWrapType>> = ({
+                                                        videoUrl,
+                                                        defaultPoster,
+                                                        customPoster,
+                                                        videoSources,
+                                                        currentTime,
+                                                        autoplay,
+                                                        timecodes
+                                                    }) => {
     const parseVideoSources:VideoJsPlayerPluginOptions = useMemo(() => {
         const defaultValue = [
             {
-                src: '',
+                src: videoUrl,
                 type: 'video/mp4',
                 label: 'original',
                 selected: true
@@ -33,7 +47,7 @@ const VideoWrap:React.FC<Partial<{
 
     const videoOptions = useMemo(() => {
         return {
-            autoplay: false,
+            autoplay: autoplay,
             controls: true,
             controlBar: {
                 timeDivider: true,
@@ -45,17 +59,31 @@ const VideoWrap:React.FC<Partial<{
             sources: parseVideoSources
         }
     }, []);
-
-
-
-
+    
     return (
         <>
             <div className="player">
-                <VideoPlayer/>
+                <VideoPlayer
+                    options={videoOptions}
+                    currentTime={currentTime}
+                    timecodes={timecodes}
+                    defaultPoster={defaultPoster}
+                    customPoster={customPoster}
+                    className='vjs-custom-skin'
+                />
             </div>
         </>
     );
 };
+
+VideoWrap.defaultProps = {
+    videoUrl: '',
+    defaultPoster: '',
+    customPoster: '',
+    videoSources: {availableResolutions: [], sources: [] },
+    currentTime: 0,
+    autoplay: false,
+    timecodes: []
+}
 
 export default VideoWrap;
