@@ -7,7 +7,7 @@ import Comments from './Comments';
 import styles from './CourseContent.module.scss'
 import {Link, useParams} from "react-router-dom";
 
-type CurrentCourseType = {
+export type CurrentCourseType = {
     id: number;
     title: string;
     image: string;
