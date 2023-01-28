@@ -4,7 +4,6 @@ import {useSelector} from 'react-redux';
 import type {IItemProps} from './CourseLesson';
 import CourseLesson from './CourseLesson';
 import Comments from './Comments';
-import styles from './CourseContent.module.scss'
 import {Link, useParams} from "react-router-dom";
 
 export type CurrentCourseType = {
@@ -61,7 +60,7 @@ const CourseContent: React.FC<CourseContentType> = ({showLessons}) => {
                         {currentCourse.lessons.map((lesson) => {
                             return (
                                 <Link key={lesson.id}
-                                      className={`${styles.courseLink} col-xl-3 col-lg-4 col-md-6`}
+                                      className={`col-xl-3 col-lg-4 col-md-6`}
                                       to={`/courses/course/${courseId}/lesson/${lesson.id}`}>
                                     <CourseLesson
                                         id={lesson.id}
