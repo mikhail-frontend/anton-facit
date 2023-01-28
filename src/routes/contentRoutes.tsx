@@ -7,12 +7,10 @@ const LANDING = {
 	DASHBOARD: lazy(() => import('../pages/presentation/Profile/Profile')),
 	SUMMARY: lazy(() => import('../pages/presentation/CoursesList/Courses')),
 	COURSE_ITEM: lazy(() => import('../pages/presentation/CourseItem/CourseItem')),
+	LESSON_PAGE: lazy(() => import('../pages/presentation/LessonPage/LessonPage')),
 };
 
 const presentation: RouteProps[] = [
-	/**
-	 * Landing
-	 */
 	{
 		path: dashboardPagesMenu.dashboard.path,
 		element: <LANDING.DASHBOARD />,
@@ -24,6 +22,10 @@ const presentation: RouteProps[] = [
 	{
 		path: `/courses/course/:courseId`,
 		element: <LANDING.COURSE_ITEM />,
+	},
+	{
+		path: `/courses/course/:courseId/lesson/:lessonId`,
+		element: <LANDING.LESSON_PAGE />,
 	},
 	/** ************************************************** */
 

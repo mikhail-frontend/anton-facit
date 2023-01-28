@@ -26,7 +26,7 @@ export type IItemProps = {
 const CourseLesson: React.FC<IItemProps> = ({ image, title, description, tags, color }) => {
 	const { darkModeStatus } = useDarkMode();
 	return (
-		<div className='col-xl-3 col-lg-4 col-md-6'>
+		<>
 			<Card className='cursor-pointer shadow-3d-primary shadow-3d-hover' data-tour={title}>
 				<CardBody>
 					<div
@@ -59,7 +59,7 @@ const CourseLesson: React.FC<IItemProps> = ({ image, title, description, tags, c
 					</div>
 				</CardBody>
 			</Card>
-		</div>
+		</>
 	);
 };
 export default CourseLesson;

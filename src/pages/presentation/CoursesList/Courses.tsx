@@ -26,7 +26,7 @@ const Courses = () => {
 				</SubHeaderLeft>
 			</SubHeader>
 			<Page container='fluid'>
-				{coursesLoading && <Loading />}
+				{coursesLoading && <Loading text={`We're loading courses list`} />}
 				{!coursesLoading && <List />}
 			</Page>
 		</PageWrapper>
