@@ -2114,6 +2114,14 @@
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
+"@silvermine/videojs-quality-selector@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@silvermine/videojs-quality-selector/-/videojs-quality-selector-1.2.5.tgz#da48b6437bad5f8def2922cbf3d77c8c5e411a28"
+  integrity sha512-cielchUzL8r2EX01S7PfR54tTbxDZR53xIDJoUi9Wg6pM2X+ftdJD6XiIDVOjPlBoG94iuG9LJwUtjX5IhrWZQ==
+  dependencies:
+    class.extend "0.9.1"
+    underscore "1.13.1"
+
 "@sinclair/typebox@^0.24.1":
   version "0.24.51"
   resolved "https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.24.51.tgz"
@@ -5769,6 +5777,11 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+class.extend@0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/class.extend/-/class.extend-0.9.1.tgz#b4ee417c693740a44a92a6d64f1c9540641b097a"
+  integrity sha512-Tzj+2kAkZs+iGiUOUoKvtj4c/SjeVdKZXg/NbLTGKu0kp66h69dyMHQwOSzuyIghXAUswuY24TZc0HdaJCXx2A==
 
 classnames@^2.2.5, classnames@^2.3.2:
   version "2.3.2"
@@ -15595,6 +15608,11 @@ unbox-primitive@^1.0.2:
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
+
+underscore@1.13.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.1.tgz#0c1c6bd2df54b6b69f2314066d65b6cde6fcf9d1"
+  integrity sha512-hzSoAVtJF+3ZtiFX0VgfFPHEDRm7Y/QPjGyNo4TVdnDTdft3tr8hEkD25a1jC+TjTuE7tkHGKkhwCgs9dgBB2g==
 
 unfetch@^4.2.0:
   version "4.2.0"

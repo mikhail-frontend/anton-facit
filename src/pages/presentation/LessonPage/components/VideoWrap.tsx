@@ -1,8 +1,13 @@
 import React, {useMemo} from 'react';
+//@ts-ignore
 import VideoPlayer from "./VideoPlayer";
+//@ts-ignore
 import type {VideoJsPlayerPluginOptions} from 'video.js';
 
-const VideoWrap = ({videoSources, timecodes = []}) => {
+const VideoWrap:React.FC<Partial<{
+    videoSources: any,
+    timecodes: any[]
+}>> = ({videoSources, timecodes = []}) => {
     const parseVideoSources:VideoJsPlayerPluginOptions = useMemo(() => {
         const defaultValue = [
             {
@@ -47,7 +52,7 @@ const VideoWrap = ({videoSources, timecodes = []}) => {
     return (
         <>
             <div className="player">
-
+                <VideoPlayer/>
             </div>
         </>
     );
