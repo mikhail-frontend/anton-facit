@@ -1,7 +1,6 @@
 // eslint-disable-next-line
-import {useCallback} from "react";
-
 export default '';
+
 // import {useCallback} from "react";
 //
 // const customizeTooltip = useCallback(() => {
