@@ -62,9 +62,72 @@ const VideoPlayer: React.FC<Partial<VideoPlayerType>> = ({
         ]
     }, [])
 
+    // eslint-disable-next-line
+    const getTimecodeValue = useCallback((time: string): string => {
+        if (!timecodes || !timecodes.length) return '';
+        const timeValue = time.split(':').reverse().reduce((result, timePart, index) => result + Number(timePart) * 60 ** index, 0);
+        for (let i = 0; i < timecodes.length; i++) {
+            if (timecodes[i].seconds > timeValue) return timecodes[i - 1]?.description;
+        }
+        return timecodes[timecodes.length - 1]?.description;
+    }, []);
 
+    // const addTimelineMarkerComponent = useCallback(() => {
+    //
+    //     const Component = videojs.getComponent('Component');
+    //     const TimelineMarker = videojs.extend(Component, {
+    //         // eslint-disable-next-line
+    //         constructor: function (player, options) {
+    //             // eslint-disable-next-line
+    //             Component.apply(this, arguments);
+    //             if (options.timeValue !== undefined) this.timeValue = options.timeValue || 0;
+    //         },
+    //         // eslint-disable-next-line
+    //         createEl: function () {
+    //             return videojs.dom.createEl('div', {className: 'vjs-timeline-marker'});
+    //         },
+    //         // eslint-disable-next-line
+    //         updatePosition: function () {
+    //             this.removeAttribute('style');
+    //             // eslint-disable-next-line
+    //             const fraction = this.timeValue / this.parentComponent_.duration_;
+    //             const position = fraction * 100;
+    //             this.setAttribute('style', `left: ${position}%`);
+    //         }
+    //     });
+    //     videojs.registerComponent('TimelineMarker', TimelineMarker);
+    //     console.log({
+    //         Component, TimelineMarker
+    //     })
+    //     // eslint-disable-next-line
+    // }, []);
 
-    const initializePlayer = useCallback(() => {
+    // const customizeTooltip = useCallback(() => {
+    //     const timeDisplay = player.controlBar.progressControl.seekBar.mouseTimeDisplay;
+    //     if (timeDisplay) {
+    //         // eslint-disable-next-line
+    //         timeDisplay.timeTooltip.update = function (seekBarRect, seekBarPoint, time) {
+    //             const timecodeValue = getTimecodeValue(time);
+    //             timecodeValue ? this.write(`${timecodeValue}\n${time}`) : this.write(time);
+    //         };
+    //     }
+    // }, []);
+
+    // const addMarkers = useCallback(() => {
+    //     const markers = timecodes.map(({seconds}) => player?.controlBar?.progressControl?.seekBar?.addChild('TimelineMarker', {timeValue: seconds}));
+    //     const updateMarkers = () => {
+    //         // eslint-disable-next-line
+    //         markers.forEach((marker) => marker.updatePosition());
+    //     };
+    //     // eslint-disable-next-line
+    //     player.bigPlayButton.on('click', function () {
+    //         this.requestAnimationFrame(() => {
+    //             updateMarkers();
+    //         });
+    //     });
+    // }, [])
+
+    const initializePlayer = useCallback(async () => {
         const videoPlayerElement: HTMLVideoElement = videoPlayer!.current;
         const videoOptions = {
             ...globalOptions,
@@ -115,127 +178,28 @@ const VideoPlayer: React.FC<Partial<VideoPlayerType>> = ({
             });
         });
 
-        player?.controlBar.addChild('QualitySelector');
 
-        player?.on('qualityRequested', () => {
-            const currentQuality = player.currentSources()?.find((src) => src.selected === true)?.label;
-            if (currentQuality) localStorage.setItem('lastVideoResolution', currentQuality);
-            setSavedPosition(() => player.currentTime());
-            setContinuePlaying(() => true);
-            // setSavedState(() => null)
-            setContinueFullscreen(() => player.isFullscreen());
-            setContinuePIP(() => player.isInPictureInPicture());
-            setCurrentVolume(() => player.volume())
-        });
 
-        player?.on('qualitySelected', () => {
-            if (continueFullscreen) {
-                player.requestFullscreen();
-            }
-            setContinueFullscreen(() => false);
-            if (currentVolume) {
-                player.volume(currentVolume);
-            }
-            setCurrentVolume(() => null)
-            player.currentTime(savedPosition);
-        });
-
-        player?.on('canplay', () => {
-            if (continuePIP) {
-                player.requestPictureInPicture();
-            }
-            setContinuePIP(() => false);
-
-            if (!continuePlaying) return;
-            // eslint-disable-next-line
-            player.play()?.catch(() => {
-            });
-            setContinuePlaying(() => false);
-        });
-
-        customizeTooltip();
-        addMarkers();
+        // customizeTooltip();
+        // addMarkers();
     }, []);
 
     const initPlayerScripts = useCallback(() => {
-        addTimelineMarkerComponent();
+        // addTimelineMarkerComponent();
         initializePlayer();
     }, []);
 
 
-    // eslint-disable-next-line
-    const getTimecodeValue = useCallback((time: string): string => {
-        if (!timecodes || !timecodes.length) return '';
-        const timeValue = time.split(':').reverse().reduce((result, timePart, index) => result + Number(timePart) * 60 ** index, 0);
-        for (let i = 0; i < timecodes.length; i++) {
-            if (timecodes[i].seconds > timeValue) return timecodes[i - 1]?.description;
-        }
-        return timecodes[timecodes.length - 1]?.description;
-    }, []);
-
-    const addTimelineMarkerComponent = useCallback(() => {
-
-        const Component = videojs.getComponent('Component');
-        const TimelineMarker = videojs.extend(Component, {
-            // eslint-disable-next-line
-            constructor: function (player, options) {
-                // eslint-disable-next-line
-                Component.apply(this, arguments);
-                if (options.timeValue !== undefined) this.timeValue = options.timeValue || 0;
-            },
-            // eslint-disable-next-line
-            createEl: function () {
-                return videojs.dom.createEl('div', {className: 'vjs-timeline-marker'});
-            },
-            // eslint-disable-next-line
-            updatePosition: function () {
-                this.removeAttribute('style');
-                // eslint-disable-next-line
-                const fraction = this.timeValue / this.parentComponent_.duration_;
-                const position = fraction * 100;
-                this.setAttribute('style', `left: ${position}%`);
-            }
-        });
-        videojs.registerComponent('TimelineMarker', TimelineMarker);
-        console.log({
-            Component, TimelineMarker
-        })
-        // eslint-disable-next-line
-    }, []);
-
-    const customizeTooltip = useCallback(() => {
-        const timeDisplay = player?.controlBar.progressControl.seekBar.mouseTimeDisplay;
-        if (timeDisplay) {
-            // eslint-disable-next-line
-            timeDisplay.timeTooltip.update = function (seekBarRect, seekBarPoint, time) {
-                const timecodeValue = getTimecodeValue(time);
-                timecodeValue ? this.write(`${timecodeValue}\n${time}`) : this.write(time);
-            };
-        }
-    }, []);
-
-    const addMarkers = useCallback(() => {
-        const markers = timecodes.map(({seconds}) => player?.controlBar?.progressControl?.seekBar?.addChild('TimelineMarker', {timeValue: seconds}));
-        const updateMarkers = () => {
-            // eslint-disable-next-line
-            markers.forEach((marker) => marker.updatePosition());
-        };
-        // eslint-disable-next-line
-        player?.bigPlayButton.on('click', function () {
-            this.requestAnimationFrame(() => {
-                updateMarkers();
-            });
-        });
-    }, [])
 
     const dispose = useCallback(async (callback = () => ({})) => {
         if (player && !player.dispose) return;
+        if(!player) return;
         // eslint-disable-next-line
-        if (player?.techName_ !== 'Flash') player?.pause && player?.pause();
+        if (player.techName_ !== 'Flash') player.pause && player.pause();
         // if (document.pictureInPictureElement) await document.exitPictureInPicture();
         // eslint-disable-next-line
         if ((document as any).pictureInPictureElement) {
-            (player as any)?.exitPictureInPicture();
+            (player as any).exitPictureInPicture();
         }
         player.dispose();
         setPlayer(() => null);
@@ -251,13 +215,53 @@ const VideoPlayer: React.FC<Partial<VideoPlayerType>> = ({
 
 
     useEffect(() => {
-        initPlayerScripts();
+        (async () => {
+            await initPlayerScripts();
+            if(!player) return;
+            player.controlBar.addChild('QualitySelector');
+
+            player.on('qualityRequested', () => {
+                const currentQuality = player.currentSources()?.find((src) => src.selected === true)?.label;
+                if (currentQuality) localStorage.setItem('lastVideoResolution', currentQuality);
+                setSavedPosition(() => player.currentTime());
+                setContinuePlaying(() => true);
+               // setSavedState(() => null)
+                setContinueFullscreen(() => player.isFullscreen());
+                setContinuePIP(() => player.isInPictureInPicture());
+                setCurrentVolume(() => player.volume())
+            });
+
+            player.on('qualitySelected', () => {
+                if (continueFullscreen) {
+                    player.requestFullscreen();
+                }
+                setContinueFullscreen(() => false);
+                if (currentVolume) {
+                    player.volume(currentVolume);
+                }
+                setCurrentVolume(() => null)
+                player.currentTime(savedPosition);
+            });
+
+            player.on('canplay', () => {
+                if (continuePIP) {
+                    player.requestPictureInPicture();
+                }
+                setContinuePIP(() => false);
+
+                if (!continuePlaying) return;
+                // eslint-disable-next-line
+                player.play()?.catch(() => {
+                });
+                setContinuePlaying(() => false);
+            });
+        })()
         if (player) {
             return () => {
                 dispose(() => ({})).then(() => ({}));
             };
         }
-    });
+    }, [player]);
 
     useEffect(() => {
         dispose((): any => {
@@ -271,11 +275,11 @@ const VideoPlayer: React.FC<Partial<VideoPlayerType>> = ({
 
 
     return (
-        <>
-            {isReset && <div className={`video-player ${className}`}>
-                <video ref={videoPlayer} className="video-js"/>
-            </div>}
-        </>
+     <>
+         {isReset &&      <div className={`video-player ${className}`}>
+             <video ref={videoPlayer} className="video-js"/>
+         </div>}
+     </>
     )
 }
 
