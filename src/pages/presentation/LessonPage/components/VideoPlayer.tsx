@@ -59,8 +59,6 @@ const VideoPlayer: React.FC<Partial<VideoPlayerType>> = ({
 		];
 	}, []);
 
-
-
 	const addTimelineMarkerComponent = useCallback(() => {
 		const Component = videojs.getComponent('Component');
 		const TimelineMarker = videojs.extend(Component, {
@@ -177,30 +175,30 @@ const VideoPlayer: React.FC<Partial<VideoPlayerType>> = ({
 			if (!player) return;
 			player.controlBar.addChild('QualitySelector');
 
-            const Button = videojs.getComponent('Button');
-            const BackButton = videojs.extend(Button, {
-                constructor: function() {
-                    Button.apply(this, arguments);
-                    this.addClass('back-btn')
-                },
-                handleClick: function() {
-                    player.currentTime(player.currentTime() < 15 ? 0 : player.currentTime() - 15 )
-                }
-            });
-            const ForwardBtn = videojs.extend(Button, {
-                constructor: function() {
-                    Button.apply(this, arguments);
-                    this.addClass('forward-btn')
-                },
-                handleClick: function() {
-                    player.currentTime(player.currentTime() + 15 )
-                }
-            });
-            videojs.registerComponent('BackButton', BackButton);
-            videojs.registerComponent('ForwardBtn', ForwardBtn);
-            player.getChild('controlBar').addChild('BackButton', {});
-            player.getChild('controlBar').addChild('ForwardBtn', {});
-            player.on('qualityRequested', () => {
+			const Button = videojs.getComponent('Button');
+			const BackButton = videojs.extend(Button, {
+				constructor: function () {
+					Button.apply(this, arguments);
+					this.addClass('back-btn');
+				},
+				handleClick: function () {
+					player.currentTime(player.currentTime() < 15 ? 0 : player.currentTime() - 15);
+				},
+			});
+			const ForwardBtn = videojs.extend(Button, {
+				constructor: function () {
+					Button.apply(this, arguments);
+					this.addClass('forward-btn');
+				},
+				handleClick: function () {
+					player.currentTime(player.currentTime() + 15);
+				},
+			});
+			videojs.registerComponent('BackButton', BackButton);
+			videojs.registerComponent('ForwardBtn', ForwardBtn);
+			player.getChild('controlBar').addChild('BackButton', {});
+			player.getChild('controlBar').addChild('ForwardBtn', {});
+			player.on('qualityRequested', () => {
 				const currentQuality = player
 					.currentSources()
 					?.find((src) => src.selected === true)?.label;

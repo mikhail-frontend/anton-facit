@@ -16,6 +16,7 @@
 
 @import 'custom/index';
 @import "custom/video/video";
+@import "custom/videoExtra";
 
 
 #appleid-signin {
@@ -38,31 +39,3 @@ a{
   color: inherit;
 }
 
-
-.player {
-  width: 674px;
-  height: 332px;
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-
-  @media (max-width: 425px) {
-    height: 200px;
-  }
-}
-
-button.vjs-control.back-btn {
-  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none' /%3E%3Cpath d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z' /%3E%3C/svg%3E%0A") ;
-  background-size: 45% ;
-  background-repeat: no-repeat ;
-  background-position: center center ;
-}
-button.vjs-control.forward-btn {
-  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none' /%3E%3Cpath d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z' /%3E%3C/svg%3E");
-  background-size: 45% ;
-  background-repeat: no-repeat ;
-  background-position: center center ;
-}
-.vjs-custom-skin > .video-js .vjs-control-bar .vjs-quality-selector{
-  margin-left: auto;
-}

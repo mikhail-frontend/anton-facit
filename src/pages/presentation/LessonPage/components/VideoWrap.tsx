@@ -11,6 +11,7 @@ type VideoWrapType = {
 	currentTime: number;
 	autoplay: boolean;
 	timecodes: any[];
+	className: string
 };
 const VideoWrap: React.FC<Partial<VideoWrapType>> = ({
 	videoUrl,
@@ -20,6 +21,7 @@ const VideoWrap: React.FC<Partial<VideoWrapType>> = ({
 	currentTime,
 	autoplay,
 	timecodes,
+	className
 }) => {
 	const parseVideoSources: VideoJsPlayerPluginOptions = useMemo(() => {
 		const defaultValue = [
@@ -68,7 +70,7 @@ const VideoWrap: React.FC<Partial<VideoWrapType>> = ({
 
 	return (
 		<>
-			<div className='player'>
+			<div className={`player ${className}`}>
 				<VideoPlayer
 					options={videoOptions}
 					currentTime={currentTime}
@@ -90,6 +92,7 @@ VideoWrap.defaultProps = {
 	currentTime: 0,
 	autoplay: false,
 	timecodes: [],
+	className: ''
 };
 
 export default VideoWrap;
