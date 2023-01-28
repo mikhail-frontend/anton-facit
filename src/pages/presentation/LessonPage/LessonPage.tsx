@@ -1,14 +1,12 @@
-import React, {Dispatch, useEffect, useMemo, useState} from 'react';
+import React, {Dispatch, useEffect, useState} from 'react';
 import SubHeader, {SubHeaderLeft, SubheaderSeparator} from '../../../layout/SubHeader/SubHeader';
 import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
-//import Button from '../../../components/bootstrap/Button';
 import {useNavigate, useParams} from 'react-router-dom';
-//import { useSelector, useDispatch } from 'react-redux';
 import Breadcrumb from "../../../components/bootstrap/Breadcrumb";
 import Loading from '../CoursesList/components/Loading';
-import type {CurrentCourseType} from '../CourseItem/components/CourseContent';
 import {getLesson} from "../../../store/modules/lesson/lessonActions";
+import LessonContent from "./components/LessonContent";
 import {useSelector, useDispatch} from "react-redux";
 
 const LessonPage = () => {
@@ -63,7 +61,7 @@ const LessonPage = () => {
             </SubHeader>
             <Page>
                 {lessonLoading && <Loading text={`We're loading your lesson`}/>}
-                {/*{!courseItemLoading && <CourseContent />}*/}
+                {!lessonLoading && <LessonContent />}
             </Page>
         </PageWrapper>
     );
