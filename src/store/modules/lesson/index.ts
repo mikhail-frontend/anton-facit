@@ -7,13 +7,13 @@ const index = createSlice({
         lessonLoading: true,
     },
     reducers: {
-        setCurrentCourse(state, { payload }) {
+        setCurrentLesson(state, { payload }) {
             const { currentLesson } = state;
             const lesson = currentLesson ? currentLesson : {};
-            return { ...state, currentLesson: { ...currentLesson, ...payload } };
+            return { ...state, currentLesson: { ...lesson, ...payload } };
         },
         setLoading(state, { payload }) {
-            return { ...state, courseItemLoading: payload };
+            return { ...state, lessonLoading: payload };
         },
     },
 });

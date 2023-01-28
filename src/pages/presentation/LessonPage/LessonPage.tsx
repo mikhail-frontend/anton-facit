@@ -7,39 +7,49 @@ import {useNavigate, useParams} from 'react-router-dom';
 //import { useSelector, useDispatch } from 'react-redux';
 import Breadcrumb from "../../../components/bootstrap/Breadcrumb";
 import Loading from '../CoursesList/components/Loading';
-import type {CurrentCourseType} from '../CourseItem/components/CourseContent'
-import {useSelector} from "react-redux";
+import type {CurrentCourseType} from '../CourseItem/components/CourseContent';
+import {getLesson} from "../../../store/modules/lesson/lessonActions";
+import {useSelector, useDispatch} from "react-redux";
 
-const CourseItem = () => {
+const LessonPage = () => {
     const navigate = useNavigate();
     const {courseId, lessonId} = useParams();
-    const currentCourse: CurrentCourseType = useSelector(
-        (state: any) => state.courseItem.currentCourse,
-    );
-    const currentLesson = currentCourse.lessons.find(({id}) => Number(id) === Number(lessonId))
+    const dispatch: Dispatch<any> = useDispatch();
+    const {currentLesson, lessonLoading} = useSelector((state:any) => state.lesson);
+
     const [breadcrumbs, setBreadcrumbs] = useState([
         {title: 'Courses', to: '/courses'},
-        {title: currentCourse.title, to: `/courses/course/${courseId}`},
-        {title: currentLesson.title, to: `/courses/course/${courseId}/lesson/${lessonId}`}
-    ])
-
+        {title: 'Course Page', to: `/courses/course/${courseId}`},
+        {title: 'Lesson Page', to: `/courses/course/${courseId}/lesson/${lessonId}`}
+    ]);
 
     useEffect(() => {
-        if (!currentCourse || !currentLesson) {
-            navigate('/404');
-        }
-        return () => {
-        };
         //eslint-disable-next-line
-    }, [currentCourse, currentLesson]);
+        (async () => {
+            const response:any=  await dispatch(getLesson({
+                course_id: Number(courseId),
+                lesson_id: Number(lessonId)
+            }))
+            const {course, lesson} = response;
+            if(!course || !lesson) {
+                navigate('/404');
+            }
+            setBreadcrumbs(() => {
+                return [
+                    {title: 'Courses', to: '/courses'},
+                    {title: course.title, to: `/courses/course/${courseId}`},
+                    {title: lesson.title, to: `/courses/course/${courseId}/lesson/${lessonId}`}
+                ]
+            })
+        })();
 
-    if (!currentCourse || !currentLesson) return <></>;
+        return () => {}
 
-    const loading = true;
+    }, [courseId, lessonId, dispatch])
 
 
     return (
-        <PageWrapper title={'Lesson Page'}>
+        <PageWrapper title={currentLesson ? currentLesson.title : 'Lesson Page'}>
             <SubHeader>
                 <SubHeaderLeft>
                     <Breadcrumb
@@ -52,11 +62,11 @@ const CourseItem = () => {
                 </SubHeaderLeft>
             </SubHeader>
             <Page>
-                {loading && <Loading text={`We're loading your lesson`}/>}
+                {lessonLoading && <Loading text={`We're loading your lesson`}/>}
                 {/*{!courseItemLoading && <CourseContent />}*/}
             </Page>
         </PageWrapper>
     );
 };
 
-export default CourseItem;
+export default LessonPage;

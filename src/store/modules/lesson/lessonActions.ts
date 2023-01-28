@@ -3,7 +3,7 @@ import lesson from "../lesson";
 
 import lessonList from '../courseItem/entities/lessonsList';
 import coursesListDUMMY from "../courses/entities/coursesListDUMMY";
-export const getCourse = ({course_id, lesson_id}: {course_id:number, lesson_id: number}) => {
+export const getLesson = ({course_id, lesson_id}: {course_id:number, lesson_id: number}) => {
     return async (dispatch) => {
         let courseInList:any = coursesListDUMMY.find(({id}) => Number(id) === Number(course_id));
         if(!courseInList) {
@@ -16,11 +16,19 @@ export const getCourse = ({course_id, lesson_id}: {course_id:number, lesson_id: 
             ...courseInList,
             lessons: lessonList,
         }
-        const lessonInCourse = courseInList.find(({id}) => Number(id) === Number(lesson_id));
+        const lessonInCourse = courseInList.lessons.find(({id}) => Number(id) === Number(lesson_id));
         if(!lessonInCourse) {
-
+            return {
+                course: courseInList,
+                lesson: null
+            }
         }
         await getData('https://httpbin.org/get', {course_id, lesson_id});
-
+        dispatch(lesson.actions.setLoading(false));
+        dispatch(lesson.actions.setCurrentLesson(lessonInCourse));
+        return  {
+            course: courseInList,
+            lesson: lessonInCourse
+        }
     };
 };
