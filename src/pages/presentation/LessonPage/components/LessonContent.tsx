@@ -7,7 +7,7 @@ const LessonContent = () => {
     const {currentLesson} = useSelector((state: any) => state.lesson);
     if (!currentLesson) return <>No Lesson</>;
 
-    console.log(currentLesson)
+
 
 
     return (
