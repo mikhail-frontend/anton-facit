@@ -59,7 +59,7 @@ const VideoWrap:React.FC<Partial<VideoWrapType>> = ({
             sources: parseVideoSources
         }
     }, []);
-    
+
     return (
         <>
             <div className="player">
