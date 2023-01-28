@@ -52,7 +52,7 @@ const CourseItem = () => {
 				</SubHeaderLeft>
 			</SubHeader>
 			<Page>
-				{courseItemLoading && <Loading text={`We're loading the course`}/>}
+				{courseItemLoading && <Loading text={`We're loading the course`} />}
 				{!courseItemLoading && <CourseContent />}
 			</Page>
 		</PageWrapper>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Spinner from '../../../../components/bootstrap/Spinner';
 
-const Loading:React.FC<{text: string}> = ({text}) => {
+const Loading: React.FC<{ text: string }> = ({ text }) => {
 	return (
 		<div className='d-flex align-items-center justify-content-center flex-column m-auto'>
 			<Spinner size='10rem' color='primary' className='mb-4' />
