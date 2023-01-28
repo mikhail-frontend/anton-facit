@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import Comments from '../../CourseItem/components/Comments';
-import LessonTop from "./LessonTop";
+import LessonTop from './LessonTop';
 import tmpVideo from '../entities/tmpVideo';
 
 const LessonContent = () => {
@@ -35,18 +35,17 @@ const LessonContent = () => {
 		<>
 			<div className='display-4 fw-bold pt-3 pb-5'>{currentLesson.title}</div>
 			<div className='row g-4'>
-				<LessonTop title={currentLesson.title || 'Lesson page'}
-						   image={currentLesson.image || ''}
-						   video={video}
-						   videoSources={videoSources}
+				<LessonTop
+					title={currentLesson.title || 'Lesson page'}
+					image={currentLesson.image || ''}
+					video={video}
+					videoSources={videoSources}
 				/>
 
 				<div
 					className='col-12 mb-4'
 					dangerouslySetInnerHTML={{ __html: currentLesson.description }}
 				/>
-
-
 			</div>
 
 			<Comments />
