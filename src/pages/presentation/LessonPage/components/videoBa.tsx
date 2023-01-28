@@ -1,5 +1,5 @@
-import React from "react";
-const BA =  (() => (<></>));
+import React from 'react';
+const BA = () => <></>;
 export default BA;
 
 // import React, { useRef, useEffect } from 'react';
