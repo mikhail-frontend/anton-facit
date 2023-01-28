@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import classNames from "classnames";
 import VideoWrap from "./VideoWrap";
 import styles from './LessonTop.module.scss'
+import PlayIcon from '../assets/play-button.png'
 
 
 type LessonTopType  = {
@@ -23,6 +24,12 @@ const LessonTop:React.FC<LessonTopType> = ({image, title, video, videoSources}) 
                         'mb-3',
                         'bg-l10-danger',
                     )}>
+                    <img src={PlayIcon}
+                         width={100}
+                         height={100}
+                         onClick={() => setVideoMode(() => true)}
+                         className={`${styles.playIcon}`}
+                         alt="play icons"/>
                     <img
                         src={image}
                         alt={title}
@@ -38,7 +45,7 @@ const LessonTop:React.FC<LessonTopType> = ({image, title, video, videoSources}) 
                     {video && (
                         <VideoWrap
                             className={`${styles.lessonVideo}`}
-                            autoplay={false}
+                            autoplay={true}
                             videoSources={videoSources}
                             videoUrl={video.link || video.url}
                             customPoster='https://storage.yandexcloud.net/matetech-dev-file-storage/46993/2345_35e67a2997506045008bedaf97e92064.jpg'
